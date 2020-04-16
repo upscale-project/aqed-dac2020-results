@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="buf4.cpp" path="/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/buf4.cpp"/>
+    <originFiles name="buf4bug3.cpp" path="/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/buf4bug3.cpp"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

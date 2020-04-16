@@ -1,0 +1,37 @@
+2020-04-11 10:01:00.514081 (411) main____ INFO    ----------------------------------------
+2020-04-11 10:01:00.514297 (411) main____ INFO    JasperGold version info
+2020-04-11 10:01:00.514326 (411) main____ INFO      tool      : JasperGold 2016.09
+2020-04-11 10:01:00.514345 (411) main____ INFO      version   : 2016.09p002 64 bits
+2020-04-11 10:01:00.514358 (411) main____ INFO      build date: 2016.11.28 18:08:37 PST
+2020-04-11 10:01:00.514367 (411) main____ INFO    ----------------------------------------
+2020-04-11 10:01:00.514376 (411) main____ INFO    Runtime info:
+2020-04-11 10:01:00.514387 (411) main____ INFO      platform  : Linux 3.10.0-957.21.3.el7.x86_64 x86_64
+2020-04-11 10:01:00.514402 (411) main____ INFO      hostname  : rsg23.stanford.edu
+2020-04-11 10:01:00.514413 (411) main____ INFO      pid       : 411
+2020-04-11 10:01:00.514422 (411) main____ INFO      arguments : '-style' 'windows'
+2020-04-11 10:01:00.514431 (411) main____ INFO    ----------------------------------------
+2020-04-11 10:01:00.519872 (411) lic__man INFO    Claim 'main' for <ui>.
+2020-04-11 10:01:00.529745 (411) lic_core INFO    (1) checking out 'jasper_interactive' ...
+2020-04-11 10:01:00.565373 (411) lic_core INFO    ... (1) checkout succeeded
+2020-04-11 10:01:00.565500 (411) lic__man INFO    Claim 'fpv' for <ui>.
+2020-04-11 10:01:00.565563 (411) lic_core INFO    (2) checking out 'jasper_fpv' ...
+2020-04-11 10:01:00.585743 (411) lic_core INFO    ... (2) checkout succeeded
+2020-04-11 10:01:04.717246 (411) lic__man INFO    Claim 'fpv' for <ui>.
+2020-04-11 10:01:04.894311 (411) lic__man INFO    Unclaim 'fpv' for <ui>.
+2020-04-11 10:01:04.894370 (411) lic__man INFO    Claim 'fpv' for <ui>.
+2020-04-11 10:01:04.934546 (411) session_ INFO    Starting analysis session with session id 'session_0' ...
+2020-04-11 10:01:04.938341 (411) session_ INFO    Analysis session with session id 'session_0' started (pid: 466)
+2020-04-11 10:01:22.517527 (411) session_ INFO    Analysis session 'session_0' connected to the console (host: 172.24.74.53:56620)
+2020-04-11 10:01:40.464349 (411) lic__man INFO    Unclaim everything for 'session_0*'.
+2020-04-11 10:01:44.574704 (411) lic__man INFO    Claim 'fpv' for 'session_0'.
+2020-04-11 10:09:21.813207 (411) lic__man INFO    Unclaim everything for 'session_0/prove-0'.
+2020-04-11 10:09:25.173007 (411) lic__man INFO    Unclaim everything for 'session_0*'.
+2020-04-11 10:09:26.206937 (411) lic__man INFO    Claim 'fpv' for 'session_0'.
+2020-04-11 10:13:55.275199 (411) lic__man INFO    Unclaim everything for 'session_0/prove-1'.
+2020-04-11 10:13:57.361374 (411) lic__man INFO    Unclaim everything for 'session_0*'.
+2020-04-11 10:14:06.286201 (411) lic__man INFO    Claim 'fpv' for 'session_0'.
+2020-04-11 10:43:11.037335 (411) lic__man INFO    Unclaim everything for 'session_0/prove-2'.
+2020-04-11 10:43:19.786754 (411) lic__man INFO    Unclaim everything for 'session_0*'.
+2020-04-11 10:43:20.884994 (411) lic__man INFO    Claim 'fpv' for 'session_0'.
+2020-04-11 10:53:50.400635 (411) lic__man INFO    Unclaim everything for 'session_0/prove-3'.
+2020-04-11 11:01:50.982519 (411) lic__man INFO    Entering idle state.

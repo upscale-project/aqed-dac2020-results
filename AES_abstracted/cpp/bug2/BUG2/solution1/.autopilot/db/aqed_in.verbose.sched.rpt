@@ -1,0 +1,401 @@
+
+
+================================================================
+== Vivado HLS Report for 'aqed_in'
+================================================================
+* Date:           Wed Apr 15 19:05:02 2020
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        BUG2
+* Solution:       solution1
+* Product family: aartix7
+* Target device:  xa7a12tcsg325-1q
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  50.00|     8.232|        6.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    3|   17|    3|   17|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 18
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / (issue_orig_V)
+	18  / (!issue_orig_V)
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.09>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%dup_idx_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %dup_idx)" [buf4bug2.cpp:330]   --->   Operation 19 'read' 'dup_idx_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%bmc_in_offset_read = call i4 @_ssdm_op_Read.ap_auto.i4(i4 %bmc_in_offset)" [buf4bug2.cpp:330]   --->   Operation 20 'read' 'bmc_in_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%tmp_10 = call i7 @_ssdm_op_PartSelect.i7.i8.i32.i32(i8 %dup_idx_read, i32 1, i32 7)" [buf4bug2.cpp:346]   --->   Operation 21 'partselect' 'tmp_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (1.46ns)   --->   "%icmp1 = icmp eq i7 %tmp_10, 0" [buf4bug2.cpp:346]   --->   Operation 22 'icmp' 'icmp1' <Predicate = true> <Delay = 1.46> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%tmp_11 = trunc i8 %dup_idx_read to i5" [buf4bug2.cpp:330]   --->   Operation 23 'trunc' 'tmp_11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%tmp_7 = call i6 @_ssdm_op_BitConcatenate.i6.i5.i1(i5 %tmp_11, i1 false)" [buf4bug2.cpp:346]   --->   Operation 24 'bitconcatenate' 'tmp_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%bmc_in_offset_cast1 = zext i4 %bmc_in_offset_read to i6" [buf4bug2.cpp:346]   --->   Operation 25 'zext' 'bmc_in_offset_cast1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (1.94ns)   --->   "%sum = add i6 %bmc_in_offset_cast1, %tmp_7" [buf4bug2.cpp:346]   --->   Operation 26 'add' 'sum' <Predicate = true> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%sum_cast = zext i6 %sum to i64" [buf4bug2.cpp:346]   --->   Operation 27 'zext' 'sum_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%bmc_in_addr = getelementptr [16 x i8]* %bmc_in, i64 0, i64 %sum_cast" [buf4bug2.cpp:346]   --->   Operation 28 'getelementptr' 'bmc_in_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [2/2] (2.15ns)   --->   "%bmc_in_load = load i8* %bmc_in_addr, align 1" [buf4bug2.cpp:346]   --->   Operation 29 'load' 'bmc_in_load' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_1 : Operation 30 [1/1] (0.00ns) (grouped into LUT with out node sum2)   --->   "%p_sum = or i6 %tmp_7, 1" [buf4bug2.cpp:346]   --->   Operation 30 'or' 'p_sum' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (1.94ns) (out node of the LUT)   --->   "%sum2 = add i6 %bmc_in_offset_cast1, %p_sum" [buf4bug2.cpp:346]   --->   Operation 31 'add' 'sum2' <Predicate = true> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%sum2_cast = zext i6 %sum2 to i64" [buf4bug2.cpp:346]   --->   Operation 32 'zext' 'sum2_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%bmc_in_addr_4 = getelementptr [16 x i8]* %bmc_in, i64 0, i64 %sum2_cast" [buf4bug2.cpp:346]   --->   Operation 33 'getelementptr' 'bmc_in_addr_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [2/2] (2.15ns)   --->   "%bmc_in_load_4 = load i8* %bmc_in_addr_4, align 1" [buf4bug2.cpp:346]   --->   Operation 34 'load' 'bmc_in_load_4' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 2 <SV = 1> <Delay = 4.09>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%orig_idx_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %orig_idx)" [buf4bug2.cpp:330]   --->   Operation 35 'read' 'orig_idx_read' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%tmp = call i7 @_ssdm_op_PartSelect.i7.i8.i32.i32(i8 %orig_idx_read, i32 1, i32 7)" [buf4bug2.cpp:339]   --->   Operation 36 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (1.46ns)   --->   "%icmp = icmp eq i7 %tmp, 0" [buf4bug2.cpp:339]   --->   Operation 37 'icmp' 'icmp' <Predicate = true> <Delay = 1.46> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 38 [2/2] (2.15ns)   --->   "%state_key_V_load = load i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 31), align 1"   --->   Operation 38 'load' 'state_key_V_load' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_2 : Operation 39 [1/2] (2.15ns)   --->   "%bmc_in_load = load i8* %bmc_in_addr, align 1" [buf4bug2.cpp:346]   --->   Operation 39 'load' 'bmc_in_load' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_2 : Operation 40 [1/2] (2.15ns)   --->   "%bmc_in_load_4 = load i8* %bmc_in_addr_4, align 1" [buf4bug2.cpp:346]   --->   Operation 40 'load' 'bmc_in_load_4' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%tmp_12 = trunc i8 %orig_idx_read to i5" [buf4bug2.cpp:330]   --->   Operation 41 'trunc' 'tmp_12' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_2 = call i6 @_ssdm_op_BitConcatenate.i6.i5.i1(i5 %tmp_12, i1 false)" [buf4bug2.cpp:346]   --->   Operation 42 'bitconcatenate' 'tmp_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (1.94ns)   --->   "%sum4 = add i6 %bmc_in_offset_cast1, %tmp_2" [buf4bug2.cpp:346]   --->   Operation 43 'add' 'sum4' <Predicate = true> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%sum4_cast = zext i6 %sum4 to i64" [buf4bug2.cpp:346]   --->   Operation 44 'zext' 'sum4_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%bmc_in_addr_5 = getelementptr [16 x i8]* %bmc_in, i64 0, i64 %sum4_cast" [buf4bug2.cpp:346]   --->   Operation 45 'getelementptr' 'bmc_in_addr_5' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 46 [2/2] (2.15ns)   --->   "%bmc_in_load_5 = load i8* %bmc_in_addr_5, align 1" [buf4bug2.cpp:346]   --->   Operation 46 'load' 'bmc_in_load_5' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_2 : Operation 47 [1/1] (0.00ns) (grouped into LUT with out node sum8)   --->   "%p_sum4 = or i6 %tmp_2, 1" [buf4bug2.cpp:346]   --->   Operation 47 'or' 'p_sum4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 48 [1/1] (1.94ns) (out node of the LUT)   --->   "%sum8 = add i6 %bmc_in_offset_cast1, %p_sum4" [buf4bug2.cpp:346]   --->   Operation 48 'add' 'sum8' <Predicate = true> <Delay = 1.94> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 49 [1/1] (0.00ns)   --->   "%sum8_cast = zext i6 %sum8 to i64" [buf4bug2.cpp:346]   --->   Operation 49 'zext' 'sum8_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%bmc_in_addr_6 = getelementptr [16 x i8]* %bmc_in, i64 0, i64 %sum8_cast" [buf4bug2.cpp:346]   --->   Operation 50 'getelementptr' 'bmc_in_addr_6' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 51 [2/2] (2.15ns)   --->   "%bmc_in_load_6 = load i8* %bmc_in_addr_6, align 1" [buf4bug2.cpp:346]   --->   Operation 51 'load' 'bmc_in_load_6' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 3 <SV = 2> <Delay = 8.23>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%dup_V_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %dup_V)" [buf4bug2.cpp:330]   --->   Operation 52 'read' 'dup_V_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%orig_V_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %orig_V)" [buf4bug2.cpp:330]   --->   Operation 53 'read' 'orig_V_read' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 54 [1/1] (0.94ns)   --->   "%or_cond = and i1 %icmp, %orig_V_read" [buf4bug2.cpp:339]   --->   Operation 54 'and' 'or_cond' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%state_orig_issued_V_s = load i1* @state_orig_issued_V, align 2" [buf4bug2.cpp:339]   --->   Operation 55 'load' 'state_orig_issued_V_s' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 56 [1/1] (0.00ns) (grouped into LUT with out node issue_orig_V)   --->   "%tmp_s = xor i1 %state_orig_issued_V_s, true" [buf4bug2.cpp:339]   --->   Operation 56 'xor' 'tmp_s' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 57 [1/1] (0.94ns) (out node of the LUT)   --->   "%issue_orig_V = and i1 %or_cond, %tmp_s" [buf4bug2.cpp:339]   --->   Operation 57 'and' 'issue_orig_V' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 58 [1/2] (2.15ns)   --->   "%state_key_V_load = load i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 31), align 1"   --->   Operation 58 'load' 'state_key_V_load' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_3 : Operation 59 [1/1] (0.94ns)   --->   "%or_cond1 = and i1 %icmp1, %dup_V_read" [buf4bug2.cpp:346]   --->   Operation 59 'and' 'or_cond1' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 60 [1/1] (0.00ns)   --->   "%state_dup_issued_V_l = load i1* @state_dup_issued_V, align 1" [buf4bug2.cpp:346]   --->   Operation 60 'load' 'state_dup_issued_V_l' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 61 [1/1] (0.00ns)   --->   "%state_orig_val_V_0_l = load i8* @state_orig_val_V_0, align 2" [buf4bug2.cpp:346]   --->   Operation 61 'load' 'state_orig_val_V_0_l' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 62 [1/1] (1.47ns)   --->   "%tmp_8 = icmp eq i8 %bmc_in_load, %state_orig_val_V_0_l" [buf4bug2.cpp:346]   --->   Operation 62 'icmp' 'tmp_8' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 63 [1/1] (0.00ns)   --->   "%state_orig_val_V_1_l = load i8* @state_orig_val_V_1, align 1" [buf4bug2.cpp:346]   --->   Operation 63 'load' 'state_orig_val_V_1_l' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 64 [1/1] (1.47ns)   --->   "%tmp_9 = icmp eq i8 %bmc_in_load_4, %state_orig_val_V_1_l" [buf4bug2.cpp:346]   --->   Operation 64 'icmp' 'tmp_9' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 65 [1/1] (0.00ns) (grouped into LUT with out node or_cond2)   --->   "%tmp_1 = xor i1 %state_key_V_load, true" [buf4bug2.cpp:346]   --->   Operation 65 'xor' 'tmp_1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 66 [1/1] (0.94ns) (out node of the LUT)   --->   "%or_cond2 = and i1 %tmp_9, %tmp_1" [buf4bug2.cpp:346]   --->   Operation 66 'and' 'or_cond2' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 67 [1/1] (0.00ns) (grouped into LUT with out node p_082_not)   --->   "%or_cond_not = xor i1 %or_cond, true" [buf4bug2.cpp:346]   --->   Operation 67 'xor' 'or_cond_not' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 68 [1/1] (0.94ns) (out node of the LUT)   --->   "%p_082_not = or i1 %state_orig_issued_V_s, %or_cond_not" [buf4bug2.cpp:346]   --->   Operation 68 'or' 'p_082_not' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 69 [1/1] (0.94ns)   --->   "%brmerge = or i1 %or_cond2, %p_082_not" [buf4bug2.cpp:346]   --->   Operation 69 'or' 'brmerge' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 70 [1/2] (2.15ns)   --->   "%bmc_in_load_5 = load i8* %bmc_in_addr_5, align 1" [buf4bug2.cpp:346]   --->   Operation 70 'load' 'bmc_in_load_5' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_3 : Operation 71 [1/1] (1.47ns)   --->   "%tmp_3 = icmp eq i8 %bmc_in_load_5, %bmc_in_load" [buf4bug2.cpp:346]   --->   Operation 71 'icmp' 'tmp_3' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 72 [1/2] (2.15ns)   --->   "%bmc_in_load_6 = load i8* %bmc_in_addr_6, align 1" [buf4bug2.cpp:346]   --->   Operation 72 'load' 'bmc_in_load_6' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_3 : Operation 73 [1/1] (1.47ns)   --->   "%tmp_4 = icmp eq i8 %bmc_in_load_6, %bmc_in_load_4" [buf4bug2.cpp:346]   --->   Operation 73 'icmp' 'tmp_4' <Predicate = true> <Delay = 1.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 74 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp1)   --->   "%sel_tmp = xor i1 %state_dup_issued_V_l, true" [buf4bug2.cpp:346]   --->   Operation 74 'xor' 'sel_tmp' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 75 [1/1] (0.94ns) (out node of the LUT)   --->   "%sel_tmp1 = and i1 %or_cond1, %sel_tmp" [buf4bug2.cpp:346]   --->   Operation 75 'and' 'sel_tmp1' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 76 [1/1] (0.94ns)   --->   "%sel_tmp5 = and i1 %state_orig_issued_V_s, %tmp_8" [buf4bug2.cpp:339]   --->   Operation 76 'and' 'sel_tmp5' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 77 [1/1] (0.00ns) (grouped into LUT with out node tmp4)   --->   "%sel_tmp6 = xor i1 %brmerge, true" [buf4bug2.cpp:346]   --->   Operation 77 'xor' 'sel_tmp6' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 78 [1/1] (0.00ns) (grouped into LUT with out node tmp4)   --->   "%sel_tmp7 = and i1 %sel_tmp5, %sel_tmp6" [buf4bug2.cpp:339]   --->   Operation 78 'and' 'sel_tmp7' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 79 [1/1] (0.00ns) (grouped into LUT with out node tmp4)   --->   "%sel_tmp8 = or i1 %issue_orig_V, %sel_tmp7" [buf4bug2.cpp:346]   --->   Operation 79 'or' 'sel_tmp8' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 80 [1/1] (0.00ns) (grouped into LUT with out node tmp4)   --->   "%sel_tmp2 = and i1 %state_dup_issued_V_l, %or_cond1" [buf4bug2.cpp:346]   --->   Operation 80 'and' 'sel_tmp2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 81 [1/1] (0.00ns) (grouped into LUT with out node tmp4)   --->   "%not_sel_tmp = xor i1 %sel_tmp2, true" [buf4bug2.cpp:346]   --->   Operation 81 'xor' 'not_sel_tmp' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 82 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp3)   --->   "%tmp2 = and i1 %sel_tmp1, %tmp_3" [buf4bug2.cpp:346]   --->   Operation 82 'and' 'tmp2' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 83 [1/1] (0.00ns) (grouped into LUT with out node tmp4)   --->   "%tmp3 = and i1 %tmp_4, %not_sel_tmp" [buf4bug2.cpp:346]   --->   Operation 83 'and' 'tmp3' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 84 [1/1] (0.94ns) (out node of the LUT)   --->   "%tmp4 = and i1 %tmp3, %sel_tmp8" [buf4bug2.cpp:346]   --->   Operation 84 'and' 'tmp4' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 85 [1/1] (0.94ns) (out node of the LUT)   --->   "%sel_tmp3 = and i1 %tmp4, %tmp2" [buf4bug2.cpp:346]   --->   Operation 85 'and' 'sel_tmp3' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 86 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp9)   --->   "%tmp5 = and i1 %state_orig_issued_V_s, %sel_tmp1" [buf4bug2.cpp:346]   --->   Operation 86 'and' 'tmp5' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 87 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp9)   --->   "%tmp6 = and i1 %tmp_8, %brmerge" [buf4bug2.cpp:346]   --->   Operation 87 'and' 'tmp6' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 88 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp9)   --->   "%sel_tmp4 = and i1 %tmp6, %tmp5" [buf4bug2.cpp:346]   --->   Operation 88 'and' 'sel_tmp4' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 89 [1/1] (1.37ns) (out node of the LUT)   --->   "%sel_tmp9 = select i1 %sel_tmp4, i1 %or_cond2, i1 %sel_tmp3" [buf4bug2.cpp:346]   --->   Operation 89 'select' 'sel_tmp9' <Predicate = true> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_3 : Operation 90 [1/1] (0.00ns) (grouped into LUT with out node not_sel_tmp1)   --->   "%sel_tmp10 = and i1 %sel_tmp1, %p_082_not" [buf4bug2.cpp:346]   --->   Operation 90 'and' 'sel_tmp10' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 91 [1/1] (0.00ns) (grouped into LUT with out node not_sel_tmp1)   --->   "%sel_tmp27_not = xor i1 %sel_tmp10, true" [buf4bug2.cpp:346]   --->   Operation 91 'xor' 'sel_tmp27_not' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 92 [1/1] (0.94ns) (out node of the LUT)   --->   "%not_sel_tmp1 = or i1 %sel_tmp5, %sel_tmp27_not" [buf4bug2.cpp:339]   --->   Operation 92 'or' 'not_sel_tmp1' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 93 [1/1] (0.94ns) (out node of the LUT)   --->   "%issue_dup_V = and i1 %sel_tmp9, %not_sel_tmp1" [buf4bug2.cpp:346]   --->   Operation 93 'and' 'issue_dup_V' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 94 [1/1] (0.00ns)   --->   "%state_in_count_V_loa = load i16* @state_in_count_V, align 2" [buf4bug2.cpp:359]   --->   Operation 94 'load' 'state_in_count_V_loa' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 95 [1/1] (0.00ns)   --->   "br i1 %issue_orig_V, label %.loopexit.loopexit, label %.loopexit" [buf4bug2.cpp:355]   --->   Operation 95 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 96 [1/1] (0.00ns)   --->   "store i1 true, i1* @state_orig_issued_V, align 2" [buf4bug2.cpp:357]   --->   Operation 96 'store' <Predicate = (issue_orig_V)> <Delay = 0.00>
+ST_3 : Operation 97 [1/1] (0.00ns)   --->   "store i8 %bmc_in_load_5, i8* @state_orig_val_V_0, align 2" [buf4bug2.cpp:357]   --->   Operation 97 'store' <Predicate = (issue_orig_V)> <Delay = 0.00>
+ST_3 : Operation 98 [1/1] (0.00ns)   --->   "store i8 %bmc_in_load_6, i8* @state_orig_val_V_1, align 1" [buf4bug2.cpp:358]   --->   Operation 98 'store' <Predicate = (issue_orig_V)> <Delay = 0.00>
+ST_3 : Operation 99 [1/1] (0.00ns)   --->   "store i16 %state_in_count_V_loa, i16* @state_orig_in_V, align 2" [buf4bug2.cpp:359]   --->   Operation 99 'store' <Predicate = (issue_orig_V)> <Delay = 0.00>
+ST_3 : Operation 100 [1/1] (0.00ns)   --->   "%tmp_14 = trunc i8 %orig_idx_read to i2" [buf4bug2.cpp:359]   --->   Operation 100 'trunc' 'tmp_14' <Predicate = (issue_orig_V)> <Delay = 0.00>
+ST_3 : Operation 101 [1/1] (0.00ns)   --->   "store i2 %tmp_14, i2* @state_orig_idx_V, align 2" [buf4bug2.cpp:359]   --->   Operation 101 'store' <Predicate = (issue_orig_V)> <Delay = 0.00>
+ST_3 : Operation 102 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 0), align 16" [buf4bug2.cpp:362]   --->   Operation 102 'store' <Predicate = (issue_orig_V)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_3 : Operation 103 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 1), align 1" [buf4bug2.cpp:362]   --->   Operation 103 'store' <Predicate = (issue_orig_V)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 4 <SV = 3> <Delay = 2.15>
+ST_4 : Operation 104 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 2), align 2" [buf4bug2.cpp:362]   --->   Operation 104 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_4 : Operation 105 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 3), align 1" [buf4bug2.cpp:362]   --->   Operation 105 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 5 <SV = 4> <Delay = 2.15>
+ST_5 : Operation 106 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 4), align 4" [buf4bug2.cpp:362]   --->   Operation 106 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_5 : Operation 107 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 5), align 1" [buf4bug2.cpp:362]   --->   Operation 107 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 6 <SV = 5> <Delay = 2.15>
+ST_6 : Operation 108 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 6), align 2" [buf4bug2.cpp:362]   --->   Operation 108 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_6 : Operation 109 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 7), align 1" [buf4bug2.cpp:362]   --->   Operation 109 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 7 <SV = 6> <Delay = 2.15>
+ST_7 : Operation 110 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 8), align 8" [buf4bug2.cpp:362]   --->   Operation 110 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_7 : Operation 111 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 9), align 1" [buf4bug2.cpp:362]   --->   Operation 111 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 8 <SV = 7> <Delay = 2.15>
+ST_8 : Operation 112 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 10), align 2" [buf4bug2.cpp:362]   --->   Operation 112 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_8 : Operation 113 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 11), align 1" [buf4bug2.cpp:362]   --->   Operation 113 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 9 <SV = 8> <Delay = 2.15>
+ST_9 : Operation 114 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 12), align 4" [buf4bug2.cpp:362]   --->   Operation 114 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_9 : Operation 115 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 13), align 1" [buf4bug2.cpp:362]   --->   Operation 115 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 10 <SV = 9> <Delay = 2.15>
+ST_10 : Operation 116 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 14), align 2" [buf4bug2.cpp:362]   --->   Operation 116 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_10 : Operation 117 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 15), align 1" [buf4bug2.cpp:362]   --->   Operation 117 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 11 <SV = 10> <Delay = 2.15>
+ST_11 : Operation 118 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 16), align 16" [buf4bug2.cpp:362]   --->   Operation 118 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_11 : Operation 119 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 17), align 1" [buf4bug2.cpp:362]   --->   Operation 119 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 12 <SV = 11> <Delay = 2.15>
+ST_12 : Operation 120 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 18), align 2" [buf4bug2.cpp:362]   --->   Operation 120 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_12 : Operation 121 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 19), align 1" [buf4bug2.cpp:362]   --->   Operation 121 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 13 <SV = 12> <Delay = 2.15>
+ST_13 : Operation 122 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 20), align 4" [buf4bug2.cpp:362]   --->   Operation 122 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_13 : Operation 123 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 21), align 1" [buf4bug2.cpp:362]   --->   Operation 123 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 14 <SV = 13> <Delay = 2.15>
+ST_14 : Operation 124 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 22), align 2" [buf4bug2.cpp:362]   --->   Operation 124 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_14 : Operation 125 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 23), align 1" [buf4bug2.cpp:362]   --->   Operation 125 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 15 <SV = 14> <Delay = 2.15>
+ST_15 : Operation 126 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 24), align 8" [buf4bug2.cpp:362]   --->   Operation 126 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_15 : Operation 127 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 25), align 1" [buf4bug2.cpp:362]   --->   Operation 127 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 16 <SV = 15> <Delay = 2.15>
+ST_16 : Operation 128 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 26), align 2" [buf4bug2.cpp:362]   --->   Operation 128 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_16 : Operation 129 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 27), align 1" [buf4bug2.cpp:362]   --->   Operation 129 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 17 <SV = 16> <Delay = 2.15>
+ST_17 : Operation 130 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 28), align 4" [buf4bug2.cpp:362]   --->   Operation 130 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_17 : Operation 131 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 29), align 1" [buf4bug2.cpp:362]   --->   Operation 131 'store' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+
+State 18 <SV = 17> <Delay = 2.15>
+ST_18 : Operation 132 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 30), align 2" [buf4bug2.cpp:362]   --->   Operation 132 'store' <Predicate = (issue_orig_V)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_18 : Operation 133 [1/1] (2.15ns)   --->   "store i1 false, i1* getelementptr inbounds ([32 x i1]* @state_key_V, i64 0, i64 31), align 1" [buf4bug2.cpp:362]   --->   Operation 133 'store' <Predicate = (issue_orig_V)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 32> <RAM>
+ST_18 : Operation 134 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 134 'br' <Predicate = (issue_orig_V)> <Delay = 0.00>
+ST_18 : Operation 135 [1/1] (0.00ns)   --->   "br i1 %issue_dup_V, label %0, label %.loopexit._crit_edge" [buf4bug2.cpp:366]   --->   Operation 135 'br' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 136 [1/1] (0.00ns)   --->   "store i16 %state_in_count_V_loa, i16* @state_dup_in_V, align 2" [buf4bug2.cpp:368]   --->   Operation 136 'store' <Predicate = (issue_dup_V)> <Delay = 0.00>
+ST_18 : Operation 137 [1/1] (0.00ns)   --->   "%tmp_15 = trunc i8 %dup_idx_read to i2" [buf4bug2.cpp:368]   --->   Operation 137 'trunc' 'tmp_15' <Predicate = (issue_dup_V)> <Delay = 0.00>
+ST_18 : Operation 138 [1/1] (0.00ns)   --->   "store i2 %tmp_15, i2* @state_dup_idx_V, align 1" [buf4bug2.cpp:368]   --->   Operation 138 'store' <Predicate = (issue_dup_V)> <Delay = 0.00>
+ST_18 : Operation 139 [1/1] (0.00ns)   --->   "store i1 true, i1* @state_dup_issued_V, align 1" [buf4bug2.cpp:369]   --->   Operation 139 'store' <Predicate = (issue_dup_V)> <Delay = 0.00>
+ST_18 : Operation 140 [1/1] (0.00ns)   --->   "store i8 %bmc_in_load, i8* @state_dup_val_V_0, align 2" [buf4bug2.cpp:369]   --->   Operation 140 'store' <Predicate = (issue_dup_V)> <Delay = 0.00>
+ST_18 : Operation 141 [1/1] (0.00ns)   --->   "store i8 %bmc_in_load_4, i8* @state_dup_val_V_1, align 1" [buf4bug2.cpp:370]   --->   Operation 141 'store' <Predicate = (issue_dup_V)> <Delay = 0.00>
+ST_18 : Operation 142 [1/1] (0.00ns)   --->   "br label %.loopexit._crit_edge" [buf4bug2.cpp:371]   --->   Operation 142 'br' <Predicate = (issue_dup_V)> <Delay = 0.00>
+ST_18 : Operation 143 [1/1] (2.14ns)   --->   "%tmp_5 = add i16 %state_in_count_V_loa, 1" [buf4bug2.cpp:373]   --->   Operation 143 'add' 'tmp_5' <Predicate = true> <Delay = 2.14> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 144 [1/1] (0.00ns)   --->   "store i16 %tmp_5, i16* @state_in_count_V, align 2" [buf4bug2.cpp:373]   --->   Operation 144 'store' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 145 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 145 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 50ns, clock uncertainty: 6.25ns.
+
+ <State 1>: 4.1ns
+The critical path consists of the following:
+	wire read on port 'dup_idx' (buf4bug2.cpp:330) [18]  (0 ns)
+	'add' operation ('sum', buf4bug2.cpp:346) [37]  (1.95 ns)
+	'getelementptr' operation ('bmc_in_addr', buf4bug2.cpp:346) [39]  (0 ns)
+	'load' operation ('i_op', buf4bug2.cpp:346) on array 'bmc_in' [40]  (2.15 ns)
+
+ <State 2>: 4.1ns
+The critical path consists of the following:
+	wire read on port 'orig_idx' (buf4bug2.cpp:330) [19]  (0 ns)
+	'add' operation ('sum4', buf4bug2.cpp:346) [57]  (1.95 ns)
+	'getelementptr' operation ('bmc_in_addr_5', buf4bug2.cpp:346) [59]  (0 ns)
+	'load' operation ('val', buf4bug2.cpp:346) on array 'bmc_in' [60]  (2.15 ns)
+
+ <State 3>: 8.23ns
+The critical path consists of the following:
+	'load' operation ('state_key_V_load') on array 'state_key_V' [29]  (2.15 ns)
+	'xor' operation ('tmp_1', buf4bug2.cpp:346) [50]  (0 ns)
+	'and' operation ('or_cond2', buf4bug2.cpp:346) [51]  (0.942 ns)
+	'or' operation ('brmerge', buf4bug2.cpp:346) [54]  (0.942 ns)
+	'xor' operation ('sel_tmp6', buf4bug2.cpp:346) [71]  (0 ns)
+	'and' operation ('sel_tmp7', buf4bug2.cpp:339) [72]  (0 ns)
+	'or' operation ('sel_tmp8', buf4bug2.cpp:346) [73]  (0 ns)
+	'and' operation ('tmp4', buf4bug2.cpp:346) [78]  (0.942 ns)
+	'and' operation ('sel_tmp3', buf4bug2.cpp:346) [79]  (0.942 ns)
+	'select' operation ('sel_tmp9', buf4bug2.cpp:346) [83]  (1.37 ns)
+	'and' operation ('val', buf4bug2.cpp:346) [87]  (0.942 ns)
+
+ <State 4>: 2.15ns
+The critical path consists of the following:
+	'store' operation (buf4bug2.cpp:362) of constant 0 on array 'state_key_V' [99]  (2.15 ns)
+
+ <State 5>: 2.15ns
+The critical path consists of the following:
+	'store' operation (buf4bug2.cpp:362) of constant 0 on array 'state_key_V' [101]  (2.15 ns)
+
+ <State 6>: 2.15ns
+The critical path consists of the following:
+	'store' operation (buf4bug2.cpp:362) of constant 0 on array 'state_key_V' [103]  (2.15 ns)
+
+ <State 7>: 2.15ns
+The critical path consists of the following:
+	'store' operation (buf4bug2.cpp:362) of constant 0 on array 'state_key_V' [105]  (2.15 ns)
+
+ <State 8>: 2.15ns
+The critical path consists of the following:
+	'store' operation (buf4bug2.cpp:362) of constant 0 on array 'state_key_V' [107]  (2.15 ns)
+
+ <State 9>: 2.15ns
+The critical path consists of the following:
+	'store' operation (buf4bug2.cpp:362) of constant 0 on array 'state_key_V' [109]  (2.15 ns)
+
+ <State 10>: 2.15ns
+The critical path consists of the following:
+	'store' operation (buf4bug2.cpp:362) of constant 0 on array 'state_key_V' [111]  (2.15 ns)
+
+ <State 11>: 2.15ns
+The critical path consists of the following:
+	'store' operation (buf4bug2.cpp:362) of constant 0 on array 'state_key_V' [113]  (2.15 ns)
+
+ <State 12>: 2.15ns
+The critical path consists of the following:
+	'store' operation (buf4bug2.cpp:362) of constant 0 on array 'state_key_V' [115]  (2.15 ns)
+
+ <State 13>: 2.15ns
+The critical path consists of the following:
+	'store' operation (buf4bug2.cpp:362) of constant 0 on array 'state_key_V' [117]  (2.15 ns)
+
+ <State 14>: 2.15ns
+The critical path consists of the following:
+	'store' operation (buf4bug2.cpp:362) of constant 0 on array 'state_key_V' [119]  (2.15 ns)
+
+ <State 15>: 2.15ns
+The critical path consists of the following:
+	'store' operation (buf4bug2.cpp:362) of constant 0 on array 'state_key_V' [121]  (2.15 ns)
+
+ <State 16>: 2.15ns
+The critical path consists of the following:
+	'store' operation (buf4bug2.cpp:362) of constant 0 on array 'state_key_V' [123]  (2.15 ns)
+
+ <State 17>: 2.15ns
+The critical path consists of the following:
+	'store' operation (buf4bug2.cpp:362) of constant 0 on array 'state_key_V' [125]  (2.15 ns)
+
+ <State 18>: 2.15ns
+The critical path consists of the following:
+	'store' operation (buf4bug2.cpp:362) of constant 0 on array 'state_key_V' [127]  (2.15 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

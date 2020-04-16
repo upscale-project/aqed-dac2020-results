@@ -1,0 +1,298 @@
+INFO-FLOW: Workspace /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0 opened at Fri Apr 10 09:08:37 PDT 2020
+Execute     config_clock -quiet -name default -period 50 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 50ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/aartix7/aartix7 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/xfir.lib 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/xfft.lib 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/aartix7/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 15850} {LUT 63400}     {FF 126800} {DSP48E 240}    {BRAM 270}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/aartix7/aartix7.gen 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.18 sec.
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.19 sec.
+Command     ap_source done; 0.19 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/aartix7/aartix7_fpv6 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/aartix7/aartix7_hp.hlp 
+Execute     source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/aartix7/aartix7_fpv6.gen 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xa7a12tcsg325-1q 
+Execute       add_library xilinx/aartix7/aartix7:xa7a12t:csg325:-1q 
+Execute         get_default_platform 
+Execute         license_isbetapart xa7a12t 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 2000}  {LUT 8000}      {FF 16000}  {DSP48E 40}     {BRAM 40}  
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/aartix7/aartix7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+Execute       get_default_platform 
+Command     set_part done; 0.12 sec.
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 2000}  {LUT 8000}      {FF 16000}  {DSP48E 40}     {BRAM 40}  
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 0.47 sec.
+Execute   set_part xa7a12tcsg325-1q 
+Execute     add_library xilinx/aartix7/aartix7:xa7a12t:csg325:-1q 
+Execute       get_default_platform 
+Execute       license_isbetapart xa7a12t 
+Command       license_isbetapart done; error code: 1; 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 2000}  {LUT 8000}      {FF 16000}  {DSP48E 40}     {BRAM 40}  
+Execute       config_chip_info -quiet -speed slow 
+Execute     add_library xilinx/aartix7/aartix7_fpv6 
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute   create_clock -period 50 -name default 
+Execute   csynth_design 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -lm 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'buf4bug3.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling buf4bug3.cpp as C++
+Execute       get_default_platform 
+Execute       is_encrypted buf4bug3.cpp 
+Execute       get_default_platform 
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "buf4bug3.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot" -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pp.0.cpp" 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E buf4bug3.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pp.0.cpp
+Command       clang done; 1.78 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot" -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pp.0.cpp"  -o "/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/useless.bc"  
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pp.0.cpp -o /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/useless.bc
+WARNING: [HLS 200-40] In file included from buf4bug3.cpp:1:
+buf4bug3.cpp:301:23: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                      ^
+buf4bug3.cpp:301:50: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                 ^
+buf4bug3.cpp:301:95: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                              ^
+buf4bug3.cpp:301:126: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                             ^
+buf4bug3.cpp:301:153: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                        ^
+buf4bug3.cpp:301:181: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                    ^
+buf4bug3.cpp:301:206: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                             ^
+buf4bug3.cpp:301:228: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                   ^
+buf4bug3.cpp:301:257: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                                                ^
+buf4bug3.cpp:301:282: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                                                                         ^
+buf4bug3.cpp:301:306: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                                                                                                 ^
+buf4bug3.cpp:301:329: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                                                                                                                        ^
+buf4bug3.cpp:348:228: warning: '&&' within '||' [-Wlogical-op-parentheses]
+      ap_uint<1> issue_dup = (dup) && (dup_idx<=num) && (!state.dup_issued) && ((state.orig_issued && (*(bmc_in + dup_idx*((1) << (2))/1) == state.orig_val[0])) && (*(bmc_in + 1 + dup_idx*((1) << (2))/1) == state.orig_val[1])) && (key_sum == 0) || ((issue_orig == 1) && (*(bmc_in + orig_idx*((1) << (2))/1) == *(bmc_in + dup_idx*((1) << (2))/1)) && (*(bmc_in + 1 + orig_idx*((1) << (2))/1) == *(bmc_in + 1 + dup_idx*((1) << (2))/1)));
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~ ~~
+buf4bug3.cpp:348:228: note: place parentheses around the '&&' expression to silence this warning
+      ap_uint<1> issue_dup = (dup) && (dup_idx<=num) && (!state.dup_issued) && ((state.orig_issued && (*(bmc_in + dup_idx*((1) << (2))/1) == state.orig_val[0])) && (*(bmc_in + 1 + dup_idx*((1) << (2))/1) == state.orig_val[1])) && (key_sum == 0) || ((issue_orig == 1) && (*(bmc_in + orig_idx*((1) << (2))/1) == *(bmc_in + dup_idx*((1) << (2))/1)) && (*(bmc_in + 1 + orig_idx*((1) << (2))/1) == *(bmc_in + 1 + dup_idx*((1) << (2))/1)));
+                                                                                                                                                                                                                                   ^
+                             (                                                                                                                                                                                                                      )
+13 warnings generated.\n
+Command       clang done; 2.09 sec.
+INFO-FLOW: GCC PP time: 3 seconds per iteration
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pp.0.cpp std=gnu++98 -directive=/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/.systemc_flag -quiet -fix-errors /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.93 sec.
+INFO-FLOW: CDT Preprocessing with tidy-3.1...
+Execute       tidy_31 xilinx-directive2pragma /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pp.0.cpp std=gnu++98 -directive=/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/bug0.json 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/bug0.json -quiet -fix-errors /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.9 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/xilinx-dataflow-lawyer.buf4bug3.pp.0.cpp.diag.yml /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/xilinx-dataflow-lawyer.buf4bug3.pp.0.cpp.out.log 2> /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/xilinx-dataflow-lawyer.buf4bug3.pp.0.cpp.err.log 
+Command       ap_eval done; 0.67 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer -quiet -fix-errors /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 2.47 sec.
+INFO-FLOW: tidy-3.1 time 4 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.8 sec.
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot" -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pragma.2.cpp" 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pragma.1.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pragma.2.cpp
+Command       clang done; 1.4 sec.
+Execute       get_default_platform 
+INFO-FLOW: Processing labels
+Execute       clang -src /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot" -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.bc" 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.bc
+Command       clang done; 2.13 sec.
+INFO: [HLS 200-10] Analyzing design file 'buf4.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling buf4.cpp as C++
+Execute       get_default_platform 
+Execute       is_encrypted buf4.cpp 
+Execute       get_default_platform 
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "buf4.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot" -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pp.0.cpp" 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E buf4.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pp.0.cpp
+Command       clang done; 1.44 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot" -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pp.0.cpp"  -o "/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/useless.bc"  
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pp.0.cpp -o /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/useless.bc
+WARNING: [HLS 200-40] In file included from buf4.cpp:1:
+buf4.cpp:300:23: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                      ^
+buf4.cpp:300:50: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                 ^
+buf4.cpp:300:95: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                              ^
+buf4.cpp:300:126: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                             ^
+buf4.cpp:300:153: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                        ^
+buf4.cpp:300:181: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                    ^
+buf4.cpp:300:206: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                             ^
+buf4.cpp:300:228: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                   ^
+buf4.cpp:300:257: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                                                ^
+buf4.cpp:300:282: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                                                                         ^
+buf4.cpp:300:306: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                                                                                                 ^
+buf4.cpp:300:329: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                                                                                                                        ^
+buf4.cpp:347:228: warning: '&&' within '||' [-Wlogical-op-parentheses]
+      ap_uint<1> issue_dup = (dup) && (dup_idx<=num) && (!state.dup_issued) && ((state.orig_issued && (*(bmc_in + dup_idx*((1) << (2))/2) == state.orig_val[0])) && (*(bmc_in + 1 + dup_idx*((1) << (2))/2) == state.orig_val[1])) && (key_sum == 0) || ((issue_orig == 1) && (*(bmc_in + orig_idx*((1) << (2))/2) == *(bmc_in + dup_idx*((1) << (2))/2)) && (*(bmc_in + 1 + orig_idx*((1) << (2))/2) == *(bmc_in + 1 + dup_idx*((1) << (2))/2)));
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~ ~~
+buf4.cpp:347:228: note: place parentheses around the '&&' expression to silence this warning
+      ap_uint<1> issue_dup = (dup) && (dup_idx<=num) && (!state.dup_issued) && ((state.orig_issued && (*(bmc_in + dup_idx*((1) << (2))/2) == state.orig_val[0])) && (*(bmc_in + 1 + dup_idx*((1) << (2))/2) == state.orig_val[1])) && (key_sum == 0) || ((issue_orig == 1) && (*(bmc_in + orig_idx*((1) << (2))/2) == *(bmc_in + dup_idx*((1) << (2))/2)) && (*(bmc_in + 1 + orig_idx*((1) << (2))/2) == *(bmc_in + 1 + dup_idx*((1) << (2))/2)));
+                                                                                                                                                                                                                                   ^
+                             (                                                                                                                                                                                                                      )
+13 warnings generated.\n
+Command       clang done; 1.85 sec.
+INFO-FLOW: GCC PP time: 3 seconds per iteration
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pp.0.cpp std=gnu++98 -directive=/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/.systemc_flag -quiet -fix-errors /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.09 sec.
+INFO-FLOW: CDT Preprocessing with tidy-3.1...
+Execute       tidy_31 xilinx-directive2pragma /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pp.0.cpp std=gnu++98 -directive=/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/bug0.json 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/bug0.json -quiet -fix-errors /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.91 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/xilinx-dataflow-lawyer.buf4.pp.0.cpp.diag.yml /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/xilinx-dataflow-lawyer.buf4.pp.0.cpp.out.log 2> /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/xilinx-dataflow-lawyer.buf4.pp.0.cpp.err.log 
+Command       ap_eval done; 0.67 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer -quiet -fix-errors /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 2.42 sec.
+INFO-FLOW: tidy-3.1 time 4 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.78 sec.
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot" -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pragma.2.cpp" 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pragma.1.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pragma.2.cpp
+Command       clang done; 1.44 sec.
+Execute       get_default_platform 
+INFO-FLOW: Processing labels
+Execute       clang -src /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot" -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.bc" 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.bc
+Command       clang done; 1.94 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4bug3.g.bc /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.g.bc -hls-opt -except-internalize aqed_top -L/cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/lib -lhlsm -lhlsmc++ -o /rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/a.g 
+INFO-FLOW: llvm-ld: error: Cannot link file '/rsgs/pool0/esingh/aqed4saranyu/results/AES/cpp/aqed_aes/bug0/.autopilot/db/buf4.g.bc': Linking globals named 'COUNT': symbol multiply defined!
+Command       llvm-ld done; error code: 2; 0.8 sec.
+Command     elaborate done; error code: 2; 29.67 sec.
+Command   csynth_design done; error code: 2; 29.68 sec.
+Command ap_source done; error code: 1; 30.34 sec.
+Execute cleanup_all 

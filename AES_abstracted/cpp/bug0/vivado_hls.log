@@ -1,0 +1,235 @@
+INFO: [HLS 200-10] Running '/cad/xilinx/vivado/2018.3/Vivado/2018.3/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'saranyuc' on host 'rsg31' (Linux_x86_64 version 3.10.0-957.21.3.el7.x86_64) on Wed Apr 15 18:07:54 PDT 2020
+INFO: [HLS 200-10] In directory '/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0'
+INFO: [HLS 200-10] Opening project '/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0'.
+INFO: [HLS 200-10] Adding design file 'buf4bug0.cpp' to the project
+INFO: [HLS 200-10] Opening solution '/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 50ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'buf4bug0.cpp' ... 
+WARNING: [HLS 200-40] In file included from buf4bug0.cpp:1:
+buf4bug0.cpp:300:23: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                      ^
+buf4bug0.cpp:300:50: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                 ^
+buf4bug0.cpp:300:95: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                              ^
+buf4bug0.cpp:300:126: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                             ^
+buf4bug0.cpp:300:153: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                        ^
+buf4bug0.cpp:300:181: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                    ^
+buf4bug0.cpp:300:206: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                             ^
+buf4bug0.cpp:300:228: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                   ^
+buf4bug0.cpp:300:257: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                                                ^
+buf4bug0.cpp:300:282: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                                                                         ^
+buf4bug0.cpp:300:306: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                                                                                                 ^
+buf4bug0.cpp:300:329: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                                                                                                                        ^
+12 warnings generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 535.250 ; gain = 0.109 ; free physical = 89851 ; free virtual = 94997
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 535.250 ; gain = 0.109 ; free physical = 89851 ; free virtual = 94997
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1' (buf4bug0.cpp:256) in function 'workload' completely with a factor of 1.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 535.426 ; gain = 0.285 ; free physical = 89823 ; free virtual = 94970
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'aes_addRoundKey_cpy' into 'aes256_encrypt_ecb' (buf4bug0.cpp:217) automatically.
+INFO: [XFORM 203-602] Inlining function 'aes_subBytes' into 'aes256_encrypt_ecb' (buf4bug0.cpp:226) automatically.
+INFO: [XFORM 203-602] Inlining function 'aes_addRoundKey' into 'aes256_encrypt_ecb' (buf4bug0.cpp:229) automatically.
+INFO: [XFORM 203-602] Inlining function 'aes_tiling' into 'workload' (buf4bug0.cpp:280) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 535.426 ; gain = 0.285 ; free physical = 89818 ; free virtual = 94965
+INFO: [XFORM 203-1101] Packing variable 'o1' (buf4bug0.cpp:438) into a 24-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'o2' (buf4bug0.cpp:440) into a 3-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'agg.result' (buf4bug0.cpp:430) into a 20-bit variable.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'Loop-1' (buf4bug0.cpp:233) in function 'aes_tiling' automatically.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (buf4bug0.cpp:249) in function 'workload' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'unroll_loop' (buf4bug0.cpp:278) in function 'workload' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (buf4bug0.cpp:233) in function 'aes_tiling' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (buf4bug0.cpp:342) in function 'aqed_in' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (buf4bug0.cpp:361) in function 'aqed_in' completely with a factor of 32.
+INFO: [XFORM 203-101] Partitioning array 'local_key' (buf4bug0.cpp:245) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf' (buf4bug0.cpp:266) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'aes_addRoundKey_cpy' into 'aes256_encrypt_ecb' (buf4bug0.cpp:217) automatically.
+INFO: [XFORM 203-602] Inlining function 'aes_subBytes' into 'aes256_encrypt_ecb' (buf4bug0.cpp:226) automatically.
+INFO: [XFORM 203-602] Inlining function 'aes_addRoundKey' into 'aes256_encrypt_ecb' (buf4bug0.cpp:229) automatically.
+INFO: [XFORM 203-602] Inlining function 'aes_tiling' into 'workload' (buf4bug0.cpp:280) automatically.
+WARNING: [XFORM 203-561] Updating loop upper bound from 2 to 1 for loop 'major_loop' in function 'workload'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 1 for loop 'major_loop' in function 'workload'.
+INFO: [XFORM 203-102] Automatically partitioning small array 'state.orig_val.V' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'state.orig_out.V' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'state.dup_val.V' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'buf[0]' (buf4bug0.cpp:266) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'buf[1]' (buf4bug0.cpp:266) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'state.orig_val.V' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'state.orig_out.V' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'state.dup_val.V' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf[0]' (buf4bug0.cpp:266) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf[1]' (buf4bug0.cpp:266) in dimension 1 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (buf4bug0.cpp:285:3) to (buf4bug0.cpp:283:31) in function 'workload'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (buf4bug0.cpp:407:31) to (buf4bug0.cpp:410:9) in function 'aqed_out'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (buf4bug0.cpp:356:11) in function 'aqed_in'... converting 11 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (buf4bug0.cpp:137:26) to (buf4bug0.cpp:139:2) in function 'aes256_encrypt_ecb'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (buf4bug0.cpp:115:24) to (buf4bug0.cpp:117:2) in function 'aes256_encrypt_ecb'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (buf4bug0.cpp:126:27) to (buf4bug0.cpp:128:2) in function 'aes256_encrypt_ecb'... converting 4 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'workload' (buf4bug0.cpp:237)...6 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'aqed_in' (buf4bug0.cpp:331)...7 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 663.145 ; gain = 128.004 ; free physical = 89713 ; free virtual = 94860
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 663.145 ; gain = 128.004 ; free physical = 89667 ; free virtual = 94815
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'aqed_top' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aqed_in' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 22.15 seconds; current allocated memory: 121.903 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.33 seconds; current allocated memory: 122.335 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes256_encrypt_ecb' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'ecb1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'cpkey'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'sub'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'addkey'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.55 seconds; current allocated memory: 122.709 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.28 seconds; current allocated memory: 123.083 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'workload' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.51 seconds; current allocated memory: 123.465 MB.
+INFO: [HLS 200-434] Only 1 loops out of a total 6 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.56 seconds; current allocated memory: 123.892 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aqed_out' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.51 seconds; current allocated memory: 124.181 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 124.449 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aqed_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SYN 201-561] Cannot apply I/O mode 'ap_none' on port 'return' changing to the default 'ap_ctrl_hs' mode.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.28 seconds; current allocated memory: 124.553 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.48 seconds; current allocated memory: 124.840 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aqed_in' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'state_orig_val_V_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_val_V_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_in_count_V' is power-on initialization.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aqed_in'.
+INFO: [HLS 200-111]  Elapsed time: 0.62 seconds; current allocated memory: 125.783 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes256_encrypt_ecb' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes256_encrypt_ecb'.
+INFO: [HLS 200-111]  Elapsed time: 0.97 seconds; current allocated memory: 128.530 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'workload' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'workload'.
+INFO: [HLS 200-111]  Elapsed time: 0.83 seconds; current allocated memory: 130.641 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aqed_out' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'state_out_count_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_qed_done_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_out_V_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_out_V_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_qed_check_V' is power-on initialization.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aqed_out'.
+INFO: [HLS 200-111]  Elapsed time: 1.04 seconds; current allocated memory: 132.847 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aqed_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'aqed_top/agg_result' to 'ap_none'.
+WARNING: [RTGEN 206-101] Port 'agg_result' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aqed_top/orig_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aqed_top/dup_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aqed_top/orig_idx' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aqed_top/dup_idx' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'aqed_top' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'idx_ct_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_issued_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Global scalar 'state_orig_issued_V' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Register 'state_dup_issued_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_in_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_idx_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_dup_in_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_dup_idx_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_dup_val_V_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_dup_val_V_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Global array 'bmc_in' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Register 'state_orig_done_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Global scalar 'state_orig_done_V' will not be exposed as RTL port.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aqed_top'.
+INFO: [HLS 200-111]  Elapsed time: 0.98 seconds; current allocated memory: 134.597 MB.
+INFO: [RTMG 210-278] Implementing memory 'aqed_in_state_key_V_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-279] Implementing memory 'aes256_encrypt_ecb_sbox_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'aes256_encrypt_ecb_ctx_body_key_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'aes256_encrypt_ecb_ctx_body_enckey_ram (RAM)' using distributed RAMs.
+WARNING: [RTMG 210-274] Memory 'workload_local_key_0' is read-only, switch it to a ROM.
+INFO: [RTMG 210-279] Implementing memory 'workload_local_key_0_rom' using distributed ROMs.
+INFO: [RTMG 210-278] Implementing memory 'aqed_top_bmc_in_ram (RAM)' using distributed RAMs with power-on initialization.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:23 ; elapsed = 00:00:36 . Memory (MB): peak = 727.145 ; gain = 192.004 ; free physical = 89448 ; free virtual = 94603
+INFO: [SYSC 207-301] Generating SystemC RTL for aqed_top.
+INFO: [VHDL 208-304] Generating VHDL RTL for aqed_top.
+INFO: [VLOG 209-307] Generating Verilog RTL for aqed_top.
+INFO: [HLS 200-112] Total elapsed time: 35.86 seconds; peak allocated memory: 134.597 MB.

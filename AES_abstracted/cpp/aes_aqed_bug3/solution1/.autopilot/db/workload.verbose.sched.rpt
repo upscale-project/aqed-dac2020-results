@@ -1,0 +1,230 @@
+
+
+================================================================
+== Vivado HLS Report for 'workload'
+================================================================
+* Date:           Fri Apr 10 23:59:14 2020
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        aes_aqed_bug3
+* Solution:       solution1
+* Product family: aartix7
+* Target device:  xa7a12tcsg325-1q
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+--------+----------+------------+
+    |  Clock | Target | Estimated| Uncertainty|
+    +--------+--------+----------+------------+
+    |ap_clk  |  100.00|     9.254|       12.50|
+    +--------+--------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   67|   67|   67|   67|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                 |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name    | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- major_loop     |   66|   66|        66|          -|          -|     1|    no    |
+        | + major_loop.1  |   12|   12|         3|          -|          -|     4|    no    |
+        | + major_loop.2  |    4|    4|         1|          -|          -|     4|    no    |
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 7
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!i_2)
+3 --> 
+	4  / (!exitcond5)
+	6  / (exitcond5)
+4 --> 
+	5  / true
+5 --> 
+	3  / true
+6 --> 
+	7  / true
+7 --> 
+	7  / (!exitcond1)
+	2  / (exitcond1)
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.66>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%buf_0_3 = alloca i8"   --->   Operation 8 'alloca' 'buf_0_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%buf_0_3_1 = alloca i8"   --->   Operation 9 'alloca' 'buf_0_3_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (1.66ns)   --->   "br label %0" [buf4bug3.cpp:270]   --->   Operation 10 'br' <Predicate = true> <Delay = 1.66>
+
+State 2 <SV = 1> <Delay = 1.66>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%buf_0_1 = phi i8 [ undef, %.preheader.preheader ], [ %buf_0_1_2, %4 ]"   --->   Operation 11 'phi' 'buf_0_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%buf_0_0 = phi i8 [ undef, %.preheader.preheader ], [ %buf_0_0_2, %4 ]"   --->   Operation 12 'phi' 'buf_0_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%i_2 = phi i1 [ false, %.preheader.preheader ], [ true, %4 ]"   --->   Operation 13 'phi' 'i_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 1, i64 1)"   --->   Operation 14 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "br i1 %i_2, label %7, label %1" [buf4bug3.cpp:270]   --->   Operation 15 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([11 x i8]* @p_str12) nounwind" [buf4bug3.cpp:270]   --->   Operation 16 'specloopname' <Predicate = (!i_2)> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%tmp_2 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str13)" [buf4bug3.cpp:271]   --->   Operation 17 'specregionbegin' 'tmp_2' <Predicate = (!i_2)> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (1.66ns)   --->   "br label %branch2" [buf4bug3.cpp:272]   --->   Operation 18 'br' <Predicate = (!i_2)> <Delay = 1.66>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "ret void" [buf4bug3.cpp:292]   --->   Operation 19 'ret' <Predicate = (i_2)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 2.15>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%buf_0_1_1 = phi i8 [ %buf_0_1, %1 ], [ %buf_0_1_1_be, %branch2.backedge ]" [buf4bug3.cpp:235->buf4bug3.cpp:281]   --->   Operation 20 'phi' 'buf_0_1_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%buf_0_0_1 = phi i8 [ %buf_0_0, %1 ], [ %buf_0_0_1_be, %branch2.backedge ]" [buf4bug3.cpp:235->buf4bug3.cpp:281]   --->   Operation 21 'phi' 'buf_0_0_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%k = phi i3 [ 0, %1 ], [ %k_2, %branch2.backedge ]" [buf4bug3.cpp:272]   --->   Operation 22 'phi' 'k' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (1.18ns)   --->   "%exitcond5 = icmp eq i3 %k, -4" [buf4bug3.cpp:272]   --->   Operation 23 'icmp' 'exitcond5' <Predicate = true> <Delay = 1.18> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%empty_4 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"   --->   Operation 24 'speclooptripcount' 'empty_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (1.68ns)   --->   "%k_2 = add i3 %k, 1" [buf4bug3.cpp:272]   --->   Operation 25 'add' 'k_2' <Predicate = true> <Delay = 1.68> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.68> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "br i1 %exitcond5, label %2, label %3" [buf4bug3.cpp:272]   --->   Operation 26 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%tmp_1 = trunc i3 %k to i2" [buf4bug3.cpp:272]   --->   Operation 27 'trunc' 'tmp_1' <Predicate = (!exitcond5)> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%sum_cast = zext i2 %tmp_1 to i64" [buf4bug3.cpp:272]   --->   Operation 28 'zext' 'sum_cast' <Predicate = (!exitcond5)> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%data_addr = getelementptr [16 x i8]* %data, i64 0, i64 %sum_cast" [buf4bug3.cpp:274]   --->   Operation 29 'getelementptr' 'data_addr' <Predicate = (!exitcond5)> <Delay = 0.00>
+ST_3 : Operation 30 [2/2] (2.15ns)   --->   "%buf_0_0_4 = load i8* %data_addr, align 1" [buf4bug3.cpp:274]   --->   Operation 30 'load' 'buf_0_0_4' <Predicate = (!exitcond5)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_3 : Operation 31 [2/2] (0.00ns)   --->   "%call_ret = call fastcc { i8, i8 } @aes256_encrypt_ecb([32 x i1]* @local_key_0, i8 %buf_0_0_1, i8 %buf_0_1_1)" [buf4bug3.cpp:235->buf4bug3.cpp:281]   --->   Operation 31 'call' 'call_ret' <Predicate = (exitcond5)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 2.15>
+ST_4 : Operation 32 [1/2] (2.15ns)   --->   "%buf_0_0_4 = load i8* %data_addr, align 1" [buf4bug3.cpp:274]   --->   Operation 32 'load' 'buf_0_0_4' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_4 : Operation 33 [1/1] (1.66ns)   --->   "switch i2 %tmp_1, label %branch3 [
+    i2 0, label %branch2.backedge
+    i2 1, label %branch1
+    i2 -2, label %.branch2.backedge_crit_edge
+  ]" [buf4bug3.cpp:274]   --->   Operation 33 'switch' <Predicate = true> <Delay = 1.66>
+ST_4 : Operation 34 [1/1] (0.00ns)   --->   "store i8 %buf_0_0_4, i8* %buf_0_3" [buf4bug3.cpp:274]   --->   Operation 34 'store' <Predicate = (tmp_1 == 2)> <Delay = 0.00>
+ST_4 : Operation 35 [1/1] (1.66ns)   --->   "br label %branch2.backedge" [buf4bug3.cpp:274]   --->   Operation 35 'br' <Predicate = (tmp_1 == 2)> <Delay = 1.66>
+ST_4 : Operation 36 [1/1] (1.66ns)   --->   "br label %branch2.backedge" [buf4bug3.cpp:274]   --->   Operation 36 'br' <Predicate = (tmp_1 == 1)> <Delay = 1.66>
+ST_4 : Operation 37 [1/1] (0.00ns)   --->   "store i8 %buf_0_0_4, i8* %buf_0_3_1" [buf4bug3.cpp:274]   --->   Operation 37 'store' <Predicate = (tmp_1 == 3)> <Delay = 0.00>
+ST_4 : Operation 38 [1/1] (1.66ns)   --->   "br label %branch2.backedge" [buf4bug3.cpp:274]   --->   Operation 38 'br' <Predicate = (tmp_1 == 3)> <Delay = 1.66>
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 39 [1/1] (0.00ns)   --->   "%buf_0_1_1_be = phi i8 [ %buf_0_1_1, %branch3 ], [ %buf_0_1_1, %.branch2.backedge_crit_edge ], [ %buf_0_0_4, %branch1 ], [ %buf_0_1_1, %3 ]"   --->   Operation 39 'phi' 'buf_0_1_1_be' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 40 [1/1] (0.00ns)   --->   "%buf_0_0_1_be = phi i8 [ %buf_0_0_1, %branch3 ], [ %buf_0_0_1, %.branch2.backedge_crit_edge ], [ %buf_0_0_1, %branch1 ], [ %buf_0_0_4, %3 ]"   --->   Operation 40 'phi' 'buf_0_0_1_be' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 41 [1/1] (0.00ns)   --->   "br label %branch2"   --->   Operation 41 'br' <Predicate = true> <Delay = 0.00>
+
+State 6 <SV = 3> <Delay = 1.66>
+ST_6 : Operation 42 [1/1] (0.00ns)   --->   "%empty_3 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str13, i32 %tmp_2)" [buf4bug3.cpp:278]   --->   Operation 42 'specregionend' 'empty_3' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 43 [1/2] (0.00ns)   --->   "%call_ret = call fastcc { i8, i8 } @aes256_encrypt_ecb([32 x i1]* @local_key_0, i8 %buf_0_0_1, i8 %buf_0_1_1)" [buf4bug3.cpp:235->buf4bug3.cpp:281]   --->   Operation 43 'call' 'call_ret' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 44 [1/1] (0.00ns)   --->   "%buf_0_0_2 = extractvalue { i8, i8 } %call_ret, 0" [buf4bug3.cpp:235->buf4bug3.cpp:281]   --->   Operation 44 'extractvalue' 'buf_0_0_2' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 45 [1/1] (0.00ns)   --->   "%buf_0_1_2 = extractvalue { i8, i8 } %call_ret, 1" [buf4bug3.cpp:235->buf4bug3.cpp:281]   --->   Operation 45 'extractvalue' 'buf_0_1_2' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 46 [1/1] (0.00ns)   --->   "%tmp_3 = call i32 (...)* @_ssdm_op_SpecRegionBegin([9 x i8]* @p_str15)" [buf4bug3.cpp:283]   --->   Operation 46 'specregionbegin' 'tmp_3' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 47 [1/1] (1.66ns)   --->   "br label %5" [buf4bug3.cpp:284]   --->   Operation 47 'br' <Predicate = true> <Delay = 1.66>
+
+State 7 <SV = 4> <Delay = 4.12>
+ST_7 : Operation 48 [1/1] (0.00ns)   --->   "%k_1 = phi i3 [ 0, %2 ], [ %k_3, %6 ]" [buf4bug3.cpp:284]   --->   Operation 48 'phi' 'k_1' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 49 [1/1] (1.18ns)   --->   "%exitcond1 = icmp eq i3 %k_1, -4" [buf4bug3.cpp:284]   --->   Operation 49 'icmp' 'exitcond1' <Predicate = true> <Delay = 1.18> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 50 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)"   --->   Operation 50 'speclooptripcount' 'empty_6' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 51 [1/1] (1.68ns)   --->   "%k_3 = add i3 %k_1, 1" [buf4bug3.cpp:284]   --->   Operation 51 'add' 'k_3' <Predicate = true> <Delay = 1.68> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.68> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 52 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %4, label %6" [buf4bug3.cpp:284]   --->   Operation 52 'br' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 53 [1/1] (0.00ns)   --->   "%buf_0_3_load = load i8* %buf_0_3"   --->   Operation 53 'load' 'buf_0_3_load' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_7 : Operation 54 [1/1] (0.00ns)   --->   "%buf_0_3_1_load = load i8* %buf_0_3_1"   --->   Operation 54 'load' 'buf_0_3_1_load' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_7 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_4 = trunc i3 %k_1 to i2" [buf4bug3.cpp:284]   --->   Operation 55 'trunc' 'tmp_4' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_7 : Operation 56 [1/1] (1.96ns)   --->   "%tmp = call i8 @_ssdm_op_Mux.ap_auto.4i8.i2(i8 %buf_0_0_2, i8 %buf_0_1_2, i8 %buf_0_3_load, i8 %buf_0_3_1_load, i2 %tmp_4)" [buf4bug3.cpp:235->buf4bug3.cpp:281]   --->   Operation 56 'mux' 'tmp' <Predicate = (!exitcond1)> <Delay = 1.96> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.96> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 57 [1/1] (0.00ns)   --->   "%sum2_cast = zext i2 %tmp_4 to i64" [buf4bug3.cpp:284]   --->   Operation 57 'zext' 'sum2_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_7 : Operation 58 [1/1] (0.00ns)   --->   "%data_addr_1 = getelementptr [16 x i8]* %data, i64 0, i64 %sum2_cast" [buf4bug3.cpp:286]   --->   Operation 58 'getelementptr' 'data_addr_1' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_7 : Operation 59 [1/1] (2.15ns)   --->   "store i8 %tmp, i8* %data_addr_1, align 1" [buf4bug3.cpp:286]   --->   Operation 59 'store' <Predicate = (!exitcond1)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_7 : Operation 60 [1/1] (0.00ns)   --->   "br label %5" [buf4bug3.cpp:284]   --->   Operation 60 'br' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_7 : Operation 61 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecRegionEnd([9 x i8]* @p_str15, i32 %tmp_3)" [buf4bug3.cpp:290]   --->   Operation 61 'specregionend' 'empty_5' <Predicate = (exitcond1)> <Delay = 0.00>
+ST_7 : Operation 62 [1/1] (0.00ns)   --->   "br label %0" [buf4bug3.cpp:270]   --->   Operation 62 'br' <Predicate = (exitcond1)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 100ns, clock uncertainty: 12.5ns.
+
+ <State 1>: 1.66ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('buf[0][1]') with incoming values : ('buf[0][1]', buf4bug3.cpp:235->buf4bug3.cpp:281) [8]  (1.66 ns)
+
+ <State 2>: 1.66ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('buf_0_1_1', buf4bug3.cpp:235->buf4bug3.cpp:281) with incoming values : ('buf[0][0]', buf4bug3.cpp:274) ('buf[0][1]', buf4bug3.cpp:235->buf4bug3.cpp:281) [18]  (1.66 ns)
+
+ <State 3>: 2.15ns
+The critical path consists of the following:
+	'phi' operation ('k', buf4bug3.cpp:272) with incoming values : ('k_2', buf4bug3.cpp:272) [20]  (0 ns)
+	'getelementptr' operation ('data_addr', buf4bug3.cpp:274) [28]  (0 ns)
+	'load' operation ('buf[0][0]', buf4bug3.cpp:274) on array 'data' [29]  (2.15 ns)
+
+ <State 4>: 2.15ns
+The critical path consists of the following:
+	'load' operation ('buf[0][0]', buf4bug3.cpp:274) on array 'data' [29]  (2.15 ns)
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 1.66ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('k_1', buf4bug3.cpp:284) with incoming values : ('k_3', buf4bug3.cpp:284) [51]  (1.66 ns)
+
+ <State 7>: 4.12ns
+The critical path consists of the following:
+	'phi' operation ('k_1', buf4bug3.cpp:284) with incoming values : ('k_3', buf4bug3.cpp:284) [51]  (0 ns)
+	'mux' operation ('tmp', buf4bug3.cpp:235->buf4bug3.cpp:281) [60]  (1.97 ns)
+	'store' operation (buf4bug3.cpp:286) of variable 'tmp', buf4bug3.cpp:235->buf4bug3.cpp:281 on array 'data' [63]  (2.15 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

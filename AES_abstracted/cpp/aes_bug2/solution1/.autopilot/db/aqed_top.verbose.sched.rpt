@@ -1,0 +1,182 @@
+
+
+================================================================
+== Vivado HLS Report for 'aqed_top'
+================================================================
+* Date:           Fri Apr 10 23:55:29 2020
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        aes_bug2
+* Solution:       solution1
+* Product family: aartix7
+* Target device:  xa7a12tcsg325-1q
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+--------+----------+------------+
+    |  Clock | Target | Estimated| Uncertainty|
+    +--------+--------+----------+------------+
+    |ap_clk  |  100.00|     9.254|       12.50|
+    +--------+--------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  116|  116|  116|  116|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 7
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 5.13>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%dup_idx_V_read = call i2 @_ssdm_op_Read.ap_auto.i2(i2 %dup_idx_V)"   --->   Operation 8 'read' 'dup_idx_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%orig_idx_V_read = call i2 @_ssdm_op_Read.ap_auto.i2(i2 %orig_idx_V)"   --->   Operation 9 'read' 'orig_idx_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%dup_V_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %dup_V)"   --->   Operation 10 'read' 'dup_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%orig_V_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %orig_V)"   --->   Operation 11 'read' 'orig_V_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [2/2] (5.13ns)   --->   "call fastcc void @aqed_in([16 x i8]* @bmc_in, i1 %orig_V_read, i1 %dup_V_read, i2 %orig_idx_V_read, i2 %dup_idx_V_read)" [buf4bug2.cpp:449]   --->   Operation 12 'call' <Predicate = true> <Delay = 5.13> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 13 [1/2] (0.00ns)   --->   "call fastcc void @aqed_in([16 x i8]* @bmc_in, i1 %orig_V_read, i1 %dup_V_read, i2 %orig_idx_V_read, i2 %dup_idx_V_read)" [buf4bug2.cpp:449]   --->   Operation 13 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 14 [2/2] (0.00ns)   --->   "call fastcc void @workload([16 x i8]* @bmc_in)" [buf4bug2.cpp:451]   --->   Operation 14 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 15 [1/2] (0.00ns)   --->   "call fastcc void @workload([16 x i8]* @bmc_in)" [buf4bug2.cpp:451]   --->   Operation 15 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 16 [2/2] (0.00ns)   --->   "%call_ret = call fastcc { i1, i1 } @aqed_out()" [buf4bug2.cpp:453]   --->   Operation 16 'call' 'call_ret' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.94>
+ST_6 : Operation 17 [1/2] (0.94ns)   --->   "%call_ret = call fastcc { i1, i1 } @aqed_out()" [buf4bug2.cpp:453]   --->   Operation 17 'call' 'call_ret' <Predicate = true> <Delay = 0.94> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 18 [1/1] (0.00ns)   --->   "%o2_qed_done_V = extractvalue { i1, i1 } %call_ret, 0" [buf4bug2.cpp:453]   --->   Operation 18 'extractvalue' 'o2_qed_done_V' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 19 [1/1] (0.00ns)   --->   "%o2_qed_check_V = extractvalue { i1, i1 } %call_ret, 1" [buf4bug2.cpp:453]   --->   Operation 19 'extractvalue' 'o2_qed_check_V' <Predicate = true> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 20 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i20* %agg_result), !map !282"   --->   Operation 20 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 21 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1 %orig_V), !map !301"   --->   Operation 21 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 22 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1 %dup_V), !map !307"   --->   Operation 22 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 23 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i2 %orig_idx_V), !map !311"   --->   Operation 23 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 24 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i2 %dup_idx_V), !map !315"   --->   Operation 24 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i3 %num_V), !map !319"   --->   Operation 25 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @aqed_top_str) nounwind"   --->   Operation 26 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [8 x i8]* @p_str19, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind" [buf4bug2.cpp:435]   --->   Operation 27 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i20* %agg_result, [8 x i8]* @p_str19, i32 0, i32 0, [1 x i8]* @p_str1, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1, [1 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind"   --->   Operation 28 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 29 [1/1] (0.00ns)   --->   "%state_orig_issued_V_s = load i1* @state_orig_issued_V, align 2" [buf4bug2.cpp:457]   --->   Operation 29 'load' 'state_orig_issued_V_s' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 30 [1/1] (0.00ns)   --->   "%state_orig_done_V_lo = load i1* @state_orig_done_V, align 2" [buf4bug2.cpp:458]   --->   Operation 30 'load' 'state_orig_done_V_lo' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 31 [1/1] (0.00ns)   --->   "%state_dup_val_V_0_lo = load i8* @state_dup_val_V_0, align 2" [buf4bug2.cpp:459]   --->   Operation 31 'load' 'state_dup_val_V_0_lo' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 32 [1/1] (0.00ns)   --->   "%state_dup_val_V_1_lo = load i8* @state_dup_val_V_1, align 1" [buf4bug2.cpp:460]   --->   Operation 32 'load' 'state_dup_val_V_1_lo' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 33 [1/1] (0.00ns)   --->   "%gep21920_part_set = call i20 @_ssdm_op_BitConcatenate.i20.i8.i8.i1.i1.i1.i1(i8 %state_dup_val_V_1_lo, i8 %state_dup_val_V_0_lo, i1 %state_orig_done_V_lo, i1 %state_orig_issued_V_s, i1 %o2_qed_check_V, i1 %o2_qed_done_V)" [buf4bug2.cpp:460]   --->   Operation 33 'bitconcatenate' 'gep21920_part_set' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 34 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_none.i20P(i20* %agg_result, i20 %gep21920_part_set)" [buf4bug2.cpp:460]   --->   Operation 34 'write' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 35 [1/1] (0.00ns)   --->   "ret void" [buf4bug2.cpp:462]   --->   Operation 35 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 100ns, clock uncertainty: 12.5ns.
+
+ <State 1>: 5.14ns
+The critical path consists of the following:
+	wire read on port 'dup_idx_V' [32]  (0 ns)
+	'call' operation (buf4bug2.cpp:449) to 'aqed_in' [39]  (5.14 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 0ns
+The critical path consists of the following:
+
+ <State 6>: 0.942ns
+The critical path consists of the following:
+	'call' operation ('call_ret', buf4bug2.cpp:453) to 'aqed_out' [41]  (0.942 ns)
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

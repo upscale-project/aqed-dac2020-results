@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TESTPLAN version="1.2" release="5">
+  <PLAN ID="0">
+    <NAME>Activation Database - 0</NAME><DESC/><HYPERLINKS/><CROSSREF/><SETUP>0.plan_prop_setup</SETUP><BCOVERAGE/><LCOVERAGE/><BSCOVERAGE/><LSCOVERAGE/><ORTL/><RRTL/><RINIT>Yes</RINIT><UDA></UDA><RES></RES>
+    <SIGNALS>
+    </SIGNALS>
+    <UDV>
+    </UDV>
+  </PLAN>
+</TESTPLAN>

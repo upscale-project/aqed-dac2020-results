@@ -1,0 +1,630 @@
+#----------------------------------------
+# JasperGold Version Info
+# tool      : JasperGold 2016.09
+# platform  : Linux 3.10.0-957.21.3.el7.x86_64
+# version   : 2016.09p002 64 bits
+# build date: 2016.11.28 18:08:41 PST
+#----------------------------------------
+# started Sat Apr 11 21:40:37 PDT 2020
+# hostname  : rsg20.stanford.edu
+# pid       : 28067
+# arguments : '-label' 'session_0' '-console' 'rsg20.stanford.edu:46051' '-style' 'windows' '-use_native_tcl' '-proj' '/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bugless/cpr_rtl/jgproject/sessionLogs/session_0' '-init' '-hidden' '/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bugless/cpr_rtl/jgproject/.tmp/.initCmds.tcl' 'jasper.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2016 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc. 
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+JasperGold Apps Analysis Session - /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bugless/cpr_rtl/jgproject/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fpv".
+INFO: reading configuration file "/rsghome/saranyuc/.config/jasper/jaspergold.conf".
+INFO (IPL003): This JasperGold instance uses a new interpreter implementation for Tcl evaluation.
+    Launch JasperGold using the "-use_jtcl" command-line switch to restore it to the old implementation.
+% 
+% analyze -sv09 -f aes.flist 
+[-- (VERI-1482)] Analyzing Verilog file /hd/cad/cadence/JASPERGOLD16.09.002.lnx86/lib/verilog/packages/std/std.sv into library std
+[-- (VERI-1482)] Analyzing Verilog file aes256_encrypt_ecb_ctx_body_enckey.v
+[-- (VERI-1482)] Analyzing Verilog file aes256_encrypt_ecb_ctx_body_key.v
+[-- (VERI-1482)] Analyzing Verilog file aes256_encrypt_ecb.v
+[-- (VERI-1482)] Analyzing Verilog file aqed_in_state_key_V.v
+[-- (VERI-1482)] Analyzing Verilog file aqed_in.v
+[-- (VERI-1482)] Analyzing Verilog file aqed_out.v
+[-- (VERI-1482)] Analyzing Verilog file aqed_top_bmc_in.v
+[-- (VERI-1482)] Analyzing Verilog file aqed_top.v
+[-- (VERI-1482)] Analyzing Verilog file workload_local_key_0.v
+[-- (VERI-1482)] Analyzing Verilog file workload.v
+% elaborate -disable_auto_bbox -top aqed_top
+INFO (ISW003): Top module name is "aqed_top".
+[INFO (VERI-1018)] aqed_top.v(12): compiling module aqed_top
+[WARN (VERI-1060)] aqed_top.v(138): 'initial' construct ignored
+[INFO (VERI-1018)] aqed_top_bmc_in.v(58): compiling module aqed_top_bmc_in:(DataWidth=8,AddressRange=16,AddressWidth=4)
+[INFO (VERI-1018)] aqed_top_bmc_in.v(9): compiling module aqed_top_bmc_in_ram
+[WARN (VERI-1060)] aqed_top_bmc_in.v(29): 'initial' construct ignored
+[INFO (VERI-1018)] workload.v(10): compiling module workload
+[WARN (VERI-1060)] workload.v(156): 'initial' construct ignored
+[INFO (VERI-1018)] workload_local_key_0.v(42): compiling module workload_local_key_0:(DataWidth=8,AddressRange=32,AddressWidth=5)_0
+[INFO (VERI-1018)] workload_local_key_0.v(9): compiling module workload_local_key_0_rom_0
+[WARN (VERI-1060)] workload_local_key_0.v(25): 'initial' construct ignored
+[INFO (VERI-1018)] workload_local_key_0.v(42): compiling module workload_local_key_0:(DataWidth=8,AddressRange=32,AddressWidth=5)_1
+[INFO (VERI-1018)] workload_local_key_0.v(9): compiling module workload_local_key_0_rom_1
+[INFO (VERI-1018)] aes256_encrypt_ecb.v(10): compiling module aes256_encrypt_ecb
+[WARN (VERI-1060)] aes256_encrypt_ecb.v(159): 'initial' construct ignored
+[INFO (VERI-1018)] aes256_encrypt_ecb_ctx_body_key.v(67): compiling module aes256_encrypt_ecb_ctx_body_key:(DataWidth=8,AddressRange=32,AddressWidth=5)
+[INFO (VERI-1018)] aes256_encrypt_ecb_ctx_body_key.v(9): compiling module aes256_encrypt_ecb_ctx_body_key_ram
+[INFO (VERI-1018)] aes256_encrypt_ecb_ctx_body_enckey.v(55): compiling module aes256_encrypt_ecb_ctx_body_enckey:(DataWidth=8,AddressRange=32,AddressWidth=5)
+[INFO (VERI-1018)] aes256_encrypt_ecb_ctx_body_enckey.v(9): compiling module aes256_encrypt_ecb_ctx_body_enckey_ram
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(478): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(480): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(482): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(512): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(514): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(516): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(606): expression size 32 truncated to fit in target size 7
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(677): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(679): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(691): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] workload.v(480): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] workload.v(482): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] workload.v(484): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] workload.v(572): expression size 32 truncated to fit in target size 11
+[INFO (VERI-1018)] aqed_in.v(10): compiling module aqed_in
+[WARN (VERI-1060)] aqed_in.v(205): 'initial' construct ignored
+[INFO (VERI-1018)] aqed_in_state_key_V.v(62): compiling module aqed_in_state_key_V:(DataWidth=1,AddressRange=32,AddressWidth=5)
+[INFO (VERI-1018)] aqed_in_state_key_V.v(9): compiling module aqed_in_state_key_V_ram
+[WARN (VERI-1060)] aqed_in_state_key_V.v(30): 'initial' construct ignored
+[WARN (VERI-1209)] aqed_in.v(309): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_in.v(311): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_in.v(315): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_in.v(321): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_in.v(323): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_in.v(327): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_in.v(429): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(467): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(595): expression size 32 truncated to fit in target size 19
+[INFO (VERI-1018)] aqed_out.v(10): compiling module aqed_out
+[WARN (VERI-1060)] aqed_out.v(124): 'initial' construct ignored
+[WARN (VERI-1209)] aqed_out.v(266): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_out.v(270): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_out.v(276): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_out.v(280): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_out.v(307): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] aqed_out.v(310): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] aqed_out.v(341): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_top.v(380): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_top.v(390): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_top.v(464): expression size 32 truncated to fit in target size 7
+[WARN (VDB-1002)] workload_local_key_0.v(21): net ram[0][7] does not have a driver
+[WARN (VDB-1000)] aes256_encrypt_ecb_ctx_body_key.v(48): net ram[0][7] is constantly driven from multiple places
+[WARN (VDB-1001)] aes256_encrypt_ecb_ctx_body_key.v(60): another driver from here
+[WARN (VDB-1000)] aqed_in_state_key_V.v(44): net ram[0][0] is constantly driven from multiple places
+[WARN (VDB-1001)] aqed_in_state_key_V.v(56): another driver from here
+[WARN (VDB-1000)] aqed_top.v(314): net state_dup_val_V_0[7] is constantly driven from multiple places
+[WARN (VDB-1001)] aqed_top.v(322): another driver from here
+[INFO] Beginning multiple driver analysis
+[INFO] Finished multiple driver analysis
+[INFO] Module Name aqed_top
+aqed_top
+[<embedded>] % clock ap_clk
+[<embedded>] % reset -expression ap_rst 
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "ap_rst".
+[<embedded>] % set_engine_mode {Hp Ht Bm J Q3 U L R B K AB D I AD M N AM G C AG G2 C2 Hps Hts Tri}
+[<embedded>] % autoprove
+INFO (IPF127): Verbosity level: 6
+INFO (IPF127): Using Proof Grid in local mode, with 1 licenses
+INFO (IPF127): Trace generation: Keeping
+INFO (IPF127): Engine C/G memory limit: 2048MB
+INFO (IPF127): Using rule default_rule.
+INFO (IPF127): Using action: prove_action.
+INFO (IPF031): Settings used for this proof:
+    time_limit                    = 2400s
+    per_property_time_limit       = 3s * 9 ^ scan
+    engine_mode                   = Hp Ht L I N 
+    proofgrid_per_engine_max_jobs = 1
+    max engine jobs               = Hp Ht L I N, total 5
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+INFO (IPF036): Starting proof on task: "<embedded>", 4 properties to prove with 0 already proven/unreachable
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis phase 2 of 4.
+INFO (IRS031): Running reset analysis phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 4 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 iterations. Assigned values for 529 of 1654 design flops, 0 of 0 design latches, 60 of 1154 internal elements.
+Using multistage preprocessing
+Starting reduce
+Finished reduce in 0.026s
+Performing Proof Simplification...
+0.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hp: Proof Simplification Iteration 1	[0.00 s]
+0.0.Hp: Proof Simplification Iteration 2	[0.01 s]
+0.0.Hp: Proof Simplification Iteration 3	[0.02 s]
+Proof Simplification completed in 0.05 s
+0.0.Hp: Property reordering done in  0.009s
+0.0.Hp: Identified and disabled 1 duplicated target.
+About to start centralized ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+=============================== ProofGrid start ===============================
+ProofGrid usable level: 4294967295
+ProofGrid is starting event handling
+0.0.N: Proofgrid shell started at 28243@rsg20.stanford.edu(local) jg_28067_rsg20.stanford.edu_1
+0.0.Hp: Proofgrid shell started at 28239@rsg20.stanford.edu(local) jg_28067_rsg20.stanford.edu_1
+0.0.I: Proofgrid shell started at 28242@rsg20.stanford.edu(local) jg_28067_rsg20.stanford.edu_1
+0.0.L: Proofgrid shell started at 28241@rsg20.stanford.edu(local) jg_28067_rsg20.stanford.edu_1
+0.0.Ht: Proofgrid shell started at 28240@rsg20.stanford.edu(local) jg_28067_rsg20.stanford.edu_1
+0.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.I: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.L: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: A trace with 1 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.N: The cover property "aqed_top.assume_stable_orig_idx:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "aqed_top.assume_stable_dup_idx:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "aqed_top.assume_stable_orig_idx:precondition1".
+0.0.L: Using trace diversification with seed 1 (0.05)
+0.0.L: Using LRU state removal heuristic
+0.0.L: Using states from traces to { (reset) }
+0.0.I: Next scan (0) will use per property time limit: 3s * 9 ^ 0 = 3s
+0.0.I: Starting proof for property "aqed_top.assume_stable_orig_idx:precondition1"	[0.00 s].
+0.0.I: Starting proof for property "aqed_top.assume_stable_dup_idx:precondition1"	[0.00 s].
+0.0.I: Stopped processing property "aqed_top.assume_stable_orig_idx:precondition1"	[0.00 s].
+0.0.I: Stopped processing property "aqed_top.assume_stable_dup_idx:precondition1"	[0.00 s].
+0.0.I: Starting proof for property "aqed_top.assert_qed_match:precondition1"	[0.00 s].
+0.0.I: Trace Attempt  1	[0.01 s]
+0.0.N: Next scan (0) will use per property time limit: 3s * 9 ^ 0 = 3s
+0.0.N: Starting proof for property "aqed_top.assume_stable_orig_idx:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "aqed_top.assume_stable_dup_idx:precondition1"	[0.00 s].
+0.0.N: Stopped processing property "aqed_top.assume_stable_orig_idx:precondition1"	[0.00 s].
+0.0.N: Stopped processing property "aqed_top.assume_stable_dup_idx:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "aqed_top.assert_qed_match:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.01 s]
+0.0.N: Trace Attempt  1	[0.01 s]
+0.0.N: Trace Attempt  2	[0.01 s]
+0.0.N: Trace Attempt  3	[0.01 s]
+0.0.I: Trace Attempt  1	[0.01 s]
+0.0.I: Trace Attempt  2	[0.01 s]
+0.0.I: Trace Attempt  3	[0.01 s]
+0.0.L: Trace Attempt  1	[0.03 s]
+0.0.I: Trace Attempt  2	[0.02 s]
+0.0.Ht: Trace Attempt  1	[0.04 s]
+0.0.Ht: Trace Attempt  2	[0.04 s]
+0.0.Ht: Trace Attempt  3	[0.04 s]
+0.0.Ht: Trace Attempt  4	[0.04 s]
+0.0.Ht: Trace Attempt  5	[0.04 s]
+0.0.I: Trace Attempt  2	[0.03 s]
+0.0.N: Trace Attempt  3	[0.03 s]
+0.0.I: Trace Attempt  3	[0.03 s]
+0.0.I: Trace Attempt  4	[0.03 s]
+0.0.N: Trace Attempt  3	[0.04 s]
+0.0.N: Trace Attempt  4	[0.04 s]
+0.0.I: Trace Attempt  3	[0.05 s]
+0.0.L: Trace Attempt  2	[0.07 s]
+0.0.I: Trace Attempt  4	[0.08 s]
+0.0.L: Trace Attempt  3	[0.11 s]
+0.0.I: Trace Attempt  2	[0.09 s]
+0.0.I: Trace Attempt  3	[0.09 s]
+0.0.I: Trace Attempt  4	[0.09 s]
+0.0.L: Trace Attempt  4	[0.14 s]
+0.0.N: Trace Attempt  3	[0.13 s]
+0.0.I: Trace Attempt  5	[0.14 s]
+0.0.L: Trace Attempt  5	[0.18 s]
+0.0.I: Trace Attempt  2	[0.24 s]
+0.0.I: Trace Attempt  3	[0.24 s]
+0.0.I: Trace Attempt  4	[0.25 s]
+0.0.N: Trace Attempt  3	[0.33 s]
+0.0.I: Trace Attempt  2	[0.53 s]
+0.0.N: Trace Attempt  3	[0.53 s]
+0.0.I: Trace Attempt  3	[0.53 s]
+0.0.I: Trace Attempt  4	[0.54 s]
+0.0.I: Trace Attempt  2	[0.74 s]
+0.0.I: Trace Attempt  3	[0.74 s]
+0.0.N: Trace Attempt  3	[0.74 s]
+0.0.I: Trace Attempt  4	[0.74 s]
+0.0.I: Trace Attempt  2	[0.91 s]
+0.0.I: Trace Attempt  3	[0.91 s]
+0.0.I: Trace Attempt  4	[0.92 s]
+0.0.N: Trace Attempt  3	[0.93 s]
+0.0.N: Trace Attempt  3	[1.23 s]
+0.0.I: Trace Attempt  2	[1.25 s]
+0.0.I: Trace Attempt  3	[1.25 s]
+0.0.I: Trace Attempt  4	[1.25 s]
+0.0.I: Trace Attempt  2	[1.55 s]
+0.0.I: Trace Attempt  3	[1.55 s]
+0.0.I: Trace Attempt  4	[1.55 s]
+0.0.N: Trace Attempt  3	[1.61 s]
+0.0.I: Trace Attempt  2	[2.09 s]
+0.0.I: Trace Attempt  3	[2.10 s]
+0.0.I: Trace Attempt  4	[2.10 s]
+0.0.N: Trace Attempt  3	[2.23 s]
+0.0.N: Trace Attempt  3	[2.54 s]
+0.0.N: Trace Attempt 19	[2.71 s]
+0.0.N: Per property time limit expired (3.00 s) [3.03 s]
+0.0.N: Stopped processing property "aqed_top.assert_qed_match:precondition1"	[2.99 s].
+0.0.N: Starting proof for property "aqed_top.assert_qed_match"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.I: Trace Attempt 19	[2.73 s]
+0.0.I: Per property time limit expired (3.00 s) [3.03 s]
+0.0.I: Stopped processing property "aqed_top.assert_qed_match:precondition1"	[3.00 s].
+0.0.I: Starting proof for property "aqed_top.assert_qed_match"	[0.00 s].
+0.0.I: Trace Attempt  2	[0.01 s]
+0.0.I: Trace Attempt  2	[0.01 s]
+0.0.I: Trace Attempt  3	[0.01 s]
+0.0.N: Trace Attempt  3	[0.02 s]
+0.0.I: Trace Attempt  4	[0.01 s]
+0.0.N: Trace Attempt  3	[0.02 s]
+0.0.N: Trace Attempt  4	[0.02 s]
+0.0.I: Trace Attempt  3	[0.03 s]
+0.0.I: Trace Attempt  4	[0.05 s]
+0.0.I: Trace Attempt  2	[0.06 s]
+0.0.I: Trace Attempt  3	[0.06 s]
+0.0.I: Trace Attempt  4	[0.06 s]
+0.0.N: Trace Attempt  3	[0.09 s]
+0.0.I: Trace Attempt  5	[0.10 s]
+0.0.I: Trace Attempt  2	[0.20 s]
+0.0.I: Trace Attempt  3	[0.20 s]
+0.0.I: Trace Attempt  4	[0.20 s]
+0.0.N: Trace Attempt  3	[0.24 s]
+0.0.N: Trace Attempt  3	[0.44 s]
+0.0.I: Trace Attempt  2	[0.44 s]
+0.0.I: Trace Attempt  3	[0.44 s]
+0.0.I: Trace Attempt  4	[0.45 s]
+0.0.N: Trace Attempt  3	[0.61 s]
+0.0.I: Trace Attempt  2	[0.61 s]
+0.0.I: Trace Attempt  3	[0.61 s]
+0.0.I: Trace Attempt  4	[0.61 s]
+0.0.N: Trace Attempt  3	[0.90 s]
+0.0.I: Trace Attempt  2	[0.91 s]
+0.0.I: Trace Attempt  3	[0.91 s]
+0.0.I: Trace Attempt  4	[0.91 s]
+0.0.N: Trace Attempt  3	[1.11 s]
+0.0.I: Trace Attempt  2	[1.12 s]
+0.0.I: Trace Attempt  3	[1.12 s]
+0.0.I: Trace Attempt  4	[1.13 s]
+0.0.L: Trace Attempt 55	[4.19 s]
+0.0.Ht: Trace Attempt 82	[4.31 s]
+0.0.N: Trace Attempt  3	[1.35 s]
+0.0.I: Trace Attempt  2	[1.35 s]
+0.0.I: Trace Attempt  3	[1.35 s]
+0.0.I: Trace Attempt  4	[1.36 s]
+0.0.N: Trace Attempt  3	[2.17 s]
+0.0.N: Trace Attempt  3	[2.74 s]
+0.0.I: Trace Attempt  2	[2.75 s]
+0.0.I: Trace Attempt  3	[2.75 s]
+0.0.I: Trace Attempt  4	[2.75 s]
+0.0.N: Trace Attempt 18	[2.90 s]
+0.0.N: Per property time limit expired (3.00 s) [3.02 s]
+0.0.N: Stopped processing property "aqed_top.assert_qed_match"	[3.03 s].
+0.0.N: Next scan (1) will use per property time limit: 3s * 9 ^ 1 = 27s
+0.0.N: Starting proof for property "aqed_top.assert_qed_match:precondition1"	[0.00 s].
+0.0.I: Trace Attempt 18	[2.89 s]
+0.0.I: Per property time limit expired (3.00 s) [3.02 s]
+0.0.I: Stopped processing property "aqed_top.assert_qed_match"	[3.02 s].
+0.0.I: Next scan (1) will use per property time limit: 3s * 9 ^ 1 = 27s
+0.0.I: Starting proof for property "aqed_top.assert_qed_match:precondition1"	[0.00 s].
+0.0.N: Trace Attempt 19	[0.11 s]
+0.0.I: Trace Attempt 19	[0.11 s]
+0.0.N: Trace Attempt  3	[0.43 s]
+0.0.I: Trace Attempt  2	[0.44 s]
+0.0.I: Trace Attempt  3	[0.44 s]
+0.0.I: Trace Attempt  4	[0.45 s]
+0.0.N: Trace Attempt  3	[1.35 s]
+0.0.I: Trace Attempt  2	[1.37 s]
+0.0.I: Trace Attempt  3	[1.37 s]
+0.0.I: Trace Attempt  4	[1.37 s]
+0.0.I: Trace Attempt  2	[2.27 s]
+0.0.I: Trace Attempt  3	[2.27 s]
+0.0.I: Trace Attempt  4	[2.27 s]
+0.0.Ht: Trace Attempt 98	[8.39 s]
+0.0.L: Trace Attempt 78	[8.52 s]
+0.0.N: Trace Attempt  3	[2.93 s]
+0.0.N: Trace Attempt  3	[4.20 s]
+0.0.Ht: Trace Attempt 108	[12.60 s]
+0.0.L: Trace Attempt 88	[12.63 s]
+0.0.L: Trace Attempt 97	[16.86 s]
+0.0.Ht: Trace Attempt 115	[16.91 s]
+0.0.N: Trace Attempt  3	[12.94 s]
+0.0.I: Trace Attempt 52	[13.54 s]
+0.0.I: Trace Attempt  2	[14.95 s]
+0.0.I: Trace Attempt  3	[14.95 s]
+0.0.I: Trace Attempt  4	[14.96 s]
+0.0.N: Trace Attempt  3	[14.96 s]
+0.0.L: Trace Attempt 108	[21.12 s]
+0.0.Ht: Trace Attempt 121	[21.81 s]
+0.0.I: Trace Attempt  2	[16.69 s]
+0.0.I: Trace Attempt  3	[16.69 s]
+0.0.I: Trace Attempt  4	[16.69 s]
+0.0.N: Trace Attempt  3	[17.14 s]
+0.0.L: Trace Attempt 118	[25.32 s]
+0.0.N: Trace Attempt  3	[19.30 s]
+0.0.I: Trace Attempt  2	[19.33 s]
+0.0.I: Trace Attempt  3	[19.33 s]
+0.0.I: Trace Attempt  4	[19.33 s]
+0.0.Ht: Trace Attempt 125	[26.52 s]
+0.0.I: Trace Attempt  2	[21.01 s]
+0.0.I: Trace Attempt  3	[21.01 s]
+0.0.I: Trace Attempt  4	[21.01 s]
+0.0.N: Trace Attempt  3	[21.43 s]
+0.0.N: Trace Attempt  3	[23.78 s]
+0.0.I: Trace Attempt  2	[23.78 s]
+0.0.I: Trace Attempt  3	[23.78 s]
+0.0.I: Trace Attempt  4	[23.78 s]
+0.0.L: Trace Attempt 126	[30.05 s]
+0.0.Ht: Trace Attempt 129	[32.56 s]
+0.0.N: Trace Attempt  3	[26.66 s]
+0.0.I: Trace Attempt 60	[24.43 s]
+0.0.I: Per property time limit expired (27.00 s) [27.01 s]
+0.0.I: Stopped processing property "aqed_top.assert_qed_match:precondition1"	[27.01 s].
+0.0.I: Starting proof for property "aqed_top.assert_qed_match"	[0.00 s].
+0.0.N: Trace Attempt 24	[26.73 s]
+0.0.N: Per property time limit expired (27.00 s) [27.01 s]
+0.0.N: Stopped processing property "aqed_top.assert_qed_match:precondition1"	[27.01 s].
+0.0.N: Starting proof for property "aqed_top.assert_qed_match"	[0.00 s].
+0.0.I: Trace Attempt 18	[0.10 s]
+0.0.N: Trace Attempt 18	[0.10 s]
+0.0.I: Trace Attempt  2	[0.24 s]
+0.0.I: Trace Attempt  3	[0.24 s]
+0.0.I: Trace Attempt  4	[0.24 s]
+0.0.N: Trace Attempt  3	[0.24 s]
+0.0.I: Trace Attempt  2	[0.64 s]
+0.0.I: Trace Attempt  3	[0.64 s]
+0.0.I: Trace Attempt  4	[0.64 s]
+0.0.N: Trace Attempt  3	[1.08 s]
+0.0.L: Trace Attempt 131	[34.38 s]
+0.0.N: Trace Attempt  3	[2.41 s]
+0.0.I: Trace Attempt  2	[3.78 s]
+0.0.I: Trace Attempt  3	[3.79 s]
+0.0.I: Trace Attempt  4	[3.79 s]
+0.0.Ht: Trace Attempt 132	[37.52 s]
+0.0.N: Trace Attempt  3	[4.46 s]
+0.0.L: Trace Attempt 133	[36.24 s]
+0.0.L: A trace with 133 cycles was found. [38.17 s]
+INFO (IPF047): 0.0.L: The cover property "aqed_top.assert_qed_match:precondition1" was covered in 133 cycles in 38.23 s.
+0.0.L: Using states from traces to { aqed_top.assert_qed_match:precondition1 (132) }
+0.0.L: Trace Attempt  1	[38.20 s]
+0.0.L: Trace Attempt  2	[38.20 s]
+0.0.L: Trace Attempt  3	[38.21 s]
+0.0.L: Trace Attempt  4	[38.22 s]
+0.0.L: Trace Attempt  5	[38.23 s]
+0.0.N: Trace Attempt  3	[6.27 s]
+0.0.I: Trace Attempt  2	[6.28 s]
+0.0.I: Trace Attempt  3	[6.28 s]
+0.0.I: Trace Attempt  4	[6.28 s]
+0.0.I: Trace Attempt  2	[8.05 s]
+0.0.I: Trace Attempt  3	[8.05 s]
+0.0.I: Trace Attempt  4	[8.05 s]
+0.0.N: Trace Attempt  3	[8.05 s]
+0.0.L: Trace Attempt 65	[42.24 s]
+0.0.I: Trace Attempt  2	[10.18 s]
+0.0.I: Trace Attempt  3	[10.19 s]
+0.0.I: Trace Attempt  4	[10.19 s]
+0.0.N: Trace Attempt  3	[10.98 s]
+0.0.L: Trace Attempt 115	[46.28 s]
+0.0.I: Trace Attempt  2	[13.32 s]
+0.0.I: Trace Attempt  3	[13.33 s]
+0.0.I: Trace Attempt  4	[13.33 s]
+0.0.N: Trace Attempt  3	[13.89 s]
+0.0.I: Trace Attempt  2	[16.21 s]
+0.0.I: Trace Attempt  3	[16.22 s]
+0.0.I: Trace Attempt  4	[16.22 s]
+0.0.N: Trace Attempt  3	[16.30 s]
+0.0.L: Trace Attempt 139	[50.31 s]
+0.0.I: Trace Attempt  2	[19.55 s]
+0.0.I: Trace Attempt  3	[19.55 s]
+0.0.I: Trace Attempt  4	[19.56 s]
+0.0.N: Trace Attempt  3	[19.56 s]
+0.0.L: Trace Attempt 170	[54.39 s]
+0.0.I: Trace Attempt  2	[22.14 s]
+0.0.I: Trace Attempt  3	[22.14 s]
+0.0.I: Trace Attempt  4	[22.15 s]
+0.0.N: Trace Attempt  3	[22.42 s]
+0.0.L: Trace Attempt 200	[58.40 s]
+0.0.I: Trace Attempt  2	[26.71 s]
+0.0.I: Trace Attempt  3	[26.72 s]
+0.0.I: Trace Attempt  4	[26.72 s]
+0.0.N: Trace Attempt  3	[26.72 s]
+0.0.I: Trace Attempt 14	[26.79 s]
+0.0.I: Per property time limit expired (27.00 s) [27.00 s]
+0.0.I: Stopped processing property "aqed_top.assert_qed_match"	[27.00 s].
+0.0.I: Last scan. Per property time limit: 0s
+0.0.I: Starting proof for property "aqed_top.assert_qed_match"	[0.00 s].
+0.0.N: Stopped processing property "aqed_top.assert_qed_match"	[27.00 s].
+0.0.N: Last scan. Per property time limit: 0s
+0.0.N: Starting proof for property "aqed_top.assert_qed_match"	[0.00 s].
+0.0.I: Trace Attempt 67	[0.45 s]
+0.0.L: Trace Attempt 228	[62.44 s]
+0.0.I: Trace Attempt  2	[3.27 s]
+0.0.I: Trace Attempt  3	[3.27 s]
+0.0.I: Trace Attempt  4	[3.27 s]
+0.0.N: Trace Attempt  3	[3.76 s]
+0.0.L: Trace Attempt 259	[66.59 s]
+0.0.I: Trace Attempt  2	[6.96 s]
+0.0.I: Trace Attempt  3	[6.96 s]
+0.0.I: Trace Attempt  4	[6.96 s]
+0.0.N: Trace Attempt  3	[7.00 s]
+0.0.L: Trace Attempt 282	[70.68 s]
+0.0.I: Trace Attempt  2	[12.43 s]
+0.0.I: Trace Attempt  3	[12.43 s]
+0.0.I: Trace Attempt  4	[12.44 s]
+0.0.N: Trace Attempt  3	[12.83 s]
+0.0.L: Trace Attempt 310	[74.68 s]
+0.0.I: Trace Attempt  2	[16.34 s]
+0.0.I: Trace Attempt  3	[16.34 s]
+0.0.I: Trace Attempt  4	[16.34 s]
+0.0.N: Trace Attempt  3	[16.37 s]
+0.0.L: Trace Attempt 317	[78.76 s]
+0.0.I: Trace Attempt  2	[20.46 s]
+0.0.I: Trace Attempt  3	[20.46 s]
+0.0.I: Trace Attempt  4	[20.46 s]
+0.0.N: Trace Attempt  3	[20.48 s]
+0.0.L: Trace Attempt 343	[82.84 s]
+0.0.I: Trace Attempt  2	[24.26 s]
+0.0.I: Trace Attempt  3	[24.26 s]
+0.0.I: Trace Attempt  4	[24.27 s]
+0.0.N: Trace Attempt  3	[24.29 s]
+0.0.N: Trace Attempt  5	[24.30 s]
+0.0.L: Trace Attempt 372	[86.86 s]
+0.0.I: Trace Attempt  2	[28.68 s]
+0.0.I: Trace Attempt  3	[28.68 s]
+0.0.I: Trace Attempt  4	[28.69 s]
+0.0.L: Trace Attempt 390	[91.36 s]
+0.0.N: Trace Attempt  3	[34.29 s]
+0.0.L: Trace Attempt 398	[95.37 s]
+0.0.I: Trace Attempt 59	[35.99 s]
+0.0.L: Trace Attempt 425	[99.51 s]
+0.0.L: Trace Attempt 450	[103.64 s]
+0.0.I: Trace Attempt  2	[45.24 s]
+0.0.I: Trace Attempt  3	[45.24 s]
+0.0.I: Trace Attempt  4	[45.25 s]
+0.0.L: Trace Attempt 471	[108.73 s]
+0.0.L: Trace Attempt 492	[112.75 s]
+0.0.N: Trace Attempt  3	[56.11 s]
+0.0.L: Trace Attempt 514	[116.87 s]
+0.0.I: Trace Attempt 106	[57.97 s]
+0.0.L: Trace Attempt 533	[124.56 s]
+0.0.N: Trace Attempt  3	[64.86 s]
+0.0.I: Trace Attempt  2	[65.35 s]
+0.0.I: Trace Attempt  3	[65.36 s]
+0.0.I: Trace Attempt  4	[65.36 s]
+0.0.L: Trace Attempt 555	[129.87 s]
+0.0.I: Trace Attempt 107	[70.65 s]
+0.0.N: Trace Attempt 109	[70.78 s]
+0.0.L: Trace Attempt 572	[133.92 s]
+0.0.L: Trace Attempt 592	[138.00 s]
+0.0.I: Trace Attempt  2	[80.81 s]
+0.0.I: Trace Attempt  3	[80.81 s]
+0.0.I: Trace Attempt  4	[80.82 s]
+0.0.L: Trace Attempt 596	[143.57 s]
+0.0.L: Trace Attempt 603	[148.62 s]
+0.0.N: Trace Attempt  3	[88.58 s]
+0.0.I: Trace Attempt 110	[92.17 s]
+0.0.L: Trace Attempt 606	[156.50 s]
+0.0.L: Trace Attempt 611	[162.11 s]
+0.0.L: Trace Attempt 626	[166.88 s]
+0.0.I: Trace Attempt  2	[107.00 s]
+0.0.I: Trace Attempt  3	[107.00 s]
+0.0.I: Trace Attempt  4	[107.00 s]
+0.0.N: Trace Attempt  3	[107.08 s]
+0.0.L: Trace Attempt 642	[170.89 s]
+0.0.N: Trace Attempt 111	[111.78 s]
+0.0.I: Trace Attempt 111	[111.80 s]
+0.0.L: Trace Attempt 649	[175.99 s]
+0.0.L: Trace Attempt 657	[180.40 s]
+0.0.L: Trace Attempt 666	[184.55 s]
+0.0.N: Trace Attempt  3	[124.99 s]
+0.0.I: Trace Attempt  2	[125.32 s]
+0.0.I: Trace Attempt  3	[125.33 s]
+0.0.I: Trace Attempt  4	[125.33 s]
+0.0.L: Trace Attempt 676	[188.71 s]
+0.0.I: Trace Attempt 112	[130.16 s]
+0.0.N: Trace Attempt 112	[130.17 s]
+0.0.L: Trace Attempt 694	[192.75 s]
+0.0.L: Trace Attempt 701	[197.96 s]
+0.0.L: Trace Attempt 712	[202.62 s]
+0.0.I: Trace Attempt  2	[146.47 s]
+0.0.I: Trace Attempt  3	[146.47 s]
+0.0.I: Trace Attempt  4	[146.47 s]
+0.0.L: Trace Attempt 726	[206.71 s]
+0.0.N: Trace Attempt  3	[148.80 s]
+0.0.N: Trace Attempt 113	[153.05 s]
+0.0.L: Trace Attempt 728	[213.18 s]
+0.0.I: Trace Attempt 113	[153.27 s]
+0.0.L: Trace Attempt 745	[217.30 s]
+0.0.L: Trace Attempt 763	[221.51 s]
+0.0.L: Trace Attempt 778	[225.70 s]
+0.0.L: Trace Attempt 792	[231.12 s]
+0.0.N: Trace Attempt  3	[171.32 s]
+0.0.I: Trace Attempt  2	[171.69 s]
+0.0.I: Trace Attempt  3	[171.69 s]
+0.0.I: Trace Attempt  4	[171.69 s]
+0.0.L: Trace Attempt 797	[235.26 s]
+0.0.I: Trace Attempt 114	[177.44 s]
+0.0.N: Trace Attempt 114	[177.62 s]
+0.0.L: Trace Attempt 802	[239.47 s]
+0.0.I: Trace Attempt  2	[194.57 s]
+0.0.I: Trace Attempt  3	[194.57 s]
+0.0.I: Trace Attempt  4	[194.57 s]
+0.0.Ht: Trace Attempt 133	[39.95 s]
+0.0.Ht: A trace with 133 cycles was found. [255.52 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 133 cycles was found for the property "aqed_top.assert_qed_match" in 255.59 s.
+0.0.I: Stopped processing property "aqed_top.assert_qed_match"	[195.56 s].
+0.0.I: Trace Attempt 14	[194.67 s]
+0.0.I: All properties either determined or skipped. [255.57 s]
+0.0.Ht: All properties determined. [255.56 s]
+0.0.Ht: Exited with Success (@ 255.58 s)
+0.0.Hp: Interrupted (multi)
+0.0.Hp: Interrupted. [255.57 s]
+0.0.I: Exited with Success (@ 255.59 s)
+0.0.Hp: Exited with Success (@ 255.59 s)
+0.0.N: Stopped processing property "aqed_top.assert_qed_match"	[195.71 s].
+0.0.N: All properties either determined or skipped. [255.79 s]
+0.0.N: Exited with Success (@ 255.81 s)
+ProofGrid usable level: 1
+0.0.L: Trace Attempt 804	[240.17 s]
+0.0.L: Interrupted. [257.19 s]
+0.0.L: Exited with Success (@ 257.21 s)
+ProofGrid usable level: 0
+ProofGrid usable level: 0
+All pending notifications were processed.
+INFO (IPF127): Done using action: prove_action.
+INFO (IPF127): Final state reached.
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 4
+	      assertions      : 1
+	       - proven       : 0 (0%)
+	       - marked_proven: 0 (0%)
+	       - cex          : 1 (100%)
+	       - ar_cex       : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+	      covers          : 3
+	       - unreachable  : 0 (0%)
+	       - covered      : 3 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+determined
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % visualize -violation -property <embedded>::aqed_top.assert_qed_match -new_window
+INFO (IVS015): Setting Visualize task to "<embedded>".
+INFO (IVS008): Expanding analysis region to enable visualization of "<embedded>::aqed_top.assert_qed_match".
+cex
+INFO: delete ampa start in Shell
+INFO: delete ampa end in Shell
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.
