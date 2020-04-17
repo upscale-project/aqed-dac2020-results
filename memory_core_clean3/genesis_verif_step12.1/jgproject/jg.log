@@ -1,0 +1,2195 @@
+#----------------------------------------
+# JasperGold Version Info
+# tool      : JasperGold 2016.09
+# platform  : Linux 3.10.0-957.21.3.el7.x86_64
+# version   : 2016.09p002 64 bits
+# build date: 2016.11.28 18:08:41 PST
+#----------------------------------------
+# started Wed Apr 08 16:51:06 PDT 2020
+# hostname  : rsg20.stanford.edu
+# pid       : 7148
+# arguments : '-label' 'session_0' '-console' 'rsg20.stanford.edu:34228' '-style' 'windows' '-use_native_tcl' '-proj' '/rsgs/pool0/Saranyu/aqed/memory_core_clean3/genesis_verif_step12.1/jgproject/sessionLogs/session_0' '-init' '-hidden' '/rsgs/pool0/Saranyu/aqed/memory_core_clean3/genesis_verif_step12.1/jgproject/.tmp/.initCmds.tcl' 'jasper.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2016 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc. 
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+JasperGold Apps Analysis Session - /rsgs/pool0/Saranyu/aqed/memory_core_clean3/genesis_verif_step12.1/jgproject/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fpv".
+INFO: reading configuration file "/rsghome/saranyuc/.config/jasper/jaspergold.conf".
+INFO (IPL003): This JasperGold instance uses a new interpreter implementation for Tcl evaluation.
+    Launch JasperGold using the "-use_jtcl" command-line switch to restore it to the old implementation.
+% 
+% analyze -sv09 -f memory_core.flist mem_core_top_1.sv
+[-- (VERI-1482)] Analyzing Verilog file /hd/cad/cadence/JASPERGOLD16.09.002.lnx86/lib/verilog/packages/std/std.sv into library std
+[-- (VERI-1482)] Analyzing Verilog file ./doublebuffer_control_unq1.sv
+[-- (VERI-1482)] Analyzing Verilog file ./fifo_control_unq1.sv
+[-- (VERI-1482)] Analyzing Verilog file ./linebuffer_control_unq1.sv
+[-- (VERI-1482)] Analyzing Verilog file ./memory_core.sv
+[-- (VERI-1482)] Analyzing Verilog file ./mem_unq1.v
+[-- (VERI-1482)] Analyzing Verilog file ./sram_control_unq1.sv
+[-- (VERI-1482)] Analyzing Verilog file ./sram_stub_unq1.v
+[-- (VERI-1482)] Analyzing Verilog file ./aqed.v
+[-- (VERI-1482)] Analyzing Verilog file ./mem_core_top_1.sv
+[-- (VERI-1482)] Analyzing Verilog file ./concat_rtl.v
+[-- (VERI-1482)] Analyzing Verilog file mem_core_top_1.sv
+[WARN (VERI-1206)] mem_core_top_1.sv(204): overwriting previous definition of module mem_core_top
+[INFO (VERI-2142)] mem_core_top_1.sv(204): previous definition of module mem_core_top is here
+% elaborate -disable_auto_bbox -top mem_core_top
+INFO (ISW003): Top module name is "mem_core_top".
+[WARN (VERI-1927)] mem_core_top_1.sv(139): port original_rsc_dat remains unconnected for this instance
+[INFO (VERI-1018)] mem_core_top_1.sv(7): compiling module mem_core_top
+[INFO (VERI-1018)] ./memory_core.sv(64): compiling module memory_core
+[INFO (VERI-1018)] ./linebuffer_control_unq1.sv(55): compiling module linebuffer_control_unq1
+[WARN (VERI-1209)] ./linebuffer_control_unq1.sv(89): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] ./linebuffer_control_unq1.sv(122): expression size 32 truncated to fit in target size 16
+[WARN (VERI-1330)] ./memory_core.sv(435): actual bit length 16 differs from formal bit length 13 for port depth
+[INFO (VERI-1018)] ./fifo_control_unq1.sv(55): compiling module fifo_control_unq1
+[WARN (VERI-1209)] ./fifo_control_unq1.sv(303): expression size 32 truncated to fit in target size 10
+[WARN (VERI-1209)] ./fifo_control_unq1.sv(309): expression size 32 truncated to fit in target size 10
+[WARN (VERI-1209)] ./fifo_control_unq1.sv(322): expression size 32 truncated to fit in target size 10
+[WARN (VERI-1209)] ./fifo_control_unq1.sv(335): expression size 32 truncated to fit in target size 10
+[WARN (VERI-1209)] ./fifo_control_unq1.sv(336): expression size 32 truncated to fit in target size 10
+[WARN (VERI-1330)] ./memory_core.sv(460): actual bit length 16 differs from formal bit length 13 for port depth
+[INFO (VERI-1018)] ./sram_control_unq1.sv(56): compiling module sram_control_unq1
+[INFO (VERI-1018)] ./doublebuffer_control_unq1.sv(58): compiling module doublebuffer_control_unq1
+[WARN (VERI-1209)] ./doublebuffer_control_unq1.sv(173): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1167)] ./doublebuffer_control_unq1.sv(179): if-condition does not match any sensitivity list edge
+[WARN (VERI-1221)] ./doublebuffer_control_unq1.sv(183): data_out should be on the sensitivity list
+[WARN (VERI-1466)] ./doublebuffer_control_unq1.sv(183): assignment under multiple single edges is not supported for synthesis
+[WARN (VERI-1209)] ./doublebuffer_control_unq1.sv(201): expression size 32 truncated to fit in target size 16
+[WARN (VERI-1209)] ./doublebuffer_control_unq1.sv(285): expression size 16 truncated to fit in target size 9
+[WARN (VERI-1209)] ./doublebuffer_control_unq1.sv(286): expression size 16 truncated to fit in target size 9
+[WARN (VERI-1209)] ./doublebuffer_control_unq1.sv(295): expression size 32 truncated to fit in target size 16
+[WARN (VERI-1209)] ./doublebuffer_control_unq1.sv(328): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] ./doublebuffer_control_unq1.sv(450): expression size 32 truncated to fit in target size 16
+[INFO (VERI-1018)] ./mem_unq1.v(56): compiling module mem_unq1
+[INFO (VERI-1018)] ./sram_stub_unq1.v(54): compiling module sram_stub_unq1
+[INFO (VERI-1018)] ./concat_rtl.v(2955): compiling module aqed_top
+[INFO (VERI-1018)] ./concat_rtl.v(87): compiling module aqed_top_core
+[INFO (VERI-1018)] ./concat_rtl.v(21): compiling module ccs_in_v1:(rscid=32'sb01,width=32'sb010000)
+[INFO (VERI-1018)] ./concat_rtl.v(21): compiling module ccs_in_v1:(rscid=32'sb010,width=32'sb01)
+[INFO (VERI-1018)] ./concat_rtl.v(21): compiling module ccs_in_v1:(rscid=32'sb011,width=32'sb01)
+[INFO (VERI-1018)] ./concat_rtl.v(21): compiling module ccs_in_v1:(rscid=32'sb0100,width=32'sb01)
+[INFO (VERI-1018)] ./concat_rtl.v(21): compiling module ccs_in_v1:(rscid=32'sb0101,width=32'sb010000)
+[INFO (VERI-1018)] ./concat_rtl.v(21): compiling module ccs_in_v1:(rscid=32'sb0110,width=32'sb01)
+[INFO (VERI-1018)] ./concat_rtl.v(21): compiling module ccs_in_v1:(rscid=32'sb0111,width=32'sb01)
+[INFO (VERI-1018)] ./concat_rtl.v(54): compiling module ccs_out_v1:(rscid=32'sb01000,width=32'sb010000)
+[INFO (VERI-1018)] ./concat_rtl.v(54): compiling module ccs_out_v1:(rscid=32'sb01001,width=32'sb01)
+[INFO (VERI-1018)] ./concat_rtl.v(54): compiling module ccs_out_v1:(rscid=32'sb01010,width=32'sb01)
+[INFO (VERI-1018)] ./concat_rtl.v(54): compiling module ccs_out_v1:(rscid=32'sb01011,width=32'sb01)
+[INFO (VERI-1018)] ./concat_rtl.v(54): compiling module ccs_out_v1:(rscid=32'sb01100,width=32'sb01)
+[INFO (VERI-1018)] ./concat_rtl.v(54): compiling module ccs_out_v1:(rscid=32'sb01101,width=32'sb01)
+[WARN (VERI-9028)] mem_core_top_1.sv(139): missing/open ports on instance aqed of module aqed_top
+[WARN (VERI-1209)] mem_core_top_1.sv(148): expression size 32 truncated to fit in target size 17
+[WARN (VERI-1209)] mem_core_top_1.sv(149): expression size 32 truncated to fit in target size 17
+[INFO (VERI-8000)] mem_core_top_1.sv(167): Creating net aqed.seq_pointer
+[INFO (VERI-8000)] mem_core_top_1.sv(171): Creating net aqed.insert_cond
+[INFO (VERI-8000)] mem_core_top_1.sv(175): Creating net aqed.delete_cond
+[WARN (VERI-1209)] mem_core_top_1.sv(190): expression size 32 truncated to fit in target size 16
+[WARN (VERI-1209)] mem_core_top_1.sv(192): expression size 32 truncated to fit in target size 16
+[WARN (VDB-1002)] mem_core_top_1.sv(10): net stencil_width[15] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(11): net arbitrary_addr does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(12): net starting_addr[15] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(13): net iter_cnt[31] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(15): net rate_matched does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(16): net stride_0[15] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(17): net stride_1[15] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(18): net stride_2[15] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(19): net stride_3[15] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(20): net stride_4[15] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(21): net stride_5[15] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(22): net range_0[31] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(23): net range_1[31] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(24): net range_2[31] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(25): net range_3[31] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(26): net range_4[31] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(27): net range_5[31] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(28): net circular_en does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(29): net almost_count[3] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(30): net enable_chain does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(31): net mode[1] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(32): net tile_en does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(33): net chain_idx[3] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(34): net depth[15] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(43): net clk_en does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(44): net flush does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(46): net addr_in[15] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(47): net ren_in does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(52): net chain_in[15] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(55): net chain_wen_in does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(57): net switch_db does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(64): net config_addr[31] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(65): net config_data[31] does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(66): net config_read does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(67): net config_write does not have a driver
+[WARN (VDB-1002)] mem_core_top_1.sv(68): net config_en_sram[3] does not have a driver
+[WARN (VDB-1013)] mem_core_top_1.sv(139): input port original_rsc_dat is not connected on this instance
+[INFO] Beginning multiple driver analysis
+[INFO] Finished multiple driver analysis
+[INFO] Module Name mem_core_top
+WARNING (WNL021): mem_core_top_1.sv(167): external reference "aqed.seq_pointer" remains unresolved and will be treated as a free net.
+WARNING (WNL021): mem_core_top_1.sv(171): external reference "aqed.insert_cond" remains unresolved and will be treated as a free net.
+WARNING (WNL021): mem_core_top_1.sv(175): external reference "aqed.delete_cond" remains unresolved and will be treated as a free net.
+mem_core_top
+[<embedded>] % clock clk
+[<embedded>] % reset -expression reset
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "reset".
+[<embedded>] % set_engine_mode {Bm B}
+[<embedded>] % prove -bg -property {<embedded>::mem_core_top.assert_qed_match}
+INFO (IPF031): Settings used for this proof:
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = Bm B 
+    proofgrid_per_engine_max_jobs = 1
+    max engine jobs               = Bm B, total 2
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+background (thread 0)
+INFO (IPF036): Starting proof on task: "<embedded>", 1 properties to prove with 0 already proven/unreachable
+[<embedded>] % 
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis phase 2 of 4.
+INFO (IRS031): Running reset analysis phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 4 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 iterations. Assigned values for 2765 of 19200 design flops, 0 of 0 design latches, 13 of 13 internal elements.
+WARNING (WPF042): A single property remains, and one of the engines "Ht", "Hts", "B", or "Bm" is already running. Ignoring "B".
+Using multistage preprocessing
+Starting reduce
+Finished reduce in 0.182s
+Performing Proof Simplification...
+0.0.Bm: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Bm: Proof Simplification Iteration 1	[0.00 s]
+0.0.Bm: Proof Simplification Iteration 2	[0.04 s]
+0.0.Bm: Proof Simplification Iteration 3	[0.07 s]
+Proof Simplification completed in 0.22 s
+About to start centralized ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+=============================== ProofGrid start ===============================
+ProofGrid usable level: 1
+ProofGrid is starting event handling
+0.0.Bm: Proofgrid shell started at 7313@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_1
+0.0.Bm: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Bm: Trace Attempt  1	[0.11 s]
+0.0.Bm: Trace Attempt  2	[0.19 s]
+0.0.Bm: Trace Attempt  3	[0.32 s]
+0.0.Bm: Trace Attempt  4	[0.54 s]
+0.0.Bm: Trace Attempt  5	[0.75 s]
+Initiating shutdown of proof (@ 6.17 s)
+0.0.Bm: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.Bm: Trace Attempt 10	[3.17 s]
+0.0.Bm: Interrupted. [6.26 s]
+0.0.Bm: Exited with Success (@ 6.27 s)
+ProofGrid usable level: 0
+ProofGrid usable level: 0
+All pending notifications were processed.
+INFO (IPM007): "prove" command stopped.
+[<embedded>] % set_engine_mode {Hp Ht Bm J Q3 U L R B K AB D I AD M N AM G C AG G2 C2 Hps Hts Tri}
+[<embedded>] % prove -bg -all
+INFO (IPF031): Settings used for this proof:
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = Hp Ht Bm J Q3 U L R B K AB D I AD M N AM G C AG G2 C2 Hps Hts Tri 
+    proofgrid_per_engine_max_jobs = 1
+    max engine jobs               = Hp Ht Bm J Q3 U L R B K AB D I AD M N AM G C AG G2 C2 Hps Hts Tri, total 25
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+background (thread 1)
+INFO (IPF036): Starting proof on task: "<embedded>", 9 properties to prove with 0 already proven/unreachable
+Using multistage preprocessing
+Starting reduce
+Finished reduce in 0.179s
+Performing Proof Simplification...
+1.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.Hp: Proof Simplification Iteration 1	[0.00 s]
+1.0.Hp: Proof Simplification Iteration 2	[0.04 s]
+1.0.Hp: Proof Simplification Iteration 3	[0.07 s]
+Proof Simplification completed in 0.21 s
+About to start centralized ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+=============================== ProofGrid start ===============================
+ProofGrid usable level: 4294967295
+ProofGrid is starting event handling
+1.0.AB: Proofgrid shell started at 7377@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.I: Proofgrid shell started at 7379@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.D: Proofgrid shell started at 7378@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.Q3: Proofgrid shell started at 7371@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.K: Proofgrid shell started at 7376@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.Hps: Proofgrid shell started at 7389@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.Ht: Proofgrid shell started at 7368@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.AB: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.I: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.L: Proofgrid shell started at 7373@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.U: Proofgrid shell started at 7372@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.B: Proofgrid shell started at 7375@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.D: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.Q3: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.Hp: Proofgrid shell started at 7367@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.AM: Proofgrid shell started at 7383@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.C2: Proofgrid shell started at 7388@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.Hps: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.K: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.R: Proofgrid shell started at 7374@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.AD: Proofgrid shell started at 7380@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.L: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.U: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.N: Proofgrid shell started at 7382@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.C2: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.AM: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.Bm: Proofgrid shell started at 7369@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.C: Proofgrid shell started at 7385@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.R: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.Hts: Proofgrid shell started at 7390@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.J: Proofgrid shell started at 7370@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.G: Proofgrid shell started at 7384@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.AD: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.G2: Proofgrid shell started at 7387@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.AG: Proofgrid shell started at 7386@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.Bm: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.M: Proofgrid shell started at 7381@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.C: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.Tri: Proofgrid shell started at 7391@rsg20.stanford.edu(local) jg_7148_rsg20.stanford.edu_2
+1.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.Hts: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.J: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.G: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.G2: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.AG: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.M: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.Tri: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+1.0.I: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.I: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Hps: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.Hps: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Q3: Seed 7, 50%
+1.0.AB: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.AB: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Hps: Trace Attempt  1	[0.01 s]
+1.0.Q3: Restart 0, Seed 7, 50.0%
+1.0.Q3: Trace Attempt  1	[0.07 s]
+1.0.C2: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.C2: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Q3: Cycle 1, State Sig: fe094c47
+1.0.Hps: Trace Attempt  2	[0.01 s]
+1.0.K: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.K: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.D: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.D: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.C: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.C: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.AD: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.AD: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Hps: Trace Attempt  3	[0.02 s]
+1.0.L: Using trace diversification with seed 1 (0.05)
+1.0.L: Using LRU state removal heuristic
+1.0.I: Trace Attempt  1	[0.02 s]
+1.0.Q3: A trace with 1 cycles was found. [0.07 s]
+INFO (IPF047): 1.0.Q3: The cover property "mem_core_top.cover_seq_10" was covered in 1 cycles in 0.11 s.
+1.0.B: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.B: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.K: Trace Attempt  1	[0.02 s]
+1.0.K: Trace Attempt  1	[0.03 s]
+1.0.K: Trace Attempt  2	[0.03 s]
+1.0.K: Trace Attempt  3	[0.04 s]
+1.0.AB: Trace Attempt  1	[0.02 s]
+1.0.AB: Trace Attempt  1	[0.04 s]
+1.0.AB: Trace Attempt  2	[0.04 s]
+1.0.AB: Trace Attempt  3	[0.04 s]
+1.0.D: Trace Attempt  1	[0.02 s]
+1.0.D: Trace Attempt  2	[0.03 s]
+1.0.I: Trace Attempt  1	[0.03 s]
+1.0.I: Trace Attempt  2	[0.04 s]
+1.0.I: Trace Attempt  3	[0.04 s]
+1.0.I: Trace Attempt  2	[0.04 s]
+1.0.AD: Trace Attempt  1	[0.01 s]
+1.0.AD: Trace Attempt  1	[0.02 s]
+1.0.AD: Trace Attempt  2	[0.03 s]
+1.0.AD: Trace Attempt  3	[0.03 s]
+1.0.AD: Trace Attempt  1	[0.03 s]
+1.0.AD: Trace Attempt  2	[0.03 s]
+1.0.AD: Trace Attempt  3	[0.03 s]
+1.0.AD: Trace Attempt  4	[0.03 s]
+1.0.M: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.M: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.N: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.N: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.AM: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.AM: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.G: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.G: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.C: Trace Attempt  1	[0.02 s]
+1.0.AG: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.AG: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.G2: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.G2: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.C2: Trace Attempt  1	[0.01 s]
+1.0.Hps: Trace Attempt  4	[0.02 s]
+1.0.Hps: Trace Attempt  5	[0.03 s]
+1.0.Hts: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.Hts: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Hts: Trace Attempt  1	[0.00 s]
+1.0.Hts: Trace Attempt  2	[0.00 s]
+1.0.Hts: Trace Attempt  3	[0.00 s]
+1.0.Hts: Trace Attempt  4	[0.01 s]
+1.0.Hts: Trace Attempt  5	[0.01 s]
+1.0.Q3: Trace Attempt  2	[0.09 s]
+1.0.Q3: Cycle 2, State Sig: 1ece4356
+1.0.Q3: A trace with 2 cycles was found. There may exist shorter traces (as short as 1 cycles) [0.09 s]
+INFO (IPF047): 1.0.Q3: The cover property "mem_core_top.cover_insert" was covered in 2 cycles in 0.15 s.
+1.0.U: Seed 1
+1.0.B: Trace Attempt  1	[0.03 s]
+1.0.B: Trace Attempt  2	[0.03 s]
+1.0.B: Trace Attempt  3	[0.03 s]
+1.0.B: Trace Attempt  4	[0.03 s]
+1.0.B: Trace Attempt  5	[0.04 s]
+1.0.K: Trace Attempt  3	[0.04 s]
+1.0.K: Trace Attempt  1	[0.06 s]
+1.0.K: Trace Attempt  2	[0.06 s]
+1.0.K: Trace Attempt  3	[0.06 s]
+1.0.K: Trace Attempt  4	[0.06 s]
+1.0.K: Trace Attempt  5	[0.06 s]
+1.0.AB: Trace Attempt  1	[0.04 s]
+1.0.AB: Trace Attempt  2	[0.04 s]
+1.0.AB: Trace Attempt  3	[0.04 s]
+1.0.AB: Trace Attempt  4	[0.05 s]
+1.0.AB: Trace Attempt  5	[0.05 s]
+1.0.D: Trace Attempt  3	[0.04 s]
+1.0.I: Trace Attempt  2	[0.06 s]
+1.0.I: Trace Attempt  3	[0.07 s]
+1.0.I: Trace Attempt  4	[0.07 s]
+1.0.AD: Trace Attempt  5	[0.03 s]
+1.0.M: Trace Attempt  1	[0.02 s]
+1.0.M: Trace Attempt  2	[0.02 s]
+1.0.M: Trace Attempt  3	[0.03 s]
+1.0.N: Trace Attempt  1	[0.02 s]
+1.0.N: Trace Attempt  1	[0.04 s]
+1.0.N: Trace Attempt  3	[0.04 s]
+1.0.AM: Trace Attempt  1	[0.02 s]
+1.0.AM: Trace Attempt  1	[0.03 s]
+1.0.AM: Trace Attempt  2	[0.03 s]
+1.0.AM: Trace Attempt  3	[0.03 s]
+1.0.C: Partitioning 3 assumptions over 34 inputs...
+1.0.AG: Trace Attempt  1	[0.02 s]
+1.0.C2: Partitioning 3 assumptions over 34 inputs...
+1.0.C2: Trace Attempt  3	[0.06 s]
+1.0.Q3: Trace Attempt  3	[0.11 s]
+1.0.Q3: Trace Attempt  4	[0.12 s]
+1.0.Q3: Cycle 4, State Sig: e6d335fb
+1.0.Q3: Trace Attempt  5	[0.12 s]
+1.0.I: Trace Attempt  3	[0.08 s]
+1.0.AM: Trace Attempt  1	[0.06 s]
+1.0.I: Trace Attempt  4	[0.09 s]
+1.0.AM: Trace Attempt  2	[0.06 s]
+1.0.D: Trace Attempt  5	[0.07 s]
+1.0.Q3: A trace with 5 cycles was found. There may exist shorter traces (as short as 1 cycles) [0.12 s]
+INFO (IPF047): 1.0.Q3: The cover property "mem_core_top.cover_delete" was covered in 5 cycles in 0.22 s.
+1.0.K: Trace Attempt  1	[0.09 s]
+1.0.K: Trace Attempt  2	[0.10 s]
+1.0.K: Trace Attempt  3	[0.10 s]
+1.0.I: Trace Attempt  2	[0.10 s]
+1.0.I: Trace Attempt  3	[0.11 s]
+1.0.AM: Trace Attempt  3	[0.06 s]
+1.0.AM: Trace Attempt  4	[0.06 s]
+1.0.AM: Trace Attempt  5	[0.06 s]
+1.0.AG: Partitioning 3 assumptions over 50 inputs...
+1.0.AG: Iteration  1	[0.03 s]
+1.0.AG: Iteration  2	[0.03 s]
+1.0.AG: Iteration  3	[0.03 s]
+1.0.AG: Trace Attempt  1	[0.07 s]
+1.0.C2: Partitioning 3 assumptions over 34 inputs...
+1.0.Q3: Cycle 8, State Sig: fee92a94
+1.0.AG: Trace Attempt  2	[0.08 s]
+1.0.K: Trace Attempt  4	[0.10 s]
+1.0.L: Trace Attempt  1	[0.17 s]
+1.0.AG: Trace Attempt  3	[0.08 s]
+1.0.K: Trace Attempt  5	[0.11 s]
+1.0.I: Trace Attempt  5	[0.12 s]
+1.0.AG: Trace Attempt  4	[0.08 s]
+1.0.AG: Trace Attempt  5	[0.08 s]
+1.0.Tri: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.Tri: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Tri: Trace Attempt  1	[0.00 s]
+1.0.N: Trace Attempt  3	[0.10 s]
+1.0.Bm: Trace Attempt  1	[0.17 s]
+1.0.I: Trace Attempt  5	[0.14 s]
+1.0.Q3: Cycle 16, State Sig: 5bc03511
+1.0.C2: Partitioning 3 assumptions over 33 inputs...
+1.0.I: Trace Attempt  2	[0.19 s]
+1.0.I: Trace Attempt  3	[0.20 s]
+1.0.C: Partitioning 3 assumptions over 33 inputs...
+1.0.K: Trace Attempt  1	[0.19 s]
+1.0.K: Trace Attempt  2	[0.19 s]
+1.0.N: Trace Attempt  3	[0.18 s]
+1.0.K: Trace Attempt  3	[0.20 s]
+1.0.K: Trace Attempt  4	[0.20 s]
+1.0.AD: Trace Attempt  2	[0.20 s]
+1.0.I: Trace Attempt  5	[0.22 s]
+1.0.K: Trace Attempt  5	[0.20 s]
+1.0.Bm: A trace with 1 cycles was found. [0.12 s]
+INFO (IPF047): 1.0.Bm: The cover property "mem_core_top.cover_delete" was covered in 1 cycles in 0.19 s.
+1.0.AB: Trace Attempt  1	[0.23 s]
+1.0.AB: Trace Attempt  2	[0.23 s]
+1.0.AB: Trace Attempt  3	[0.23 s]
+1.0.AB: Trace Attempt  4	[0.23 s]
+1.0.AB: Trace Attempt  5	[0.23 s]
+1.0.AD: Trace Attempt  3	[0.21 s]
+1.0.AD: Trace Attempt  5	[0.23 s]
+1.0.N: Trace Attempt  5	[0.23 s]
+1.0.AM: Trace Attempt  3	[0.24 s]
+1.0.Ht: Trace Attempt  1	[0.29 s]
+1.0.Ht: Trace Attempt  2	[0.29 s]
+1.0.Ht: A trace with 2 cycles was found. [0.30 s]
+INFO (IPF047): 1.0.Ht: The cover property "mem_core_top.resource_constrain_2:precondition1" was covered in 2 cycles in 0.32 s.
+1.0.Q3: Cycle 32, State Sig: aef632be
+1.0.L: Trace Attempt  1	[0.34 s]
+1.0.Ht: Trace Attempt  3	[0.33 s]
+1.0.Ht: A trace with 3 cycles was found. [0.33 s]
+INFO (IPF047): 1.0.Ht: The cover property "mem_core_top.resource_constrain_1:precondition1" was covered in 3 cycles in 0.39 s.
+1.0.Bm: Trace Attempt  2	[0.37 s]
+1.0.R:    0.08" ---- Attempting simultaneous proof of 9 remaining properties ----
+1.0.AM: Trace Attempt  5	[0.29 s]
+1.0.Ht: Trace Attempt  4	[0.39 s]
+1.0.Tri:    0.08" ---- Launching main thread ----
+1.0.Ht: A trace with 4 cycles was found. [0.40 s]
+INFO (IPF047): 1.0.Ht: The cover property "mem_core_top.assert_qed_match:precondition1" was covered in 4 cycles in 0.50 s.
+1.0.I: Trace Attempt  2	[0.38 s]
+1.0.I: Trace Attempt  3	[0.39 s]
+1.0.I: Trace Attempt  5	[0.42 s]
+1.0.Tri:    0.14" ---- Launching abstraction thread ----
+1.0.Ht: Trace Attempt  5	[0.48 s]
+1.0.Tri:    0.15" ---- Launching multi-phase simplification thread ----
+1.0.L: Trace Attempt  1	[0.51 s]
+1.0.Tri: Trace Attempt  2	[0.37 s]
+1.0.AG: Partitioning 3 assumptions over 16 inputs...
+1.0.J: Trace Attempt  1	[0.53 s]
+1.0.J: Trace Attempt  1	[0.53 s]
+1.0.J: Trace Attempt  1	[0.54 s]
+1.0.J: Trace Attempt  2	[0.54 s]
+1.0.J: Trace Attempt  1	[0.54 s]
+1.0.J: Trace Attempt  3	[0.54 s]
+1.0.J: Trace Attempt  1	[0.54 s]
+1.0.J: Trace Attempt  4	[0.54 s]
+1.0.J: Trace Attempt  1	[0.54 s]
+1.0.J: Trace Attempt  1	[0.55 s]
+1.0.Ht: Trace Attempt  6	[0.54 s]
+1.0.Ht: A trace with 6 cycles was found. [0.54 s]
+INFO (IPF047): 1.0.Ht: The cover property "mem_core_top.assert_response_bound:precondition1" was covered in 6 cycles in 0.61 s.
+1.0.J: Trace Attempt  1	[0.55 s]
+1.0.J: Trace Attempt  1	[0.56 s]
+1.0.J: Trace Attempt  1	[0.57 s]
+1.0.Tri: Trace Attempt  3	[0.39 s]
+1.0.Tri: Trace Attempt  4	[0.42 s]
+1.0.Tri: Trace Attempt  5	[0.43 s]
+1.0.J: Trace Attempt  1	[0.59 s]
+1.0.Bm: Trace Attempt  3	[0.61 s]
+1.0.J: Trace Attempt  1	[0.62 s]
+1.0.Ht: Trace Attempt  7	[0.67 s]
+1.0.J: Trace Attempt  1	[0.67 s]
+1.0.U: Trace Attempt  1	[0.69 s]
+1.0.L: Trace Attempt  1	[0.73 s]
+1.0.J: Trace Attempt  1	[0.73 s]
+1.0.Q3: Cycle 64, State Sig: 149116b8
+1.0.J: Trace Attempt  1	[0.83 s]
+1.0.L: Trace Attempt  2	[0.91 s]
+1.0.Tri:    0.60" Simplification phase 1 complete
+1.0.C: Partitioning 3 assumptions over 1 inputs...
+1.0.G: Partitioning 3 assumptions over 1 inputs...
+1.0.G2: Partitioning 3 assumptions over 1 inputs...
+1.0.U: Trace Attempt  2	[0.99 s]
+1.0.J: Trace Attempt  1	[0.98 s]
+1.0.C: Trace Attempt  8	[0.21 s]
+1.0.C: Per property time limit expired (0.97 s) [0.97 s]
+1.0.C: Stopped processing property "mem_core_top.assert_response_bound"	[0.97 s].
+1.0.C: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.Hps: Stopped processing property "mem_core_top.assert_response_bound"	[0.99 s].
+1.0.Hps: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.Hts: Stopped processing property "mem_core_top.assert_response_bound"	[0.86 s].
+1.0.Hts: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.C2: Stopped processing property "mem_core_top.assert_response_bound"	[0.98 s].
+1.0.C2: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.G2: Stopped processing property "mem_core_top.assert_response_bound"	[0.86 s].
+1.0.G: Stopped processing property "mem_core_top.assert_response_bound"	[0.86 s].
+1.0.G: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.G2: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.M: Stopped processing property "mem_core_top.assert_response_bound"	[0.86 s].
+1.0.M: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.AM: Stopped processing property "mem_core_top.assert_response_bound"	[0.86 s].
+1.0.AM: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.AG: Stopped processing property "mem_core_top.assert_response_bound"	[0.86 s].
+1.0.AG: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.N: Stopped processing property "mem_core_top.assert_response_bound"	[0.86 s].
+1.0.N: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.AB: Stopped processing property "mem_core_top.assert_response_bound"	[0.98 s].
+1.0.AB: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.D: Stopped processing property "mem_core_top.assert_response_bound"	[0.98 s].
+1.0.D: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.I: Stopped processing property "mem_core_top.assert_response_bound"	[0.99 s].
+1.0.I: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.AD: Stopped processing property "mem_core_top.assert_response_bound"	[0.97 s].
+1.0.AD: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.K: Stopped processing property "mem_core_top.assert_response_bound"	[0.98 s].
+1.0.K: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.B: Stopped processing property "mem_core_top.assert_response_bound"	[0.87 s].
+1.0.B: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.Bm: Trace Attempt  4	[1.04 s]
+1.0.AB: Trace Attempt  1	[0.04 s]
+1.0.AM: Trace Attempt  1	[0.04 s]
+1.0.C2: Trace Attempt  1	[0.04 s]
+1.0.AD: Trace Attempt  1	[0.04 s]
+1.0.N: Trace Attempt  1	[0.04 s]
+1.0.I: Trace Attempt  1	[0.04 s]
+1.0.K: Trace Attempt  1	[0.04 s]
+1.0.AG: Trace Attempt  1	[0.04 s]
+1.0.C: Trace Attempt  1	[0.05 s]
+1.0.AM: Trace Attempt  1	[0.05 s]
+1.0.AB: Trace Attempt  1	[0.05 s]
+1.0.AM: Trace Attempt  2	[0.05 s]
+1.0.AB: Trace Attempt  2	[0.05 s]
+1.0.AB: Trace Attempt  3	[0.05 s]
+1.0.AM: Trace Attempt  3	[0.05 s]
+1.0.C2: Partitioning 0 assumptions over 0 inputs...
+1.0.C2: Iteration  1	[0.05 s]
+1.0.C2: Iteration  2	[0.05 s]
+1.0.C2: Iteration  3	[0.05 s]
+1.0.AD: Trace Attempt  1	[0.05 s]
+1.0.N: Trace Attempt  1	[0.05 s]
+1.0.AD: Trace Attempt  2	[0.05 s]
+1.0.I: Trace Attempt  1	[0.05 s]
+1.0.K: Trace Attempt  1	[0.05 s]
+1.0.AD: Trace Attempt  3	[0.06 s]
+1.0.AB: Trace Attempt  1	[0.06 s]
+1.0.AB: Trace Attempt  2	[0.06 s]
+1.0.C: Partitioning 0 assumptions over 0 inputs...
+1.0.C: Iteration  1	[0.06 s]
+1.0.C: Iteration  2	[0.06 s]
+1.0.AM: Trace Attempt  1	[0.07 s]
+1.0.AM: Trace Attempt  2	[0.07 s]
+1.0.AD: Trace Attempt  1	[0.07 s]
+1.0.AD: Trace Attempt  2	[0.07 s]
+1.0.AG: Partitioning 3 assumptions over 50 inputs...
+1.0.AB: Trace Attempt  3	[0.07 s]
+1.0.AM: Trace Attempt  3	[0.08 s]
+1.0.AD: Trace Attempt  3	[0.08 s]
+1.0.D: Trace Attempt  1	[0.09 s]
+1.0.AB: Trace Attempt  4	[0.09 s]
+1.0.AM: Trace Attempt  4	[0.10 s]
+1.0.AD: Trace Attempt  4	[0.10 s]
+1.0.Tri:    0.80" Simplification phase 2 complete
+1.0.Tri: Trace Attempt 15	[0.81 s]
+1.0.Tri: Per property time limit expired (0.96 s) [0.97 s]
+1.0.Tri: Stopped processing property "mem_core_top.assert_response_bound"	[0.84 s].
+1.0.Tri: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.Tri: Trace Attempt  1	[0.00 s]
+1.0.J: Trace Attempt  1	[1.13 s]
+1.0.M: Trace Attempt  1	[0.11 s]
+1.0.B: Trace Attempt  1	[0.13 s]
+1.0.U: Trace Attempt  3	[1.19 s]
+1.0.AM: Trace Attempt  5	[0.16 s]
+1.0.L: Trace Attempt  1	[1.22 s]
+1.0.I: Trace Attempt  2	[0.18 s]
+1.0.AB: Trace Attempt  5	[0.19 s]
+1.0.Tri:    0.90" ---- Launching main thread ----
+1.0.M: Trace Attempt  2	[0.20 s]
+1.0.AD: Trace Attempt  5	[0.20 s]
+1.0.Hts: Trace Attempt  1	[0.20 s]
+1.0.Hts: Trace Attempt  2	[0.20 s]
+1.0.Hts: Trace Attempt  3	[0.21 s]
+1.0.D: Trace Attempt  2	[0.23 s]
+1.0.Hts: Trace Attempt  4	[0.24 s]
+1.0.AG: Iteration  1	[0.06 s]
+1.0.U: Trace Attempt  4	[1.29 s]
+1.0.AG: Iteration  2	[0.06 s]
+1.0.I: Trace Attempt  2	[0.25 s]
+1.0.I: Trace Attempt  3	[0.25 s]
+1.0.I: Trace Attempt  4	[0.25 s]
+1.0.J: Trace Attempt  1	[1.28 s]
+1.0.AG: Iteration  3	[0.06 s]
+1.0.AG: Trace Attempt  1	[0.27 s]
+1.0.AG: Trace Attempt  2	[0.27 s]
+1.0.B: Trace Attempt  2	[0.27 s]
+1.0.C2: Trace Attempt  3	[0.28 s]
+1.0.AG: Trace Attempt  3	[0.28 s]
+1.0.C: Trace Attempt  3	[0.28 s]
+1.0.AG: Trace Attempt  4	[0.29 s]
+1.0.Hts: Trace Attempt  5	[0.30 s]
+1.0.N: Trace Attempt  3	[0.33 s]
+1.0.K: Trace Attempt  3	[0.35 s]
+1.0.C: Partitioning 1 assumptions over 1 inputs...
+1.0.AG: Trace Attempt  5	[0.35 s]
+1.0.C: Iteration  1	[0.35 s]
+1.0.C: Iteration  2	[0.35 s]
+1.0.C: Iteration  3	[0.35 s]
+1.0.C: Iteration  4	[0.35 s]
+1.0.Bm: Trace Attempt  5	[1.39 s]
+1.0.C2: Partitioning 1 assumptions over 1 inputs...
+1.0.Tri:    1.07" ---- Launching abstraction thread ----
+1.0.C2: Iteration  1	[0.36 s]
+1.0.C2: Iteration  2	[0.36 s]
+1.0.U: Trace Attempt  5	[1.42 s]
+1.0.L: Trace Attempt  2	[1.44 s]
+1.0.J: Trace Attempt  1	[1.42 s]
+1.0.Tri:    1.10" ---- Launching multi-phase simplification thread ----
+1.0.K: Trace Attempt  1	[0.42 s]
+1.0.R: Trace Attempt  1	[1.48 s]
+1.0.R: Trace Attempt  2	[1.48 s]
+1.0.R:    1.18" ---- Attempting simultaneous proof of 2 remaining properties ----
+1.0.B: Trace Attempt  3	[0.47 s]
+1.0.Hps: Trace Attempt  1	[0.49 s]
+1.0.M: Trace Attempt  3	[0.51 s]
+1.0.J: Trace Attempt  1	[1.56 s]
+1.0.J: Trace Attempt  1	[1.69 s]
+1.0.L: Trace Attempt  3	[1.73 s]
+1.0.Tri: Trace Attempt  2	[0.62 s]
+1.0.Tri: Trace Attempt  3	[0.65 s]
+1.0.Hps: Trace Attempt  2	[0.75 s]
+1.0.C2: Trace Attempt  4	[0.77 s]
+1.0.C: Trace Attempt  4	[0.79 s]
+1.0.J: Trace Attempt  1	[1.83 s]
+1.0.I: Trace Attempt  4	[0.84 s]
+1.0.K: Trace Attempt  4	[0.85 s]
+1.0.B: Trace Attempt  4	[0.86 s]
+1.0.N: Trace Attempt  4	[0.86 s]
+1.0.D: Trace Attempt  3	[0.92 s]
+1.0.J: Trace Attempt  1	[1.97 s]
+1.0.Hts: Trace Attempt  8	[0.64 s]
+1.0.Hts: Per property time limit expired (1.00 s) [1.00 s]
+1.0.Hts: Stopped processing property "mem_core_top.assert_qed_match"	[1.00 s].
+1.0.Hts: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.Hts: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Hps: Per property time limit expired (1.00 s) [1.00 s]
+1.0.Hps: Stopped processing property "mem_core_top.assert_qed_match"	[1.00 s].
+1.0.Hps: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.Hps: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Hts: Trace Attempt  1	[0.02 s]
+1.0.Hts: Trace Attempt  2	[0.02 s]
+1.0.Hts: Trace Attempt  3	[0.02 s]
+1.0.Hts: Trace Attempt  4	[0.02 s]
+1.0.Hts: Trace Attempt  5	[0.02 s]
+1.0.AM: Stopped processing property "mem_core_top.assert_qed_match"	[1.02 s].
+1.0.AM: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.AM: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.AM: Trace Attempt  1	[0.02 s]
+1.0.AM: Trace Attempt  1	[0.03 s]
+1.0.AM: Trace Attempt  2	[0.03 s]
+1.0.AM: Trace Attempt  3	[0.03 s]
+1.0.Hps: Trace Attempt  1	[0.06 s]
+1.0.Hps: Trace Attempt  2	[0.07 s]
+1.0.M: Stopped processing property "mem_core_top.assert_qed_match"	[1.07 s].
+1.0.M: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.M: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Hps: Trace Attempt  3	[0.07 s]
+1.0.AM: Trace Attempt  1	[0.05 s]
+1.0.AM: Trace Attempt  2	[0.05 s]
+1.0.AM: Trace Attempt  3	[0.06 s]
+1.0.AM: Trace Attempt  4	[0.06 s]
+1.0.AM: Trace Attempt  5	[0.06 s]
+1.0.Hps: Trace Attempt  4	[0.08 s]
+1.0.AG: Stopped processing property "mem_core_top.assert_qed_match"	[1.08 s].
+1.0.AG: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.AG: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Hps: Trace Attempt  5	[0.08 s]
+1.0.C: Stopped processing property "mem_core_top.assert_qed_match"	[1.09 s].
+1.0.C: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.C: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.M: Trace Attempt  1	[0.02 s]
+1.0.M: Trace Attempt  2	[0.02 s]
+1.0.J: Trace Attempt  1	[2.11 s]
+1.0.Tri: Trace Attempt  4	[0.99 s]
+1.0.Tri: Stopped processing property "mem_core_top.assert_qed_match"	[0.99 s].
+1.0.Tri: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.Tri: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Tri: Trace Attempt  1	[0.00 s]
+1.0.AG: Trace Attempt  1	[0.02 s]
+1.0.M: Trace Attempt  3	[0.03 s]
+1.0.C2: Stopped processing property "mem_core_top.assert_qed_match"	[1.11 s].
+1.0.C2: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.C2: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.AG: Partitioning 3 assumptions over 50 inputs...
+1.0.AG: Iteration  1	[0.03 s]
+1.0.AG: Iteration  2	[0.03 s]
+1.0.AG: Iteration  3	[0.03 s]
+1.0.AG: Trace Attempt  1	[0.05 s]
+1.0.AG: Trace Attempt  2	[0.05 s]
+1.0.AG: Trace Attempt  3	[0.05 s]
+1.0.AG: Trace Attempt  4	[0.05 s]
+1.0.AG: Trace Attempt  5	[0.06 s]
+1.0.Q3: Cycle 128, State Sig: f3cdc20
+1.0.AB: Stopped processing property "mem_core_top.assert_qed_match"	[1.15 s].
+1.0.AB: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.AB: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.I: Stopped processing property "mem_core_top.assert_qed_match"	[1.17 s].
+1.0.I: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.I: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.AB: Trace Attempt  1	[0.02 s]
+1.0.D: Stopped processing property "mem_core_top.assert_qed_match"	[1.18 s].
+1.0.D: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.D: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.AB: Trace Attempt  1	[0.04 s]
+1.0.AB: Trace Attempt  2	[0.04 s]
+1.0.AB: Trace Attempt  3	[0.04 s]
+1.0.AB: Trace Attempt  1	[0.04 s]
+1.0.AB: Trace Attempt  2	[0.04 s]
+1.0.AB: Trace Attempt  3	[0.04 s]
+1.0.AB: Trace Attempt  4	[0.04 s]
+1.0.AB: Trace Attempt  5	[0.04 s]
+1.0.Tri:    1.90" ---- Launching main thread ----
+1.0.N: Stopped processing property "mem_core_top.assert_qed_match"	[1.20 s].
+1.0.N: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.N: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.B: Stopped processing property "mem_core_top.assert_qed_match"	[1.20 s].
+1.0.B: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.B: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.K: Stopped processing property "mem_core_top.assert_qed_match"	[1.21 s].
+1.0.K: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.K: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.L: Trace Attempt  1	[2.25 s]
+1.0.B: Trace Attempt  1	[0.02 s]
+1.0.B: Trace Attempt  2	[0.02 s]
+1.0.B: Trace Attempt  3	[0.03 s]
+1.0.AD: Stopped processing property "mem_core_top.assert_qed_match"	[1.23 s].
+1.0.AD: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.AD: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.AM: Trace Attempt  3	[0.21 s]
+1.0.B: Trace Attempt  4	[0.03 s]
+1.0.B: Trace Attempt  5	[0.04 s]
+1.0.Tri:    1.94" ---- Launching abstraction thread ----
+1.0.J: Trace Attempt  1	[2.27 s]
+1.0.Tri:    1.95" ---- Launching multi-phase simplification thread ----
+1.0.AD: Trace Attempt  1	[0.02 s]
+1.0.AD: Trace Attempt  1	[0.03 s]
+1.0.AD: Trace Attempt  2	[0.03 s]
+1.0.I: Trace Attempt  2	[0.09 s]
+1.0.AD: Trace Attempt  3	[0.03 s]
+1.0.AD: Trace Attempt  1	[0.04 s]
+1.0.AD: Trace Attempt  2	[0.04 s]
+1.0.N: Trace Attempt  3	[0.07 s]
+1.0.AM: Trace Attempt  5	[0.24 s]
+1.0.K: Trace Attempt  1	[0.05 s]
+1.0.K: Trace Attempt  2	[0.05 s]
+1.0.AD: Trace Attempt  3	[0.04 s]
+1.0.K: Trace Attempt  3	[0.06 s]
+1.0.AD: Trace Attempt  4	[0.04 s]
+1.0.AD: Trace Attempt  5	[0.04 s]
+1.0.K: Trace Attempt  4	[0.06 s]
+1.0.I: Trace Attempt  3	[0.10 s]
+1.0.K: Trace Attempt  5	[0.07 s]
+1.0.I: Trace Attempt  5	[0.13 s]
+1.0.N: Trace Attempt  5	[0.12 s]
+1.0.AB: Trace Attempt  1	[0.20 s]
+1.0.AB: Trace Attempt  2	[0.21 s]
+1.0.AB: Trace Attempt  3	[0.21 s]
+1.0.AB: Trace Attempt  4	[0.21 s]
+1.0.AB: Trace Attempt  5	[0.21 s]
+1.0.J: Trace Attempt  1	[2.41 s]
+1.0.AD: Trace Attempt  2	[0.21 s]
+1.0.AD: Trace Attempt  3	[0.22 s]
+1.0.AD: Trace Attempt  5	[0.24 s]
+1.0.AG: Partitioning 3 assumptions over 16 inputs...
+1.0.Tri:    2.20" Simplification phase 1 complete
+1.0.R: Trace Attempt  1	[2.53 s]
+1.0.R: Trace Attempt  2	[2.53 s]
+1.0.R: Trace Attempt  3	[2.55 s]
+1.0.R: Trace Attempt  4	[2.56 s]
+1.0.J: Trace Attempt  1	[2.55 s]
+1.0.R:    2.25" ---- Attempting simultaneous proof of 2 remaining properties ----
+1.0.J: Trace Attempt  1	[2.68 s]
+1.0.Tri:    2.38" Simplification phase 2 complete
+1.0.C: Partitioning 3 assumptions over 1 inputs...
+1.0.J: Trace Attempt  1	[2.82 s]
+1.0.C2: Partitioning 3 assumptions over 1 inputs...
+1.0.J: Trace Attempt  1	[2.96 s]
+1.0.L: Trace Attempt  2	[3.13 s]
+1.0.J: Trace Attempt  1	[3.12 s]
+1.0.Tri:    2.85" Simplification phase 3 complete
+   2.85" ---- Completed simplification thread ----
+1.0.Tri:    2.85" ---- Restarting main thread on simplified netlist ----
+1.0.Tri:    2.90" ---- Restarting abstraction thread on simplified netlist ----
+1.0.J: Trace Attempt  1	[3.27 s]
+1.0.J: Trace Attempt  1	[3.41 s]
+1.0.R: Trace Attempt  1	[3.54 s]
+1.0.R: Trace Attempt  2	[3.54 s]
+1.0.J: Trace Attempt  1	[3.56 s]
+1.0.R: Trace Attempt  3	[3.58 s]
+1.0.R: Trace Attempt  4	[3.61 s]
+1.0.R: Trace Attempt  5	[3.61 s]
+1.0.R:    3.35" ---- Attempting simultaneous proof of 2 remaining properties ----
+1.0.J: Trace Attempt  1	[3.70 s]
+1.0.J: Trace Attempt  1	[3.84 s]
+1.0.J: Trace Attempt  1	[3.98 s]
+1.0.Q3: Trace Attempt 188	[4.15 s]
+1.0.J: Trace Attempt  1	[4.12 s]
+1.0.J: Trace Attempt  1	[4.26 s]
+1.0.J: Trace Attempt  1	[4.41 s]
+1.0.J: Trace Attempt  1	[4.55 s]
+1.0.R: Trace Attempt  1	[4.61 s]
+1.0.R: Trace Attempt  2	[4.61 s]
+1.0.R: Trace Attempt  3	[4.65 s]
+1.0.J: Trace Attempt  1	[4.70 s]
+1.0.R: Trace Attempt  4	[4.77 s]
+1.0.Q3: Trace Attempt 200	[4.63 s]
+1.0.Q3: A sanity trace with 200 cycles was found. [4.63 s]
+1.0.Q3: Restart 1, Seed 90daae555ddbd22f, 50.0%
+1.0.Q3: Trace Attempt  1	[4.88 s]
+1.0.R: Trace Attempt  5	[4.88 s]
+1.0.AB: Trace Attempt  1	[2.74 s]
+1.0.AB: Trace Attempt  2	[2.74 s]
+1.0.AB: Trace Attempt  3	[2.75 s]
+1.0.AB: Trace Attempt  4	[2.75 s]
+1.0.AB: Trace Attempt  5	[2.75 s]
+1.0.J: Trace Attempt  1	[4.84 s]
+1.0.Q3: Trace Attempt  2	[5.02 s]
+1.0.Q3: Trace Attempt  3	[5.02 s]
+1.0.AG: Iteration  1	[0.21 s]
+1.0.J: Trace Attempt  1	[4.98 s]
+1.0.Q3: Trace Attempt  4	[5.04 s]
+1.0.Q3: Trace Attempt  5	[5.04 s]
+1.0.R:    4.74" ---- Attempting simultaneous proof of 2 remaining properties ----
+1.0.J: Trace Attempt  1	[5.12 s]
+1.0.J: Trace Attempt  1	[5.26 s]
+1.0.AD: Trace Attempt  2	[3.10 s]
+1.0.AD: Trace Attempt  3	[3.11 s]
+1.0.AD: Trace Attempt  5	[3.14 s]
+1.0.J: Trace Attempt  1	[5.40 s]
+1.0.U: Trace Attempt 21	[5.50 s]
+1.0.J: Trace Attempt  1	[5.54 s]
+1.0.J: Trace Attempt  1	[5.65 s]
+1.0.L: Trace Attempt  3	[5.71 s]
+1.0.J: Trace Attempt  1	[5.80 s]
+1.0.AG: Iteration  2	[0.21 s]
+1.0.J: Trace Attempt  1	[5.95 s]
+1.0.R: Trace Attempt  1	[5.98 s]
+1.0.R: Trace Attempt  2	[5.98 s]
+1.0.R: Trace Attempt  3	[6.02 s]
+1.0.AG: Iteration  3	[0.21 s]
+1.0.J: Trace Attempt  1	[6.10 s]
+1.0.R: Trace Attempt  4	[6.14 s]
+1.0.AG: Iteration  4	[0.21 s]
+1.0.M: Trace Attempt  9	[4.12 s]
+1.0.J: Trace Attempt  1	[6.25 s]
+1.0.B: Trace Attempt 19	[4.05 s]
+1.0.Tri: Trace Attempt 18	[4.25 s]
+1.0.J: Trace Attempt  1	[6.40 s]
+1.0.J: Trace Attempt  1	[6.55 s]
+1.0.Hps: Trace Attempt 18	[4.59 s]
+1.0.J: Trace Attempt  1	[6.70 s]
+1.0.AM: Trace Attempt 16	[4.69 s]
+1.0.R: Trace Attempt  5	[6.77 s]
+1.0.J: Trace Attempt  1	[6.85 s]
+1.0.Hts: Trace Attempt 19	[4.94 s]
+1.0.J: Trace Attempt  1	[7.00 s]
+1.0.C2: Iteration  1	[0.07 s]
+1.0.J: Trace Attempt  1	[7.16 s]
+1.0.C: Iteration  1	[0.05 s]
+1.0.J: Trace Attempt  1	[7.31 s]
+1.0.R:    7.08" ---- Attempting simultaneous proof of 2 remaining properties ----
+1.0.J: Trace Attempt  1	[7.46 s]
+1.0.J: Trace Attempt  1	[7.62 s]
+1.0.N: Trace Attempt 11	[5.42 s]
+1.0.AG: Iteration  5	[0.21 s]
+1.0.J: Trace Attempt  1	[7.78 s]
+1.0.AG: Iteration  6	[0.21 s]
+1.0.J: Trace Attempt  1	[7.93 s]
+1.0.AG: Iteration  7	[0.21 s]
+1.0.J: Trace Attempt  1	[8.10 s]
+1.0.L: Trace Attempt  4	[8.21 s]
+1.0.J: Trace Attempt  1	[8.25 s]
+1.0.R: Trace Attempt  1	[8.41 s]
+1.0.R: Trace Attempt  2	[8.41 s]
+1.0.J: Trace Attempt  1	[8.41 s]
+1.0.R: Trace Attempt  3	[8.46 s]
+1.0.Bm: Trace Attempt 10	[8.50 s]
+1.0.R: Trace Attempt  4	[8.58 s]
+1.0.J: Trace Attempt  1	[8.57 s]
+1.0.AM: Trace Attempt  3	[6.58 s]
+1.0.AM: Trace Attempt  5	[6.61 s]
+1.0.K: Trace Attempt 20	[6.46 s]
+1.0.J: Trace Attempt  1	[8.72 s]
+1.0.J: Trace Attempt  1	[8.87 s]
+1.0.J: Trace Attempt  1	[9.02 s]
+1.0.Q3: Trace Attempt 182	[9.07 s]
+1.0.J: Trace Attempt  1	[9.17 s]
+1.0.J: Trace Attempt  1	[9.32 s]
+1.0.C: Iteration  2	[0.05 s]
+1.0.C2: Iteration  2	[0.07 s]
+1.0.J: Trace Attempt  1	[9.48 s]
+1.0.C: Iteration  3	[0.05 s]
+1.0.C2: Iteration  3	[0.07 s]
+1.0.J: Trace Attempt  1	[9.63 s]
+1.0.C: Iteration  4	[0.05 s]
+1.0.C2: Iteration  4	[0.07 s]
+1.0.C: Iteration  5	[0.05 s]
+1.0.J: Trace Attempt  1	[9.79 s]
+1.0.U: Trace Attempt 35	[9.81 s]
+1.0.C2: Iteration  5	[0.07 s]
+1.0.J: Trace Attempt  1	[9.94 s]
+1.0.R: Trace Attempt  5	[10.06 s]
+1.0.J: Trace Attempt  1	[10.09 s]
+1.0.Q3: Restart 2, Seed a50af29b51ef7bfa, 50.0%
+1.0.Q3: Trace Attempt  1	[10.16 s]
+1.0.Q3: Trace Attempt  2	[10.16 s]
+1.0.Q3: Trace Attempt  3	[10.16 s]
+1.0.Q3: Trace Attempt  4	[10.17 s]
+1.0.Q3: Trace Attempt  5	[10.18 s]
+1.0.J: Trace Attempt  1	[10.24 s]
+1.0.J: Trace Attempt  1	[10.39 s]
+1.0.J: Trace Attempt  1	[10.54 s]
+1.0.AG: Iteration  8	[0.21 s]
+1.0.J: Trace Attempt  1	[10.69 s]
+1.0.J: Trace Attempt  1	[10.84 s]
+1.0.L: Trace Attempt  1	[10.89 s]
+1.0.AG: Iteration  9	[0.21 s]
+1.0.J: Trace Attempt  1	[10.98 s]
+1.0.J: Trace Attempt  1	[11.12 s]
+1.0.J: Trace Attempt  1	[11.27 s]
+1.0.L: Trace Attempt  2	[11.33 s]
+1.0.J: Trace Attempt  1	[11.41 s]
+1.0.J: Trace Attempt  1	[11.55 s]
+1.0.J: Trace Attempt  1	[11.69 s]
+1.0.J: Trace Attempt  1	[11.84 s]
+1.0.J: Trace Attempt  1	[11.99 s]
+1.0.L: Trace Attempt  3	[12.03 s]
+1.0.N: Trace Attempt 13	[9.79 s]
+1.0.Hts: Per property time limit expired (10.00 s) [10.00 s]
+1.0.Hts: Stopped processing property "mem_core_top.assert_response_bound"	[10.00 s].
+1.0.Hts: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.Hps: Stopped processing property "mem_core_top.assert_response_bound"	[9.99 s].
+1.0.Hps: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.AM: Stopped processing property "mem_core_top.assert_response_bound"	[9.98 s].
+1.0.AM: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.AB: Stopped processing property "mem_core_top.assert_response_bound"	[9.85 s].
+1.0.AB: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.B: Stopped processing property "mem_core_top.assert_response_bound"	[9.80 s].
+1.0.B: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.N: Stopped processing property "mem_core_top.assert_response_bound"	[9.81 s].
+1.0.N: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.M: Stopped processing property "mem_core_top.assert_response_bound"	[9.93 s].
+1.0.M: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.K: Stopped processing property "mem_core_top.assert_response_bound"	[9.80 s].
+1.0.K: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.D: Stopped processing property "mem_core_top.assert_response_bound"	[9.83 s].
+1.0.D: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.AG: Stopped processing property "mem_core_top.assert_response_bound"	[9.94 s].
+1.0.AG: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.Tri: Stopped processing property "mem_core_top.assert_response_bound"	[9.93 s].
+1.0.Tri: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.Tri: Trace Attempt  1	[0.00 s]
+1.0.AD: Stopped processing property "mem_core_top.assert_response_bound"	[9.80 s].
+1.0.AD: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.C: Stopped processing property "mem_core_top.assert_response_bound"	[9.94 s].
+1.0.C: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.C2: Stopped processing property "mem_core_top.assert_response_bound"	[9.92 s].
+1.0.C2: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.AM: Trace Attempt  1	[0.03 s]
+1.0.AB: Trace Attempt  1	[0.04 s]
+1.0.AM: Trace Attempt  1	[0.04 s]
+1.0.AM: Trace Attempt  2	[0.04 s]
+1.0.AM: Trace Attempt  3	[0.04 s]
+1.0.AG: Trace Attempt  1	[0.03 s]
+1.0.AM: Trace Attempt  1	[0.05 s]
+1.0.AM: Trace Attempt  2	[0.05 s]
+1.0.AB: Trace Attempt  1	[0.05 s]
+1.0.AB: Trace Attempt  2	[0.05 s]
+1.0.AB: Trace Attempt  3	[0.05 s]
+1.0.AM: Trace Attempt  3	[0.06 s]
+1.0.AD: Trace Attempt  1	[0.04 s]
+1.0.AB: Trace Attempt  1	[0.07 s]
+1.0.AB: Trace Attempt  2	[0.07 s]
+1.0.AM: Trace Attempt  4	[0.07 s]
+1.0.AG: Partitioning 3 assumptions over 50 inputs...
+1.0.AD: Trace Attempt  1	[0.05 s]
+1.0.AD: Trace Attempt  2	[0.05 s]
+1.0.AB: Trace Attempt  3	[0.08 s]
+1.0.AD: Trace Attempt  3	[0.06 s]
+1.0.AD: Trace Attempt  1	[0.07 s]
+1.0.AD: Trace Attempt  2	[0.07 s]
+1.0.AB: Trace Attempt  4	[0.10 s]
+1.0.Tri:   11.81" ---- Launching main thread ----
+1.0.AD: Trace Attempt  3	[0.08 s]
+1.0.J: Trace Attempt  1	[12.13 s]
+1.0.B: Trace Attempt  1	[0.12 s]
+1.0.M: Trace Attempt  1	[0.11 s]
+1.0.AD: Trace Attempt  4	[0.10 s]
+1.0.AM: Trace Attempt  5	[0.15 s]
+1.0.Hts: Trace Attempt  1	[0.19 s]
+1.0.Hts: Trace Attempt  2	[0.19 s]
+1.0.Hts: Trace Attempt  3	[0.19 s]
+1.0.AB: Trace Attempt  5	[0.19 s]
+1.0.M: Trace Attempt  2	[0.20 s]
+1.0.Hts: Trace Attempt  4	[0.22 s]
+1.0.AD: Trace Attempt  5	[0.20 s]
+1.0.Tri:   11.93" ---- Launching abstraction thread ----
+1.0.AG: Iteration  1	[0.04 s]
+1.0.AG: Iteration  2	[0.04 s]
+1.0.Tri:   11.95" ---- Launching multi-phase simplification thread ----
+1.0.AG: Iteration  3	[0.04 s]
+1.0.J: Trace Attempt  1	[12.27 s]
+1.0.B: Trace Attempt  2	[0.25 s]
+1.0.AG: Trace Attempt  1	[0.23 s]
+1.0.AG: Trace Attempt  2	[0.24 s]
+1.0.AG: Trace Attempt  3	[0.25 s]
+1.0.Hts: Trace Attempt  5	[0.27 s]
+1.0.D: Trace Attempt  3	[0.27 s]
+1.0.AG: Trace Attempt  4	[0.27 s]
+1.0.N: Trace Attempt  4	[0.41 s]
+1.0.AG: Trace Attempt  5	[0.41 s]
+1.0.C: Trace Attempt  4	[0.41 s]
+1.0.Hps: Trace Attempt  1	[0.47 s]
+1.0.J: Trace Attempt  1	[12.49 s]
+1.0.C2: Trace Attempt  4	[0.45 s]
+1.0.B: Trace Attempt  3	[0.49 s]
+1.0.K: Trace Attempt  4	[0.50 s]
+1.0.M: Trace Attempt  3	[0.55 s]
+1.0.J: Trace Attempt  1	[12.73 s]
+1.0.Hps: Trace Attempt  2	[0.73 s]
+1.0.L: Trace Attempt  4	[12.88 s]
+1.0.J: Trace Attempt  1	[12.90 s]
+1.0.B: Trace Attempt  4	[0.89 s]
+1.0.I: Stopped processing property "mem_core_top.assert_response_bound"	[10.81 s].
+1.0.I: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.J: Trace Attempt  1	[13.05 s]
+1.0.M: Trace Attempt  4	[1.06 s]
+1.0.Hps: Trace Attempt  3	[1.09 s]
+1.0.J: Trace Attempt  1	[13.23 s]
+1.0.B: Trace Attempt  5	[1.30 s]
+1.0.J: Trace Attempt  1	[13.39 s]
+1.0.I: Trace Attempt  4	[0.48 s]
+1.0.D: Trace Attempt  4	[1.54 s]
+1.0.N: Trace Attempt  3	[1.56 s]
+1.0.J: Trace Attempt  1	[13.60 s]
+1.0.Hps: Trace Attempt  4	[1.59 s]
+1.0.K: Trace Attempt  1	[1.60 s]
+1.0.N: Trace Attempt  4	[1.60 s]
+1.0.K: Trace Attempt  2	[1.61 s]
+1.0.K: Trace Attempt  3	[1.63 s]
+1.0.K: Trace Attempt  4	[1.65 s]
+1.0.K: Trace Attempt  5	[1.67 s]
+1.0.J: Trace Attempt  1	[13.77 s]
+1.0.L: Trace Attempt  5	[13.89 s]
+1.0.J: Trace Attempt  1	[13.95 s]
+1.0.U: Trace Attempt 48	[14.10 s]
+1.0.J: Trace Attempt  1	[14.12 s]
+1.0.R: Trace Attempt  7	[14.14 s]
+1.0.Hps: Trace Attempt  5	[2.12 s]
+1.0.Q3: Trace Attempt 178	[14.21 s]
+1.0.N: Trace Attempt  5	[2.22 s]
+1.0.K: Trace Attempt  5	[2.23 s]
+1.0.J: Trace Attempt  1	[14.29 s]
+1.0.I: Trace Attempt  5	[1.36 s]
+1.0.J: Trace Attempt  1	[14.48 s]
+1.0.J: Trace Attempt  1	[14.67 s]
+1.0.J: Trace Attempt  1	[14.84 s]
+1.0.Q3: Restart 3, Seed 8039ff370aefafd0, 50.0%
+1.0.Q3: Trace Attempt  1	[15.03 s]
+1.0.Q3: Trace Attempt  2	[15.03 s]
+1.0.Q3: Trace Attempt  3	[15.03 s]
+1.0.Q3: Trace Attempt  4	[15.04 s]
+1.0.J: Trace Attempt  1	[15.01 s]
+1.0.Q3: Trace Attempt  5	[15.04 s]
+1.0.R:   14.73" ---- Attempting simultaneous proof of 2 remaining properties ----
+1.0.J: Trace Attempt  1	[15.17 s]
+1.0.Tri: Trace Attempt  5	[3.24 s]
+1.0.J: Trace Attempt  1	[15.36 s]
+1.0.K: Trace Attempt  1	[3.50 s]
+1.0.K: Trace Attempt  2	[3.51 s]
+1.0.N: Trace Attempt  3	[3.53 s]
+1.0.K: Trace Attempt  3	[3.53 s]
+1.0.J: Trace Attempt  1	[15.57 s]
+1.0.K: Trace Attempt  4	[3.56 s]
+1.0.N: Trace Attempt  4	[3.57 s]
+1.0.K: Trace Attempt  5	[3.58 s]
+1.0.Ht: Trace Attempt 11	[15.66 s]
+1.0.J: Trace Attempt  1	[15.82 s]
+1.0.J: Trace Attempt  1	[16.00 s]
+1.0.L: Trace Attempt  1	[16.06 s]
+1.0.R: Trace Attempt  1	[16.09 s]
+1.0.R: Trace Attempt  2	[16.09 s]
+1.0.R: Trace Attempt  3	[16.13 s]
+1.0.J: Trace Attempt  1	[16.18 s]
+1.0.R: Trace Attempt  4	[16.25 s]
+1.0.J: Trace Attempt  1	[16.36 s]
+1.0.D: Trace Attempt  5	[4.51 s]
+1.0.L: Trace Attempt  2	[16.57 s]
+1.0.J: Trace Attempt  1	[16.56 s]
+1.0.J: Trace Attempt  1	[16.75 s]
+1.0.J: Trace Attempt  1	[16.95 s]
+1.0.J: Trace Attempt  1	[17.12 s]
+1.0.J: Trace Attempt  1	[17.31 s]
+1.0.L: Trace Attempt  3	[17.36 s]
+1.0.J: Trace Attempt  1	[17.50 s]
+1.0.J: Trace Attempt  1	[17.68 s]
+1.0.G: Stopped processing property "mem_core_top.assert_qed_match"	[16.78 s].
+1.0.G: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.G: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.R: Trace Attempt  5	[17.87 s]
+1.0.J: Trace Attempt  1	[17.86 s]
+1.0.J: Trace Attempt  1	[18.05 s]
+1.0.L: Trace Attempt  4	[18.16 s]
+1.0.U: Trace Attempt 59	[18.22 s]
+1.0.J: Trace Attempt  1	[18.21 s]
+1.0.G2: Stopped processing property "mem_core_top.assert_qed_match"	[17.22 s].
+1.0.G2: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+1.0.G2: Starting proof for property "mem_core_top.assert_qed_match"	[0.00 s].
+1.0.J: Trace Attempt  1	[18.39 s]
+1.0.J: Trace Attempt  1	[18.54 s]
+1.0.J: Trace Attempt  1	[18.70 s]
+1.0.J: Trace Attempt  1	[18.87 s]
+1.0.L: Trace Attempt  5	[18.98 s]
+1.0.C: Trace Attempt  6	[6.96 s]
+1.0.J: Trace Attempt  1	[19.04 s]
+1.0.Q3: Trace Attempt 198	[19.07 s]
+1.0.C2: Trace Attempt  6	[6.99 s]
+1.0.K: Trace Attempt  1	[7.04 s]
+1.0.N: Trace Attempt  3	[7.04 s]
+1.0.K: Trace Attempt  2	[7.07 s]
+1.0.K: Trace Attempt  3	[7.13 s]
+1.0.Q3: Restart 4, Seed 945ea23616047c4c, 50.0%
+1.0.Q3: Trace Attempt  1	[19.19 s]
+1.0.Q3: Trace Attempt  2	[19.19 s]
+1.0.Q3: Trace Attempt  3	[19.20 s]
+1.0.Q3: Trace Attempt  4	[19.20 s]
+1.0.Q3: Trace Attempt  5	[19.20 s]
+1.0.J: Trace Attempt  1	[19.24 s]
+1.0.K: Trace Attempt  4	[7.24 s]
+1.0.K: Trace Attempt  5	[7.35 s]
+1.0.J: Trace Attempt  1	[19.41 s]
+1.0.N: Trace Attempt  4	[7.40 s]
+1.0.J: Trace Attempt  1	[19.59 s]
+1.0.B: Trace Attempt 10	[7.62 s]
+1.0.I: Trace Attempt  2	[6.70 s]
+1.0.J: Trace Attempt  1	[19.76 s]
+1.0.J: Trace Attempt  1	[19.92 s]
+1.0.I: Trace Attempt  3	[6.98 s]
+1.0.J: Trace Attempt  1	[20.09 s]
+1.0.J: Trace Attempt  1	[20.26 s]
+1.0.J: Trace Attempt  1	[20.42 s]
+1.0.J: Trace Attempt  1	[20.60 s]
+1.0.J: Trace Attempt  1	[20.77 s]
+1.0.J: Trace Attempt  1	[20.93 s]
+1.0.J: Trace Attempt  1	[21.10 s]
+1.0.J: Trace Attempt  1	[21.29 s]
+1.0.J: Trace Attempt  1	[21.45 s]
+1.0.J: Trace Attempt  1	[21.62 s]
+1.0.Bm: Trace Attempt 11	[21.70 s]
+1.0.D: Trace Attempt  6	[9.72 s]
+1.0.J: Trace Attempt  1	[21.78 s]
+1.0.J: Trace Attempt  1	[21.94 s]
+1.0.Hts: Trace Attempt 10	[4.02 s]
+1.0.Hts: Per property time limit expired (10.00 s) [10.00 s]
+1.0.Hts: Stopped processing property "mem_core_top.assert_qed_match"	[10.00 s].
+1.0.Hts: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.Hts: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Hps: Trace Attempt  7	[3.31 s]
+1.0.Hps: Per property time limit expired (10.00 s) [10.00 s]
+1.0.Hps: Stopped processing property "mem_core_top.assert_qed_match"	[10.00 s].
+1.0.Hps: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.Hps: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Hts: Trace Attempt  1	[0.02 s]
+1.0.Hts: Trace Attempt  2	[0.02 s]
+1.0.Hts: Trace Attempt  3	[0.02 s]
+1.0.Hts: Trace Attempt  4	[0.02 s]
+1.0.Hts: Trace Attempt  5	[0.02 s]
+1.0.Tri: Trace Attempt 10	[5.84 s]
+1.0.Tri: Per property time limit expired (10.00 s) [10.06 s]
+1.0.Tri: Stopped processing property "mem_core_top.assert_qed_match"	[10.07 s].
+1.0.Tri: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.Tri: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Tri: Trace Attempt  1	[0.00 s]
+1.0.M: Stopped processing property "mem_core_top.assert_qed_match"	[10.10 s].
+1.0.M: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.M: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.M: Trace Attempt  1	[0.01 s]
+1.0.M: Trace Attempt  2	[0.01 s]
+1.0.M: Trace Attempt  3	[0.02 s]
+1.0.AD: Stopped processing property "mem_core_top.assert_qed_match"	[10.10 s].
+1.0.AD: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.AD: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.K: Stopped processing property "mem_core_top.assert_qed_match"	[10.13 s].
+1.0.K: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.K: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.J: Trace Attempt  1	[22.16 s]
+1.0.I: Stopped processing property "mem_core_top.assert_qed_match"	[9.16 s].
+1.0.I: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.I: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.AD: Trace Attempt  1	[0.02 s]
+1.0.Hps: Trace Attempt  1	[0.16 s]
+1.0.Hps: Trace Attempt  2	[0.16 s]
+1.0.AD: Trace Attempt  1	[0.03 s]
+1.0.AD: Trace Attempt  2	[0.03 s]
+1.0.Hps: Trace Attempt  3	[0.16 s]
+1.0.N: Stopped processing property "mem_core_top.assert_qed_match"	[10.16 s].
+1.0.N: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.N: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.AD: Trace Attempt  3	[0.04 s]
+1.0.C: Stopped processing property "mem_core_top.assert_qed_match"	[10.14 s].
+1.0.C: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.C: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.C2: Stopped processing property "mem_core_top.assert_qed_match"	[10.13 s].
+1.0.C2: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.C2: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Hps: Trace Attempt  4	[0.17 s]
+1.0.AD: Trace Attempt  1	[0.04 s]
+1.0.AD: Trace Attempt  2	[0.04 s]
+1.0.AD: Trace Attempt  3	[0.04 s]
+1.0.AD: Trace Attempt  4	[0.04 s]
+1.0.AD: Trace Attempt  5	[0.04 s]
+1.0.Hps: Trace Attempt  5	[0.18 s]
+1.0.D: Stopped processing property "mem_core_top.assert_qed_match"	[10.17 s].
+1.0.D: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.D: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.AB: Stopped processing property "mem_core_top.assert_qed_match"	[10.18 s].
+1.0.AB: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.AB: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Tri:   21.89" ---- Launching main thread ----
+1.0.K: Trace Attempt  1	[0.06 s]
+1.0.K: Trace Attempt  2	[0.06 s]
+1.0.K: Trace Attempt  3	[0.06 s]
+1.0.K: Trace Attempt  4	[0.06 s]
+1.0.AG: Stopped processing property "mem_core_top.assert_qed_match"	[10.18 s].
+1.0.AG: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.AG: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.AB: Trace Attempt  1	[0.02 s]
+1.0.K: Trace Attempt  5	[0.06 s]
+1.0.AM: Stopped processing property "mem_core_top.assert_qed_match"	[10.20 s].
+1.0.AM: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.AM: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.AB: Trace Attempt  1	[0.03 s]
+1.0.AB: Trace Attempt  2	[0.03 s]
+1.0.AB: Trace Attempt  3	[0.03 s]
+1.0.AG: Trace Attempt  1	[0.01 s]
+1.0.AB: Trace Attempt  1	[0.03 s]
+1.0.AB: Trace Attempt  2	[0.03 s]
+1.0.AB: Trace Attempt  3	[0.03 s]
+1.0.I: Trace Attempt  2	[0.07 s]
+1.0.AB: Trace Attempt  4	[0.03 s]
+1.0.AB: Trace Attempt  5	[0.03 s]
+1.0.I: Trace Attempt  3	[0.08 s]
+1.0.AG: Partitioning 3 assumptions over 50 inputs...
+1.0.AM: Trace Attempt  1	[0.03 s]
+1.0.AG: Iteration  1	[0.02 s]
+1.0.N: Trace Attempt  3	[0.07 s]
+1.0.AG: Iteration  2	[0.02 s]
+1.0.AM: Trace Attempt  1	[0.04 s]
+1.0.AM: Trace Attempt  2	[0.04 s]
+1.0.AG: Iteration  3	[0.02 s]
+1.0.AM: Trace Attempt  3	[0.04 s]
+1.0.AG: Trace Attempt  1	[0.05 s]
+1.0.AG: Trace Attempt  2	[0.05 s]
+1.0.Tri:   21.95" ---- Launching abstraction thread ----
+1.0.AG: Trace Attempt  3	[0.05 s]
+1.0.AG: Trace Attempt  4	[0.05 s]
+1.0.AG: Trace Attempt  5	[0.05 s]
+1.0.I: Trace Attempt  5	[0.11 s]
+1.0.B: Stopped processing property "mem_core_top.assert_qed_match"	[10.25 s].
+1.0.B: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.B: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.Tri:   21.96" ---- Launching multi-phase simplification thread ----
+1.0.B: Trace Attempt  1	[0.01 s]
+1.0.B: Trace Attempt  2	[0.01 s]
+1.0.AM: Trace Attempt  1	[0.07 s]
+1.0.AM: Trace Attempt  2	[0.07 s]
+1.0.B: Trace Attempt  3	[0.02 s]
+1.0.AM: Trace Attempt  3	[0.07 s]
+1.0.AM: Trace Attempt  4	[0.07 s]
+1.0.B: Trace Attempt  4	[0.02 s]
+1.0.AM: Trace Attempt  5	[0.07 s]
+1.0.B: Trace Attempt  5	[0.02 s]
+1.0.N: Trace Attempt  5	[0.13 s]
+1.0.J: Trace Attempt  1	[22.33 s]
+1.0.U: Trace Attempt 69	[22.39 s]
+1.0.AD: Trace Attempt  2	[0.23 s]
+1.0.AD: Trace Attempt  3	[0.24 s]
+1.0.AD: Trace Attempt  5	[0.26 s]
+1.0.AB: Trace Attempt  1	[0.21 s]
+1.0.AB: Trace Attempt  2	[0.21 s]
+1.0.AB: Trace Attempt  3	[0.21 s]
+1.0.AB: Trace Attempt  4	[0.21 s]
+1.0.AB: Trace Attempt  5	[0.21 s]
+1.0.AM: Trace Attempt  3	[0.25 s]
+1.0.J: Trace Attempt  1	[22.47 s]
+1.0.Tri:   22.17" Simplification phase 1 complete
+1.0.AM: Trace Attempt  5	[0.31 s]
+1.0.J: Trace Attempt  1	[22.64 s]
+1.0.AG: Partitioning 3 assumptions over 16 inputs...
+1.0.Tri:   22.37" Simplification phase 2 complete
+1.0.J: Trace Attempt  1	[22.81 s]
+1.0.C: Partitioning 3 assumptions over 1 inputs...
+1.0.C2: Partitioning 3 assumptions over 1 inputs...
+1.0.Tri:   22.65" Simplification phase 3 complete
+  22.65" ---- Completed simplification thread ----
+1.0.Tri:   22.65" ---- Restarting main thread on simplified netlist ----
+1.0.J: Trace Attempt  1	[22.98 s]
+1.0.Tri:   22.69" ---- Restarting abstraction thread on simplified netlist ----
+1.0.J: Trace Attempt  1	[23.15 s]
+1.0.Q3: Trace Attempt 192	[23.22 s]
+1.0.J: Trace Attempt  1	[23.31 s]
+1.0.J: Trace Attempt  1	[23.51 s]
+1.0.Q3: Restart 5, Seed 4e1927dcbff6b982, 50.0%
+1.0.Q3: Trace Attempt  1	[23.59 s]
+1.0.Q3: Trace Attempt  2	[23.59 s]
+1.0.Q3: Trace Attempt  3	[23.60 s]
+1.0.Q3: Trace Attempt  4	[23.60 s]
+1.0.Q3: Trace Attempt  5	[23.61 s]
+1.0.J: Trace Attempt  1	[23.69 s]
+1.0.J: Trace Attempt  1	[23.88 s]
+1.0.J: Trace Attempt  1	[24.07 s]
+1.0.J: Trace Attempt  1	[24.27 s]
+1.0.J: Trace Attempt  1	[24.45 s]
+1.0.J: Trace Attempt  1	[24.65 s]
+1.0.AB: Trace Attempt  1	[2.54 s]
+1.0.AB: Trace Attempt  2	[2.54 s]
+1.0.AB: Trace Attempt  3	[2.54 s]
+1.0.AB: Trace Attempt  4	[2.54 s]
+1.0.AB: Trace Attempt  5	[2.55 s]
+1.0.J: Trace Attempt  1	[24.86 s]
+1.0.AD: Trace Attempt  2	[2.87 s]
+1.0.AD: Trace Attempt  3	[2.88 s]
+1.0.AD: Trace Attempt  5	[2.91 s]
+1.0.J: Trace Attempt  1	[25.06 s]
+1.0.AG: Iteration  1	[0.23 s]
+1.0.J: Trace Attempt  1	[25.25 s]
+1.0.J: Trace Attempt  1	[25.42 s]
+1.0.J: Trace Attempt  1	[25.61 s]
+1.0.J: Trace Attempt  1	[25.82 s]
+1.0.J: Trace Attempt  1	[26.06 s]
+1.0.AG: Iteration  2	[0.23 s]
+1.0.M: Trace Attempt  9	[4.03 s]
+1.0.J: Trace Attempt  1	[26.25 s]
+1.0.AG: Iteration  3	[0.23 s]
+1.0.AG: Iteration  4	[0.23 s]
+1.0.L: Trace Attempt  9	[26.40 s]
+1.0.Hts: Trace Attempt 19	[4.42 s]
+1.0.J: Trace Attempt  1	[26.45 s]
+1.0.J: Trace Attempt  1	[26.68 s]
+1.0.B: Trace Attempt 19	[4.41 s]
+1.0.U: Trace Attempt 79	[26.75 s]
+1.0.J: Trace Attempt  1	[27.02 s]
+1.0.J: Trace Attempt  1	[27.34 s]
+1.0.C2: Iteration  1	[0.05 s]
+1.0.AM: Trace Attempt 16	[5.20 s]
+1.0.Q3: Trace Attempt 185	[27.63 s]
+1.0.N: Trace Attempt 11	[5.43 s]
+1.0.J: Trace Attempt  1	[27.65 s]
+1.0.C: Iteration  1	[0.04 s]
+1.0.J: Trace Attempt  1	[27.92 s]
+1.0.Hps: Trace Attempt 19	[6.02 s]
+1.0.AG: Iteration  5	[0.23 s]
+1.0.Q3: Restart 6, Seed 26cc4a3045a595e0, 50.0%
+1.0.Q3: Trace Attempt  1	[28.21 s]
+1.0.Q3: Trace Attempt  2	[28.21 s]
+1.0.Q3: Trace Attempt  3	[28.21 s]
+1.0.Q3: Trace Attempt  4	[28.22 s]
+1.0.Q3: Trace Attempt  5	[28.22 s]
+1.0.AG: Iteration  6	[0.23 s]
+1.0.J: Trace Attempt  1	[28.27 s]
+1.0.AG: Iteration  7	[0.23 s]
+1.0.J: Trace Attempt  1	[28.64 s]
+1.0.J: Trace Attempt  1	[28.80 s]
+1.0.K: Trace Attempt 20	[6.81 s]
+1.0.J: Trace Attempt  1	[28.99 s]
+1.0.J: Trace Attempt  1	[29.17 s]
+1.0.J: Trace Attempt  1	[29.34 s]
+1.0.J: Trace Attempt  1	[29.50 s]
+1.0.J: Trace Attempt  1	[29.66 s]
+1.0.AM: Trace Attempt  3	[7.49 s]
+1.0.AM: Trace Attempt  5	[7.53 s]
+1.0.J: Trace Attempt  1	[29.84 s]
+1.0.C2: Iteration  2	[0.05 s]
+1.0.J: Trace Attempt  1	[30.00 s]
+1.0.J: Trace Attempt  1	[30.15 s]
+1.0.C2: Iteration  3	[0.05 s]
+1.0.J: Trace Attempt  1	[30.30 s]
+1.0.C2: Iteration  4	[0.05 s]
+1.0.J: Trace Attempt  1	[30.46 s]
+1.0.C2: Iteration  5	[0.05 s]
+1.0.C: Iteration  2	[0.04 s]
+1.0.J: Trace Attempt  1	[30.61 s]
+1.0.J: Trace Attempt  1	[30.79 s]
+1.0.C: Iteration  3	[0.04 s]
+1.0.J: Trace Attempt  1	[30.98 s]
+1.0.C: Iteration  4	[0.04 s]
+1.0.AG: Iteration  8	[0.23 s]
+1.0.U: Trace Attempt 88	[31.16 s]
+1.0.J: Trace Attempt  1	[31.14 s]
+1.0.Hts: Trace Attempt 20	[9.17 s]
+1.0.C: Iteration  5	[0.04 s]
+1.0.AG: Iteration  9	[0.23 s]
+1.0.J: Trace Attempt  1	[31.31 s]
+1.0.J: Trace Attempt  1	[31.48 s]
+1.0.AD: Trace Attempt 15	[9.40 s]
+1.0.J: Trace Attempt  1	[31.65 s]
+1.0.J: Trace Attempt  1	[31.82 s]
+1.0.J: Trace Attempt  1	[31.97 s]
+1.0.J: Trace Attempt  1	[32.12 s]
+1.0.M: Trace Attempt 11	[10.01 s]
+1.0.Q3: Trace Attempt 187	[32.23 s]
+1.0.AB: Trace Attempt 18	[10.06 s]
+1.0.J: Trace Attempt  1	[32.28 s]
+1.0.N: Trace Attempt 13	[10.17 s]
+1.0.J: Trace Attempt  1	[32.44 s]
+1.0.J: Trace Attempt  1	[32.59 s]
+1.0.J: Trace Attempt  1	[32.74 s]
+1.0.Q3: Restart 7, Seed 46199575827331b1, 50.0%
+1.0.Q3: Trace Attempt  1	[32.78 s]
+1.0.Q3: A trace with 1 cycles was found. [0.09 s]
+INFO (IPF047): 1.0.Q3: The cover property "mem_core_top.cover_insert" was covered in 1 cycles in 32.81 s.
+1.0.Q3: Trace Attempt  2	[32.80 s]
+1.0.Q3: Trace Attempt  3	[32.81 s]
+1.0.Q3: Trace Attempt  4	[32.81 s]
+1.0.Q3: Trace Attempt  5	[32.82 s]
+1.0.J: Trace Attempt  1	[32.94 s]
+1.0.Hps: Trace Attempt 20	[11.14 s]
+1.0.J: Trace Attempt  1	[33.19 s]
+1.0.R: Trace Attempt  6	[33.29 s]
+1.0.J: Trace Attempt  1	[33.40 s]
+1.0.J: Trace Attempt  1	[33.62 s]
+1.0.J: Trace Attempt  1	[33.88 s]
+1.0.J: Trace Attempt  1	[34.09 s]
+1.0.K: Trace Attempt 21	[12.04 s]
+1.0.J: Trace Attempt  1	[34.28 s]
+1.0.J: Trace Attempt  1	[34.49 s]
+1.0.J: Trace Attempt  1	[34.72 s]
+1.0.B: Trace Attempt 21	[12.46 s]
+1.0.J: Trace Attempt  1	[34.90 s]
+1.0.J: Trace Attempt  1	[35.09 s]
+1.0.J: Trace Attempt  1	[35.32 s]
+1.0.U: Trace Attempt 96	[35.45 s]
+1.0.J: Trace Attempt  1	[35.61 s]
+1.0.C2: Iteration  6	[0.05 s]
+1.0.J: Trace Attempt  1	[35.83 s]
+1.0.J: Trace Attempt  1	[36.02 s]
+1.0.C2: Iteration  7	[0.05 s]
+1.0.J: Trace Attempt  1	[36.22 s]
+1.0.J: Trace Attempt  1	[36.40 s]
+1.0.C2: Iteration  8	[0.05 s]
+1.0.J: Trace Attempt  1	[36.56 s]
+1.0.AG: Iteration 10	[0.23 s]
+1.0.AG: Trace Attempt  8	[14.53 s]
+1.0.J: Trace Attempt  1	[36.78 s]
+1.0.Q3: Trace Attempt 193	[36.86 s]
+1.0.C2: Iteration  9	[0.05 s]
+1.0.J: Trace Attempt  1	[37.02 s]
+1.0.Q3: Restart 8, Seed a225db4906bab506, 50.0%
+1.0.Q3: Trace Attempt  1	[37.15 s]
+1.0.Q3: Trace Attempt  2	[37.16 s]
+1.0.Q3: Trace Attempt  3	[37.16 s]
+1.0.Q3: Trace Attempt  4	[37.16 s]
+1.0.Q3: Trace Attempt  5	[37.17 s]
+1.0.J: Trace Attempt  1	[37.22 s]
+1.0.C: Iteration  6	[0.04 s]
+1.0.J: Trace Attempt  1	[37.62 s]
+1.0.J: Trace Attempt  1	[37.82 s]
+1.0.AM: Trace Attempt 11	[15.65 s]
+1.0.C: Iteration  7	[0.04 s]
+1.0.G: Stopped processing property "mem_core_top.assert_qed_match"	[20.35 s].
+1.0.G: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.G: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.J: Trace Attempt  1	[38.17 s]
+1.0.M: Trace Attempt 13	[16.09 s]
+1.0.Hts: Trace Attempt 21	[16.39 s]
+1.0.J: Trace Attempt  1	[38.42 s]
+1.0.C: Iteration  8	[0.04 s]
+1.0.J: Trace Attempt  1	[38.74 s]
+1.0.Tri: Trace Attempt 20	[16.81 s]
+1.0.J: Trace Attempt  1	[38.96 s]
+1.0.G: Partitioning 3 assumptions over 1 inputs...
+1.0.J: Trace Attempt  1	[39.15 s]
+1.0.J: Trace Attempt  1	[39.30 s]
+1.0.C: Iteration  9	[0.04 s]
+1.0.J: Trace Attempt  1	[39.54 s]
+1.0.G2: Stopped processing property "mem_core_top.assert_qed_match"	[21.39 s].
+1.0.G2: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+1.0.G2: Starting proof for property "mem_core_top.assert_response_bound"	[0.00 s].
+1.0.L: Trace Attempt 10	[39.67 s]
+1.0.J: Trace Attempt  1	[39.73 s]
+1.0.B: Trace Attempt 22	[17.59 s]
+1.0.AG: Partitioning 3 assumptions over 1 inputs...
+1.0.J: Trace Attempt  1	[39.96 s]
+1.0.K: Trace Attempt 22	[17.83 s]
+1.0.J: Trace Attempt  1	[40.16 s]
+1.0.J: Trace Attempt  1	[40.32 s]
+1.0.U: Trace Attempt  1	[40.36 s]
+1.0.G2: Partitioning 3 assumptions over 1 inputs...
+1.0.J: Trace Attempt  1	[40.48 s]
+1.0.AB: Trace Attempt 19	[18.38 s]
+1.0.J: Trace Attempt  1	[40.65 s]
+1.0.J: Trace Attempt  1	[40.84 s]
+1.0.U: Trace Attempt  2	[40.90 s]
+1.0.D: Trace Attempt 17	[18.72 s]
+1.0.J: Trace Attempt  1	[41.02 s]
+1.0.Q3: Trace Attempt 181	[41.20 s]
+1.0.J: Trace Attempt  1	[41.20 s]
+1.0.J: Trace Attempt  1	[41.44 s]
+1.0.U: Trace Attempt  3	[41.52 s]
+1.0.J: Trace Attempt  1	[41.57 s]
+1.0.J: Trace Attempt  1	[41.76 s]
+1.0.U: Trace Attempt  4	[41.84 s]
+1.0.J: Trace Attempt  1	[41.92 s]
+1.0.Q3: Restart 9, Seed df925f4ea33cfd8e, 50.0%
+1.0.Q3: Trace Attempt  1	[42.07 s]
+1.0.Q3: Trace Attempt  2	[42.07 s]
+1.0.Q3: Trace Attempt  3	[42.07 s]
+1.0.Q3: Trace Attempt  4	[42.08 s]
+1.0.Q3: Trace Attempt  5	[42.09 s]
+1.0.U: Trace Attempt  5	[42.09 s]
+1.0.J: Trace Attempt  1	[42.09 s]
+1.0.R: Trace Attempt 11	[42.22 s]
+1.0.J: Trace Attempt  1	[42.29 s]
+1.0.Hps: Trace Attempt 21	[20.43 s]
+1.0.J: Trace Attempt  1	[42.48 s]
+1.0.J: Trace Attempt  1	[42.68 s]
+1.0.J: Trace Attempt  1	[42.86 s]
+1.0.J: Trace Attempt  1	[43.05 s]
+1.0.J: Trace Attempt  1	[43.22 s]
+1.0.J: Trace Attempt  1	[43.46 s]
+1.0.AG: Iteration  1	[17.35 s]
+1.0.J: Trace Attempt  1	[43.66 s]
+1.0.J: Trace Attempt  1	[43.84 s]
+1.0.J: Trace Attempt  1	[44.02 s]
+1.0.G: Iteration  1	[0.00 s]
+1.0.J: Trace Attempt  1	[44.22 s]
+1.0.J: Trace Attempt  1	[44.46 s]
+1.0.J: Trace Attempt  1	[44.73 s]
+1.0.G2: Iteration  1	[0.00 s]
+1.0.J: Trace Attempt  1	[44.98 s]
+1.0.J: Trace Attempt  1	[45.15 s]
+1.0.AM: Trace Attempt 14	[22.99 s]
+1.0.AG: Iteration  2	[17.35 s]
+1.0.J: Trace Attempt  1	[45.30 s]
+1.0.J: Trace Attempt  1	[45.48 s]
+1.0.M: Trace Attempt 14	[23.39 s]
+1.0.AG: Iteration  3	[17.35 s]
+1.0.AG: Iteration  4	[17.35 s]
+1.0.J: Trace Attempt  1	[45.62 s]
+1.0.AG: Iteration  5	[17.35 s]
+1.0.J: Trace Attempt  1	[45.76 s]
+1.0.J: Trace Attempt  1	[45.90 s]
+1.0.J: Trace Attempt  1	[46.04 s]
+1.0.Q3: Trace Attempt 187	[46.10 s]
+1.0.J: Trace Attempt  1	[46.18 s]
+1.0.J: Trace Attempt  1	[46.32 s]
+1.0.N: Trace Attempt 15	[24.17 s]
+1.0.G: Iteration  2	[0.00 s]
+1.0.U: Trace Attempt 20	[46.46 s]
+1.0.J: Trace Attempt  1	[46.46 s]
+1.0.J: Trace Attempt  1	[46.60 s]
+1.0.G: Iteration  3	[0.00 s]
+1.0.Q3: Restart 10, Seed 44473d53ea4b417d, 50.0%
+1.0.Q3: Trace Attempt  1	[46.70 s]
+1.0.Q3: Trace Attempt  2	[46.70 s]
+1.0.Q3: Trace Attempt  3	[46.71 s]
+1.0.Q3: Trace Attempt  4	[46.71 s]
+1.0.Q3: Trace Attempt  5	[46.72 s]
+1.0.J: Trace Attempt  1	[46.74 s]
+1.0.C2: Iteration 10	[0.05 s]
+1.0.J: Trace Attempt  1	[46.93 s]
+1.0.J: Trace Attempt  1	[47.07 s]
+1.0.J: Trace Attempt  1	[47.22 s]
+1.0.G2: Iteration  2	[0.00 s]
+1.0.J: Trace Attempt  1	[47.37 s]
+1.0.J: Trace Attempt  1	[47.53 s]
+1.0.G2: Iteration  3	[0.00 s]
+1.0.J: Trace Attempt  1	[47.68 s]
+1.0.C2: Iteration 11	[0.05 s]
+1.0.J: Trace Attempt  1	[47.82 s]
+1.0.R:   47.52" ---- Attempting simultaneous proof of 2 remaining properties ----
+1.0.J: Trace Attempt  1	[47.95 s]
+1.0.J: Trace Attempt  1	[48.09 s]
+1.0.J: Trace Attempt  1	[48.23 s]
+1.0.J: Trace Attempt  1	[48.38 s]
+1.0.J: Trace Attempt  1	[48.54 s]
+1.0.J: Trace Attempt  1	[48.70 s]
+1.0.J: Trace Attempt  1	[48.87 s]
+1.0.R: Trace Attempt  1	[48.97 s]
+1.0.R: Trace Attempt  2	[48.97 s]
+1.0.J: Trace Attempt  1	[49.04 s]
+1.0.R: Trace Attempt  3	[49.06 s]
+1.0.J: Trace Attempt  1	[49.20 s]
+1.0.R: Trace Attempt  4	[49.24 s]
+1.0.K: Trace Attempt 23	[27.13 s]
+1.0.AG: Iteration  6	[17.35 s]
+1.0.J: Trace Attempt  1	[49.42 s]
+1.0.AG: Iteration  7	[17.35 s]
+1.0.J: Trace Attempt  1	[49.58 s]
+1.0.AG: Iteration  8	[17.35 s]
+1.0.J: Trace Attempt  1	[49.76 s]
+1.0.J: Trace Attempt  1	[49.96 s]
+1.0.J: Trace Attempt  1	[50.15 s]
+1.0.Tri: Trace Attempt 21	[28.17 s]
+1.0.J: Trace Attempt  1	[50.37 s]
+1.0.J: Trace Attempt  1	[50.56 s]
+1.0.Q3: Trace Attempt 189	[50.75 s]
+1.0.U: Trace Attempt 34	[50.78 s]
+1.0.J: Trace Attempt  1	[50.78 s]
+1.0.R: Trace Attempt  5	[50.82 s]
+1.0.J: Trace Attempt  1	[50.96 s]
+1.0.J: Trace Attempt  1	[51.20 s]
+1.0.Q3: Restart 11, Seed 743ac846f5ef91d4, 50.0%
+1.0.Q3: Trace Attempt  1	[51.26 s]
+1.0.Q3: Trace Attempt  2	[51.26 s]
+1.0.Q3: Trace Attempt  3	[51.27 s]
+1.0.Q3: Trace Attempt  4	[51.27 s]
+1.0.C: Iteration 10	[0.04 s]
+1.0.Q3: Trace Attempt  5	[51.28 s]
+1.0.J: Trace Attempt  1	[51.42 s]
+1.0.J: Trace Attempt  1	[51.65 s]
+1.0.J: Trace Attempt  1	[51.87 s]
+1.0.J: Trace Attempt  1	[52.15 s]
+1.0.C: Iteration 11	[0.04 s]
+1.0.G: Iteration  4	[0.00 s]
+1.0.J: Trace Attempt  1	[52.57 s]
+1.0.J: Trace Attempt  1	[52.88 s]
+1.0.G: Iteration  5	[0.00 s]
+1.0.J: Trace Attempt  1	[53.22 s]
+1.0.J: Trace Attempt  1	[53.48 s]
+1.0.B: Trace Attempt 23	[31.29 s]
+1.0.AB: Trace Attempt 20	[31.43 s]
+1.0.Ht: Trace Attempt 12	[53.67 s]
+1.0.J: Trace Attempt  1	[53.81 s]
+1.0.J: Trace Attempt  1	[54.04 s]
+1.0.J: Trace Attempt  1	[54.22 s]
+1.0.G2: Iteration  4	[0.00 s]
+1.0.J: Trace Attempt  1	[54.37 s]
+1.0.J: Trace Attempt  1	[54.53 s]
+1.0.J: Trace Attempt  1	[54.69 s]
+1.0.G2: Iteration  5	[0.00 s]
+1.0.AG: Iteration  9	[17.35 s]
+1.0.J: Trace Attempt  1	[54.84 s]
+1.0.J: Trace Attempt  1	[55.00 s]
+1.0.U: Trace Attempt 46	[55.06 s]
+1.0.AG: Iteration 10	[17.35 s]
+1.0.J: Trace Attempt  1	[55.15 s]
+1.0.Q3: Trace Attempt 188	[55.28 s]
+1.0.J: Trace Attempt  1	[55.29 s]
+1.0.AG: Iteration 11	[17.35 s]
+1.0.J: Trace Attempt  1	[55.44 s]
+1.0.J: Trace Attempt  1	[55.59 s]
+1.0.J: Trace Attempt  1	[55.72 s]
+1.0.Q3: Restart 12, Seed 809a06ee30b14492, 50.0%
+1.0.Q3: Trace Attempt  1	[55.79 s]
+1.0.Q3: Trace Attempt  2	[55.79 s]
+1.0.Q3: Trace Attempt  3	[55.80 s]
+1.0.Q3: Trace Attempt  4	[55.80 s]
+1.0.Q3: Trace Attempt  5	[55.80 s]
+1.0.J: Trace Attempt  1	[55.86 s]
+1.0.J: Trace Attempt  1	[56.00 s]
+1.0.J: Trace Attempt  1	[56.13 s]
+1.0.J: Trace Attempt  1	[56.29 s]
+1.0.J: Trace Attempt  1	[56.44 s]
+1.0.J: Trace Attempt  1	[56.59 s]
+1.0.J: Trace Attempt  1	[56.74 s]
+1.0.J: Trace Attempt  1	[56.89 s]
+1.0.J: Trace Attempt  1	[57.03 s]
+1.0.J: Trace Attempt  1	[57.17 s]
+1.0.J: Trace Attempt  1	[57.32 s]
+1.0.J: Trace Attempt  1	[57.47 s]
+1.0.J: Trace Attempt  1	[57.62 s]
+1.0.J: Trace Attempt  1	[57.77 s]
+1.0.Hts: Trace Attempt 22	[35.83 s]
+1.0.J: Trace Attempt  1	[57.92 s]
+1.0.J: Trace Attempt  1	[58.14 s]
+1.0.J: Trace Attempt  1	[58.42 s]
+1.0.J: Trace Attempt  1	[58.64 s]
+1.0.J: Trace Attempt  1	[58.92 s]
+1.0.U: Trace Attempt 56	[59.07 s]
+1.0.J: Trace Attempt  1	[59.12 s]
+1.0.J: Trace Attempt  1	[59.38 s]
+1.0.J: Trace Attempt  1	[59.58 s]
+1.0.Q3: Trace Attempt 190	[59.84 s]
+1.0.J: Trace Attempt  1	[59.81 s]
+1.0.J: Trace Attempt  1	[60.03 s]
+1.0.J: Trace Attempt  1	[60.25 s]
+1.0.Q3: Restart 13, Seed b10ae6e7b841597, 50.0%
+1.0.Q3: Trace Attempt  1	[60.28 s]
+1.0.Q3: Trace Attempt  2	[60.28 s]
+1.0.Q3: Trace Attempt  3	[60.28 s]
+1.0.Q3: Trace Attempt  4	[60.29 s]
+1.0.Q3: Trace Attempt  5	[60.29 s]
+1.0.J: Trace Attempt  1	[60.44 s]
+1.0.J: Trace Attempt  1	[60.65 s]
+1.0.J: Trace Attempt  1	[60.86 s]
+1.0.J: Trace Attempt  1	[61.14 s]
+1.0.J: Trace Attempt  1	[61.35 s]
+1.0.Hps: Trace Attempt 22	[39.39 s]
+1.0.J: Trace Attempt  1	[61.53 s]
+1.0.J: Trace Attempt  1	[61.70 s]
+1.0.J: Trace Attempt  1	[61.94 s]
+1.0.J: Trace Attempt  1	[62.14 s]
+1.0.J: Trace Attempt  1	[62.41 s]
+1.0.G: Iteration  6	[0.00 s]
+1.0.J: Trace Attempt  1	[62.57 s]
+1.0.J: Trace Attempt  1	[62.72 s]
+1.0.Bm: Trace Attempt 12	[62.83 s]
+1.0.J: Trace Attempt  1	[62.87 s]
+1.0.G: Iteration  7	[0.00 s]
+1.0.J: Trace Attempt  1	[63.02 s]
+1.0.U: Trace Attempt 65	[63.12 s]
+1.0.J: Trace Attempt  1	[63.18 s]
+1.0.J: Trace Attempt  1	[63.33 s]
+1.0.G: Iteration  8	[0.00 s]
+1.0.J: Trace Attempt  1	[63.48 s]
+1.0.J: Trace Attempt  1	[63.63 s]
+1.0.J: Trace Attempt  1	[63.79 s]
+1.0.J: Trace Attempt  1	[63.94 s]
+1.0.G: Iteration  9	[0.00 s]
+1.0.J: Trace Attempt  1	[64.09 s]
+1.0.J: Trace Attempt  1	[64.25 s]
+1.0.Q3: Trace Attempt 188	[64.31 s]
+1.0.J: Trace Attempt  1	[64.40 s]
+1.0.G2: Iteration  6	[0.00 s]
+1.0.J: Trace Attempt  1	[64.55 s]
+1.0.J: Trace Attempt  1	[64.70 s]
+1.0.K: Trace Attempt 24	[42.55 s]
+1.0.Q3: Restart 14, Seed 4a76452472f80c7d, 50.0%
+1.0.Q3: Trace Attempt  1	[64.78 s]
+1.0.Q3: Trace Attempt  2	[64.78 s]
+1.0.Q3: Trace Attempt  3	[64.79 s]
+1.0.Q3: Trace Attempt  4	[64.79 s]
+1.0.Q3: Trace Attempt  5	[64.80 s]
+1.0.J: Trace Attempt  1	[64.87 s]
+1.0.G2: Iteration  7	[0.00 s]
+1.0.J: Trace Attempt  1	[65.04 s]
+1.0.J: Trace Attempt  1	[65.20 s]
+1.0.G2: Iteration  8	[0.00 s]
+1.0.AM: Trace Attempt 15	[43.10 s]
+1.0.J: Trace Attempt  1	[65.36 s]
+1.0.J: Trace Attempt  1	[65.55 s]
+1.0.J: Trace Attempt  1	[65.70 s]
+1.0.G2: Iteration  9	[0.00 s]
+1.0.J: Trace Attempt  1	[65.88 s]
+1.0.J: Trace Attempt  1	[66.04 s]
+1.0.J: Trace Attempt  1	[66.20 s]
+1.0.J: Trace Attempt  1	[66.35 s]
+1.0.J: Trace Attempt  1	[66.51 s]
+1.0.J: Trace Attempt  1	[66.67 s]
+1.0.J: Trace Attempt  1	[66.82 s]
+1.0.J: Trace Attempt  1	[66.98 s]
+1.0.J: Trace Attempt  1	[67.14 s]
+1.0.J: Trace Attempt  1	[67.29 s]
+1.0.U: Trace Attempt 74	[67.34 s]
+1.0.J: Trace Attempt  1	[67.45 s]
+1.0.L: Trace Attempt 11	[67.56 s]
+1.0.Tri: Trace Attempt 22	[45.44 s]
+1.0.J: Trace Attempt  1	[67.61 s]
+1.0.J: Trace Attempt  1	[67.76 s]
+1.0.J: Trace Attempt  1	[67.92 s]
+1.0.J: Trace Attempt  1	[68.08 s]
+1.0.J: Trace Attempt  1	[68.23 s]
+1.0.J: Trace Attempt  1	[68.40 s]
+1.0.J: Trace Attempt  1	[68.56 s]
+1.0.J: Trace Attempt  1	[68.72 s]
+1.0.Q3: Trace Attempt 191	[68.82 s]
+1.0.J: Trace Attempt  1	[68.88 s]
+1.0.J: Trace Attempt  1	[69.05 s]
+1.0.Q3: Restart 15, Seed a519386cbb21da3c, 50.0%
+1.0.Q3: Trace Attempt  1	[69.21 s]
+1.0.Q3: Trace Attempt  2	[69.21 s]
+1.0.Q3: Trace Attempt  3	[69.21 s]
+1.0.Q3: Trace Attempt  4	[69.22 s]
+1.0.Q3: Trace Attempt  5	[69.22 s]
+1.0.J: Trace Attempt  1	[69.22 s]
+1.0.J: Trace Attempt  1	[69.38 s]
+1.0.J: Trace Attempt  1	[69.58 s]
+1.0.J: Trace Attempt  1	[69.77 s]
+1.0.J: Trace Attempt  1	[69.92 s]
+1.0.J: Trace Attempt  1	[70.08 s]
+1.0.J: Trace Attempt  1	[70.23 s]
+1.0.J: Trace Attempt  1	[70.39 s]
+1.0.J: Trace Attempt  1	[70.54 s]
+1.0.J: Trace Attempt  1	[70.68 s]
+1.0.J: Trace Attempt  1	[70.83 s]
+1.0.J: Trace Attempt  1	[70.98 s]
+1.0.J: Trace Attempt  1	[71.13 s]
+1.0.J: Trace Attempt  1	[71.26 s]
+1.0.J: Trace Attempt  1	[71.40 s]
+1.0.AG: Iteration 12	[17.35 s]
+1.0.J: Trace Attempt  1	[71.54 s]
+1.0.J: Trace Attempt  1	[71.69 s]
+1.0.U: Trace Attempt 83	[71.71 s]
+1.0.J: Trace Attempt  1	[71.83 s]
+1.0.C: Iteration 12	[0.04 s]
+1.0.J: Trace Attempt  1	[71.98 s]
+1.0.AG: Iteration 13	[17.35 s]
+1.0.J: Trace Attempt  1	[72.14 s]
+1.0.J: Trace Attempt  1	[72.30 s]
+1.0.J: Trace Attempt  1	[72.45 s]
+1.0.J: Trace Attempt  1	[72.59 s]
+1.0.AG: Iteration 14	[17.35 s]
+1.0.J: Trace Attempt  1	[72.74 s]
+1.0.J: Trace Attempt  1	[72.89 s]
+1.0.C: Iteration 13	[0.04 s]
+1.0.J: Trace Attempt  1	[73.04 s]
+1.0.J: Trace Attempt  1	[73.19 s]
+1.0.Q3: Trace Attempt 192	[73.24 s]
+1.0.J: Trace Attempt  1	[73.34 s]
+1.0.J: Trace Attempt  1	[73.49 s]
+1.0.Q3: Restart 16, Seed 75ac3115f3007180, 50.0%
+1.0.Q3: Trace Attempt  1	[73.62 s]
+1.0.Q3: Trace Attempt  2	[73.62 s]
+1.0.Q3: Trace Attempt  3	[73.62 s]
+1.0.Q3: Trace Attempt  4	[73.63 s]
+1.0.Q3: Trace Attempt  5	[73.63 s]
+1.0.J: Trace Attempt  1	[73.64 s]
+1.0.J: Trace Attempt  1	[73.78 s]
+1.0.J: Trace Attempt  1	[73.93 s]
+1.0.J: Trace Attempt  1	[74.08 s]
+1.0.C2: Iteration 12	[0.05 s]
+1.0.J: Trace Attempt  1	[74.22 s]
+1.0.C: Iteration 14	[0.04 s]
+1.0.J: Trace Attempt  1	[74.37 s]
+1.0.J: Trace Attempt  1	[74.51 s]
+1.0.J: Trace Attempt  1	[74.66 s]
+1.0.J: Trace Attempt  1	[74.80 s]
+1.0.J: Trace Attempt  1	[74.94 s]
+1.0.J: Trace Attempt  1	[75.09 s]
+1.0.J: Trace Attempt  1	[75.24 s]
+1.0.C2: Iteration 13	[0.05 s]
+1.0.J: Trace Attempt  1	[75.39 s]
+1.0.J: Trace Attempt  1	[75.53 s]
+1.0.J: Trace Attempt  1	[75.68 s]
+1.0.J: Trace Attempt  1	[75.83 s]
+1.0.J: Trace Attempt  1	[75.98 s]
+1.0.AM: Trace Attempt 17	[53.85 s]
+1.0.J: Trace Attempt  1	[76.12 s]
+1.0.U: Trace Attempt 92	[76.28 s]
+1.0.J: Trace Attempt  1	[76.27 s]
+1.0.J: Trace Attempt  1	[76.42 s]
+1.0.C2: Iteration 14	[0.05 s]
+1.0.J: Trace Attempt  1	[76.56 s]
+1.0.J: Trace Attempt  1	[76.71 s]
+1.0.J: Trace Attempt  1	[76.86 s]
+1.0.J: Trace Attempt  1	[77.00 s]
+1.0.J: Trace Attempt  1	[77.15 s]
+1.0.J: Trace Attempt  1	[77.30 s]
+1.0.B: Trace Attempt 24	[55.12 s]
+1.0.J: Trace Attempt  1	[77.44 s]
+1.0.J: Trace Attempt  1	[77.58 s]
+1.0.Q3: Trace Attempt 184	[77.66 s]
+1.0.J: Trace Attempt  1	[77.73 s]
+1.0.J: Trace Attempt  1	[77.88 s]
+1.0.J: Trace Attempt  1	[78.02 s]
+1.0.N: Trace Attempt 17	[55.86 s]
+1.0.J: Trace Attempt  1	[78.17 s]
+1.0.J: Trace Attempt  1	[78.31 s]
+1.0.Q3: Restart 17, Seed 592abdb464bae1bc, 50.0%
+1.0.Q3: Trace Attempt  1	[78.40 s]
+1.0.Q3: Trace Attempt  2	[78.40 s]
+1.0.Q3: Trace Attempt  3	[78.40 s]
+1.0.Q3: Trace Attempt  4	[78.41 s]
+1.0.Q3: Trace Attempt  5	[78.41 s]
+1.0.J: Trace Attempt  1	[78.46 s]
+1.0.J: Trace Attempt  1	[78.61 s]
+1.0.J: Trace Attempt  1	[78.75 s]
+1.0.AB: Trace Attempt 21	[56.66 s]
+1.0.J: Trace Attempt  1	[78.90 s]
+1.0.J: Trace Attempt  1	[79.05 s]
+1.0.J: Trace Attempt  1	[79.20 s]
+1.0.J: Trace Attempt  1	[79.35 s]
+1.0.J: Trace Attempt  1	[79.53 s]
+1.0.J: Trace Attempt  1	[79.70 s]
+1.0.G2: Iteration 10	[0.00 s]
+1.0.J: Trace Attempt  1	[79.87 s]
+1.0.G: Iteration 10	[0.00 s]
+1.0.J: Trace Attempt  1	[80.05 s]
+1.0.J: Trace Attempt  1	[80.23 s]
+1.0.G2: Iteration 11	[0.00 s]
+1.0.J: Trace Attempt  1	[80.39 s]
+1.0.J: Trace Attempt  1	[80.54 s]
+1.0.U: Trace Attempt 100	[80.64 s]
+1.0.G: Iteration 11	[0.00 s]
+1.0.J: Trace Attempt  1	[80.68 s]
+1.0.J: Trace Attempt  1	[80.82 s]
+1.0.J: Trace Attempt  1	[80.94 s]
+1.0.J: Trace Attempt  1	[81.09 s]
+1.0.J: Trace Attempt  1	[81.24 s]
+1.0.J: Trace Attempt  1	[81.39 s]
+1.0.J: Trace Attempt  1	[81.54 s]
+1.0.J: Trace Attempt  1	[81.69 s]
+1.0.J: Trace Attempt  1	[81.83 s]
+1.0.U: Trace Attempt  1	[81.94 s]
+1.0.R: Trace Attempt  6	[81.99 s]
+1.0.J: Trace Attempt  1	[81.98 s]
+1.0.J: Trace Attempt  1	[82.16 s]
+1.0.J: Trace Attempt  1	[82.33 s]
+1.0.U: Trace Attempt  2	[82.38 s]
+1.0.Q3: Trace Attempt 187	[82.44 s]
+1.0.J: Trace Attempt  1	[82.50 s]
+1.0.J: Trace Attempt  1	[82.70 s]
+1.0.J: Trace Attempt  1	[82.85 s]
+1.0.U: Trace Attempt  3	[82.88 s]
+1.0.Q3: Restart 18, Seed ce91d6ad72ca8e89, 50.0%
+1.0.Q3: Trace Attempt  1	[83.00 s]
+1.0.Q3: Trace Attempt  2	[83.00 s]
+1.0.Q3: Trace Attempt  3	[83.01 s]
+1.0.Q3: Trace Attempt  4	[83.01 s]
+1.0.Q3: Trace Attempt  5	[83.02 s]
+1.0.J: Trace Attempt  1	[83.01 s]
+1.0.U: Trace Attempt  4	[83.15 s]
+1.0.J: Trace Attempt  1	[83.16 s]
+1.0.J: Trace Attempt  1	[83.32 s]
+1.0.U: Trace Attempt  5	[83.35 s]
+1.0.J: Trace Attempt  1	[83.47 s]
+1.0.J: Trace Attempt  1	[83.62 s]
+1.0.J: Trace Attempt  1	[83.78 s]
+1.0.J: Trace Attempt  1	[83.94 s]
+1.0.J: Trace Attempt  1	[84.09 s]
+1.0.J: Trace Attempt  1	[84.27 s]
+1.0.J: Trace Attempt  1	[84.42 s]
+1.0.J: Trace Attempt  1	[84.57 s]
+1.0.J: Trace Attempt  1	[84.73 s]
+1.0.J: Trace Attempt  1	[84.89 s]
+1.0.J: Trace Attempt  1	[85.03 s]
+1.0.J: Trace Attempt  1	[85.17 s]
+1.0.J: Trace Attempt  1	[85.32 s]
+1.0.J: Trace Attempt  1	[85.47 s]
+1.0.J: Trace Attempt  1	[85.63 s]
+1.0.J: Trace Attempt  1	[85.78 s]
+1.0.J: Trace Attempt  1	[85.94 s]
+1.0.J: Trace Attempt  1	[86.08 s]
+1.0.J: Trace Attempt  1	[86.30 s]
+1.0.J: Trace Attempt  1	[86.49 s]
+1.0.M: Trace Attempt 15	[64.52 s]
+1.0.J: Trace Attempt  1	[86.64 s]
+1.0.J: Trace Attempt  1	[86.80 s]
+1.0.J: Trace Attempt  1	[86.95 s]
+1.0.Q3: Trace Attempt 189	[87.05 s]
+1.0.J: Trace Attempt  1	[87.11 s]
+1.0.J: Trace Attempt  1	[87.27 s]
+1.0.J: Trace Attempt  1	[87.44 s]
+1.0.U: Trace Attempt 22	[87.47 s]
+1.0.Q3: Restart 19, Seed ff71f84b6fe2f633, 50.0%
+1.0.Q3: Trace Attempt  1	[87.50 s]
+1.0.Q3: Trace Attempt  2	[87.50 s]
+1.0.Q3: Trace Attempt  3	[87.50 s]
+1.0.Q3: Trace Attempt  4	[87.50 s]
+1.0.Q3: Trace Attempt  5	[87.50 s]
+1.0.J: Trace Attempt  1	[87.60 s]
+1.0.J: Trace Attempt  1	[87.76 s]
+1.0.J: Trace Attempt  1	[87.92 s]
+1.0.J: Trace Attempt  1	[88.08 s]
+1.0.J: Trace Attempt  1	[88.24 s]
+1.0.J: Trace Attempt  1	[88.40 s]
+1.0.J: Trace Attempt  1	[88.58 s]
+1.0.J: Trace Attempt  1	[88.75 s]
+1.0.J: Trace Attempt  1	[88.92 s]
+1.0.J: Trace Attempt  1	[89.09 s]
+1.0.J: Trace Attempt  1	[89.27 s]
+1.0.J: Trace Attempt  1	[89.44 s]
+1.0.J: Trace Attempt  1	[89.61 s]
+1.0.J: Trace Attempt  1	[89.79 s]
+1.0.J: Trace Attempt  1	[89.96 s]
+1.0.J: Trace Attempt  1	[90.13 s]
+1.0.J: Trace Attempt  1	[90.31 s]
+1.0.J: Trace Attempt  1	[90.48 s]
+1.0.J: Trace Attempt  1	[90.65 s]
+1.0.J: Trace Attempt  1	[90.82 s]
+1.0.J: Trace Attempt  1	[90.99 s]
+1.0.J: Trace Attempt  1	[91.16 s]
+1.0.J: Trace Attempt  1	[91.32 s]
+1.0.U: Trace Attempt 36	[91.50 s]
+1.0.J: Trace Attempt  1	[91.49 s]
+1.0.Q3: Trace Attempt 193	[91.53 s]
+1.0.J: Trace Attempt  1	[91.67 s]
+1.0.Q3: Restart 20, Seed 6e0918f5b40c58f7, 50.0%
+1.0.Q3: Trace Attempt  1	[91.83 s]
+1.0.Q3: Trace Attempt  2	[91.83 s]
+1.0.Q3: Trace Attempt  3	[91.83 s]
+1.0.Q3: Trace Attempt  4	[91.84 s]
+1.0.Q3: Trace Attempt  5	[91.84 s]
+1.0.J: Trace Attempt  1	[91.84 s]
+1.0.J: Trace Attempt  1	[92.01 s]
+1.0.J: Trace Attempt  1	[92.17 s]
+1.0.J: Trace Attempt  1	[92.32 s]
+1.0.J: Trace Attempt  1	[92.49 s]
+1.0.J: Trace Attempt  1	[92.69 s]
+1.0.J: Trace Attempt  1	[92.86 s]
+1.0.J: Trace Attempt  1	[93.03 s]
+1.0.J: Trace Attempt  1	[93.20 s]
+1.0.M: Trace Attempt 16	[71.12 s]
+1.0.K: Trace Attempt 25	[71.14 s]
+1.0.J: Trace Attempt  1	[93.36 s]
+1.0.J: Trace Attempt  1	[93.53 s]
+1.0.J: Trace Attempt  1	[93.70 s]
+1.0.J: Trace Attempt  1	[93.87 s]
+1.0.J: Trace Attempt  1	[94.08 s]
+1.0.J: Trace Attempt  1	[94.26 s]
+1.0.J: Trace Attempt  1	[94.49 s]
+1.0.J: Trace Attempt  1	[94.72 s]
+1.0.J: Trace Attempt  1	[94.88 s]
+1.0.J: Trace Attempt  1	[95.07 s]
+1.0.J: Trace Attempt  1	[95.28 s]
+1.0.J: Trace Attempt  1	[95.50 s]
+1.0.J: Trace Attempt  1	[95.71 s]
+1.0.U: Trace Attempt 48	[95.76 s]
+1.0.Q3: Trace Attempt 197	[95.88 s]
+1.0.J: Trace Attempt  1	[95.87 s]
+1.0.Q3: Restart 21, Seed 11e1398a95ac4fbb, 50.0%
+1.0.Q3: Trace Attempt  1	[96.03 s]
+1.0.Q3: Trace Attempt  2	[96.03 s]
+1.0.Q3: Trace Attempt  3	[96.04 s]
+1.0.Q3: Trace Attempt  4	[96.04 s]
+1.0.Q3: Trace Attempt  5	[96.05 s]
+1.0.J: Trace Attempt  1	[96.03 s]
+1.0.J: Trace Attempt  1	[96.19 s]
+1.0.J: Trace Attempt  1	[96.35 s]
+1.0.J: Trace Attempt  1	[96.51 s]
+1.0.J: Trace Attempt  1	[96.67 s]
+1.0.J: Trace Attempt  1	[96.83 s]
+1.0.J: Trace Attempt  1	[96.99 s]
+1.0.J: Trace Attempt  1	[97.15 s]
+1.0.J: Trace Attempt  1	[97.31 s]
+1.0.J: Trace Attempt  1	[97.47 s]
+1.0.J: Trace Attempt  1	[97.63 s]
+1.0.J: Trace Attempt  1	[97.79 s]
+1.0.J: Trace Attempt  1	[97.95 s]
+1.0.J: Trace Attempt  1	[98.11 s]
+1.0.J: Trace Attempt  1	[98.26 s]
+1.0.J: Trace Attempt  1	[98.42 s]
+1.0.J: Trace Attempt  1	[98.58 s]
+1.0.J: Trace Attempt  1	[98.75 s]
+1.0.J: Trace Attempt  1	[98.91 s]
+1.0.I: Trace Attempt 18	[76.83 s]
+1.0.J: Trace Attempt  1	[99.07 s]
+1.0.J: Trace Attempt  1	[99.23 s]
+1.0.J: Trace Attempt  1	[99.40 s]
+1.0.J: Trace Attempt  1	[99.56 s]
+Initiating shutdown of proof (@ 99.71 s)
+1.0.Hts: Stopped processing property "mem_core_top.assert_response_bound"	[77.66 s].
+1.0.Hts: All properties either determined or skipped. [98.08 s]
+1.0.Q3: Trace Attempt 181	[99.71 s]
+1.0.Q3: Interrupted. [97.69 s]
+1.0.Hps: Stopped processing property "mem_core_top.assert_response_bound"	[77.66 s].
+1.0.Hps: All properties either determined or skipped. [98.67 s]
+1.0.J: Interrupted (multi)
+1.0.J: Trace Attempt 153	[99.68 s]
+1.0.J: Interrupted. [97.83 s]
+1.0.Ht: Interrupted (multi)
+1.0.Ht: Interrupted. [98.58 s]
+1.0.I: Stopped processing property "mem_core_top.assert_response_bound"	[77.52 s].
+1.0.I: All properties either determined or skipped. [98.70 s]
+1.0.K: Stopped processing property "mem_core_top.assert_response_bound"	[77.53 s].
+1.0.K: All properties either determined or skipped. [98.85 s]
+1.0.Hts: Exited with Success (@ 99.72 s)
+1.0.B: Stopped processing property "mem_core_top.assert_response_bound"	[77.41 s].
+1.0.J: Exited with Success (@ 99.72 s)
+1.0.AB: Stopped processing property "mem_core_top.assert_response_bound"	[77.49 s].
+1.0.AB: All properties either determined or skipped. [99.09 s]
+1.0.Q3: Exited with Success (@ 99.73 s)
+1.0.Ht: Exited with Success (@ 99.73 s)
+1.0.Hps: Exited with Success (@ 99.73 s)
+1.0.B: All properties either determined or skipped. [98.86 s]
+1.0.AB: Exited with Success (@ 99.73 s)
+1.0.K: Exited with Success (@ 99.74 s)
+1.0.I: Exited with Success (@ 99.74 s)
+1.0.B: Exited with Success (@ 99.75 s)
+1.0.M: Stopped processing property "mem_core_top.assert_response_bound"	[77.60 s].
+1.0.M: All properties either determined or skipped. [98.74 s]
+1.0.N: Stopped processing property "mem_core_top.assert_response_bound"	[77.54 s].
+1.0.N: Trace Attempt 18	[59.53 s]
+1.0.N: All properties either determined or skipped. [98.27 s]
+1.0.AM: Stopped processing property "mem_core_top.assert_response_bound"	[77.50 s].
+1.0.Hp: Interrupted (multi)
+1.0.Hp: Interrupted. [98.61 s]
+1.0.AM: All properties either determined or skipped. [98.47 s]
+1.0.D: Stopped processing property "mem_core_top.assert_response_bound"	[77.53 s].
+1.0.Tri: Stopped processing property "mem_core_top.assert_response_bound"	[77.61 s].
+1.0.D: All properties either determined or skipped. [98.94 s]
+1.0.Tri: All properties either determined or skipped. [0.11 s]
+1.0.M: Exited with Success (@ 99.78 s)
+1.0.G: Stopped processing property "mem_core_top.assert_response_bound"	[61.59 s].
+1.0.Tri: Exited with Success (@ 99.78 s)
+1.0.AM: Exited with Success (@ 99.78 s)
+1.0.G: All properties either determined or skipped. [98.39 s]
+1.0.D: Exited with Success (@ 99.79 s)
+1.0.N: Exited with Success (@ 99.79 s)
+1.0.G: Exited with Success (@ 99.79 s)
+1.0.AG: Stopped processing property "mem_core_top.assert_response_bound"	[77.54 s].
+1.0.AG: Trace Attempt 15	[16.07 s]
+1.0.AG: All properties either determined or skipped. [98.72 s]
+1.0.Hp: Exited with Success (@ 99.79 s)
+1.0.AD: Stopped processing property "mem_core_top.assert_response_bound"	[77.61 s].
+1.0.AD: All properties either determined or skipped. [98.85 s]
+1.0.AG: Exited with Success (@ 99.80 s)
+1.0.G2: Stopped processing property "mem_core_top.assert_response_bound"	[60.14 s].
+1.0.G2: All properties either determined or skipped. [98.28 s]
+1.0.G2: Exited with Success (@ 99.81 s)
+1.0.AD: Exited with Success (@ 99.81 s)
+1.0.C: Stopped processing property "mem_core_top.assert_response_bound"	[77.64 s].
+1.0.C: Trace Attempt  8	[0.02 s]
+1.0.C: All properties either determined or skipped. [99.34 s]
+1.0.C: Exited with Success (@ 99.88 s)
+1.0.R: All properties either determined or skipped. [0.10 s]
+1.0.R: Exited with Success (@ 99.91 s)
+1.0.C2: Stopped processing property "mem_core_top.assert_response_bound"	[77.69 s].
+1.0.C2: Trace Attempt  8	[0.02 s]
+1.0.C2: All properties either determined or skipped. [98.69 s]
+1.0.C2: Exited with Success (@ 99.92 s)
+1.0.Bm: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.Bm: Interrupted. [98.75 s]
+1.0.Bm: Exited with Success (@ 99.94 s)
+1.0.L: Interrupted. [98.48 s]
+1.0.L: Exited with Success (@ 99.97 s)
+1.0.U: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+1.0.U: Trace Attempt 58	[99.67 s]
+1.0.U: Interrupted. [99.49 s]
+1.0.U: Exited with Success (@ 100.40 s)
+ProofGrid usable level: 0
+ProofGrid usable level: 0
+All pending notifications were processed.
+INFO (IPM007): "prove" command stopped.
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 9
+	      assertions      : 2
+	       - proven       : 0 (0%)
+	       - marked_proven: 0 (0%)
+	       - cex          : 0 (0%)
+	       - ar_cex       : 0 (0%)
+	       - undetermined : 2 (100%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+	      covers          : 7
+	       - unreachable  : 0 (0%)
+	       - covered      : 7 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+INFO: delete ampa start in Shell
+INFO: delete ampa end in Shell
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.

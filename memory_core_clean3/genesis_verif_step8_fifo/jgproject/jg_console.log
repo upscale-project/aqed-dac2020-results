@@ -1,0 +1,29 @@
+2020-04-08 16:30:13.813761 (32373) main____ INFO    ----------------------------------------
+2020-04-08 16:30:13.813951 (32373) main____ INFO    JasperGold version info
+2020-04-08 16:30:13.813982 (32373) main____ INFO      tool      : JasperGold 2016.09
+2020-04-08 16:30:13.814005 (32373) main____ INFO      version   : 2016.09p002 64 bits
+2020-04-08 16:30:13.814019 (32373) main____ INFO      build date: 2016.11.28 18:08:37 PST
+2020-04-08 16:30:13.814031 (32373) main____ INFO    ----------------------------------------
+2020-04-08 16:30:13.814041 (32373) main____ INFO    Runtime info:
+2020-04-08 16:30:13.814055 (32373) main____ INFO      platform  : Linux 3.10.0-957.21.3.el7.x86_64 x86_64
+2020-04-08 16:30:13.814074 (32373) main____ INFO      hostname  : rsg20.stanford.edu
+2020-04-08 16:30:13.814086 (32373) main____ INFO      pid       : 32373
+2020-04-08 16:30:13.814098 (32373) main____ INFO      arguments : '-style' 'windows' '-tcl' 'jasper.tcl'
+2020-04-08 16:30:13.814109 (32373) main____ INFO    ----------------------------------------
+2020-04-08 16:30:13.817204 (32373) lic__man INFO    Claim 'main' for <ui>.
+2020-04-08 16:30:13.823994 (32373) lic_core INFO    (1) checking out 'jasper_interactive' ...
+2020-04-08 16:30:13.848917 (32373) lic_core INFO    ... (1) checkout succeeded
+2020-04-08 16:30:13.849058 (32373) lic__man INFO    Claim 'fpv' for <ui>.
+2020-04-08 16:30:13.849116 (32373) lic_core INFO    (2) checking out 'jasper_fpv' ...
+2020-04-08 16:30:13.868007 (32373) lic_core INFO    ... (2) checkout succeeded
+2020-04-08 16:30:14.644118 (32373) lic__man INFO    Claim 'fpv' for <ui>.
+2020-04-08 16:30:14.695549 (32373) lic__man INFO    Unclaim 'fpv' for <ui>.
+2020-04-08 16:30:14.695581 (32373) lic__man INFO    Claim 'fpv' for <ui>.
+2020-04-08 16:30:14.712608 (32373) session_ INFO    Starting analysis session with session id 'session_0' ...
+2020-04-08 16:30:14.715219 (32373) session_ INFO    Analysis session with session id 'session_0' started (pid: 32388)
+2020-04-08 16:30:19.688719 (32373) session_ INFO    Analysis session 'session_0' connected to the console (host: 172.24.74.47:48248)
+2020-04-08 16:30:23.019098 (32373) lic__man INFO    Unclaim everything for 'session_0*'.
+2020-04-08 16:30:23.751291 (32373) lic__man INFO    Claim 'fpv' for 'session_0'.
+2020-04-08 16:30:43.961673 (32373) lic__man INFO    Unclaim everything for 'session_0/prove-0'.
+2020-04-08 16:31:18.652496 (32373) main____ INFO    About to exit: requested from GUI
+2020-04-08 16:31:18.793586 (32373) main____ INFO    Exiting.

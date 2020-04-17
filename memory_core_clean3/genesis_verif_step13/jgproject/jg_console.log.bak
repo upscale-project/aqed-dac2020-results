@@ -1,0 +1,48 @@
+2020-04-03 21:29:23.008683 (11754) main____ INFO    ----------------------------------------
+2020-04-03 21:29:23.008854 (11754) main____ INFO    JasperGold version info
+2020-04-03 21:29:23.008882 (11754) main____ INFO      tool      : JasperGold 2016.09
+2020-04-03 21:29:23.008900 (11754) main____ INFO      version   : 2016.09p002 64 bits
+2020-04-03 21:29:23.008912 (11754) main____ INFO      build date: 2016.11.28 18:08:37 PST
+2020-04-03 21:29:23.008922 (11754) main____ INFO    ----------------------------------------
+2020-04-03 21:29:23.008930 (11754) main____ INFO    Runtime info:
+2020-04-03 21:29:23.008941 (11754) main____ INFO      platform  : Linux 3.10.0-957.21.3.el7.x86_64 x86_64
+2020-04-03 21:29:23.008956 (11754) main____ INFO      hostname  : rsg20.stanford.edu
+2020-04-03 21:29:23.008966 (11754) main____ INFO      pid       : 11754
+2020-04-03 21:29:23.008976 (11754) main____ INFO      arguments : '-style' 'windows' '-tcl' 'jasper.tcl'
+2020-04-03 21:29:23.008985 (11754) main____ INFO    ----------------------------------------
+2020-04-03 21:29:23.019682 (11754) lic__man INFO    Claim 'main' for <ui>.
+2020-04-03 21:29:24.801525 (11754) lic_core INFO    (1) checking out 'jasper_interactive' ...
+2020-04-03 21:29:24.826283 (11754) lic_core INFO    ... (1) checkout succeeded
+2020-04-03 21:29:24.826387 (11754) lic__man INFO    Claim 'fpv' for <ui>.
+2020-04-03 21:29:24.826437 (11754) lic_core INFO    (2) checking out 'jasper_fpv' ...
+2020-04-03 21:29:24.844804 (11754) lic_core INFO    ... (2) checkout succeeded
+2020-04-03 21:29:55.567495 (11754) lic__man INFO    Claim 'fpv' for <ui>.
+2020-04-03 21:30:02.594093 (11754) lic__man INFO    Unclaim 'fpv' for <ui>.
+2020-04-03 21:30:02.594175 (11754) lic__man INFO    Claim 'fpv' for <ui>.
+2020-04-03 21:30:02.612967 (11754) session_ INFO    Starting analysis session with session id 'session_0' ...
+2020-04-03 21:30:02.617539 (11754) session_ INFO    Analysis session with session id 'session_0' started (pid: 11835)
+2020-04-03 21:30:13.818814 (11754) session_ INFO    Analysis session 'session_0' connected to the console (host: 172.24.74.47:35990)
+2020-04-03 21:30:15.896405 (11754) lic__man INFO    Unclaim everything for 'session_0*'.
+2020-04-03 21:30:16.089098 (11754) lic__man INFO    Claim 'fpv' for 'session_0'.
+2020-04-03 21:30:19.545186 (11754) lic__man INFO    Unclaim everything for 'session_0/prove-0'.
+2020-04-03 21:38:19.545677 (11754) lic__man INFO    Entering idle state.
+2020-04-03 21:41:02.532561 (11754) lic__man INFO    Leaving idle state.
+2020-04-03 21:41:03.154245 (11754) lic__man INFO    Unclaim everything for 'session_0/prove-1'.
+2020-04-03 21:41:37.755691 (11754) lic__man INFO    Unclaim everything for 'session_0*'.
+2020-04-03 21:41:38.046076 (11754) lic__man INFO    Claim 'fpv' for 'session_0'.
+2020-04-03 21:41:41.439630 (11754) lic__man INFO    Unclaim everything for 'session_0/prove-2'.
+2020-04-03 21:41:49.740138 (11754) lic__man INFO    Unclaim everything for 'session_0/prove-3'.
+2020-04-03 21:44:53.668739 (11754) lic__man INFO    Unclaim everything for 'session_0*'.
+2020-04-03 21:44:54.067834 (11754) lic__man INFO    Claim 'fpv' for 'session_0'.
+2020-04-03 21:44:57.758408 (11754) lic__man INFO    Unclaim everything for 'session_0/prove-4'.
+2020-04-03 21:44:59.542957 (11754) lic__man INFO    Unclaim everything for 'session_0/prove-5'.
+2020-04-03 21:47:55.378008 (11754) lic__man INFO    Unclaim everything for 'session_0*'.
+2020-04-03 21:47:55.791530 (11754) lic__man INFO    Claim 'fpv' for 'session_0'.
+2020-04-03 21:47:59.269129 (11754) lic__man INFO    Unclaim everything for 'session_0/prove-6'.
+2020-04-03 21:48:00.577197 (11754) lic__man INFO    Unclaim everything for 'session_0/prove-7'.
+2020-04-03 22:03:48.811943 (11754) lic__man INFO    Entering idle state.
+2020-04-03 22:05:14.874660 (11754) lic__man INFO    Leaving idle state.
+2020-04-03 22:13:14.874746 (11754) lic__man INFO    Entering idle state.
+2020-04-03 22:28:58.804170 (11754) lic__man INFO    Leaving idle state.
+2020-04-03 22:42:21.566131 (11754) main____ INFO    About to exit: requested from GUI
+2020-04-03 22:42:21.751145 (11754) main____ INFO    Exiting.
