@@ -1,0 +1,11 @@
+aqed_in.v
+aqed_out.v
+aqed_top_bmc_in.v
+aqed_top_mac_mulacud.v
+aqed_top_mul_mul_eOg.v
+aqed_top.v
+Autocorrelation_bbkb.v
+Autocorrelation.v
+gsm_add.v
+Quantization_and_cod.v
+Quantization_and_dEe.v

@@ -1,0 +1,233 @@
+INFO: [HLS 200-10] Running '/cad/xilinx/vivado/2018.2/Vivado/2018.2/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'saranyuc' on host 'rsg26' (Linux_x86_64 version 3.10.0-957.21.3.el7.x86_64) on Thu Apr 16 21:26:35 PDT 2020
+INFO: [HLS 200-10] In directory '/rsgs/pool0/Saranyu/gsm/cpp_bug4'
+INFO: [HLS 200-10] Opening project '/rsgs/pool0/Saranyu/gsm/cpp_bug4/gsm_new_2'.
+INFO: [HLS 200-10] Adding design file '../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp' to the project
+INFO: [HLS 200-10] Adding design file '../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c' to the project
+INFO: [HLS 200-10] Opening solution '/rsgs/pool0/Saranyu/gsm/cpp_bug4/gsm_new_2/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [HLS 200-10] Analyzing design file '../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c' ... 
+INFO: [HLS 200-10] Analyzing design file '../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp' ... 
+WARNING: [HLS 200-40] In file included from ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:1:
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:17: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:57: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                        ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:85: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                    ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:108: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                           ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:131: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                  ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:154: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                         ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:179: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                                                  ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:201: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                                                                        ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:220: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                                                                                           ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:239: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                                                                                                              ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:265: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                                                                                                                                        ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:287: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                                                                                                                                                              ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:305: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                                                                                                                                                                                ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:322: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                                                                                                                                                                                                 ^
+14 warnings generated.\n
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 465.984 ; gain = 0.105 ; free physical = 109295 ; free virtual = 115436
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 465.984 ; gain = 0.105 ; free physical = 109295 ; free virtual = 115436
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 465.984 ; gain = 0.105 ; free physical = 109232 ; free virtual = 115374
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'gsm_abs' into 'Autocorrelation' (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:61) automatically.
+INFO: [XFORM 203-602] Inlining function 'gsm_mult_r' into 'Autocorrelation' (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:78) automatically.
+INFO: [XFORM 203-602] Inlining function 'Transformation_to_Log_Area_Ratios' into 'Gsm_LPC_Analysis' (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:335) automatically.
+INFO: [XFORM 203-602] Inlining function 'Gsm_LPC_Analysis' into 'aqed_top' (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:296) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 465.984 ; gain = 0.105 ; free physical = 109229 ; free virtual = 115371
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'o1.num_out' (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:265).
+INFO: [XFORM 203-1101] Packing variable 'o2' (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:267) into a 19-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'agg.result' (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:263) into a 404-bit variable.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-2' (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:76) in function 'Autocorrelation' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-3' (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:164) in function 'Autocorrelation' completely.
+INFO: [XFORM 203-602] Inlining function 'gsm_abs' into 'Autocorrelation' (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:61) automatically.
+INFO: [XFORM 203-602] Inlining function 'Gsm_LPC_Analysis' into 'aqed_top' (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:296) automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'state.orig_val' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'state.orig_val' in dimension 1 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:123:1) in function 'gsm_norm'... converting 11 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:63:1) in function 'gsm_mult_r'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:49:1) in function 'gsm_mult'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:39:3) in function 'gsm_add'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:199:10) to (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:225:4) in function 'aqed_out'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:155:7) in function 'aqed_in'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173:10) to (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:175:10) in function 'aqed_in'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:325:1) in function 'Quantization_and_coding'... converting 17 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:59:6) to (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:58:28) in function 'Autocorrelation'... converting 3 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'gsm_norm' into 'Autocorrelation' (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:71) automatically.
+INFO: [XFORM 203-602] Inlining function 'gsm_mult_r' into 'Autocorrelation' (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:78) automatically.
+INFO: [XFORM 203-602] Inlining function 'gsm_mult' into 'Quantization_and_coding' (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:314) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'aqed_out' (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:192:9)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'aqed_in' (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:147)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 593.883 ; gain = 128.004 ; free physical = 109206 ; free virtual = 115348
+WARNING: [XFORM 203-631] Renaming function 'Quantization_and_coding' to 'Quantization_and_cod' (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:48:1)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 593.883 ; gain = 128.004 ; free physical = 109170 ; free virtual = 115312
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'aqed_top' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aqed_in' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 23.62 seconds; current allocated memory: 113.732 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.23 seconds; current allocated memory: 113.957 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Autocorrelation' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.51 seconds; current allocated memory: 114.593 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.44 seconds; current allocated memory: 115.105 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gsm_add' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.45 seconds; current allocated memory: 115.251 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.38 seconds; current allocated memory: 115.313 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Quantization_and_cod' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.45 seconds; current allocated memory: 115.836 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.53 seconds; current allocated memory: 116.424 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aqed_out' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.61 seconds; current allocated memory: 116.799 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 117.091 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aqed_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.36 seconds; current allocated memory: 117.262 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.74 seconds; current allocated memory: 117.634 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aqed_in' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'state_in_count' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_val_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_val_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_val_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_val_3' is power-on initialization.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aqed_in'.
+INFO: [HLS 200-111]  Elapsed time: 0.73 seconds; current allocated memory: 118.212 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Autocorrelation' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'Autocorrelation_bitoff' to 'Autocorrelation_bbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'aqed_top_mac_muladd_15ns_16s_16ns_31_1_1' to 'aqed_top_mac_mulacud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'aqed_top_mac_mulacud': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Autocorrelation'.
+INFO: [HLS 200-111]  Elapsed time: 0.65 seconds; current allocated memory: 120.237 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gsm_add' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gsm_add'.
+INFO: [HLS 200-111]  Elapsed time: 1.58 seconds; current allocated memory: 122.619 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Quantization_and_cod' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'Quantization_and_cod_LARc_out' to 'Quantization_and_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'aqed_top_mul_mul_15ns_8s_23_1_1' to 'aqed_top_mul_mul_eOg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'aqed_top_mul_mul_eOg': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Quantization_and_cod'.
+INFO: [HLS 200-111]  Elapsed time: 0.82 seconds; current allocated memory: 123.968 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aqed_out' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'state_out_count' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_acc_out1_index' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_qed_done' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_qed_check' is power-on initialization.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aqed_out'.
+INFO: [HLS 200-111]  Elapsed time: 1.15 seconds; current allocated memory: 127.070 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aqed_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'aqed_top/agg_result' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aqed_top/orig' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aqed_top/dup' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'aqed_top' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'state_index' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_issued' is power-on initialization.
+WARNING: [RTGEN 206-101] Global scalar 'state_orig_issued' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Register 'state_dup_issued' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_in' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_dup_in' is power-on initialization.
+WARNING: [RTGEN 206-101] Global array 'bmc_in' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Register 'state_orig_done' is power-on initialization.
+WARNING: [RTGEN 206-101] Global scalar 'state_orig_done' will not be exposed as RTL port.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aqed_top'.
+INFO: [HLS 200-111]  Elapsed time: 0.89 seconds; current allocated memory: 128.919 MB.
+INFO: [RTMG 210-279] Implementing memory 'Autocorrelation_bbkb_rom' using block ROMs.
+INFO: [RTMG 210-278] Implementing memory 'Quantization_and_dEe_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'aqed_top_bmc_in_ram (RAM)' using block RAMs with power-on initialization.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:26 ; elapsed = 00:00:40 . Memory (MB): peak = 657.883 ; gain = 192.004 ; free physical = 109008 ; free virtual = 115159
+INFO: [SYSC 207-301] Generating SystemC RTL for aqed_top.
+INFO: [VHDL 208-304] Generating VHDL RTL for aqed_top.
+INFO: [VLOG 209-307] Generating Verilog RTL for aqed_top.
+INFO: [HLS 200-112] Total elapsed time: 40.14 seconds; peak allocated memory: 128.919 MB.
