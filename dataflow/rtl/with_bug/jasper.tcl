@@ -1,9 +1,9 @@
 
-analyze -sv09 -f dataflow.flist 
-elaborate -disable_auto_bbox -top aqed_top
+analyze -sv09 -f dataflow.flist dataflow_stalls_kernel.v
+elaborate -disable_auto_bbox -top dataflow_stalls_kernel
 clock ap_clk
-reset -expression ap_rst 
-#set_engine_mode {Hp Ht Bm J Q3 U L R B K AB D I AD M N AM G C AG G2 C2 Hps Hts Tri}
+reset -expression ~ap_rst_n
+set_engine_mode {B Bm}
 autoprove
 
 

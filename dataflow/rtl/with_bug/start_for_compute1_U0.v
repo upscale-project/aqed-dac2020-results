@@ -8,7 +8,7 @@
 
 `timescale 1 ns / 1 ps
 
-module start_for_gather_U0_shiftReg (
+module start_for_compute1_U0_shiftReg (
     clk,
     data,
     ce,
@@ -42,7 +42,7 @@ assign q = SRL_SIG[a];
 
 endmodule
 
-module start_for_gather_U0 (
+module start_for_compute1_U0 (
     clk,
     reset,
     if_empty_n,
@@ -111,12 +111,12 @@ end
 assign shiftReg_addr = mOutPtr[ADDR_WIDTH] == 1'b0 ? mOutPtr[ADDR_WIDTH-1:0]:{ADDR_WIDTH{1'b0}};
 assign shiftReg_ce = (if_write & if_write_ce) & internal_full_n;
 
-start_for_gather_U0_shiftReg 
+start_for_compute1_U0_shiftReg 
 #(
     .DATA_WIDTH(DATA_WIDTH),
     .ADDR_WIDTH(ADDR_WIDTH),
     .DEPTH(DEPTH))
-U_start_for_gather_U0_ram (
+U_start_for_compute1_U0_ram (
     .clk(clk),
     .data(shiftReg_data),
     .ce(shiftReg_ce),

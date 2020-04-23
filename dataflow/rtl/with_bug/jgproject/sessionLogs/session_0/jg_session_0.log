@@ -1,0 +1,467 @@
+#----------------------------------------
+# JasperGold Version Info
+# tool      : JasperGold 2016.09
+# platform  : Linux 3.10.0-957.21.3.el7.x86_64
+# version   : 2016.09p002 64 bits
+# build date: 2016.11.28 18:08:41 PST
+#----------------------------------------
+# started Fri Apr 17 16:01:07 PDT 2020
+# hostname  : rsg23.stanford.edu
+# pid       : 6936
+# arguments : '-label' 'session_0' '-console' 'rsg23.stanford.edu:41160' '-style' 'windows' '-use_native_tcl' '-proj' '/rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls/src/jasper_aqed/deadlock4/jgproject/sessionLogs/session_0' '-init' '-hidden' '/rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls/src/jasper_aqed/deadlock4/jgproject/.tmp/.initCmds.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2016 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc. 
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+JasperGold Apps Analysis Session - /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls/src/jasper_aqed/deadlock4/jgproject/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fpv".
+INFO: reading configuration file "/rsghome/esingh/.config/jasper/jaspergold.conf".
+INFO (IPL003): This JasperGold instance uses a new interpreter implementation for Tcl evaluation.
+    Launch JasperGold using the "-use_jtcl" command-line switch to restore it to the old implementation.
+% source jasper.tcl
+[-- (VERI-1482)] Analyzing Verilog file /hd/cad/cadence/JASPERGOLD16.09.002.lnx86/lib/verilog/packages/std/std.sv into library std
+[-- (VERI-1482)] Analyzing Verilog file compute1.v
+[-- (VERI-1482)] Analyzing Verilog file compute2.v
+[-- (VERI-1482)] Analyzing Verilog file dataflow_stalls_kernel_control_s_axi.v
+[-- (VERI-1482)] Analyzing Verilog file dataflow_stalls_kernel_gmemi_m_axi.v
+[-- (VERI-1482)] Analyzing Verilog file dataflow_stalls_kernel_gmemo_m_axi.v
+[-- (VERI-1482)] Analyzing Verilog file dataflow_stalls_kernel_mul_64s_64s_64_6.v
+[-- (VERI-1482)] Analyzing Verilog file dataflow_stalls_kernel.v
+[-- (VERI-1482)] Analyzing Verilog file fifo_w32_d1_A.v
+[-- (VERI-1482)] Analyzing Verilog file fifo_w64_d1_A.v
+[-- (VERI-1482)] Analyzing Verilog file fifo_w64_d32_A.v
+[-- (VERI-1482)] Analyzing Verilog file fifo_w64_d4_A.v
+[-- (VERI-1482)] Analyzing Verilog file gather.v
+[-- (VERI-1482)] Analyzing Verilog file load5.v
+[-- (VERI-1482)] Analyzing Verilog file scatter.v
+[-- (VERI-1482)] Analyzing Verilog file start_for_compute1_U0.v
+[-- (VERI-1482)] Analyzing Verilog file start_for_compute2_U0.v
+[-- (VERI-1482)] Analyzing Verilog file start_for_gather_U0.v
+[-- (VERI-1482)] Analyzing Verilog file start_for_scatter_U0.v
+[-- (VERI-1482)] Analyzing Verilog file start_for_store_U0.v
+[-- (VERI-1482)] Analyzing Verilog file store.v
+[-- (VERI-1482)] Analyzing Verilog file dataflow_stalls_kernel.v
+[WARN (VERI-1206)] dataflow_stalls_kernel.v(1399): overwriting previous definition of module dataflow_stalls_kernel
+[INFO (VERI-2142)] dataflow_stalls_kernel.v(1399): previous definition of module dataflow_stalls_kernel is here
+INFO (ISW003): Top module name is "dataflow_stalls_kernel".
+[INFO (VERI-1018)] dataflow_stalls_kernel.v(12): compiling module dataflow_stalls_kernel
+[WARN (VERI-1060)] dataflow_stalls_kernel.v(519): 'initial' construct ignored
+[INFO (VERI-1018)] dataflow_stalls_kernel_control_s_axi.v(9): compiling module dataflow_stalls_kernel_control_s_axi
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemo_m_axi.v(10): compiling module dataflow_stalls_kernel_gmemo_m_axi:(NUM_READ_OUTSTANDING=16,NUM_WRITE_OUTSTANDING=16,C_M_AXI_ADDR_WIDTH=64,C_M_AXI_DATA_WIDTH=64,C_USER_VALUE=0,C_PROT_VALUE=0,C_CACHE_VALUE=3,USER_DW=64,USER_AW=64,USER_MAXREQS=5)
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemo_m_axi.v(689): compiling module dataflow_stalls_kernel_gmemo_m_axi_throttl
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemo_m_axi.v(1504): compiling module dataflow_stalls_kernel_gmemo_m_axi_write:(NUM_WRITE_OUTSTANDING=16,C_M_AXI_ADDR_WIDTH=64,C_M_AXI_DATA_WIDTH=64,C_USER_VALUE=0,C_PROT_VALUE=0,C_CACHE_VALUE=3,USER_DW=64,USER_AW=64,USER_MAXREQS=5)
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemo_m_axi.v(295): compiling module dataflow_stalls_kernel_gmemo_m_axi_reg_slice:(N=96)
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemo_m_axi.v(399): compiling module dataflow_stalls_kernel_gmemo_m_axi_fifo:(DATA_BITS=96,DEPTH=5,DEPTH_BITS=3)
+[WARN (VERI-1209)] dataflow_stalls_kernel_gmemo_m_axi.v(1716): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] dataflow_stalls_kernel_gmemo_m_axi.v(1717): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] dataflow_stalls_kernel_gmemo_m_axi.v(1965): expression size 32 truncated to fit in target size 5
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemo_m_axi.v(508): compiling module dataflow_stalls_kernel_gmemo_m_axi_buffer:(DATA_WIDTH=72,ADDR_WIDTH=8,DEPTH=256)
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemo_m_axi.v(399): compiling module dataflow_stalls_kernel_gmemo_m_axi_fifo:(DEPTH=5,DEPTH_BITS=3)
+[WARN (VERI-1209)] dataflow_stalls_kernel_gmemo_m_axi.v(2136): expression size 32 truncated to fit in target size 8
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemo_m_axi.v(399): compiling module dataflow_stalls_kernel_gmemo_m_axi_fifo:(DATA_BITS=2,DEPTH=15)
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemo_m_axi.v(399): compiling module dataflow_stalls_kernel_gmemo_m_axi_fifo:(DATA_BITS=2,DEPTH=5,DEPTH_BITS=3)
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemo_m_axi.v(741): compiling module dataflow_stalls_kernel_gmemo_m_axi_read:(NUM_READ_OUTSTANDING=16,C_M_AXI_ADDR_WIDTH=64,C_M_AXI_DATA_WIDTH=64,C_USER_VALUE=0,C_PROT_VALUE=0,C_CACHE_VALUE=3,USER_DW=64,USER_AW=64,USER_MAXREQS=5)
+[WARN (VERI-1209)] dataflow_stalls_kernel_gmemo_m_axi.v(937): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] dataflow_stalls_kernel_gmemo_m_axi.v(938): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] dataflow_stalls_kernel_gmemo_m_axi.v(1156): expression size 32 truncated to fit in target size 5
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemo_m_axi.v(508): compiling module dataflow_stalls_kernel_gmemo_m_axi_buffer:(DATA_WIDTH=67,ADDR_WIDTH=8,DEPTH=256)
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemo_m_axi.v(295): compiling module dataflow_stalls_kernel_gmemo_m_axi_reg_slice:(N=66)
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemi_m_axi.v(10): compiling module dataflow_stalls_kernel_gmemi_m_axi:(NUM_READ_OUTSTANDING=16,NUM_WRITE_OUTSTANDING=16,C_M_AXI_ADDR_WIDTH=64,C_M_AXI_DATA_WIDTH=64,C_USER_VALUE=0,C_PROT_VALUE=0,C_CACHE_VALUE=3,USER_DW=64,USER_AW=64,USER_MAXREQS=5)
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemi_m_axi.v(689): compiling module dataflow_stalls_kernel_gmemi_m_axi_throttl
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemi_m_axi.v(1504): compiling module dataflow_stalls_kernel_gmemi_m_axi_write:(NUM_WRITE_OUTSTANDING=16,C_M_AXI_ADDR_WIDTH=64,C_M_AXI_DATA_WIDTH=64,C_USER_VALUE=0,C_PROT_VALUE=0,C_CACHE_VALUE=3,USER_DW=64,USER_AW=64,USER_MAXREQS=5)
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemi_m_axi.v(295): compiling module dataflow_stalls_kernel_gmemi_m_axi_reg_slice:(N=96)
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemi_m_axi.v(399): compiling module dataflow_stalls_kernel_gmemi_m_axi_fifo:(DATA_BITS=96,DEPTH=5,DEPTH_BITS=3)
+[WARN (VERI-1209)] dataflow_stalls_kernel_gmemi_m_axi.v(1716): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] dataflow_stalls_kernel_gmemi_m_axi.v(1717): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] dataflow_stalls_kernel_gmemi_m_axi.v(1965): expression size 32 truncated to fit in target size 5
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemi_m_axi.v(508): compiling module dataflow_stalls_kernel_gmemi_m_axi_buffer:(DATA_WIDTH=72,ADDR_WIDTH=8,DEPTH=256)
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemi_m_axi.v(399): compiling module dataflow_stalls_kernel_gmemi_m_axi_fifo:(DEPTH=5,DEPTH_BITS=3)
+[WARN (VERI-1209)] dataflow_stalls_kernel_gmemi_m_axi.v(2136): expression size 32 truncated to fit in target size 8
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemi_m_axi.v(399): compiling module dataflow_stalls_kernel_gmemi_m_axi_fifo:(DATA_BITS=2,DEPTH=15)
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemi_m_axi.v(399): compiling module dataflow_stalls_kernel_gmemi_m_axi_fifo:(DATA_BITS=2,DEPTH=5,DEPTH_BITS=3)
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemi_m_axi.v(741): compiling module dataflow_stalls_kernel_gmemi_m_axi_read:(NUM_READ_OUTSTANDING=16,C_M_AXI_ADDR_WIDTH=64,C_M_AXI_DATA_WIDTH=64,C_USER_VALUE=0,C_PROT_VALUE=0,C_CACHE_VALUE=3,USER_DW=64,USER_AW=64,USER_MAXREQS=5)
+[WARN (VERI-1209)] dataflow_stalls_kernel_gmemi_m_axi.v(937): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] dataflow_stalls_kernel_gmemi_m_axi.v(938): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] dataflow_stalls_kernel_gmemi_m_axi.v(1156): expression size 32 truncated to fit in target size 5
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemi_m_axi.v(508): compiling module dataflow_stalls_kernel_gmemi_m_axi_buffer:(DATA_WIDTH=67,ADDR_WIDTH=8,DEPTH=256)
+[INFO (VERI-1018)] dataflow_stalls_kernel_gmemi_m_axi.v(295): compiling module dataflow_stalls_kernel_gmemi_m_axi_reg_slice:(N=66)
+[INFO (VERI-1018)] load5.v(10): compiling module load5
+[WARN (VERI-1060)] load5.v(222): 'initial' construct ignored
+[WARN (VERI-1209)] load5.v(533): expression size 32 truncated to fit in target size 9
+[INFO (VERI-1018)] scatter.v(10): compiling module scatter
+[WARN (VERI-1060)] scatter.v(127): 'initial' construct ignored
+[WARN (VERI-1209)] scatter.v(397): expression size 32 truncated to fit in target size 3
+[INFO (VERI-1018)] compute1.v(10): compiling module compute1
+[WARN (VERI-1060)] compute1.v(111): 'initial' construct ignored
+[WARN (VERI-1209)] compute1.v(349): expression size 32 truncated to fit in target size 3
+[INFO (VERI-1018)] compute2.v(10): compiling module compute2
+[WARN (VERI-1060)] compute2.v(122): 'initial' construct ignored
+[INFO (VERI-1018)] dataflow_stalls_kernel_mul_64s_64s_64_6.v(41): compiling module dataflow_stalls_kernel_mul_64s_64s_64_6:(ID=1,NUM_STAGE=6,din0_WIDTH=64,din1_WIDTH=64,dout_WIDTH=64)
+[INFO (VERI-1018)] dataflow_stalls_kernel_mul_64s_64s_64_6.v(11): compiling module dataflow_stalls_kernel_mul_64s_64s_64_6_MulnS_0
+[WARN (VERI-1209)] compute2.v(419): expression size 32 truncated to fit in target size 3
+[INFO (VERI-1018)] gather.v(10): compiling module gather
+[WARN (VERI-1060)] gather.v(112): 'initial' construct ignored
+[WARN (VERI-1209)] gather.v(341): expression size 32 truncated to fit in target size 3
+[INFO (VERI-1018)] store.v(10): compiling module store
+[WARN (VERI-1060)] store.v(206): 'initial' construct ignored
+[WARN (VERI-1209)] store.v(519): expression size 32 truncated to fit in target size 8
+[INFO (VERI-1018)] fifo_w64_d32_A.v(11): compiling module fifo_w64_d32_A
+[INFO (VERI-1018)] fifo_w32_d1_A.v(45): compiling module fifo_w32_d1_A
+[WARN (VERI-1209)] fifo_w32_d1_A.v(95): expression size 32 truncated to fit in target size 2
+[WARN (VERI-1209)] fifo_w32_d1_A.v(103): expression size 32 truncated to fit in target size 2
+[INFO (VERI-1018)] fifo_w32_d1_A.v(11): compiling module fifo_w32_d1_A_shiftReg
+[INFO (VERI-1018)] fifo_w64_d4_A.v(45): compiling module fifo_w64_d4_A
+[WARN (VERI-1209)] fifo_w64_d4_A.v(95): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] fifo_w64_d4_A.v(103): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] fifo_w64_d4_A.v(11): compiling module fifo_w64_d4_A_shiftReg
+[INFO (VERI-1018)] fifo_w64_d1_A.v(45): compiling module fifo_w64_d1_A
+[WARN (VERI-1209)] fifo_w64_d1_A.v(95): expression size 32 truncated to fit in target size 2
+[WARN (VERI-1209)] fifo_w64_d1_A.v(103): expression size 32 truncated to fit in target size 2
+[INFO (VERI-1018)] fifo_w64_d1_A.v(11): compiling module fifo_w64_d1_A_shiftReg
+[INFO (VERI-1018)] start_for_scatter_U0.v(45): compiling module start_for_scatter_U0
+[WARN (VERI-1209)] start_for_scatter_U0.v(95): expression size 32 truncated to fit in target size 2
+[WARN (VERI-1209)] start_for_scatter_U0.v(103): expression size 32 truncated to fit in target size 2
+[INFO (VERI-1018)] start_for_scatter_U0.v(11): compiling module start_for_scatter_U0_shiftReg
+[INFO (VERI-1018)] start_for_store_U0.v(45): compiling module start_for_store_U0
+[WARN (VERI-1209)] start_for_store_U0.v(95): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] start_for_store_U0.v(103): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] start_for_store_U0.v(11): compiling module start_for_store_U0_shiftReg
+[INFO (VERI-1018)] start_for_compute1_U0.v(45): compiling module start_for_compute1_U0
+[WARN (VERI-1209)] start_for_compute1_U0.v(95): expression size 32 truncated to fit in target size 2
+[WARN (VERI-1209)] start_for_compute1_U0.v(103): expression size 32 truncated to fit in target size 2
+[INFO (VERI-1018)] start_for_compute1_U0.v(11): compiling module start_for_compute1_U0_shiftReg
+[INFO (VERI-1018)] start_for_compute2_U0.v(45): compiling module start_for_compute2_U0
+[WARN (VERI-1209)] start_for_compute2_U0.v(95): expression size 32 truncated to fit in target size 2
+[WARN (VERI-1209)] start_for_compute2_U0.v(103): expression size 32 truncated to fit in target size 2
+[INFO (VERI-1018)] start_for_compute2_U0.v(11): compiling module start_for_compute2_U0_shiftReg
+[INFO (VERI-1018)] start_for_gather_U0.v(45): compiling module start_for_gather_U0
+[WARN (VERI-1209)] start_for_gather_U0.v(95): expression size 32 truncated to fit in target size 2
+[WARN (VERI-1209)] start_for_gather_U0.v(103): expression size 32 truncated to fit in target size 2
+[INFO (VERI-1018)] start_for_gather_U0.v(11): compiling module start_for_gather_U0_shiftReg
+[WARN (VERI-1209)] dataflow_stalls_kernel.v(1334): expression size 32 truncated to fit in target size 10
+[WARN (VERI-1209)] dataflow_stalls_kernel.v(1342): expression size 32 truncated to fit in target size 10
+[WARN (VERI-1209)] dataflow_stalls_kernel.v(1361): expression size 32 truncated to fit in target size 10
+[WARN (VDB-1002)] dataflow_stalls_kernel.v(1310): net sel_in does not have a driver
+[INFO] Beginning multiple driver analysis
+[INFO] Finished multiple driver analysis
+[INFO] Module Name dataflow_stalls_kernel
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "~ap_rst_n".
+INFO (IPF127): Verbosity level: 6
+INFO (IPF127): Using Proof Grid in local mode, with 1 licenses
+INFO (IPF127): Trace generation: Keeping
+INFO (IPF127): Engine C/G memory limit: 2048MB
+INFO (IPF127): Using rule default_rule.
+INFO (IPF127): Using action: prove_action.
+INFO (IPF031): Settings used for this proof:
+    time_limit                    = 2400s
+    per_property_time_limit       = 3s * 9 ^ scan
+    engine_mode                   = Hp Ht L I N 
+    proofgrid_per_engine_max_jobs = 1
+    max engine jobs               = Hp Ht L I N, total 5
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+INFO (IPF036): Starting proof on task: "<embedded>", 4 properties to prove with 0 already proven/unreachable
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis phase 2 of 4.
+INFO (IRS031): Running reset analysis phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 4 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 iterations. Assigned values for 3661 of 85095 design flops, 0 of 0 design latches, 4 of 4 internal elements.
+Using multistage preprocessing
+Starting reduce
+Finished reduce in 0.031s
+Performing Proof Simplification...
+0.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hp: Proof Simplification Iteration 1	[0.00 s]
+0.0.Hp: Proof Simplification Iteration 2	[0.01 s]
+0.0.Hp: Proof Simplification Iteration 3	[0.01 s]
+Proof Simplification completed in 0.05 s
+0.0.Hp: Property reordering done in  0.007s
+0.0.Hp: Identified and disabled 1 duplicated target.
+About to start centralized ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+=============================== ProofGrid start ===============================
+ProofGrid usable level: 4294967295
+ProofGrid is starting event handling
+0.0.Ht: Proofgrid shell started at 7133@rsg23.stanford.edu(local) jg_6936_rsg23.stanford.edu_1
+0.0.N: Proofgrid shell started at 7136@rsg23.stanford.edu(local) jg_6936_rsg23.stanford.edu_1
+0.0.Ht: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.I: Proofgrid shell started at 7135@rsg23.stanford.edu(local) jg_6936_rsg23.stanford.edu_1
+0.0.L: Proofgrid shell started at 7134@rsg23.stanford.edu(local) jg_6936_rsg23.stanford.edu_1
+0.0.Hp: Proofgrid shell started at 7132@rsg23.stanford.edu(local) jg_6936_rsg23.stanford.edu_1
+0.0.I: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.L: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hp: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: Next scan (0) will use per property time limit: 3s * 9 ^ 0 = 3s
+0.0.N: Starting proof for property "dataflow_stalls_kernel.assert_RB_check_1:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "dataflow_stalls_kernel.assert_RB_check_2:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  1	[0.01 s]
+0.0.I: Next scan (0) will use per property time limit: 3s * 9 ^ 0 = 3s
+0.0.I: Starting proof for property "dataflow_stalls_kernel.assert_RB_check_1:precondition1"	[0.00 s].
+0.0.I: Starting proof for property "dataflow_stalls_kernel.assert_RB_check_2:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  2	[0.01 s]
+0.0.L: Using trace diversification with seed 1 (0.05)
+0.0.L: Using LRU state removal heuristic
+0.0.N: Trace Attempt  3	[0.01 s]
+0.0.L: Using states from traces to { (reset) }
+0.0.L: Trace Attempt  1	[0.04 s]
+0.0.I: Trace Attempt  2	[0.02 s]
+0.0.Ht: Trace Attempt  1	[0.04 s]
+0.0.Ht: Trace Attempt  2	[0.04 s]
+0.0.Ht: Trace Attempt  3	[0.04 s]
+0.0.Ht: Trace Attempt  4	[0.04 s]
+0.0.Ht: Trace Attempt  5	[0.04 s]
+0.0.N: Trace Attempt  3	[0.04 s]
+0.0.I: Trace Attempt  2	[0.04 s]
+0.0.I: Trace Attempt  4	[0.04 s]
+0.0.N: Trace Attempt  3	[0.05 s]
+0.0.L: Trace Attempt  2	[0.06 s]
+0.0.N: Trace Attempt  4	[0.05 s]
+0.0.L: Trace Attempt  3	[0.09 s]
+0.0.N: Trace Attempt  4	[0.10 s]
+0.0.I: Trace Attempt  4	[0.10 s]
+0.0.L: Trace Attempt  4	[0.12 s]
+0.0.N: Trace Attempt  3	[0.11 s]
+0.0.N: Trace Attempt  4	[0.11 s]
+0.0.L: Trace Attempt  5	[0.14 s]
+0.0.N: Trace Attempt  5	[0.16 s]
+0.0.N: Trace Attempt  3	[0.18 s]
+0.0.N: Trace Attempt  4	[0.18 s]
+0.0.N: Trace Attempt  5	[0.18 s]
+0.0.I: Trace Attempt  5	[0.18 s]
+0.0.N: Trace Attempt  3	[0.26 s]
+0.0.N: Trace Attempt  4	[0.26 s]
+0.0.N: Trace Attempt  5	[0.26 s]
+0.0.I: Trace Attempt  2	[0.37 s]
+0.0.I: Trace Attempt  4	[0.37 s]
+0.0.N: Trace Attempt  3	[0.43 s]
+0.0.N: Trace Attempt  5	[0.43 s]
+0.0.I: Trace Attempt  2	[0.65 s]
+0.0.I: Trace Attempt  5	[0.65 s]
+0.0.N: Trace Attempt  3	[1.03 s]
+0.0.N: Trace Attempt  5	[1.03 s]
+0.0.I: Trace Attempt 53	[1.48 s]
+0.0.I: Per property time limit expired (3.00 s) [3.00 s]
+0.0.I: Per property time limit expired (3.00 s) [3.00 s]
+0.0.I: Stopped processing property "dataflow_stalls_kernel.assert_RB_check_1:precondition1"	[3.00 s].
+0.0.I: Stopped processing property "dataflow_stalls_kernel.assert_RB_check_2:precondition1"	[3.00 s].
+0.0.I: Starting proof for property "dataflow_stalls_kernel.assert_RB_check_2"	[0.00 s].
+0.0.I: Trace Attempt  1	[0.00 s]
+0.0.I: Trace Attempt  1	[0.01 s]
+0.0.I: Trace Attempt  2	[0.01 s]
+0.0.I: Trace Attempt  3	[0.01 s]
+0.0.N: Trace Attempt 88	[1.31 s]
+0.0.N: Per property time limit expired (3.00 s) [3.02 s]
+0.0.N: Per property time limit expired (3.00 s) [3.02 s]
+0.0.N: Stopped processing property "dataflow_stalls_kernel.assert_RB_check_1:precondition1"	[3.02 s].
+0.0.N: Stopped processing property "dataflow_stalls_kernel.assert_RB_check_2:precondition1"	[3.02 s].
+0.0.N: Starting proof for property "dataflow_stalls_kernel.assert_RB_check_2"	[0.00 s].
+0.0.I: Trace Attempt  2	[0.02 s]
+0.0.I: Trace Attempt  2	[0.03 s]
+0.0.I: Trace Attempt  4	[0.03 s]
+0.0.I: Trace Attempt  3	[0.04 s]
+0.0.I: Trace Attempt  2	[0.05 s]
+0.0.I: Trace Attempt  4	[0.06 s]
+0.0.N: Trace Attempt  3	[0.04 s]
+0.0.I: Trace Attempt  4	[0.08 s]
+0.0.I: Trace Attempt  2	[0.09 s]
+0.0.I: Trace Attempt  4	[0.10 s]
+0.0.I: Trace Attempt  5	[0.13 s]
+0.0.I: Trace Attempt  2	[0.14 s]
+0.0.I: Trace Attempt  4	[0.14 s]
+0.0.N: Trace Attempt  3	[0.17 s]
+0.0.N: Trace Attempt  4	[0.17 s]
+0.0.I: Trace Attempt  2	[0.29 s]
+0.0.I: Trace Attempt  5	[0.30 s]
+0.0.N: Trace Attempt  3	[0.44 s]
+0.0.N: Trace Attempt  4	[0.44 s]
+0.0.N: Trace Attempt  5	[0.44 s]
+0.0.L: Trace Attempt 49	[4.25 s]
+0.0.I: Trace Attempt 57	[1.69 s]
+0.0.I: Per property time limit expired (3.00 s) [3.00 s]
+0.0.I: Stopped processing property "dataflow_stalls_kernel.assert_RB_check_2"	[3.00 s].
+0.0.I: Starting proof for property "dataflow_stalls_kernel.assert_RB_check_1"	[0.00 s].
+0.0.I: Trace Attempt  1	[0.00 s]
+0.0.I: Trace Attempt  1	[0.00 s]
+0.0.I: Trace Attempt  2	[0.00 s]
+0.0.I: Trace Attempt  3	[0.00 s]
+0.0.N: Stopped processing property "dataflow_stalls_kernel.assert_RB_check_2"	[3.00 s].
+0.0.N: Starting proof for property "dataflow_stalls_kernel.assert_RB_check_1"	[0.00 s].
+0.0.I: Trace Attempt  2	[0.02 s]
+0.0.I: Trace Attempt  2	[0.02 s]
+0.0.I: Trace Attempt  4	[0.02 s]
+0.0.N: Trace Attempt  3	[0.02 s]
+0.0.N: Trace Attempt  3	[0.03 s]
+0.0.N: Trace Attempt  4	[0.04 s]
+0.0.I: Trace Attempt  3	[0.04 s]
+0.0.I: Trace Attempt  4	[0.08 s]
+0.0.N: Trace Attempt  4	[0.07 s]
+0.0.I: Trace Attempt  2	[0.09 s]
+0.0.I: Trace Attempt  4	[0.09 s]
+0.0.N: Trace Attempt  3	[0.09 s]
+0.0.I: Trace Attempt  5	[0.13 s]
+0.0.I: Trace Attempt  2	[0.14 s]
+0.0.I: Trace Attempt  4	[0.14 s]
+0.0.N: Trace Attempt  3	[0.17 s]
+0.0.N: Trace Attempt  4	[0.18 s]
+0.0.I: Trace Attempt  2	[0.31 s]
+0.0.I: Trace Attempt  5	[0.31 s]
+0.0.N: Trace Attempt  3	[0.44 s]
+0.0.N: Trace Attempt  4	[0.44 s]
+0.0.N: Trace Attempt  5	[0.44 s]
+0.0.L: Trace Attempt 85	[8.25 s]
+0.0.I: Trace Attempt 57	[1.71 s]
+0.0.I: Per property time limit expired (3.00 s) [3.00 s]
+0.0.I: Stopped processing property "dataflow_stalls_kernel.assert_RB_check_1"	[3.00 s].
+0.0.I: Next scan (1) will use per property time limit: 3s * 9 ^ 1 = 27s
+0.0.I: Starting proof for property "dataflow_stalls_kernel.assert_RB_check_1:precondition1"	[0.00 s].
+0.0.I: Starting proof for property "dataflow_stalls_kernel.assert_RB_check_2:precondition1"	[0.00 s].
+0.0.N: Stopped processing property "dataflow_stalls_kernel.assert_RB_check_1"	[3.00 s].
+0.0.N: Next scan (1) will use per property time limit: 3s * 9 ^ 1 = 27s
+0.0.N: Starting proof for property "dataflow_stalls_kernel.assert_RB_check_1:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "dataflow_stalls_kernel.assert_RB_check_2:precondition1"	[0.00 s].
+0.0.I: Trace Attempt 12	[0.11 s]
+0.0.I: Trace Attempt  2	[0.15 s]
+0.0.I: Trace Attempt  5	[0.15 s]
+0.0.N: Trace Attempt  3	[0.60 s]
+0.0.N: Trace Attempt  5	[0.61 s]
+0.0.I: Trace Attempt 86	[5.08 s]
+0.0.I: Trace Attempt  2	[5.82 s]
+0.0.I: Trace Attempt  5	[5.83 s]
+0.0.I: Trace Attempt 86	[10.84 s]
+0.0.I: Trace Attempt  2	[11.59 s]
+0.0.I: Trace Attempt  5	[11.59 s]
+0.0.Ht: Trace Attempt 98	[1.76 s]
+0.0.Ht: A trace with 98 cycles was found. [22.31 s]
+INFO (IPF047): 0.0.Ht: The cover property "dataflow_stalls_kernel.assert_RB_check_1:precondition1" was covered in 98 cycles in 22.47 s.
+INFO (IPF047): 0.0.Ht: The cover property "dataflow_stalls_kernel.assert_RB_check_2:precondition1" was covered in 98 cycles in 22.47 s by the incidental trace "dataflow_stalls_kernel.assert_RB_check_1:precondition1".
+0.0.I: Stopped processing property "dataflow_stalls_kernel.assert_RB_check_1:precondition1"	[13.47 s].
+0.0.I: Stopped processing property "dataflow_stalls_kernel.assert_RB_check_2:precondition1"	[13.47 s].
+0.0.I: Starting proof for property "dataflow_stalls_kernel.assert_RB_check_2"	[0.00 s].
+0.0.N: Stopped processing property "dataflow_stalls_kernel.assert_RB_check_1:precondition1"	[13.46 s].
+0.0.N: Stopped processing property "dataflow_stalls_kernel.assert_RB_check_2:precondition1"	[13.46 s].
+0.0.N: Starting proof for property "dataflow_stalls_kernel.assert_RB_check_2"	[0.00 s].
+0.0.I: Trace Attempt  2	[0.08 s]
+0.0.I: Trace Attempt  5	[0.08 s]
+0.0.N: Trace Attempt  3	[0.31 s]
+0.0.N: Trace Attempt  4	[0.31 s]
+0.0.N: Trace Attempt  5	[0.32 s]
+0.0.L: Trace Attempt 98	[9.86 s]
+0.0.L: A trace with 98 cycles was found. [23.58 s]
+INFO (IPF055): 0.0.L: A counterexample (cex) with 98 cycles was found for the property "dataflow_stalls_kernel.assert_RB_check_2" in 23.65 s.
+0.0.I: Stopped processing property "dataflow_stalls_kernel.assert_RB_check_2"	[1.18 s].
+0.0.I: Last scan. Per property time limit: 0s
+0.0.I: Starting proof for property "dataflow_stalls_kernel.assert_RB_check_1"	[0.00 s].
+0.0.L: Using states from traces to { dataflow_stalls_kernel.assert_RB_check_1:precondition1 (97) }
+0.0.L: Trace Attempt  1	[23.60 s]
+0.0.L: Trace Attempt  2	[23.61 s]
+0.0.L: Trace Attempt  3	[23.61 s]
+0.0.N: Stopped processing property "dataflow_stalls_kernel.assert_RB_check_2"	[1.19 s].
+0.0.N: Last scan. Per property time limit: 0s
+0.0.N: Starting proof for property "dataflow_stalls_kernel.assert_RB_check_1"	[0.00 s].
+0.0.L: Trace Attempt  4	[23.62 s]
+0.0.L: Trace Attempt  5	[23.63 s]
+0.0.I: Trace Attempt  2	[0.08 s]
+0.0.I: Trace Attempt  5	[0.08 s]
+0.0.N: Trace Attempt  3	[0.33 s]
+0.0.N: Trace Attempt  4	[0.34 s]
+0.0.N: Trace Attempt  5	[0.34 s]
+0.0.I: Trace Attempt  2	[3.75 s]
+0.0.I: Trace Attempt  5	[3.76 s]
+0.0.L: Trace Attempt 87	[27.67 s]
+0.0.N: Trace Attempt 88	[4.74 s]
+0.0.Ht: Trace Attempt 99	[28.39 s]
+0.0.L: Trace Attempt 149	[31.71 s]
+0.0.I: Trace Attempt 83	[8.78 s]
+0.0.N: Trace Attempt  3	[9.65 s]
+0.0.N: Trace Attempt  5	[9.65 s]
+0.0.L: Trace Attempt 209	[35.75 s]
+0.0.Ht: Trace Attempt 130	[36.48 s]
+0.0.I: Trace Attempt 96	[12.91 s]
+0.0.I: Trace Attempt  2	[13.52 s]
+0.0.I: Trace Attempt  5	[13.52 s]
+0.0.L: Trace Attempt 261	[39.75 s]
+0.0.I: Trace Attempt 83	[18.50 s]
+0.0.L: Trace Attempt 311	[43.80 s]
+0.0.N: Trace Attempt 89	[20.61 s]
+0.0.Ht: Trace Attempt 132	[36.59 s]
+0.0.Ht: A trace with 132 cycles was found. [45.71 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 132 cycles was found for the property "dataflow_stalls_kernel.assert_RB_check_1" in 45.94 s.
+0.0.Hp: Interrupted (multi)
+0.0.Hp: Interrupted. [45.79 s]
+0.0.Ht: All properties determined. [45.77 s]
+0.0.Ht: Exited with Success (@ 45.80 s)
+0.0.I: Stopped processing property "dataflow_stalls_kernel.assert_RB_check_1"	[22.32 s].
+0.0.Hp: Exited with Success (@ 45.99 s)
+0.0.I: Trace Attempt 89	[20.34 s]
+0.0.I: All properties either determined or skipped. [45.98 s]
+0.0.I: Exited with Success (@ 46.00 s)
+0.0.L: Trace Attempt 338	[45.77 s]
+0.0.L: Interrupted. [46.01 s]
+0.0.L: Exited with Success (@ 46.03 s)
+ProofGrid usable level: 0
+0.0.N: Stopped processing property "dataflow_stalls_kernel.assert_RB_check_1"	[22.39 s].
+0.0.N: All properties either determined or skipped. [46.06 s]
+0.0.N: Exited with Success (@ 46.08 s)
+ProofGrid usable level: 0
+All pending notifications were processed.
+INFO (IPF127): Done using action: prove_action.
+INFO (IPF127): Final state reached.
+
+==============================================================
+SUMMARY
+==============================================================
+	Properties Considered : 4
+	      assertions      : 2
+	       - proven       : 0 (0%)
+	       - marked_proven: 0 (0%)
+	       - cex          : 2 (100%)
+	       - ar_cex       : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+	      covers          : 2
+	       - unreachable  : 0 (0%)
+	       - covered      : 2 (100%)
+	       - ar_covered   : 0 (0%)
+	       - undetermined : 0 (0%)
+	       - unprocessed  : 0 (0%)
+	       - error        : 0 (0%)
+determined
+INFO: delete ampa start in Shell
+INFO: delete ampa end in Shell
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.

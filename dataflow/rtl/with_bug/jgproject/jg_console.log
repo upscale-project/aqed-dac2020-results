@@ -1,0 +1,29 @@
+2020-04-17 16:01:02.168785 (6860) main____ INFO    ----------------------------------------
+2020-04-17 16:01:02.169000 (6860) main____ INFO    JasperGold version info
+2020-04-17 16:01:02.169031 (6860) main____ INFO      tool      : JasperGold 2016.09
+2020-04-17 16:01:02.169051 (6860) main____ INFO      version   : 2016.09p002 64 bits
+2020-04-17 16:01:02.169064 (6860) main____ INFO      build date: 2016.11.28 18:08:37 PST
+2020-04-17 16:01:02.169074 (6860) main____ INFO    ----------------------------------------
+2020-04-17 16:01:02.169083 (6860) main____ INFO    Runtime info:
+2020-04-17 16:01:02.169094 (6860) main____ INFO      platform  : Linux 3.10.0-957.21.3.el7.x86_64 x86_64
+2020-04-17 16:01:02.169110 (6860) main____ INFO      hostname  : rsg23.stanford.edu
+2020-04-17 16:01:02.169120 (6860) main____ INFO      pid       : 6860
+2020-04-17 16:01:02.169130 (6860) main____ INFO      arguments : '-style' 'windows'
+2020-04-17 16:01:02.169139 (6860) main____ INFO    ----------------------------------------
+2020-04-17 16:01:02.173430 (6860) lic__man INFO    Claim 'main' for <ui>.
+2020-04-17 16:01:02.291323 (6860) lic_core INFO    (1) checking out 'jasper_interactive' ...
+2020-04-17 16:01:02.331134 (6860) lic_core INFO    ... (1) checkout succeeded
+2020-04-17 16:01:02.331267 (6860) lic__man INFO    Claim 'fpv' for <ui>.
+2020-04-17 16:01:02.331321 (6860) lic_core INFO    (2) checking out 'jasper_fpv' ...
+2020-04-17 16:01:02.350805 (6860) lic_core INFO    ... (2) checkout succeeded
+2020-04-17 16:01:04.983115 (6860) lic__man INFO    Claim 'fpv' for <ui>.
+2020-04-17 16:01:05.788323 (6860) lic__man INFO    Unclaim 'fpv' for <ui>.
+2020-04-17 16:01:05.788390 (6860) lic__man INFO    Claim 'fpv' for <ui>.
+2020-04-17 16:01:05.872391 (6860) session_ INFO    Starting analysis session with session id 'session_0' ...
+2020-04-17 16:01:05.876238 (6860) session_ INFO    Analysis session with session id 'session_0' started (pid: 6936)
+2020-04-17 16:01:26.809523 (6860) session_ INFO    Analysis session 'session_0' connected to the console (host: 172.24.74.53:41400)
+2020-04-17 16:01:39.146656 (6860) lic__man INFO    Unclaim everything for 'session_0*'.
+2020-04-17 16:01:41.070736 (6860) lic__man INFO    Claim 'fpv' for 'session_0'.
+2020-04-17 16:02:28.955636 (6860) lic__man INFO    Unclaim everything for 'session_0/prove-0'.
+2020-04-17 16:02:54.649283 (6860) main____ INFO    About to exit: requested from GUI
+2020-04-17 16:02:55.674314 (6860) main____ INFO    Exiting.

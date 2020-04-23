@@ -8,16 +8,16 @@
 
 `timescale 1 ns / 1 ps
 
-module start_for_gather_U0_shiftReg (
+module fifo_w64_d4_A_shiftReg (
     clk,
     data,
     ce,
     a,
     q);
 
-parameter DATA_WIDTH = 32'd1;
-parameter ADDR_WIDTH = 32'd1;
-parameter DEPTH = 32'd2;
+parameter DATA_WIDTH = 32'd64;
+parameter ADDR_WIDTH = 32'd3;
+parameter DEPTH = 32'd5;
 
 input clk;
 input [DATA_WIDTH-1:0] data;
@@ -42,7 +42,7 @@ assign q = SRL_SIG[a];
 
 endmodule
 
-module start_for_gather_U0 (
+module fifo_w64_d4_A (
     clk,
     reset,
     if_empty_n,
@@ -54,10 +54,10 @@ module start_for_gather_U0 (
     if_write,
     if_din);
 
-parameter MEM_STYLE   = "auto";
-parameter DATA_WIDTH  = 32'd1;
-parameter ADDR_WIDTH  = 32'd1;
-parameter DEPTH       = 32'd2;
+parameter MEM_STYLE   = "shiftreg";
+parameter DATA_WIDTH  = 32'd64;
+parameter ADDR_WIDTH  = 32'd3;
+parameter DEPTH       = 32'd5;
 
 input clk;
 input reset;
@@ -111,12 +111,12 @@ end
 assign shiftReg_addr = mOutPtr[ADDR_WIDTH] == 1'b0 ? mOutPtr[ADDR_WIDTH-1:0]:{ADDR_WIDTH{1'b0}};
 assign shiftReg_ce = (if_write & if_write_ce) & internal_full_n;
 
-start_for_gather_U0_shiftReg 
+fifo_w64_d4_A_shiftReg 
 #(
     .DATA_WIDTH(DATA_WIDTH),
     .ADDR_WIDTH(ADDR_WIDTH),
     .DEPTH(DEPTH))
-U_start_for_gather_U0_ram (
+U_fifo_w64_d4_A_ram (
     .clk(clk),
     .data(shiftReg_data),
     .ce(shiftReg_ce),
