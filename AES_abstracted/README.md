@@ -1,4 +1,4 @@
-## A-QED Verification on AES Design<sup>Cong 17<\sup> Bugs 
+## A-QED Verification on AES Design<sup>1</sup> Bugs 
 
 ### Directory Hierarchy
 
@@ -36,6 +36,6 @@ Four bugs and the bugless design are looked into and can be found in the **./bug
 2. The pragmas for generating an axi interface were also removed. Since the standard C++ memcpy function is incompatible for synthesis without these m\_axi interface, instead a for loop updating arrays elementwise was done.
 
 ### References
-[Cong 17] Cong, J., et al., "Bandwidth Optimization Through On-Chip Memory Restructuring for HLS," Proc. DAC, 2017
+<sup>1</sup> Cong, J., et al., "Bandwidth Optimization Through On-Chip Memory Restructuring for HLS," Proc. DAC, 2017
 
 
