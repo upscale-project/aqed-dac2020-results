@@ -19,10 +19,10 @@ Four bugs and the bugless design are looked into and can be found in the **./bug
 1. **assume_stable_orig/dup_idx** : This ensures the BMC tool chooses the position of original and duplicate element in a batch during reset and holds them fixed throughout its run. 
 2. *Xilinx Vivado* uses *initial* blocks to initialize registers. However, *Cadence JasperGold* ignores *initial* blocks in verilog. To bridge this disparity, an additional constraint **assume_consistent_key** was placed to fix the values in the registers in the ROM modules from where the key is read otherwise the BMC tool treats them as free nets and assign different key values for the original and duplicate batches leading to spurious counter-examples. If different ROMs are accessed by each element of the batch, they need to contain the same key. All these are captured in  **assume_consistent_key**. 
 
-###Edits and Modifications
+### Edits and Modifications
 
 #### Verilog Edits
-   Because of the disparity between *JasperGold* and *Vivado*, we had to edit some of the verilog files. All edits are commented with *\\edit*.  
+   Because of the disparity between *JasperGold* and *Vivado*, we had to edit some of the verilog files. All edits are commented with *\\\edit*.  
 1. **aqed_top.v, aqed_in.v, aqed_out.v** : Reset conditions inside *always* blocks were inserted for the all the _state\_*\_V_ reg variables. _state\_orig\_in\_V_ and _state\_dup\_in\_V_ in **aqed_top.v** are reset to _'hFFFF_ and all other variables are reset to 0. _idx_ct_V_, _o2_qed_check_V_reg*_ and _o2_qed_done_V_reg*_ in **aqed_top.v** also needs to be reset to 0.
 2. **aes256_encrypt_ecb_sbox.v** : The sbox values were manually assigned to every register in *aes256\_encrypt\_ecb\_sbox\_rom* module from aes256\_encrypt\_ecb\_sbox\_rom.dat. 
 3. **aqed_in_state_key_V.v, aes256_encrypt_ecb_ctx_body_key.v** : In *aes256_encrypt_ecb_ctx_body_key_ram* and *aqed_in_state_key_V_ram* modules, *Vivado* all updation of the same register in two different *always* blocks. *JasperGold* cannot resolve this multi-driver conflict and treats the register as a free net. To remove this multi-driver conflict, the two blocks were combined and blocking assignments were used instead of non-blocking ones.
