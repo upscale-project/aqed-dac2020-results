@@ -1,4 +1,4 @@
-## A-QED Verification on AES Design<sup>1</sup> Bugs 
+## A-QED Verification of AES Design<sup>1</sup> Bugs 
 
 ### Directory Hierarchy
 
