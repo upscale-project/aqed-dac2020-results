@@ -13,7 +13,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /media/saranyu/Share/SF/garnet-master/memory_core/genesis_new/memory_core.svp
+//  Source file: /media//Share/SF/garnet-master/memory_core/genesis_new/memory_core.svp
 //  Source template: memory_core
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
@@ -151,7 +151,7 @@ input logic             enable_chain;
 input logic  [1:0]      mode;
 input logic             tile_en;
 input logic  [3:0]      chain_idx;
-input logic  [15:0]     depth; //updated
+input logic  [15:0]     depth;
 
 // ========================================================
 // Inputs and Outputs
@@ -464,7 +464,7 @@ linebuffer_control_unq1  linebuffer_control
 fifo_control_unq1  fifo_control
 (
 .clk(gclk),
-.clk_en(1'b1), 
+.clk_en(clk_en), 
 .reset(reset),
 .flush(flush),
 .ren((mode == 2'b01) ? ren_in : ren_lb_to_fifo),

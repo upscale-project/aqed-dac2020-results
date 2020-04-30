@@ -270,7 +270,6 @@ assign range[5] = range_5;
 // ========================================================
 
 assign gclk_in = (tile_en==1'b1) ? clk : 1'b0;
-assign gclk = clk_en ? gclk_in : 1'b0;
 // TODO
 assign read_config_data = 1'b0;
 // ========================================================
@@ -381,7 +380,7 @@ always @(*) begin
       valid_out = 1'b1;
       almost_full = 1'b0;
       almost_empty = 1'b0;
-      full = 1'b0; 
+      full = 1'b0;
       empty = 1'b0; 
   end
 
@@ -399,7 +398,7 @@ always @(*) begin
       valid_out = db_valid_out;
       almost_full = 1'b0;
       almost_empty = 1'b0;
-      full = 1'b0; 
+      full = 1'b0;
       empty = 1'b0; 
   end
 
@@ -418,7 +417,7 @@ always @(*) begin
       valid_out = 1'b0; 
       almost_full = 1'b0; 
       almost_empty = 1'b0; 
-      full = 1'b0; 
+      full = 1'b0;
       empty = 1'b0; 
   end
 
@@ -429,15 +428,15 @@ end // END ALWAYS
 // ========================================================
 // Select a specific SRAM (from previous cycle)
 // ========================================================
-always @(posedge gclk) begin
+always @(posedge gclk_in) begin
   sram_sel <= addr_in[9:9];
 end
 
 // ========================================================
 // Basically gate the memory CEN
 // ========================================================
-assign mem_cen[0] = mem_cen_int[0] & ( mem_wen[0] | mem_ren[0]);
-assign mem_cen[1] = mem_cen_int[1] & ( mem_wen[1] | mem_ren[1]);
+assign mem_cen[0] = mem_cen_int[0] & ( mem_wen[0] | mem_ren[0]) ;
+assign mem_cen[1] = mem_cen_int[1] & ( mem_wen[1] | mem_ren[1]) ;
 
 // ========================================================
 // Instantiate (Row) LineBuffer
@@ -463,7 +462,7 @@ linebuffer_control_unq1  linebuffer_control
 // ========================================================
 fifo_control_unq1  fifo_control
 (
-.clk(gclk),
+.clk(gclk_in),
 .clk_en(clk_en), 
 .reset(reset),
 .flush(flush),
@@ -552,12 +551,11 @@ doublebuffer_control_unq1  doublebuffer_control
 // ========================================================
 // Instantiate memory banks
 // ========================================================
-assign gclk_sram = (clk_en | (|config_en_sram)) ? gclk_in : 1'b0;
    mem_unq1  mem_inst0
    (
    .data_out(mem_data_out[0]),
    .data_in(mem_data_in[0]),
-   .clk(gclk_sram),
+   .clk(gclk_in),
    .cen(mem_cen[0]),
    .wen(mem_wen[0]),
    .addr(mem_addr[0])
@@ -566,7 +564,7 @@ assign gclk_sram = (clk_en | (|config_en_sram)) ? gclk_in : 1'b0;
    (
    .data_out(mem_data_out[1]),
    .data_in(mem_data_in[1]),
-   .clk(gclk_sram),
+   .clk(gclk_in),
    .cen(mem_cen[1]),
    .wen(mem_wen[1]),
    .addr(mem_addr[1])

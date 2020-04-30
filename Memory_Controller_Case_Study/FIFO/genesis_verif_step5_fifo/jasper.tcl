@@ -5,4 +5,4 @@ clock clk
 reset -expression reset
 set_engine_mode {Bm B}
 prove -bg -property {<embedded>::mem_core_top.assert_qed_match}
-
+prove -bg -property {<embedded>::mem_core_top.assert_response_bound}

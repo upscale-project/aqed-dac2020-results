@@ -102,7 +102,7 @@ output logic [8:0] fifo_to_mem_addr [1:0];
 input logic  [15:0] mem_to_fifo_data [1:0];
 
 output logic [12:0] num_words_mem;
-input logic [15:0] depth; //updated
+input logic [15:0] depth;
 input logic [3:0] almost_count;
 input logic circular_en;
 
@@ -333,7 +333,6 @@ always @(posedge clk_gated or posedge reset) begin
 		 // If WRITE AND NO READ
 		 else if (wen & ~ren) begin
                 passthru <= 0;
-		if(~full)
 				write_addr <= (write_addr + 1) % (2 ** 10);
 				read_to_write <= 0;
          end	

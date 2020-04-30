@@ -82,7 +82,7 @@ memory_core DUT(
    .flush(flush), 
 
    .addr_in(addr_in),
-   .data_in(data_out), 
+   .data_in(data_in), 
    .data_out(data_out_in), 
    .wen_in(wen_in), 
    .ren_in(ren_in), 
@@ -137,27 +137,10 @@ memory_core DUT(
   .chain_idx(chain_idx)
 );
 
-aqed_top aqed(.clk(clk), .clk_en(clk_en), .reset(reset), .bmc_in_rsc_dat(data_in), .bmc_v_rsc_dat(wen_in_1), .full_rsc_dat(full), .empty_rsc_dat(empty), .acc_out_rsc_dat(data_out_in), .acc_out_v_rsc_dat(valid_out), .acc_out_rdy_rsc_dat(ren_in), .return_aqed_out_rsc_dat(data_out), .return_aqed_out_v_rsc_dat(wen_in), .return_qed_done_rsc_dat(qed_done), .return_qed_check_rsc_dat(qed_check));
+aqed_top aqed(.clk(clk), .clk_en(clk_en), .reset(reset), .bmc_in_rsc_dat(data_in), .bmc_v_rsc_dat(wen_in), .full_rsc_dat(full), .empty_rsc_dat(empty), .acc_out_rsc_dat(data_out_in), .acc_out_v_rsc_dat(valid_out), .acc_out_rdy_rsc_dat(ren_in), .return_aqed_out_rsc_dat(data_out), .return_aqed_out_v_rsc_dat(wen_in_1), .return_qed_done_rsc_dat(qed_done), .return_qed_check_rsc_dat(qed_check));
 
 
-reg [16:0] count, in_after_orig;
-reg rdy_after_orig, ren_d1;
-always @(posedge clk) begin
-if(reset) begin
-  count <= 0; in_after_orig <= 0; rdy_after_orig <= 0; ren_d1 <= 0;
-end
-else if (clk_en) begin
-  count <= (ren_in && (aqed.return_orig_issued_rsc_dat))?count+1:count;
-  in_after_orig <= (wen_in && (aqed.return_orig_issued_rsc_dat))?in_after_orig+1:in_after_orig;
-  ren_d1 <= ren_in;
- end
-  rdy_after_orig <= (aqed.return_orig_done_rsc_dat || rdy_after_orig);
-end
 
-   assert_response_bound : assert property (
-       @(posedge clk)
-          (count>=4*depth) && (in_after_orig>=0)|-> (rdy_after_orig));
- 
 
 
    assert_qed_match : assert property (
@@ -166,7 +149,7 @@ end
        
 
    configure : assume property ( @(posedge clk)
-   ( ((flush==1'b0) && (clk_en==1'b1) && (config_en_sram==4'b0) && (config_addr==32'h0) && (enable_chain==1'b0) &&  (circular_en == 1'b0) && (almost_count == 4'h0) && (mode == 2'h1) && (tile_en == 1'b1) && (starting_addr==15'h0))));
+   ( ((flush==1'b0) && (config_en_sram==4'b0) && (config_addr==32'h0) && (enable_chain==1'b0) &&  (circular_en == 1'b0) && (almost_count == 4'h0) && (mode == 2'h1) && (tile_en == 1'b1) && (starting_addr==15'h0))));
 	reg [15:0] const_depth;
         reg [15:0] count_ren;
 	reg [15:0] count_wen; 
@@ -176,14 +159,14 @@ end
 			count_wen <= 0;
 		end
 		else begin
-			if(clk_en && ren_d1 && valid_out)		
+			if(clk_en && aqed.ren_d1==1'b1 && valid_out==1'b1)		
 				count_ren <= count_ren + 1;
 			if(clk_en && wen_in==1'b1)
 				count_wen <= count_wen + 1;
 		end
 		const_depth <= depth;
 	end
-cnst_depth: assume property ( @(posedge clk) (const_depth==depth && depth>0 && (count_ren+depth>=count_wen)));
+cnst_depth: assume property ( @(posedge clk) (const_depth==depth && (count_ren+depth>=count_wen)));
 
 
 endmodule

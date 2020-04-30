@@ -333,7 +333,6 @@ always @(posedge clk_gated or posedge reset) begin
 		 // If WRITE AND NO READ
 		 else if (wen & ~ren) begin
                 passthru <= 0;
-		if(~full)//updated
 				write_addr <= (write_addr + 1) % (2 ** 10);
 				read_to_write <= 0;
          end	

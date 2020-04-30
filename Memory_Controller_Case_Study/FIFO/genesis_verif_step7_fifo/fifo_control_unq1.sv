@@ -110,7 +110,7 @@ input logic circular_en;
 // Clock Gating
 // ==========================
 logic clk_gated;
-assign clk_gated = clk & clk_en;
+assign clk_gated = clk ;//updated
 
 // ==========================
 // Address generation
@@ -156,7 +156,7 @@ always @(posedge clk or posedge reset) begin
   if(reset) begin
     valid <= 0;
   end
-  else begin
+  else if(clk_en) begin //updated
     if(flush) begin
       valid <= 0;
     end
@@ -201,7 +201,7 @@ always @(posedge clk or posedge reset) begin
    if(reset) begin
       num_words_mem <= 0;
    end
-   else begin
+   else if(clk_en) begin //updated
       if (flush) begin
          num_words_mem <= 0;
       end
@@ -266,7 +266,7 @@ always @(posedge clk_gated or posedge reset) begin
 	  write_buff_addr[1] <= 0;
 	  ren_mem_reg[1] <= 0;
    end
-   else begin
+   else if(clk_en) begin //updated
       if (flush == 1'b1) begin
          read_addr <= 0;
 		 write_addr <= 0;
@@ -333,7 +333,6 @@ always @(posedge clk_gated or posedge reset) begin
 		 // If WRITE AND NO READ
 		 else if (wen & ~ren) begin
                 passthru <= 0;
-		if(~full)
 				write_addr <= (write_addr + 1) % (2 ** 10);
 				read_to_write <= 0;
          end	

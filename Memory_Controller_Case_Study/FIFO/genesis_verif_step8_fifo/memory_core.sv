@@ -380,7 +380,7 @@ always @(*) begin
       valid_out = 1'b1;
       almost_full = 1'b0;
       almost_empty = 1'b0;
-      full = 1'b0;
+      full = 1'b0; 
       empty = 1'b0; 
   end
 
@@ -398,7 +398,7 @@ always @(*) begin
       valid_out = db_valid_out;
       almost_full = 1'b0;
       almost_empty = 1'b0;
-      full = 1'b0;
+      full = 1'b0; 
       empty = 1'b0; 
   end
 
@@ -417,7 +417,7 @@ always @(*) begin
       valid_out = 1'b0; 
       almost_full = 1'b0; 
       almost_empty = 1'b0; 
-      full = 1'b0;
+      full = 1'b0; 
       empty = 1'b0; 
   end
 

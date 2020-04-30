@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wavelist version="2">
-  <insertion-point-position>19</insertion-point-position>
+  <insertion-point-position>10</insertion-point-position>
   <wave>
     <expr>clk</expr>
     <label/>
@@ -22,26 +22,6 @@
     <radix/>
   </wave>
   <wave>
-    <expr>aqed.data_out</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>aqed.data_out_in</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>aqed.issue_dup</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>aqed.issue_orig</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
     <expr>DUT.wen_in</expr>
     <label/>
     <radix/>
@@ -57,6 +37,26 @@
     <radix/>
   </wave>
   <wave>
+    <expr>aqed.aqed_top_core_inst.state_dup_issued_sva</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>aqed.aqed_top_core_inst.state_orig_issued_sva</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>data_in</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>data_out_in</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
     <expr>valid_out</expr>
     <label/>
     <radix/>
@@ -67,32 +67,12 @@
     <radix/>
   </wave>
   <wave>
-    <expr>aqed.ren_d1</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
     <expr>DUT.fifo_control.empty</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
-    <expr>DUT.fifo_control.read_addr</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>DUT.fifo_control.write_addr</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>DUT.fifo_control.num_words_mem</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>DUT.fifo_control.next_num_words_mem</expr>
+    <expr>aqed.aqed_top_core_inst.state_out_count_sva</expr>
     <label/>
     <radix/>
   </wave>
