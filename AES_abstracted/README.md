@@ -1,4 +1,4 @@
-## A-QED Verification on AES Design [Cong 17] Bugs 
+## A-QED Verification on AES Design<sup>Cong 17<\sup> Bugs 
 
 ### Directory Hierarchy
 
