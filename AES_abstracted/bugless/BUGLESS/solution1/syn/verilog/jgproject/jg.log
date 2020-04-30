@@ -1,0 +1,257 @@
+#----------------------------------------
+# JasperGold Version Info
+# tool      : JasperGold 2016.09
+# platform  : Linux 3.10.0-957.21.3.el7.x86_64
+# version   : 2016.09p002 64 bits
+# build date: 2016.11.28 18:08:41 PST
+#----------------------------------------
+# started Wed Apr 15 22:29:33 PDT 2020
+# hostname  : rsg31.stanford.edu
+# pid       : 7810
+# arguments : '-label' 'session_0' '-console' 'rsg31.stanford.edu:38111' '-style' 'windows' '-use_native_tcl' '-proj' '/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bugless/BUGLESS/solution1/syn/verilog/jgproject/sessionLogs/session_0' '-init' '-hidden' '/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bugless/BUGLESS/solution1/syn/verilog/jgproject/.tmp/.initCmds.tcl' 'jasper.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2016 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc. 
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+JasperGold Apps Analysis Session - /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bugless/BUGLESS/solution1/syn/verilog/jgproject/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fpv".
+INFO: reading configuration file "/rsghome/saranyuc/.config/jasper/jaspergold.conf".
+INFO (IPL003): This JasperGold instance uses a new interpreter implementation for Tcl evaluation.
+    Launch JasperGold using the "-use_jtcl" command-line switch to restore it to the old implementation.
+% 
+% analyze -sv09 -f aes.flist 
+[-- (VERI-1482)] Analyzing Verilog file /hd/cad/cadence/JASPERGOLD16.09.002.lnx86/lib/verilog/packages/std/std.sv into library std
+[-- (VERI-1482)] Analyzing Verilog file aes256_encrypt_ecb_ctx_body_enckey.v
+[-- (VERI-1482)] Analyzing Verilog file aes256_encrypt_ecb_ctx_body_key.v
+[-- (VERI-1482)] Analyzing Verilog file aes256_encrypt_ecb_sbox.v
+[-- (VERI-1482)] Analyzing Verilog file aes256_encrypt_ecb.v
+[-- (VERI-1482)] Analyzing Verilog file aqed_in_state_key_V.v
+[-- (VERI-1482)] Analyzing Verilog file aqed_in.v
+[-- (VERI-1482)] Analyzing Verilog file aqed_out.v
+[-- (VERI-1482)] Analyzing Verilog file aqed_top_bmc_in.v
+[-- (VERI-1482)] Analyzing Verilog file aqed_top.v
+[-- (VERI-1482)] Analyzing Verilog file workload_local_key_0.v
+[-- (VERI-1482)] Analyzing Verilog file workload.v
+% elaborate -disable_auto_bbox -top aqed_top
+INFO (ISW003): Top module name is "aqed_top".
+[INFO (VERI-1018)] aqed_top.v(12): compiling module aqed_top
+[WARN (VERI-1060)] aqed_top.v(145): 'initial' construct ignored
+[INFO (VERI-1018)] aqed_top_bmc_in.v(58): compiling module aqed_top_bmc_in:(DataWidth=8,AddressRange=16,AddressWidth=4)
+[INFO (VERI-1018)] aqed_top_bmc_in.v(9): compiling module aqed_top_bmc_in_ram
+[WARN (VERI-1060)] aqed_top_bmc_in.v(29): 'initial' construct ignored
+[INFO (VERI-1018)] workload.v(10): compiling module workload
+[WARN (VERI-1060)] workload.v(162): 'initial' construct ignored
+[INFO (VERI-1018)] workload_local_key_0.v(42): compiling module workload_local_key_0:(DataWidth=8,AddressRange=32,AddressWidth=5)_0
+[INFO (VERI-1018)] workload_local_key_0.v(9): compiling module workload_local_key_0_rom_0
+[WARN (VERI-1060)] workload_local_key_0.v(25): 'initial' construct ignored
+[INFO (VERI-1018)] workload_local_key_0.v(42): compiling module workload_local_key_0:(DataWidth=8,AddressRange=32,AddressWidth=5)_1
+[INFO (VERI-1018)] workload_local_key_0.v(9): compiling module workload_local_key_0_rom_1
+[INFO (VERI-1018)] aes256_encrypt_ecb.v(10): compiling module aes256_encrypt_ecb
+[WARN (VERI-1060)] aes256_encrypt_ecb.v(178): 'initial' construct ignored
+[INFO (VERI-1018)] aes256_encrypt_ecb_sbox.v(300): compiling module aes256_encrypt_ecb_sbox:(DataWidth=8,AddressRange=256,AddressWidth=8)
+[INFO (VERI-1018)] aes256_encrypt_ecb_sbox.v(9): compiling module aes256_encrypt_ecb_sbox_rom
+[WARN (VERI-1060)] aes256_encrypt_ecb_sbox.v(25): 'initial' construct ignored
+[INFO (VERI-1018)] aes256_encrypt_ecb_ctx_body_key.v(55): compiling module aes256_encrypt_ecb_ctx_body_key:(DataWidth=8,AddressRange=32,AddressWidth=5)
+[INFO (VERI-1018)] aes256_encrypt_ecb_ctx_body_key.v(9): compiling module aes256_encrypt_ecb_ctx_body_key_ram
+[INFO (VERI-9012)] aes256_encrypt_ecb_ctx_body_key.v(26): Unintentional Sequential element inferred for ram read before write using blocking assignment
+[INFO (VERI-9012)] aes256_encrypt_ecb_ctx_body_key.v(19): Unintentional Sequential element inferred for q0 read before write using blocking assignment
+[INFO (VERI-1018)] aes256_encrypt_ecb_ctx_body_enckey.v(55): compiling module aes256_encrypt_ecb_ctx_body_enckey:(DataWidth=8,AddressRange=32,AddressWidth=5)
+[INFO (VERI-1018)] aes256_encrypt_ecb_ctx_body_enckey.v(9): compiling module aes256_encrypt_ecb_ctx_body_enckey_ram
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(547): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(549): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(551): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(581): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(583): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(585): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(693): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(774): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(776): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(790): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aes256_encrypt_ecb.v(792): expression size 64 truncated to fit in target size 8
+[WARN (VERI-1209)] workload.v(486): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] workload.v(488): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] workload.v(490): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] workload.v(578): expression size 32 truncated to fit in target size 11
+[INFO (VERI-1018)] aqed_in.v(10): compiling module aqed_in
+[WARN (VERI-1060)] aqed_in.v(219): 'initial' construct ignored
+[INFO (VERI-1018)] aqed_in_state_key_V.v(58): compiling module aqed_in_state_key_V:(DataWidth=1,AddressRange=32,AddressWidth=5)
+[INFO (VERI-1018)] aqed_in_state_key_V.v(9): compiling module aqed_in_state_key_V_ram
+[WARN (VERI-1060)] aqed_in_state_key_V.v(30): 'initial' construct ignored
+[INFO (VERI-9012)] aqed_in_state_key_V.v(26): Unintentional Sequential element inferred for ram read before write using blocking assignment
+[INFO (VERI-9012)] aqed_in_state_key_V.v(19): Unintentional Sequential element inferred for q0 read before write using blocking assignment
+[WARN (VERI-1209)] aqed_in.v(311): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_in.v(313): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_in.v(315): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_in.v(321): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_in.v(323): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_in.v(325): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_in.v(427): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(465): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(598): expression size 32 truncated to fit in target size 18
+[INFO (VERI-1018)] aqed_out.v(10): compiling module aqed_out
+[WARN (VERI-1060)] aqed_out.v(142): 'initial' construct ignored
+[WARN (VERI-1209)] aqed_out.v(281): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_out.v(283): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_out.v(285): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_out.v(291): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_out.v(293): expression size 64 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_out.v(295): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_out.v(322): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] aqed_out.v(325): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] aqed_out.v(356): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_top.v(406): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_top.v(416): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_top.v(490): expression size 32 truncated to fit in target size 7
+[WARN (VDB-1002)] workload_local_key_0.v(21): net ram[0][7] does not have a driver
+[INFO] Beginning multiple driver analysis
+[INFO] Finished multiple driver analysis
+[INFO] Module Name aqed_top
+aqed_top
+[<embedded>] % clock ap_clk
+[<embedded>] % reset -expression ap_rst 
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "ap_rst".
+[<embedded>] % #set_engine_mode {Hp Ht Bm J Q3 U L R B K AB D I AD M N AM G C AG G2 C2 Hps Hts Tri}
+[<embedded>] % #autoprove
+[<embedded>] % set_engine_mode {B Bm}
+[<embedded>] % 
+[<embedded>] % prove -bg -property {<embedded>::aqed_top.assert_qed_match <embedded>::aqed_top.assert_qed_match:precondition1}
+INFO (IPF031): Settings used for this proof:
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = B Bm 
+    proofgrid_per_engine_max_jobs = 1
+    max engine jobs               = B Bm, total 2
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+INFO (IPF036): Starting proof on task: "<embedded>", 2 properties to prove with 0 already proven/unreachable
+background (thread 0)
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis phase 2 of 4.
+INFO (IRS031): Running reset analysis phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 4 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 iterations. Assigned values for 506 of 2263 design flops, 0 of 0 design latches, 42 of 316 internal elements.
+Using multistage preprocessing
+Starting reduce
+Finished reduce in 0.023s
+Performing Proof Simplification...
+0.0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.B: Proof Simplification Iteration 1	[0.00 s]
+0.0.B: Proof Simplification Iteration 2	[0.01 s]
+0.0.B: Proof Simplification Iteration 3	[0.02 s]
+Proof Simplification completed in 0.05 s
+About to start centralized ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+=============================== ProofGrid start ===============================
+ProofGrid usable level: 2
+ProofGrid is starting event handling
+0.0.B: Proofgrid shell started at 8035@rsg31.stanford.edu(local) jg_7810_rsg31.stanford.edu_1
+0.0.Bm: Proofgrid shell started at 8036@rsg31.stanford.edu(local) jg_7810_rsg31.stanford.edu_1
+0.0.B: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Bm: clocks: 1, declared: 1, disabling: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.B: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.B: Starting proof for property "aqed_top.assert_qed_match"	[0.00 s].
+0.0.B: Trace Attempt  1	[0.02 s]
+0.0.Bm: Trace Attempt  1	[0.04 s]
+0.0.B: Trace Attempt  2	[0.06 s]
+0.0.Bm: Trace Attempt  2	[0.08 s]
+0.0.B: Trace Attempt  3	[0.09 s]
+0.0.Bm: Trace Attempt  3	[0.12 s]
+0.0.B: Trace Attempt  4	[0.12 s]
+0.0.Bm: Trace Attempt  4	[0.15 s]
+0.0.B: Trace Attempt  5	[0.15 s]
+0.0.Bm: Trace Attempt  5	[0.19 s]
+0.0.B: Trace Attempt 19	[0.97 s]
+0.0.B: Per property time limit expired (1.00 s) [1.04 s]
+0.0.B: Stopped processing property "aqed_top.assert_qed_match"	[1.04 s].
+0.0.B: Starting proof for property "aqed_top.assert_qed_match:precondition1"	[0.00 s].
+0.0.B: Trace Attempt  1	[0.01 s]
+0.0.B: Trace Attempt  2	[0.03 s]
+0.0.B: Trace Attempt  3	[0.06 s]
+0.0.B: Trace Attempt  4	[0.08 s]
+0.0.B: Trace Attempt  5	[0.10 s]
+0.0.B: Trace Attempt 21	[1.00 s]
+0.0.B: Per property time limit expired (1.00 s) [1.13 s]
+0.0.B: Stopped processing property "aqed_top.assert_qed_match:precondition1"	[1.13 s].
+0.0.B: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+0.0.B: Starting proof for property "aqed_top.assert_qed_match"	[0.00 s].
+0.0.B: Trace Attempt  1	[0.01 s]
+0.0.B: Trace Attempt  2	[0.03 s]
+0.0.B: Trace Attempt  3	[0.05 s]
+0.0.B: Trace Attempt  4	[0.07 s]
+0.0.B: Trace Attempt  5	[0.10 s]
+0.0.Bm: Trace Attempt 58	[4.51 s]
+0.0.B: Trace Attempt 64	[4.14 s]
+0.0.Bm: Trace Attempt 93	[8.52 s]
+0.0.B: Trace Attempt 93	[8.17 s]
+0.0.B: Trace Attempt 101	[9.90 s]
+0.0.B: Per property time limit expired (10.00 s) [10.19 s]
+0.0.B: Stopped processing property "aqed_top.assert_qed_match"	[10.19 s].
+0.0.B: Starting proof for property "aqed_top.assert_qed_match:precondition1"	[0.00 s].
+0.0.B: Trace Attempt  1	[0.01 s]
+0.0.B: Trace Attempt  2	[0.03 s]
+0.0.B: Trace Attempt  3	[0.05 s]
+0.0.B: Trace Attempt  4	[0.07 s]
+0.0.B: Trace Attempt  5	[0.10 s]
+0.0.Bm: Trace Attempt 113	[12.60 s]
+0.0.B: Trace Attempt 63	[4.20 s]
+0.0.Bm: Trace Attempt 130	[16.83 s]
+0.0.B: Trace Attempt 88	[8.34 s]
+0.0.Bm: Trace Attempt 137	[20.96 s]
+0.0.Bm: A trace with 137 cycles was found. [22.53 s]
+INFO (IPF047): 0.0.Bm: The cover property "aqed_top.assert_qed_match:precondition1" was covered in 137 cycles in 22.62 s.
+0.0.B: Trace Attempt 96	[9.93 s]
+0.0.B: Per property time limit expired (10.00 s) [10.18 s]
+0.0.B: Stopped processing property "aqed_top.assert_qed_match:precondition1"	[10.26 s].
+0.0.B: Last scan. Per property time limit: 0s
+0.0.B: Starting proof for property "aqed_top.assert_qed_match"	[0.00 s].
+0.0.B: Trace Attempt  1	[0.01 s]
+0.0.B: Trace Attempt  2	[0.04 s]
+0.0.B: Trace Attempt  3	[0.06 s]
+0.0.B: Trace Attempt  4	[0.08 s]
+0.0.B: Trace Attempt  5	[0.11 s]
+ProofGrid usable level: 1
+0.0.B: Trace Attempt 64	[4.19 s]
+0.0.B: Trace Attempt 93	[8.21 s]
+0.0.B: Trace Attempt 108	[12.43 s]
+0.0.B: Trace Attempt 122	[16.50 s]
+0.0.Bm: Trace Attempt 138	[40.40 s]
+0.0.B: Trace Attempt 131	[20.77 s]
+0.0.B: Trace Attempt 137	[24.80 s]
+0.0.Bm: Trace Attempt 139	[49.69 s]
+0.0.B: Trace Attempt 138	[36.91 s]
+0.0.Bm: Trace Attempt 140	[61.04 s]
+0.0.B: Trace Attempt 139	[49.97 s]
+0.0.Bm: Trace Attempt 141	[73.56 s]
+0.0.B: Trace Attempt 140	[59.70 s]
