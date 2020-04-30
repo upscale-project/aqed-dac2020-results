@@ -284,7 +284,7 @@ always @ (posedge ap_clk) begin
     end
 end
 always @ (posedge ap_clk) begin
-    if(ap_rst) begin
+    if(ap_rst) begin //edit
 	idx_ct_V <= 0;
     end else if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
         idx_ct_V <= tmp_s_fu_217_p2;
@@ -293,7 +293,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if(ap_rst) begin
+    if(ap_rst) begin //edit
         o2_qed_check_V_reg_300 <=0;
         o2_qed_done_V_reg_295 <=0; 
     end else    if (((grp_aqed_out_fu_173_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state6))) begin
@@ -303,7 +303,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if(ap_rst) begin
+    if(ap_rst) begin //edit
 	state_dup_idx_V <= 0;
     end else    if (((1'b1 == ap_CS_fsm_state2) & (grp_aqed_in_fu_134_state_dup_idx_V_ap_vld == 1'b1))) begin
         state_dup_idx_V <= grp_aqed_in_fu_134_state_dup_idx_V;
@@ -311,7 +311,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if(ap_rst) begin
+    if(ap_rst) begin //edit
 	state_dup_in_V <= 'hFFFF;
     end else    if (((1'b1 == ap_CS_fsm_state2) & (grp_aqed_in_fu_134_state_dup_in_V_ap_vld == 1'b1))) begin
         state_dup_in_V <= grp_aqed_in_fu_134_state_dup_in_V;
@@ -319,7 +319,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if(ap_rst) begin
+    if(ap_rst) begin //edit
 	state_dup_issued_V <= 0;
     end else    if (((1'b1 == ap_CS_fsm_state2) & (grp_aqed_in_fu_134_state_dup_issued_V_o_ap_vld == 1'b1))) begin
         state_dup_issued_V <= grp_aqed_in_fu_134_state_dup_issued_V_o;
@@ -339,7 +339,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if(ap_rst) begin
+    if(ap_rst) begin //edit
 	state_orig_done_V <= 0;
     end else    if (((1'b1 == ap_CS_fsm_state6) & (grp_aqed_out_fu_173_state_orig_done_V_ap_vld == 1'b1))) begin
         state_orig_done_V <= grp_aqed_out_fu_173_state_orig_done_V;
@@ -347,7 +347,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if(ap_rst) begin
+    if(ap_rst) begin //edit
 	state_orig_idx_V <= 0;
     end else    if (((1'b1 == ap_CS_fsm_state2) & (grp_aqed_in_fu_134_state_orig_idx_V_ap_vld == 1'b1))) begin
         state_orig_idx_V <= grp_aqed_in_fu_134_state_orig_idx_V;
@@ -355,7 +355,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if(ap_rst) begin
+    if(ap_rst) begin //edit
 	state_orig_in_V <= 'hFFFF;
     end else    if (((1'b1 == ap_CS_fsm_state2) & (grp_aqed_in_fu_134_state_orig_in_V_ap_vld == 1'b1))) begin
         state_orig_in_V <= grp_aqed_in_fu_134_state_orig_in_V;
@@ -363,7 +363,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if(ap_rst) begin
+    if(ap_rst) begin //edit
 	state_orig_issued_V <= 0;
     end else    if (((1'b1 == ap_CS_fsm_state2) & (grp_aqed_in_fu_134_state_orig_issued_V_o_ap_vld == 1'b1))) begin
         state_orig_issued_V <= grp_aqed_in_fu_134_state_orig_issued_V_o;
@@ -532,17 +532,11 @@ end
   assume_stable_dup_idx : assume property
     (@(posedge ap_clk) ap_rst == 0 |=> $stable(dup_idx));
 
-/*  assume_orig_idx_max : assume property
-    (@(posedge ap_clk) (orig_idx_V < 2'b10));
-
-  assume_dup_idx_max : assume property
-    (@(posedge ap_clk) (dup_idx_V < 2'b10));
-*/
 generate
   for (genvar i=0; i < 32; i++) begin
   assume_consistent_key3 : assume property
     (@(posedge ap_clk) (
- 	$stable(grp_workload_fu_121.local_key_0_U.workload_local_key_0_rom_U.ram[i]) && (grp_workload_fu_121.local_key_0_U.workload_local_key_0_rom_U.ram[i] == grp_workload_fu_121.local_key_1_U.workload_local_key_0_rom_U.ram[i]) /*&& (grp_workload_fu_111.grp_aes256_encrypt_ecb_fu_339.ctx_body_key_U.aes256_encrypt_ecb_ctx_body_key_ram_U.ram[i] == grp_workload_fu_111.grp_aes256_encrypt_ecb_fu_349.ctx_body_key_U.aes256_encrypt_ecb_ctx_body_key_ram_U.ram[i]) && (grp_workload_fu_111.grp_aes256_encrypt_ecb_fu_339.ctx_body_enckey_U.aes256_encrypt_ecb_ctx_body_enckey_ram_U.ram[i]==grp_workload_fu_111.grp_aes256_encrypt_ecb_fu_349.ctx_body_enckey_U.aes256_encrypt_ecb_ctx_body_enckey_ram_U.ram[i])*/));
+ 	$stable(grp_workload_fu_121.local_key_0_U.workload_local_key_0_rom_U.ram[i]) && (grp_workload_fu_121.local_key_0_U.workload_local_key_0_rom_U.ram[i] == grp_workload_fu_121.local_key_1_U.workload_local_key_0_rom_U.ram[i]) ));
    end
 endgenerate
 

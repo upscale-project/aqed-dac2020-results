@@ -210,12 +210,12 @@ void aes256_encrypt_ecb(uint8_t k[32], uint8_t buf[2])
         ctx->enckey[i] = ctx->deckey[i] = k[i];
     }
 /*    ecb2 : for (i = 8;--i;){
-        aes_expandEncKey(ctx->deckey, &rcon);
+        aes_expandEncKey(ctx->deckey, &rcon); //abstracted away
     }
 */
     //DEC
     aes_addRoundKey_cpy(buf, ctx->enckey, ctx->key);
-/*    ecb3 : for(i = 1, rcon = 1; i < 14; ++i)
+/*    ecb3 : for(i = 1, rcon = 1; i < 14; ++i) //abstracted away
     {
         aes_subBytes(buf);
         aes_shiftRows(buf);
@@ -224,13 +224,13 @@ void aes256_encrypt_ecb(uint8_t k[32], uint8_t buf[2])
         else aes_expandEncKey(ctx->key, &rcon), aes_addRoundKey(buf, ctx->key);
     }*/
     aes_subBytes(buf);
- // aes_shiftRows(buf);
- // aes_expandEncKey(ctx->key, &rcon);
+ // aes_shiftRows(buf); //abstracted away
+ // aes_expandEncKey(ctx->key, &rcon); //abstracted away
     aes_addRoundKey(buf, ctx->key);
 } /* aes256_encrypt */
 
 void aes_tiling(uint8_t* local_key, uint8_t* buf) {
-    for (int k=0; k<BUF_SIZE/UNROLL_FACTOR; k+=2)
+    for (int k=0; k<BUF_SIZE/UNROLL_FACTOR; k+=2) //plaintext abstracted from 16 to 2 bytes
         aes256_encrypt_ecb(local_key, buf + k);
 }
 
@@ -274,7 +274,7 @@ void workload( uint8_t* key, uint8_t* data, ap_uint<3> size ) {
             //	buf[j][k] = *(data + i*BUF_SIZE + j*BUF_SIZE/UNROLL_FACTOR + k);
         	buf[i][k] = *(data + i*BUF_SIZE + j*BUF_SIZE/UNROLL_FACTOR + k);
 	    }
-//	    memcpy(buf[i], data + i*BUF_SIZE + j*BUF_SIZE/UNROLL_FACTOR, BUF_SIZE/UNROLL_FACTOR);
+// Converted from:  memcpy(buf[i], data + i*BUF_SIZE + j*BUF_SIZE/UNROLL_FACTOR, BUF_SIZE/UNROLL_FACTOR);
 	}
         unroll_loop: for (j=0; j<UNROLL_FACTOR; j++) {
 	#pragma HLS UNROLL
@@ -286,7 +286,7 @@ void workload( uint8_t* key, uint8_t* data, ap_uint<3> size ) {
 		*(data + i*BUF_SIZE + j*BUF_SIZE/UNROLL_FACTOR + k) = buf[j][k] ;
 	    }
 
-//	    memcpy(data + i*BUF_SIZE + j*BUF_SIZE/UNROLL_FACTOR, buf[j], BUF_SIZE/UNROLL_FACTOR);
+// Converted from:  memcpy(data + i*BUF_SIZE + j*BUF_SIZE/UNROLL_FACTOR, buf[j], BUF_SIZE/UNROLL_FACTOR);
 	}
     }
     return;

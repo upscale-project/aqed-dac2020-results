@@ -24,7 +24,7 @@ initial begin
     $readmemh("./aes256_encrypt_ecb_sbox_rom.dat", ram);
 end
 
-
+//edit
 assign ram[0] =            'h63;                               
 assign ram[1] =            'h7C;                 
 assign ram[2] =            'h77;                 

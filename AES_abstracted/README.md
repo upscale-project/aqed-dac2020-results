@@ -28,7 +28,12 @@ Four bugs and the bugless design are looked into and can be found in the **./bug
 3. **aqed_in_state_key_V.v, aes256_encrypt_ecb_ctx_body_key.v** : In *aes256_encrypt_ecb_ctx_body_key_ram* and *aqed_in_state_key_V_ram* modules, *Vivado* all updation of the same register in two different *always* blocks. *JasperGold* cannot resolve this multi-driver conflict and treats the register as a free net. To remove this multi-driver conflict, the two blocks were combined and blocking assignments were used instead of non-blocking ones.
 
 #### C++ code Edits
-   Because the full AES module proved too large for the BMC tool to handle, some functions were abstracted away and BUF_SIZE macro was reduced to 4 instead of 2^12. The pragmas for generating an axi interface were also removed. Since the standard C++ memcpy function is incompatible for synthesis without these m\_axi interface, instead a for loop updating arrays elementwise was done.
+   Edits made in __buf4*.cpp__ are as follows  
+1. Because the full AES module proved too large for the BMC tool to handle  
+   1. Most of the internal operations were abstracted away
+   2. BUF_SIZE macro was reduced to 4 from 2^12
+   3. Plaintext message was reduced from 16 bytes to 2 bytes.
+2. The pragmas for generating an axi interface were also removed. Since the standard C++ memcpy function is incompatible for synthesis without these m\_axi interface, instead a for loop updating arrays elementwise was done.
 
 ### References
 [Cong 17] Cong, J., et al., "Bandwidth Optimization Through On-Chip Memory Restructuring for HLS," Proc. DAC, 2017

@@ -27,7 +27,7 @@ input clk;
 
 
 
-
+//edit
 always @(posedge clk)  
 begin 
      if (ce1) 
@@ -47,8 +47,18 @@ begin
     end
 end
 
-
-
+//edit
+/*always @(posedge clk)  
+begin 
+     if (ce1) 
+    begin
+        if (we1) 
+        begin 
+            ram[addr1] <= d1; 
+        end 
+    end
+end
+*/
 endmodule
 
 `timescale 1 ns / 1 ps

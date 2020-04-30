@@ -205,7 +205,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if(ap_rst) begin
+    if(ap_rst) begin //edit
 	state_out_count_V <= 0;	
     end else if ((1'b1 == ap_CS_fsm_state3)) begin
         state_out_count_V <= tmp_4_fu_353_p2;
@@ -221,7 +221,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if(ap_rst) begin
+    if(ap_rst) begin //edit
 	state_qed_check_V <= 0;	
     end else    if (((state_orig_issued_V_s_load_fu_120_p1 == 1'd1) & (brmerge1_reg_438 == 1'd0) & (1'b1 == ap_CS_fsm_state3))) begin
         state_qed_check_V <= val_assign_5_fu_337_p2;
@@ -229,7 +229,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-     if(ap_rst) begin
+     if(ap_rst) begin //edit
 	state_qed_done_V <= 0;	
     end else   if (((p_state_qed_done_V_fl_fu_364_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state4))) begin
         state_qed_done_V <= 1'd1;

@@ -268,7 +268,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if(ap_rst) begin
+    if(ap_rst) begin //edit
 	state_in_count_V <= 0;
     end else if ((1'b1 == ap_CS_fsm_state18)) begin
         state_in_count_V <= tmp_4_fu_631_p2;
