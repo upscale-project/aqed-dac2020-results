@@ -66,7 +66,7 @@ module fifo_control_unq1(
    almost_full,
    empty,
    full,
-   valid,//saranyu
+   valid,
 
    fifo_to_mem_data,
    fifo_to_mem_cen,
@@ -93,7 +93,7 @@ output logic	almost_empty;
 output logic	almost_full;
 output logic	empty;
 output logic	full;
-output logic 	valid;//saranyu
+output logic 	valid;
 
 output logic [15:0] fifo_to_mem_data [1:0];
 output logic [1:0] fifo_to_mem_cen;
@@ -152,7 +152,7 @@ assign almost_full = (num_words_mem >= (depth - almost_count));
 assign empty = (num_words_mem == 0);
 assign full = (num_words_mem == depth);
 
-always @(posedge clk or posedge reset) begin//saranyu
+always @(posedge clk or posedge reset) begin
   if(reset) begin
     valid <= 0;
   end
@@ -333,7 +333,7 @@ always @(posedge clk_gated or posedge reset) begin
 		 // If WRITE AND NO READ
 		 else if (wen & ~ren) begin
                 passthru <= 0;
-		if(~full)
+		if(~full)//updated
 				write_addr <= (write_addr + 1) % (2 ** 10);
 				read_to_write <= 0;
          end	

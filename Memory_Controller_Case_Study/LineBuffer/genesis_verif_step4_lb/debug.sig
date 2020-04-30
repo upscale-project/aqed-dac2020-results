@@ -32,7 +32,7 @@
     <radix/>
   </wave>
   <wave>
-    <expr>data_out</expr>
+    <expr>data_in</expr>
     <label/>
     <radix/>
   </wave>

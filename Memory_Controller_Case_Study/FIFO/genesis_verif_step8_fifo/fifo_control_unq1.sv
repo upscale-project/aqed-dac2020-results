@@ -66,7 +66,7 @@ module fifo_control_unq1(
    almost_full,
    empty,
    full,
-   valid,//saranyu
+   valid,
 
    fifo_to_mem_data,
    fifo_to_mem_cen,
@@ -93,7 +93,7 @@ output logic	almost_empty;
 output logic	almost_full;
 output logic	empty;
 output logic	full;
-output logic 	valid;//saranyu
+output logic 	valid;
 
 output logic [15:0] fifo_to_mem_data [1:0];
 output logic [1:0] fifo_to_mem_cen;
@@ -110,7 +110,7 @@ input logic circular_en;
 // Clock Gating
 // ==========================
 logic clk_gated;
-assign clk_gated = clk ;
+assign clk_gated = clk ;//updated
 
 // ==========================
 // Address generation
@@ -156,7 +156,7 @@ always @(posedge clk or posedge reset) begin
   if(reset) begin
     valid <= 0;
   end
-  else if(clk_en) begin
+  else if(clk_en) begin //updated
     if(flush) begin
       valid <= 0;
     end
@@ -201,7 +201,7 @@ always @(posedge clk or posedge reset) begin
    if(reset) begin
       num_words_mem <= 0;
    end
-   else if(clk_en) begin
+   else if(clk_en) begin //updated
       if (flush) begin
          num_words_mem <= 0;
       end
@@ -266,7 +266,7 @@ always @(posedge clk_gated or posedge reset) begin
 	  write_buff_addr[1] <= 0;
 	  ren_mem_reg[1] <= 0;
    end
-   else if(clk_en) begin
+   else if(clk_en) begin //updated
       if (flush == 1'b1) begin
          read_addr <= 0;
 		 write_addr <= 0;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wavelist version="2">
-  <insertion-point-position>14</insertion-point-position>
+  <insertion-point-position>11</insertion-point-position>
   <wave>
     <expr>clk</expr>
     <label/>
@@ -18,21 +18,6 @@
   </wave>
   <wave>
     <expr>qed_done</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>aqed.aqed_top_core_inst.original_rsc_dat</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>aqed.aqed_top_core_inst.duplicate_rsc_dat</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>aqed.aqed_top_core_inst.bmc_v_rsci_idat</expr>
     <label/>
     <radix/>
   </wave>

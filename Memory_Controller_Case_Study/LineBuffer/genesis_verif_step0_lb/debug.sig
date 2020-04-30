@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wavelist version="2">
-  <insertion-point-position>11</insertion-point-position>
+  <insertion-point-position>7</insertion-point-position>
   <wave>
     <expr>clk</expr>
     <label/>
@@ -32,7 +32,7 @@
     <radix/>
   </wave>
   <wave>
-    <expr>data_out</expr>
+    <expr>data_in</expr>
     <label/>
     <radix/>
   </wave>

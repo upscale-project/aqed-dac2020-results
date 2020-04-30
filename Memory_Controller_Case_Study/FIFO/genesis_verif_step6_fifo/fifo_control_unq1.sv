@@ -66,7 +66,7 @@ module fifo_control_unq1(
    almost_full,
    empty,
    full,
-   valid,//saranyu
+   valid,
 
    fifo_to_mem_data,
    fifo_to_mem_cen,
@@ -93,7 +93,7 @@ output logic	almost_empty;
 output logic	almost_full;
 output logic	empty;
 output logic	full;
-output logic 	valid;//saranyu
+output logic 	valid;
 
 output logic [15:0] fifo_to_mem_data [1:0];
 output logic [1:0] fifo_to_mem_cen;
@@ -102,7 +102,7 @@ output logic [8:0] fifo_to_mem_addr [1:0];
 input logic  [15:0] mem_to_fifo_data [1:0];
 
 output logic [12:0] num_words_mem;
-input logic [15:0] depth;
+input logic [15:0] depth; //updated
 input logic [3:0] almost_count;
 input logic circular_en;
 

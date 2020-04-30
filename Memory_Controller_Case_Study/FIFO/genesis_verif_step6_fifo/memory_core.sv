@@ -77,8 +77,8 @@ module memory_core(
    chain_wen_in,
    chain_valid_out,
 
-   full,//saranyu
-   empty,//saranyu
+   full,
+   empty,
    almost_full, 
    almost_empty, 
 
@@ -151,7 +151,7 @@ input logic             enable_chain;
 input logic  [1:0]      mode;
 input logic             tile_en;
 input logic  [3:0]      chain_idx;
-input logic  [15:0]     depth;
+input logic  [15:0]     depth; //updated
 
 // ========================================================
 // Inputs and Outputs
@@ -180,8 +180,8 @@ input logic switch_db;
 // Status
 output logic almost_full;
 output logic almost_empty;
-output logic full;//saranyu
-output logic empty;//saranyu
+output logic full;
+output logic empty;
 
 
 // Config port for SRAM features (1-4)
@@ -323,8 +323,8 @@ always @(*) begin
       valid_out = 1'b0; 
       almost_full = 1'b0; 
       almost_empty = 1'b0; 
-      full = 1'b0;//saranyu 
-      empty = 1'b0;//saranyu 
+      full = 1'b0; 
+      empty = 1'b0; 
 
 
    end
@@ -345,8 +345,8 @@ always @(*) begin
       valid_out = lb_valid_out; //& wen_in_int;
       almost_full = fifo_almost_full;
       almost_empty = fifo_almost_empty;
-      full = fifo_full;//saranyu
-      empty = fifo_empty;//saranyu
+      full = fifo_full;
+      empty = fifo_empty;
    end
 
    // ========================================================
@@ -360,11 +360,11 @@ always @(*) begin
       mem_addr = fifo_addr;
       mem_data_in = fifo_mem_data_out;
       data_out = fifo_out;
-      valid_out = fifo_valid_out;//saranyu
+      valid_out = fifo_valid_out;
       almost_full = fifo_almost_full;
       almost_empty = fifo_almost_empty;
-      full = fifo_full;//saranyu
-      empty = fifo_empty;//saranyu
+      full = fifo_full;
+      empty = fifo_empty;
    end
 
    // ========================================================
@@ -381,8 +381,8 @@ always @(*) begin
       valid_out = 1'b1;
       almost_full = 1'b0;
       almost_empty = 1'b0;
-      full = 1'b0;//saranyu 
-      empty = 1'b0;//saranyu 
+      full = 1'b0; 
+      empty = 1'b0; 
   end
 
    // ========================================================
@@ -399,8 +399,8 @@ always @(*) begin
       valid_out = db_valid_out;
       almost_full = 1'b0;
       almost_empty = 1'b0;
-      full = 1'b0;//saranyu 
-      empty = 1'b0;//saranyu 
+      full = 1'b0; 
+      empty = 1'b0; 
   end
 
    // ========================================================
@@ -418,8 +418,8 @@ always @(*) begin
       valid_out = 1'b0; 
       almost_full = 1'b0; 
       almost_empty = 1'b0; 
-      full = 1'b0;//saranyu 
-      empty = 1'b0;//saranyu 
+      full = 1'b0; 
+      empty = 1'b0; 
   end
 
    endcase
@@ -473,9 +473,9 @@ fifo_control_unq1  fifo_control
 .data_out(fifo_out),
 .almost_empty(fifo_almost_empty),
 .almost_full(fifo_almost_full),
-.empty(fifo_empty),//saranyu
+.empty(fifo_empty),
 .full(fifo_full),
-.valid(fifo_valid_out),//saranyu
+.valid(fifo_valid_out),
 .depth(depth),
 .fifo_to_mem_data(fifo_mem_data_out),
 .fifo_to_mem_cen(fifo_cen),

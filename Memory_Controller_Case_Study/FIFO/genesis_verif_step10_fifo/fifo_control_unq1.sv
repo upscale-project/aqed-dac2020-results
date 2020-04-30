@@ -13,15 +13,15 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /media/saranyu/Share/SF/garnet-master/memory_core/genesis_new/fifo_control.svp
+//  Source file: /home/jarvis/Documents/garnet-master/memory_core/genesis_new/fifo_control.svp
 //  Source template: fifo_control
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
 //
 //	From 'generate' statement (priority=5):
+// Parameter bbanks 	= 2
 // Parameter ddepth 	= 512
 // Parameter wwidth 	= 16
-// Parameter bbanks 	= 2
 // Parameter dwidth 	= 16
 //
 //		---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
@@ -66,7 +66,7 @@ module fifo_control_unq1(
    almost_full,
    empty,
    full,
-   valid,//saranyu
+   valid,
 
    fifo_to_mem_data,
    fifo_to_mem_cen,
@@ -93,7 +93,7 @@ output logic	almost_empty;
 output logic	almost_full;
 output logic	empty;
 output logic	full;
-output logic 	valid;//saranyu
+output logic    valid;
 
 output logic [15:0] fifo_to_mem_data [1:0];
 output logic [1:0] fifo_to_mem_cen;
@@ -101,16 +101,12 @@ output logic [1:0] fifo_to_mem_wen;
 output logic [8:0] fifo_to_mem_addr [1:0];
 input logic  [15:0] mem_to_fifo_data [1:0];
 
-output logic [12:0] num_words_mem;
+output logic [15:0] num_words_mem;
 input logic [15:0] depth;
 input logic [3:0] almost_count;
 input logic circular_en;
 
-// ==========================
-// Clock Gating
-// ==========================
-logic clk_gated;
-assign clk_gated = clk ;
+logic [15:0] almost_count_extended;
 
 // ==========================
 // Address generation
@@ -133,7 +129,7 @@ logic [15:0] data_out_sel [1:0];
 
 logic [8:0] data_addr [1:0];
 
-logic [12:0] next_num_words_mem;
+logic [15:0] next_num_words_mem;
 logic init_stage;
 logic read_to_write;
 logic passthru;
@@ -143,28 +139,34 @@ logic [15:0] data_out_reg;
 logic [1:0] ren_mem_reg;
 logic [1:0] same_bank;
 
+logic empty_d1;
+logic write_d1;
+
+always_ff @(posedge clk or posedge reset) begin
+    if(reset) begin
+        empty_d1 <= 0;
+        write_d1 <= 0;
+    end
+    else if(clk_en) begin
+        if(flush) begin
+            empty_d1 <= 0;
+            write_d1 <= 0;
+        end
+        else begin
+            empty_d1 <= empty;
+            write_d1 <= wen;
+        end
+    end
+end
+
 assign read_addr_mem = read_addr[9:1];
 assign write_addr_mem = write_addr[9:1];
-
-assign almost_empty = (num_words_mem <= almost_count);
-assign almost_full = (num_words_mem >= (depth - almost_count));
+assign almost_count_extended = {12'b0, almost_count};
+assign almost_empty = (num_words_mem <= almost_count_extended);
+assign almost_full = (num_words_mem >= (depth - almost_count_extended));
 
 assign empty = (num_words_mem == 0);
 assign full = (num_words_mem == depth);
-
-always @(posedge clk or posedge reset) begin
-  if(reset) begin
-    valid <= 0;
-  end
-  else if(clk_en) begin
-    if(flush) begin
-      valid <= 0;
-    end
-    else begin
-      valid <= ren & (~empty|wen); 
-    end
-  end
-end
 
 assign same_bank[0] = ren_mem[0] & wen_mem[0];
 assign same_bank[1] = ren_mem[1] & wen_mem[1];
@@ -194,10 +196,24 @@ assign cen_mem[1] = ren_mem[1] | wen_mem_en[1];
    assign data_out_sel[0] = mem_to_fifo_data[0];
    assign data_out_sel[1] = mem_to_fifo_data[1];
 
+always_ff @(posedge clk or posedge reset) begin
+  if(reset) begin
+    valid <= 0;
+  end
+  else if(clk_en) begin
+    if(flush) begin
+      valid <= 0;
+    end
+    else begin
+      valid <= ren & (~empty | wen);
+    end
+  end
+end
+
 // =========================
 // Combinational updates
 // =========================
-always @(posedge clk or posedge reset) begin
+always_ff @(posedge clk or posedge reset) begin
    if(reset) begin
       num_words_mem <= 0;
    end
@@ -211,7 +227,7 @@ always @(posedge clk or posedge reset) begin
    end
 end
 
-always @(*) begin
+always_comb begin
 
    next_num_words_mem = 0;
 
@@ -226,7 +242,7 @@ always @(*) begin
    end
 end
 
-always @(*) begin
+always_comb begin
 
    data_addr[0] = write_buffed[0] ?
 			  write_buff_addr[0] :
@@ -234,10 +250,10 @@ always @(*) begin
    data_addr[1] = write_buffed[1] ?
 			  write_buff_addr[1] :
 			  (ren_mem[1] ? read_addr_mem : write_addr_mem);	
-   if (ren_mem_reg[0]) begin
+   if (ren_mem_reg[0] & (~empty_d1 | write_d1)) begin
       data_out = (passthru) ? passthru_reg : data_out_sel[0];
    end
-   else if (ren_mem_reg[1]) begin
+   else if (ren_mem_reg[1] & (~empty_d1 | write_d1)) begin
       data_out = (passthru) ? passthru_reg : data_out_sel[1];
    end
    else begin
@@ -248,8 +264,8 @@ end
 // =======================
 // State updates
 // =======================
-always @(posedge clk_gated or posedge reset) begin
-   if(reset == 1'b1) begin
+always_ff @(posedge clk or posedge reset) begin
+   if(reset) begin
       read_addr <= 0;
       write_addr <= 0;
 	  init_stage <= 1;
@@ -267,7 +283,7 @@ always @(posedge clk_gated or posedge reset) begin
 	  ren_mem_reg[1] <= 0;
    end
    else if(clk_en) begin
-      if (flush == 1'b1) begin
+      if (flush) begin
          read_addr <= 0;
 		 write_addr <= 0;
 		 init_stage <= 1;
@@ -305,23 +321,25 @@ always @(posedge clk_gated or posedge reset) begin
 		 end
 			// If READ AND NO WRITE
          if (ren & ~wen) begin
-            passthru <= 0;
+            if(~empty) begin 
+                passthru <= 0;
+            end
 			if(circular_en & ~empty) begin
-			   if ((read_addr + 1) % (2 ** 10) == write_addr) begin
-			   // circular buffer
+			   if ((read_addr + 1) == write_addr) begin
+			      // circular buffer
 			      read_addr <= 0;
 				  // caught up to write
 				  read_to_write <= 1;
 			   end
 			   else begin
-				  read_addr <= (read_addr + 1) % (2 ** 10);
+				  read_addr <= (read_addr + 1);
 				  read_to_write <= 0;
 			   end
 			end
 			else begin
 			   if (~empty) begin				
-			      read_addr <= (read_addr + 1) % (2 ** 10);
-				  if ((read_addr + 1) % (2 ** 10) == write_addr) begin
+			      read_addr <= (read_addr + 1);
+				  if ((read_addr + 1) == write_addr) begin
 				     read_to_write <= 1;
 				  end
 				  else begin
@@ -332,10 +350,11 @@ always @(posedge clk_gated or posedge reset) begin
          end
 		 // If WRITE AND NO READ
 		 else if (wen & ~ren) begin
+            if(~full) begin
                 passthru <= 0;
-		if(~full)
-				write_addr <= (write_addr + 1) % (2 ** 10);
+				write_addr <= (write_addr + 1);
 				read_to_write <= 0;
+            end
          end	
 		 // If READ AND WRITE
 		 else if (ren & wen) begin
@@ -347,14 +366,10 @@ always @(posedge clk_gated or posedge reset) begin
                passthru <= 0;
             end
 			
-            read_addr <= (read_addr + 1) % (2 ** 10);
-			write_addr <= (write_addr + 1) % (2 ** 10);
+            read_addr <= (read_addr + 1);
+			write_addr <= (write_addr + 1);
 
 	  end
-      // No read or write - turn off passthru
-      else begin
-        passthru <= 0;
-      end
          // Transition out of the init stage after a read or write
 		 if (ren | wen) begin
 	        init_stage <= 0;
@@ -365,6 +380,5 @@ always @(posedge clk_gated or posedge reset) begin
       end
    end
 end
-//end
 
 endmodule

@@ -13,7 +13,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /media/saranyu/Share/SF/garnet-master/memory_core/genesis_new/fifo_control.svp
+//  Source file: /media/updated/Share/SF/garnet-master/memory_core/genesis_new/fifo_control.svp
 //  Source template: fifo_control
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
@@ -66,7 +66,7 @@ module fifo_control_unq1(
    almost_full,
    empty,
    full,
-   valid,//saranyu
+   valid,//updated
 
    fifo_to_mem_data,
    fifo_to_mem_cen,
@@ -93,7 +93,7 @@ output logic	almost_empty;
 output logic	almost_full;
 output logic	empty;
 output logic	full;
-output logic 	valid;//saranyu
+output logic 	valid;//updated
 
 output logic [15:0] fifo_to_mem_data [1:0];
 output logic [1:0] fifo_to_mem_cen;
@@ -152,7 +152,7 @@ assign almost_full = (num_words_mem >= (depth - almost_count));
 assign empty = (num_words_mem == 0);
 assign full = (num_words_mem == depth);
 
-assign valid = ren & (~empty|wen);//saranyu
+assign valid = ren & (~empty|wen);//updated
 /*always @(posedge clk or posedge reset) begin
   if(reset) begin
     valid <= 0;
