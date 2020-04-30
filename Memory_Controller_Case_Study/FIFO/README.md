@@ -6,7 +6,7 @@
 | 3_fifo | sol: disable empty | buggy full | 1 | 5 |  | 0 |
 | 4_fifo | sol: disable full | bus width mismatch for depth signal | 1.2 | 6 |  | 0 |
 | 5_fifo | sol: fix mitmatch | -------NO BUGS--------- |  |  | [found bug in FIFO, fixed, made test make more sense and do checks eve…](https://github.com/StanfordAHA/garnet/commit/88641665838078a95c1f2bb3003ad7270df57b3e#diff-d7ec987a198ed4cf3b82800e750c4fed) | 0 |
-| 6\_fifo | turning on clk gating  | clk_gating occurs in aqed a cycle later leading it to register a spurious duplicate | 1.4 | 6 |  | 0 |
+| 6\_fifo | turning on clk gating  | clk gating occurs in fifo a cycle earlier | 1.4 | 6 |  | 0 |
 | 7\_fifo | Sol: add clk\_en in every if statement instead of gating at the top | -------NO BUGS--------- |  |  | [clk_en on the rest...here goes nothing](https://github.com/StanfordAHA/garnet/commit/88641665838078a95c1f2bb3003ad7270df57b3e#diff-d7ec987a198ed4cf3b82800e750c4fed) | 0 |
 | 8_fifo | final design | -------NO BUGS--------- |  |  |  | 0 |
 | 9\_fifo | final design | same address read twice since read_addr gets reset because of buggy circular buffer mode | 1.3 | 6 |  | 1 |
