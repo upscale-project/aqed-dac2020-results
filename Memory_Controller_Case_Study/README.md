@@ -27,5 +27,12 @@ In the mem_core_top_1.sv,
 5. **cnst_depth** : Allows for symbolic initialization of some configuration bits like depth and iter_cnt, handles configuration criteria as well as takes care of FIFO full condition in FIFO versions where the buggy full signal has been removed.
 6. __resource_constrain*__ : These enforce ready-valid protocol in the absence of ready-valid signals like when the accelerator is ready to take inputs in doublebuffer.
 
-**Note: The updation in each step is marked by the comment *\\\\updated* in the verilog.**
+### Notes: 
+
+1. The updation in each step is marked by the comment *\\\\updated* in the verilog code.
+2. Rate-matched in doublebuffer and circular_en are two sub-configuration bits and the verification flow was performed once keeping them high and then keeping them low. More details can be found in the __README__ in each folder.
+3. In doublebuffer the response bound was checked only after a functionally consistent design was reached after considering both sub-configurations produced by rate-matched. Specifically response-bound was checked at steps 12, 15-18.
+4. In FIFO and linebuffer, the response bound was checked whenever functional consistency checked off a design as clean specifically steps 5,7 and 8 in FIFO and 1, 2, 3 and 5 in linebuffer. The bug in 2 is due to response bound violation and passed functional consistency check.
+
+
 
