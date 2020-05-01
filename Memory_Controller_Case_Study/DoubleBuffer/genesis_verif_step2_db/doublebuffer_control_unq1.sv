@@ -129,7 +129,7 @@ output logic [1:0]  doublebuffer_wen_mem;
 output logic [8:0]  doublebuffer_addr_mem [1:0];
 input logic  [15:0]  doublebuffer_data_out [1:0];
 
-input logic  [15:0]           depth;//saranyu
+input logic  [15:0]           depth;//updated
 output logic                  valid;
 // ==============================================
 // Internal

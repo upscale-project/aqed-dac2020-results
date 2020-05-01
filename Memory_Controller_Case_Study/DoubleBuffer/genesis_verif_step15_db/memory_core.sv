@@ -13,7 +13,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /media/saranyu/Share/SF/garnet-master/memory_core/genesis_new/memory_core.svp
+//  Source file: /media/updated/Share/SF/garnet-master/memory_core/genesis_new/memory_core.svp
 //  Source template: memory_core
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
@@ -473,7 +473,7 @@ fifo_control_unq1  fifo_control
 // ========================================================
 sram_control_unq1  sram_control
 (
-.clk(gclk_in),//saranyu
+.clk(gclk_in),//updated
 .clk_en(clk_en),
 .reset(reset),
 .flush(flush),
@@ -496,7 +496,7 @@ sram_control_unq1  sram_control
 // ========================================================
 doublebuffer_control_unq1  doublebuffer_control
 (
-.clk(gclk_in),//saranyu
+.clk(gclk_in),//updated
 .clk_en(clk_en), 
 .reset(reset),
 .flush(flush),
@@ -539,7 +539,7 @@ doublebuffer_control_unq1  doublebuffer_control
    (
    .data_out(mem_data_out[0]),
    .data_in(mem_data_in[0]),
-   .clk(gclk_in),//saranyu
+   .clk(gclk_in),//updated
    .cen(mem_cen[0]),
    .wen(mem_wen[0]),
    .addr(mem_addr[0])
@@ -548,7 +548,7 @@ doublebuffer_control_unq1  doublebuffer_control
    (
    .data_out(mem_data_out[1]),
    .data_in(mem_data_in[1]),
-   .clk(gclk_in),//saranyu
+   .clk(gclk_in),//updated
    .cen(mem_cen[1]),
    .wen(mem_wen[1]),
    .addr(mem_addr[1])

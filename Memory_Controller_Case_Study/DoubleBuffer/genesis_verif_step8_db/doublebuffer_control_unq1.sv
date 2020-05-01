@@ -219,7 +219,7 @@ always @ (posedge clk or posedge reset) begin
     end
 end
 
-assign read_done = read_cnt == (iter_cnt - 1);//saranyu
+assign read_done = read_cnt == (iter_cnt - 1);//updated
 assign write_done = (write_addr == (depth - 1)) & wen; 
 
 // valid only used in chaining for db? timing is sorta irrelevant
@@ -227,7 +227,7 @@ assign write_gate = write_addr[12:9] == chain_idx;
 assign next_valid = read_addr[12:9] == chain_idx;
 
 assign valid_from_read = (read_mux) & in_range & ~init_state;
-assign valid = last_line_gate & (valid_from_read );
+assign valid = last_line_gate & (valid_from_read);
 
 always @ (posedge clk or posedge reset) begin
   if(reset) begin
@@ -244,7 +244,7 @@ always @ (posedge clk or posedge reset) begin
         valid_int <= valid_from_read;
       end
       else begin
-	valid_int <= (valid_from_read | autoswitch);
+	valid_int <= (valid_from_read );
 	end
     end
   end

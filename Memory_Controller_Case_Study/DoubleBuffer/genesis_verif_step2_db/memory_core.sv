@@ -148,7 +148,7 @@ input logic             enable_chain;
 input logic  [1:0]      mode;
 input logic             tile_en;
 input logic  [3:0]      chain_idx;
-input logic  [15:0]     depth;//saranyu
+input logic  [15:0]     depth;//updated
 
 // ========================================================
 // Inputs and Outputs

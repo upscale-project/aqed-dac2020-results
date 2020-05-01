@@ -265,7 +265,7 @@ assign write_gate = write_addr[12:9] == chain_idx;
 assign next_valid = read_addr[12:9] == chain_idx;
 
 assign valid_from_read = (read_mux) & in_range & ~init_state;
-assign valid = last_line_gate & (valid_from_read);//saranyu
+assign valid = last_line_gate & (valid_from_read);//updated
 
 always @ (posedge clk or posedge reset) begin
   if(reset) begin
@@ -282,7 +282,7 @@ always @ (posedge clk or posedge reset) begin
         valid_int <= valid_from_read;
       end
       else begin
-	valid_int <= (valid_from_read | autoswitch);
+	valid_int <= (valid_from_read );
 	end
     end
   end
@@ -292,8 +292,8 @@ always @(*) begin
   // Data to memory is just data in
   doublebuffer_data_in[0] = data_in;
   doublebuffer_data_in[1] = data_in;
-  doublebuffer_cen_mem[0] = wen | switch | ~init_state | autoswitch | (read_mux);
-  doublebuffer_cen_mem[1] = wen | switch | ~init_state | autoswitch | (read_mux);
+  doublebuffer_cen_mem[0] = wen | ~init_state | switch  | autoswitch | (read_mux);
+  doublebuffer_cen_mem[1] = wen | ~init_state | switch  | autoswitch | (read_mux);
   doublebuffer_wen_mem[0] = (ping_npong == 0) & (wen | ~write_done_d1) & write_gate;
   doublebuffer_wen_mem[1] = (ping_npong == 1) & (wen | ~write_done_d1) & write_gate;
   doublebuffer_addr_mem[0] = (ping_npong == 0) ? write_addr : read_addr;

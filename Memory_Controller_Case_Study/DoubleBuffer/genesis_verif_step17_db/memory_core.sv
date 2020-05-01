@@ -13,7 +13,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /media/saranyu/Share/SF/garnet-master/memory_core/genesis_new/memory_core.svp
+//  Source file: /home/jarvis/Documents/memory_core/genesis_new/memory_core.svp
 //  Source template: memory_core
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
@@ -23,12 +23,6 @@
 //		---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
 //	From Command Line input (priority=4):
-// Parameter wwidth 	= 16
-// Parameter iterator_support 	= 6
-// Parameter bbanks 	= 2
-// Parameter ddepth 	= 512
-// Parameter dwidth 	= 16
-// Parameter use_sram_stub 	= 1
 //
 //		---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -45,17 +39,17 @@
 // ========================================================
 `define xassert(condition, message) if(condition) begin $display(message); $finish(1); end
 
-// dwidth (_GENESIS2_CMD_LINE_PRIORITY_) = 16
+// dwidth (_GENESIS2_DECLARATION_PRIORITY_) = 16
 //
-// bbanks (_GENESIS2_CMD_LINE_PRIORITY_) = 2
+// bbanks (_GENESIS2_DECLARATION_PRIORITY_) = 2
 //
-// ddepth (_GENESIS2_CMD_LINE_PRIORITY_) = 0x200
+// ddepth (_GENESIS2_DECLARATION_PRIORITY_) = 0x200
 //
-// wwidth (_GENESIS2_CMD_LINE_PRIORITY_) = 16
+// wwidth (_GENESIS2_DECLARATION_PRIORITY_) = 16
 //
-// iterator_support (_GENESIS2_CMD_LINE_PRIORITY_) = 6
+// iterator_support (_GENESIS2_DECLARATION_PRIORITY_) = 8
 //
-// use_sram_stub (_GENESIS2_CMD_LINE_PRIORITY_) = 1
+// use_sram_stub (_GENESIS2_DECLARATION_PRIORITY_) = 0
 //
 
 // ========================================================
@@ -79,6 +73,8 @@ module memory_core(
    chain_wen_in,
    chain_valid_out,
 
+   full,
+   empty,
    almost_full, 
    almost_empty, 
 
@@ -108,12 +104,16 @@ module memory_core(
    stride_3,
    stride_4,
    stride_5,
+   stride_6,
+   stride_7,
   range_0,
   range_1,
   range_2,
   range_3,
   range_4,
   range_5,
+  range_6,
+  range_7,
    circular_en,
    almost_count,
    enable_chain,
@@ -136,12 +136,16 @@ input logic [15:0] stride_2;
 input logic [15:0] stride_3;
 input logic [15:0] stride_4;
 input logic [15:0] stride_5;
+input logic [15:0] stride_6;
+input logic [15:0] stride_7;
 input logic [31:0] range_0;
 input logic [31:0] range_1;
 input logic [31:0] range_2;
 input logic [31:0] range_3;
 input logic [31:0] range_4;
 input logic [31:0] range_5;
+input logic [31:0] range_6;
+input logic [31:0] range_7;
 input logic circular_en;
 input logic  [3:0]      almost_count;
 input logic             enable_chain;
@@ -153,8 +157,8 @@ input logic  [15:0]     depth;
 // ========================================================
 // Inputs and Outputs
 // ========================================================
-logic [15:0] stride [5:0];
-logic [31:0] range [5:0];
+logic [15:0] stride [7:0];
+logic [31:0] range [7:0];
 // Clock + Reset
 input clk;
 input clk_en;
@@ -177,7 +181,8 @@ input logic switch_db;
 // Status
 output logic almost_full;
 output logic almost_empty;
-
+output logic full;
+output logic empty;
 // Config port for SRAM features (1-4)
 input logic [31:0] config_addr;
 input logic [31:0] config_data;
@@ -209,7 +214,7 @@ logic fifo_almost_empty;
 logic fifo_valid_out;
 logic fifo_full;
 logic fifo_empty;
-logic [12:0] num_words_mem_fifo_to_lb;
+logic [15:0] num_words_mem_fifo_to_lb;
 //
 logic [8:0] sram_addr [1:0];
 logic [15:0] sram_mem_data_out [1:0];
@@ -230,18 +235,14 @@ logic  [8:0] mem_addr [1:0];
 logic  [1:0] mem_ren;
 logic  [1:0] mem_wen;
 
-logic gclk_sram;
-
 logic wen_in_int;
 logic [15:0] data_in_int;
 // ========================================================
 // Configuration
 // ========================================================
-logic             gclk;
 logic             gclk_in;
 
 logic [0:0] sram_sel;
-
 logic [1:0] mem_cen;
 logic  [1:0] mem_cen_int;
 
@@ -252,32 +253,39 @@ assign stride[2] = stride_2;
 assign stride[3] = stride_3;
 assign stride[4] = stride_4;
 assign stride[5] = stride_5;
+assign stride[6] = stride_6;
+assign stride[7] = stride_7;
 assign range[0] = range_0; 
 assign range[1] = range_1; 
 assign range[2] = range_2; 
 assign range[3] = range_3; 
 assign range[4] = range_4; 
 assign range[5] = range_5; 
+assign range[6] = range_6; 
+assign range[7] = range_7; 
 
 // ========================================================
 // No more wire declarations after this 
 // ========================================================
-
 assign gclk_in = (tile_en==1'b1) ? clk : 1'b0;
-// TODO
-assign read_config_data = 0;
+// Assign as config from sram
+assign read_config_data = mem_data_out[sram_sel];
 // ========================================================
 // Chaining - basically changes data in/data out/valid/wen
 // ========================================================
+// For the FIFO/(FIFOLB) - chain fifo data/wen
 assign data_in_int = (enable_chain) ? chain_in : data_in;
+// For the FIFO/(FIFOLB) - chain fifo data/wen
 assign wen_in_int = (enable_chain) ? chain_wen_in : wen_in;
+// If the chain valid in is high, then pass through the data, otherwise send your data
 assign chain_out = (enable_chain & chain_wen_in) ? chain_in : data_out;
-assign chain_valid_out = valid_out;
+// The valid out will be yours if the above is 0, otherwise its 1
+assign chain_valid_out = (enable_chain & chain_wen_in) | valid_out;
 
 // ========================================================
 // Do all the functional modes
 // ========================================================
-always @(*) begin
+always_comb begin
 
    read_data_sram_0 = { 16'b0, //'
 		mem_data_out[0]}; 
@@ -306,7 +314,6 @@ always @(*) begin
                       config_en_sram[3] |
                       config_en_sram[2]));
 
-      // TODO     
       mem_addr[0] = {(config_en_sram[3] | config_en_sram[1]), config_addr[31:24]};
       mem_addr[1] = {(config_en_sram[3] | config_en_sram[1]), config_addr[31:24]};
       mem_data_in[0] = config_data[15:0];
@@ -315,7 +322,9 @@ always @(*) begin
       data_out = mem_data_out[sram_sel];
       valid_out = 1'b0; 
       almost_full = 1'b0; 
-      almost_empty = 1'b0; 
+      almost_empty = 1'b0;
+      full = 1'b0;
+      empty = 1'b0;
 
    end
 
@@ -335,6 +344,8 @@ always @(*) begin
       valid_out = lb_valid_out; 
       almost_full = fifo_almost_full;
       almost_empty = fifo_almost_empty;
+      full = fifo_full;
+      empty = fifo_empty;
    end
 
    // ========================================================
@@ -343,15 +354,15 @@ always @(*) begin
    2'd1: begin 
       mem_cen_int = fifo_cen;
       mem_wen = fifo_wen;
-      //mem_ren = fifo_ren;
       mem_ren = {2{1'b1}};
       mem_addr = fifo_addr;
       mem_data_in = fifo_mem_data_out;
       data_out = fifo_out;
-      // TODO: Why did I invert this signal?
-      valid_out = ~(fifo_valid_out);
+      valid_out = fifo_valid_out;
       almost_full = fifo_almost_full;
       almost_empty = fifo_almost_empty;
+      full = fifo_full;
+      empty = fifo_empty;
    end
 
    // ========================================================
@@ -360,7 +371,6 @@ always @(*) begin
    2'd2: begin 
       mem_cen_int = sram_cen;
       mem_wen = sram_wen;
-      //mem_ren = sram_ren;
       mem_ren = {2{1'b1}};
       mem_addr = sram_addr;
       mem_data_in = sram_mem_data_out;
@@ -368,6 +378,8 @@ always @(*) begin
       valid_out = 1'b1;
       almost_full = 1'b0;
       almost_empty = 1'b0;
+      full = 1'b0;
+      empty = 1'b0;
    end
 
    // ========================================================
@@ -376,14 +388,15 @@ always @(*) begin
    2'd3: begin 
       mem_cen_int = db_cen;
       mem_wen = db_wen;
-      //mem_ren = sram_ren;
       mem_ren = {2{1'b1}};
       mem_addr = db_addr;
       mem_data_in = db_mem_data_out;
       data_out = (enable_chain & chain_wen_in) ? chain_in : db_out;
-      valid_out = db_valid_out;
+      valid_out = (enable_chain & chain_wen_in) | db_valid_out;
       almost_full = 1'b0;
       almost_empty = 1'b0;
+      full = 1'b0;
+      empty = 1'b0;
    end
 
    // ========================================================
@@ -401,6 +414,8 @@ always @(*) begin
       valid_out = 1'b0; 
       almost_full = 1'b0; 
       almost_empty = 1'b0; 
+      full = 1'b0;
+      empty = 1'b0;
    end
 
    endcase
@@ -410,23 +425,28 @@ end // END ALWAYS
 // ========================================================
 // Select a specific SRAM (from previous cycle)
 // ========================================================
-always @(posedge gclk) begin
-  sram_sel <= addr_in[9:9];
+always_ff @(posedge gclk_in or posedge reset) begin
+    if(reset) begin
+        sram_sel <= 0;
+    end
+    else if(clk_en | (|config_en_sram)) begin
+        sram_sel <= config_en_sram[3] | config_en_sram[2];
+    end
 end
 
 // ========================================================
 // Basically gate the memory CEN
 // ========================================================
-assign mem_cen[0] = mem_cen_int[0] & ( mem_wen[0] | mem_ren[0])&clk_en;
-assign mem_cen[1] = mem_cen_int[1] & ( mem_wen[1] | mem_ren[1])&clk_en;
+assign mem_cen[0] = mem_cen_int[0] & ( mem_wen[0] | mem_ren[0]) & (clk_en | (|config_en_sram));
+assign mem_cen[1] = mem_cen_int[1] & ( mem_wen[1] | mem_ren[1]) & (clk_en | (|config_en_sram));
 
 // ========================================================
 // Instantiate (Row) LineBuffer
 // ========================================================
 linebuffer_control_unq1  linebuffer_control
 (
-.clk(gclk),
-.clk_en(1'b1), 
+.clk(gclk_in),
+.clk_en(clk_en), 
 .reset(reset),
 .flush(flush),
 .wen(wen_in_int),
@@ -444,8 +464,8 @@ linebuffer_control_unq1  linebuffer_control
 // ========================================================
 fifo_control_unq1  fifo_control
 (
-.clk(gclk),
-.clk_en(1'b1), 
+.clk(gclk_in),
+.clk_en(clk_en), 
 .reset(reset),
 .flush(flush),
 .ren((mode == 2'b01) ? ren_in : ren_lb_to_fifo),
@@ -454,8 +474,9 @@ fifo_control_unq1  fifo_control
 .data_out(fifo_out),
 .almost_empty(fifo_almost_empty),
 .almost_full(fifo_almost_full),
-.empty(fifo_valid_out),
+.empty(fifo_empty),
 .full(fifo_full),
+.valid(fifo_valid_out),
 .depth(depth),
 .fifo_to_mem_data(fifo_mem_data_out),
 .fifo_to_mem_cen(fifo_cen),
@@ -473,13 +494,13 @@ fifo_control_unq1  fifo_control
 // ========================================================
 sram_control_unq1  sram_control
 (
-.clk(gclk_in),//saranyu
+.clk(gclk_in),
 .clk_en(clk_en),
 .reset(reset),
 .flush(flush),
 
-.data_in(data_in_int),
-.wen(wen_in_int),
+.data_in(data_in),
+.wen(wen_in),
 .data_out(sram_out),
 .ren(ren_in),
 .addr_in(addr_in),
@@ -496,7 +517,7 @@ sram_control_unq1  sram_control
 // ========================================================
 doublebuffer_control_unq1  doublebuffer_control
 (
-.clk(gclk_in),//saranyu
+.clk(gclk_in),
 .clk_en(clk_en), 
 .reset(reset),
 .flush(flush),
@@ -516,7 +537,6 @@ doublebuffer_control_unq1  doublebuffer_control
 .depth(depth),
 .valid(db_valid_out),
 .switch(switch_db),
-.chain_en(enable_chain),
 .chain_idx(chain_idx),
 
 .arbitrary_addr(arbitrary_addr),
@@ -539,18 +559,18 @@ doublebuffer_control_unq1  doublebuffer_control
    (
    .data_out(mem_data_out[0]),
    .data_in(mem_data_in[0]),
-   .clk(gclk_in),//saranyu
+   .clk(gclk_in),
    .cen(mem_cen[0]),
-   .wen(mem_wen[0]),
+   .wen(mem_wen[0] & (clk_en | (|config_en_sram))),
    .addr(mem_addr[0])
    );
    mem_unq1  mem_inst1
    (
    .data_out(mem_data_out[1]),
    .data_in(mem_data_in[1]),
-   .clk(gclk_in),//saranyu
+   .clk(gclk_in),
    .cen(mem_cen[1]),
-   .wen(mem_wen[1]),
+   .wen(mem_wen[1] & (clk_en | (|config_en_sram))),
    .addr(mem_addr[1])
    );
 

@@ -80,7 +80,7 @@ memory_core DUT(
    .flush(flush), 
 
    .addr_in(addr_in),
-   .data_in(data_out), 
+   .data_in(data_in), 
    .data_out(data_out_in), 
    .wen_in(wen_in), 
    .ren_in(ren_in), 
@@ -135,7 +135,7 @@ memory_core DUT(
   .chain_idx(chain_idx)
 );
 
-aqed_top aqed(.clk(clk), .clk_en(clk_en), .reset(reset), .bmc_in_rsc_dat(data_in), .bmc_v_rsc_dat(wen_in_1), .acc_out_rsc_dat(data_out_in), .acc_out_v_rsc_dat(wen_in), .acc_out_rdy_rsc_dat(valid_out), .return_aqed_out_rsc_dat(data_out), .return_aqed_out_v_rsc_dat(wen_in), .return_qed_done_rsc_dat(qed_done), .return_qed_check_rsc_dat(qed_check));
+aqed_top aqed(.clk(clk), .clk_en(clk_en), .reset(reset), .bmc_in_rsc_dat(data_in), .bmc_v_rsc_dat(wen_in), .acc_out_rsc_dat(data_out_in), .acc_out_v_rsc_dat(wen_in), .acc_out_rdy_rsc_dat(valid_out), .return_aqed_out_rsc_dat(data_out), .return_aqed_out_v_rsc_dat(wen_in_1), .return_qed_done_rsc_dat(qed_done), .return_qed_check_rsc_dat(qed_check));
 
 reg [16:0] count, in_after_orig;
 reg rdy_after_orig;

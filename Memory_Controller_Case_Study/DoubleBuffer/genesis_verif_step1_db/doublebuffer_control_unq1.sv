@@ -252,7 +252,7 @@ always @ (posedge clk or posedge reset) begin
       write_done <= 1'b0;
     end
     else begin
-      if(write_addr == (depth - 2) & wen) begin //saranyu
+      if(write_addr == (depth - 2) & wen) begin //updated
         write_done <= 1'b1;
       end
     end

@@ -13,17 +13,17 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /media/saranyu/Share/SF/garnet-master/memory_core/genesis_new/doublebuffer_control.svp
+//  Source file: /home/jarvis/Documents/memory_core/genesis_new/doublebuffer_control.svp
 //  Source template: doublebuffer_control
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
 //
 //	From 'generate' statement (priority=5):
+// Parameter iterator_support 	= 8
+// Parameter wwidth 	= 16
 // Parameter dwidth 	= 16
 // Parameter bbanks 	= 2
 // Parameter ddepth 	= 512
-// Parameter iterator_support 	= 6
-// Parameter wwidth 	= 16
 //
 //		---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -52,7 +52,7 @@
 //
 // bbanks (_GENESIS2_INHERITANCE_PRIORITY_) = 2
 //
-// iterator_support (_GENESIS2_INHERITANCE_PRIORITY_) = 6
+// iterator_support (_GENESIS2_INHERITANCE_PRIORITY_) = 8
 //
 
 module doublebuffer_control_unq1(
@@ -77,7 +77,6 @@ module doublebuffer_control_unq1(
   valid,
   switch,
 
-  chain_en,
   chain_idx,
 
   arbitrary_addr,
@@ -94,9 +93,7 @@ module doublebuffer_control_unq1(
 // =============================================
 // Depth or Ping Pong In Configuration
 // =============================================
-input logic        chain_en;
 input logic [3:0]  chain_idx;
-
 input logic [15:0] stencil_width;
 input logic        rate_matched;
 // ==============================================
@@ -112,9 +109,9 @@ input logic [15:0] starting_addr;
 input logic [31:0] iter_cnt;
 input logic [3:0]  dimensionality;
 
-input logic [15:0] stride [5:0];
-input logic [31:0] range [5:0];
-logic       [15:0] current_loc [5:0];
+input logic [15:0] stride [7:0];
+input logic [31:0] range [7:0];
+logic       [15:0] current_loc [7:0];
 
 input logic                   flush;
 input logic                   wen;
@@ -131,6 +128,7 @@ input logic  [15:0]  doublebuffer_data_out [1:0];
 
 input logic  [15:0]           depth;
 output logic                  valid;
+logic valid_arb;
 // ==============================================
 // Internal
 // ==============================================
@@ -139,87 +137,40 @@ logic [8:0]  addr;
 logic                  ping_npong;
 logic [15:0]  read_addr;
 logic [15:0]  write_addr;
-logic [31:0] dim_counter [5:0]; 
+logic [31:0]           dim_counter [7:0]; 
 // ==============================================
 // Configuration
 // ==============================================
-logic                  update [5:0];
-logic  [15:0] data_out_reg;
+logic                  update [7:0];
 logic  [15:0] strt_addr;
 logic  [31:0]          read_cnt;
 logic  [15:0] firstn [1:0];
 logic                  take_the_flop;
 logic                  autoswitch;
 logic                  read_done;
+logic                  read_done_thresh;
 logic                  write_done;
-logic                  write_done_d1;
+logic                  write_done_thresh;
 
-logic next_valid;
-logic write_gate;
+logic last_line_gate;
 logic read_first;
 logic next_take_the_flop;
-logic valid_from_read;
-logic [15:0] vg_ctr;
-logic valid_int;
-logic in_range;
+logic write_in_range;
+logic read_in_range;
+logic read_in_range_d1;
 logic read_mux;
-logic read_done_thresh;
-assign read_mux = (rate_matched) ? wen : ren;
-assign in_range = 1;
+// =============================================
 
-assign autoswitch = ~arbitrary_addr & write_done & (read_done|read_done_thresh | init_state) & (wen | ~rate_matched);
+assign read_mux = (rate_matched) ? wen : ren;
+assign autoswitch = ~arbitrary_addr & (write_done | write_done_thresh) & 
+                                      (read_done | read_done_thresh | ~init_state) & ~(depth == 0); 
 assign strt_addr = starting_addr[15:0];
 assign addr = addr_in[8:0];
 
-assign last_line_gate = (stencil_width == 0) ? 1 : vg_ctr >= (stencil_width - 1);
+assign last_line_gate = (stencil_width == 0) ? 1 : read_cnt >= (stencil_width - 1);
 
-always @ (posedge clk or posedge reset) begin
-  if(reset) begin
-    data_out_reg <= 0;
-  end
-  if(flush) begin
-    data_out_reg <= 0;
-  end
-  else begin
-    data_out_reg <= data_out;
-  end
-end
-
-always @(posedge clk or posedge reset) begin
-  if(reset) begin
-    vg_ctr <= 0;
-  end
-  else begin
-    if(flush) begin
-      vg_ctr <= 0;
-    end
-    else begin
-        if(~init_state) begin
-          if(vg_ctr == (depth - 1)) begin
-            vg_ctr <= 0;
-          end
-          else begin
-            vg_ctr <= vg_ctr + 1;
-          end
-        end
-    end
-  end
-end
-
-always @ (posedge clk or posedge reset) begin
-    if(reset) begin
-        write_done_d1 <= 0;
-    end
-    else if(clk_en) begin
-        if(flush) begin
-            write_done_d1 <= 0;
-        end
-        else begin    
-            write_done_d1 <= write_done;
-        end
-    end
-end
-always @(posedge clk or posedge reset) begin
+assign read_done = (read_cnt == (iter_cnt - 1)) & read_mux;
+always_ff @(posedge clk or posedge reset) begin
     if(reset) begin
         read_done_thresh <= 0;
     end
@@ -228,7 +179,7 @@ always @(posedge clk or posedge reset) begin
             read_done_thresh <= 0;
         end
         else begin
-            if(switch | autoswitch) begin
+            if(autoswitch | switch) begin
                 read_done_thresh <= 0;
             end
             else if(read_done) begin
@@ -237,45 +188,98 @@ always @(posedge clk or posedge reset) begin
         end
     end
 end
-assign read_done = read_cnt == (iter_cnt - 1);
-assign write_done = (write_addr == (depth - 1)) & wen; 
 
-// valid only used in chaining for db? timing is sorta irrelevant
-assign write_gate = write_addr[12:9] == chain_idx;
-assign next_valid = read_addr[12:9] == chain_idx;
+assign write_done = (write_addr == (depth - 1)) & wen;
+always_ff @(posedge clk or posedge reset) begin
+  if(reset) begin
+    write_done_thresh <= 0;
+  end
+  else if(clk_en) begin
+    if(flush) begin
+      write_done_thresh <= 0;
+    end
+    else if(autoswitch | switch) begin
+      write_done_thresh <= 0;
+    end
+    else begin
+      if(write_done) begin
+        write_done_thresh <= 1;
+      end
+    end
+  end
+end
 
-assign valid_from_read = (read_mux) & in_range & ~init_state;
-assign valid = last_line_gate & (valid_from_read ) & ~read_done_thresh;
+assign write_in_range = write_addr[12:9] == chain_idx;
+assign read_in_range = read_addr[12:9] == chain_idx;
 
-always @(*) begin
-  // Data to memory is just data in
-  doublebuffer_data_in[0] = data_in;
-  doublebuffer_data_in[1] = data_in;
-  doublebuffer_cen_mem[0] = (wen & (ping_npong == 0)) | switch | autoswitch | (read_mux);//saranyu
-  doublebuffer_cen_mem[1] = (wen & (ping_npong == 1)) | switch | autoswitch | (read_mux);//saranyu
-  doublebuffer_wen_mem[0] = (ping_npong == 0) & (wen | ~write_done_d1) & write_gate;
-  doublebuffer_wen_mem[1] = (ping_npong == 1) & (wen | ~write_done_d1) & write_gate;
-  doublebuffer_addr_mem[0] = (ping_npong == 0) ? write_addr : read_addr;
-  doublebuffer_addr_mem[1] = (ping_npong == 1) ? write_addr : read_addr;
+assign valid = (arbitrary_addr) ? valid_arb : 
+   last_line_gate & read_mux & (init_state | (depth == 0)) & read_in_range_d1 & ~read_done_thresh;
+
+always_ff @(posedge clk or posedge reset) begin
+    if(reset) begin
+        valid_arb <= 0;
+    end
+    else if(clk_en) begin
+        if(flush | switch) begin
+            valid_arb <= 0;
+        end
+        else begin
+            valid_arb <= read_in_range & read_mux & init_state; 
+        end
+    end
+end
+
+always_ff @(posedge clk or posedge reset) begin
+    if(reset) begin
+       read_in_range_d1 <= 0; 
+    end
+    else if(clk_en) begin
+        // We can prime the thing in zero-delay mode
+        // if we let the delayed range follow at all times
+        if(flush) begin
+            read_in_range_d1 <= strt_addr[12:9] == chain_idx;
+        end
+        else begin
+            read_in_range_d1 <= read_in_range;
+        end
+    end
+end
+
+assign doublebuffer_data_in[0] = data_in;
+assign doublebuffer_data_in[1] = data_in;
+assign doublebuffer_cen_mem[0] = (wen & (ping_npong == 0)) | flush 
+					| switch | autoswitch | (read_mux & (ping_npong != 0));
+assign doublebuffer_cen_mem[1] = (wen & (ping_npong == 1)) | flush 
+					| switch | autoswitch | (read_mux & (ping_npong != 1));
+assign doublebuffer_wen_mem[0] = (ping_npong == 0) & (wen & ~write_done_thresh) & write_in_range & ~(depth == 0);
+assign doublebuffer_wen_mem[1] = (ping_npong == 1) & (wen & ~write_done_thresh) & write_in_range & ~(depth == 0);
+assign doublebuffer_addr_mem[0] = (ping_npong == 0) ? write_addr[8:0] : read_addr[8:0];
+assign doublebuffer_addr_mem[1] = (ping_npong == 1) ? write_addr[8:0] : read_addr[8:0];
+assign data_out = (take_the_flop ? firstn[~ping_npong] : doublebuffer_data_out[~ping_npong]);
+
+always_comb begin
   // select proper data - 
-  data_out = take_the_flop ? firstn[~ping_npong] : doublebuffer_data_out[~ping_npong];
   read_addr = arbitrary_addr ? addr :  
+   ((7 < dimensionality) ? (current_loc[7]) : 0) +
+   ((6 < dimensionality) ? (current_loc[6]) : 0) +
    ((5 < dimensionality) ? (current_loc[5]) : 0) +
    ((4 < dimensionality) ? (current_loc[4]) : 0) +
    ((3 < dimensionality) ? (current_loc[3]) : 0) +
    ((2 < dimensionality) ? (current_loc[2]) : 0) +
    ((1 < dimensionality) ? (current_loc[1]) : 0) +
     (current_loc[0]) + strt_addr;
-  update[0] = ~init_state;
+  update[0] = init_state | (depth == 0);
   // Update iterator when the previous one will update and flow over
   update[1] = ((dim_counter[0]) == (range[0] - 1)) & update[0];
   update[2] = ((dim_counter[1]) == (range[1] - 1)) & update[1];
   update[3] = ((dim_counter[2]) == (range[2] - 1)) & update[2];
   update[4] = ((dim_counter[3]) == (range[3] - 1)) & update[3];
   update[5] = ((dim_counter[4]) == (range[4] - 1)) & update[4];
+  update[6] = ((dim_counter[5]) == (range[5] - 1)) & update[5];
+  update[7] = ((dim_counter[6]) == (range[6] - 1)) & update[6];
 end
 
-always @(posedge clk or posedge reset) begin
+always_ff @(posedge clk or posedge reset) begin
   if(reset) begin
     firstn[0] <= 0;
     firstn[1] <= 0;
@@ -294,33 +298,9 @@ always @(posedge clk or posedge reset) begin
   end
 end
 
-
-
-assign next_take_the_flop = (autoswitch | switch) ? 1 : 
+assign next_take_the_flop = autoswitch ? 1 : 
                             (take_the_flop & ~(read_mux)) ? 1 :
                                                     0 ;
-//                            (take_the_flop & rw & ~read_first) ? 0 :
- //                                       take_the_flop ;
-                                                    
-//assign next_take_the_flop = arbitrary_addr | (take_the_flop & rw & ~read_first) ? 0 : autoswitch | switch | take_the_flop;
-/*
-logic saturated;
-always_ff @(posedge clk or posedge reset) begin
-    if(reset) begin
-        saturated <= 0;
-    end
-    else if(clk_en) begin
-        if(flush) begin
-            saturated <= 0;
-        end
-        else begin
-            
-        end
-    end
-end */
-
-
-
 
 always_ff @(posedge clk or posedge reset) begin
     if(reset) begin
@@ -348,12 +328,23 @@ always_ff @(posedge clk or posedge reset) begin
       else begin
          take_the_flop <= next_take_the_flop; 
       end
-  //  if(switch | autoswitch & ~arbitrary_addr) begin
-  //      take_the_flop <= 1;
- //   end
-  //  else if()
   end
 end
+
+always_ff @(posedge clk or posedge reset) begin
+	if(reset) begin
+		init_state <= 0;
+	end
+	else if(clk_en) begin
+		if(flush) begin
+			init_state <= 0;
+		end
+		else if(autoswitch | switch) begin
+			init_state <= 1;
+		end
+	end
+end
+
 
 always_ff @(posedge clk or posedge reset) begin
   if(reset) begin 
@@ -363,32 +354,38 @@ always_ff @(posedge clk or posedge reset) begin
     dim_counter[3] <= 0;
     dim_counter[4] <= 0;
     dim_counter[5] <= 0;
+    dim_counter[6] <= 0;
+    dim_counter[7] <= 0;
     current_loc[0] <= 0;
     current_loc[1] <= 0;
     current_loc[2] <= 0;
     current_loc[3] <= 0;
     current_loc[4] <= 0;
     current_loc[5] <= 0;
-    init_state <= 1'b1;
+    current_loc[6] <= 0;
+    current_loc[7] <= 0;
     ping_npong <= 0;
     write_addr <= 0;
     read_cnt <= 0;
   end
   else if(clk_en) begin
     if(flush) begin 
-      dim_counter[0] <= 0;
       dim_counter[1] <= 0;
       dim_counter[2] <= 0;
       dim_counter[3] <= 0;
       dim_counter[4] <= 0;
       dim_counter[5] <= 0;
-      current_loc[0] <= 0;
+      dim_counter[6] <= 0;
+      dim_counter[7] <= 0;
       current_loc[1] <= 0;
       current_loc[2] <= 0;
       current_loc[3] <= 0;
       current_loc[4] <= 0;
       current_loc[5] <= 0;
-      init_state <= 1'b1;
+      current_loc[6] <= 0;
+      current_loc[7] <= 0;
+      dim_counter[0] <= (depth == 0) ? (range[0] > 1) : 0;
+      current_loc[0] <= (depth == 0) ? stride[0] : 0;
       ping_npong <= 0;
       write_addr <= 0;
       read_cnt <= 0;
@@ -400,7 +397,6 @@ always_ff @(posedge clk or posedge reset) begin
         ping_npong <= ~ping_npong;
         read_cnt <= 0;
         write_addr <= 0;
-        init_state <= 0;
         dim_counter[1] <= 0;
         current_loc[1] <= 0;
         dim_counter[2] <= 0;
@@ -411,6 +407,10 @@ always_ff @(posedge clk or posedge reset) begin
         current_loc[4] <= 0;
         dim_counter[5] <= 0;
         current_loc[5] <= 0;
+        dim_counter[6] <= 0;
+        current_loc[6] <= 0;
+        dim_counter[7] <= 0;
+        current_loc[7] <= 0;
         dim_counter[0] <= range[0] > 1; 
         current_loc[0] <= stride[0];
       end
@@ -419,11 +419,12 @@ always_ff @(posedge clk or posedge reset) begin
         // ADDRS
         // ===================
         // Increment write_addr on wen
-        if(wen & ~write_done) begin
+        if(wen & ~write_done & ~write_done_thresh) begin
           write_addr <= (write_addr + 1); 
         end
         // Once we expect data to start spilling out, we start moving the read_addr - move is based on counters
-        if( (~init_state & read_mux & ~read_done & ~take_the_flop) | (~init_state & read_mux & take_the_flop) ) begin 
+        // If serving weights (depth == 0), then take the flop will never be high, so we just "skip" ahead out of init state
+        if( ((init_state | (depth == 0)) & read_mux & ~read_done & ~take_the_flop & ~read_done_thresh) | (init_state & read_mux & take_the_flop) ) begin 
           read_cnt <= read_cnt + 1;
           if(update[0]) begin
             if(dim_counter[0] == (range[0] - 1)) begin
@@ -483,6 +484,26 @@ always_ff @(posedge clk or posedge reset) begin
             else begin
               dim_counter[5] <= dim_counter[5] + 1;
               current_loc[5] <= current_loc[5] + stride[5];
+            end
+          end
+          if(update[6]) begin
+            if(dim_counter[6] == (range[6] - 1)) begin
+              dim_counter[6] <= 0;
+              current_loc[6] <= 0;
+            end
+            else begin
+              dim_counter[6] <= dim_counter[6] + 1;
+              current_loc[6] <= current_loc[6] + stride[6];
+            end
+          end
+          if(update[7]) begin
+            if(dim_counter[7] == (range[7] - 1)) begin
+              dim_counter[7] <= 0;
+              current_loc[7] <= 0;
+            end
+            else begin
+              dim_counter[7] <= dim_counter[7] + 1;
+              current_loc[7] <= current_loc[7] + stride[7];
             end
           end
         end

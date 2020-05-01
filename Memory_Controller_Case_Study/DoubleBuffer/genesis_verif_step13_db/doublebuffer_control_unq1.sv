@@ -153,7 +153,7 @@ logic                  autoswitch;
 logic                  read_done;
 logic                  write_done;
 logic                  write_done_d1;
-logic 		       read_done_thresh;//
+logic 		       read_done_thresh;
 logic next_valid;
 logic write_gate;
 logic read_first;
@@ -166,7 +166,7 @@ logic read_mux;
 assign read_mux = (rate_matched) ? wen : ren;
 assign in_range = 1;
 
-assign autoswitch = ~arbitrary_addr & (write_done|write_done_d1) & (read_done | read_done_thresh | init_state) & (wen | ~rate_matched);//
+assign autoswitch = ~arbitrary_addr & (write_done|write_done_d1) & (read_done | read_done_thresh | init_state) & (wen | ~rate_matched);
 assign strt_addr = starting_addr[15:0];
 assign addr = addr_in[8:0];
 
@@ -204,11 +204,11 @@ always @(posedge clk or posedge reset) begin
     end
   end
 end
-always_ff @(posedge clk or posedge reset) begin// 
+always_ff @(posedge clk or posedge reset) begin 
     if(reset) begin
         read_done_thresh <= 0;
     end
-    else if(clk_en) begin//
+    else begin
         if(flush) begin
             read_done_thresh <= 0;
         end
@@ -227,7 +227,7 @@ always @ (posedge clk or posedge reset) begin
     if(reset) begin
         write_done_d1 <= 0;
     end
-    else if(clk_en) begin
+    else begin
         if(flush) begin
             write_done_d1 <= 0;
         end
@@ -242,7 +242,6 @@ always @ (posedge clk or posedge reset) begin
     end
 end
 
-
 assign read_done = read_cnt == (iter_cnt - 1) & read_mux;
 assign write_done = (write_addr == (depth - 1)) & wen; 
 
@@ -251,7 +250,7 @@ assign write_gate = write_addr[12:9] == chain_idx;
 assign next_valid = read_addr[12:9] == chain_idx;
 
 assign valid_from_read = (read_mux) & in_range & ~init_state;
-assign valid = last_line_gate & (valid_from_read )&~read_done_thresh;//
+assign valid = last_line_gate & (valid_from_read)&~read_done_thresh;
 
 always @ (posedge clk or posedge reset) begin
   if(reset) begin
@@ -268,7 +267,7 @@ always @ (posedge clk or posedge reset) begin
         valid_int <= valid_from_read;
       end
       else begin
-	valid_int <= (valid_from_read | autoswitch);
+	valid_int <= (valid_from_read );
 	end
     end
   end
@@ -278,8 +277,8 @@ always @(*) begin
   // Data to memory is just data in
   doublebuffer_data_in[0] = data_in;
   doublebuffer_data_in[1] = data_in;
-  doublebuffer_cen_mem[0] = (wen & (ping_npong == 0)) | switch | autoswitch | (read_mux);//saranyu
-  doublebuffer_cen_mem[1] = (wen & (ping_npong == 1)) | switch | autoswitch | (read_mux);//saranyu
+  doublebuffer_cen_mem[0] = (wen & (ping_npong == 0)) | switch | autoswitch | (read_mux);//updated
+  doublebuffer_cen_mem[1] = (wen & (ping_npong == 1)) | switch | autoswitch | (read_mux);//updated
   doublebuffer_wen_mem[0] = (ping_npong == 0) & (wen | ~write_done_d1) & write_gate;
   doublebuffer_wen_mem[1] = (ping_npong == 1) & (wen | ~write_done_d1) & write_gate;
   doublebuffer_addr_mem[0] = (ping_npong == 0) ? write_addr : read_addr;

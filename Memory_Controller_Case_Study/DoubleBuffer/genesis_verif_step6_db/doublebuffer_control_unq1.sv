@@ -252,7 +252,7 @@ always @ (posedge clk or posedge reset) begin
       write_done <= 1'b0;
     end
     else begin
-      if((write_addr == (depth - 2)) & wen) begin 
+      if(write_addr == (depth - 2) & wen) begin 
         write_done <= 1'b1;
       end
     end
@@ -265,7 +265,7 @@ assign write_gate = write_addr[12:9] == chain_idx;
 assign next_valid = read_addr[12:9] == chain_idx;
 
 assign valid_from_read = (read_mux) & in_range & ~init_state;
-assign valid = last_line_gate & (valid_from_read );//saranyu
+assign valid = last_line_gate & (valid_from_read);
 
 always @ (posedge clk or posedge reset) begin
   if(reset) begin
@@ -282,7 +282,7 @@ always @ (posedge clk or posedge reset) begin
         valid_int <= valid_from_read;
       end
       else begin
-	valid_int <= (valid_from_read | autoswitch);
+	valid_int <= (valid_from_read );
 	end
     end
   end

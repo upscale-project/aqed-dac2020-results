@@ -129,7 +129,7 @@ output logic [1:0]  doublebuffer_wen_mem;
 output logic [8:0]  doublebuffer_addr_mem [1:0];
 input logic  [15:0]  doublebuffer_data_out [1:0];
 
-input logic  [15:0]           depth;//
+input logic  [15:0]           depth;
 output logic                  valid;
 // ==============================================
 // Internal
@@ -282,7 +282,7 @@ always @ (posedge clk or posedge reset) begin
         valid_int <= valid_from_read;
       end
       else begin
-	valid_int <= (valid_from_read );//saranyu
+	valid_int <= (valid_from_read );//updated
 	end
     end
   end

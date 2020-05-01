@@ -1,4 +1,4 @@
-| **SL** | **Progress** | **Bug** | **Time(s)** | **Bounds** | **Repo** |
+| **SL** | **Progress** | **Bug** | **Time(s)** | **Bounds** | **Soln. Repo** |
 |:----:|:----------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------:|:-------:|:------:|:--------------------:|
 | 0_lb | start with [Hotfix to linebuffer to add flush](https://github.com/StanfordAHA/garnet/commit/26b5452a0bb9e41553996d766cbc35343cceb74f#diff-56b8645ef137aac84edd3bbce6ccac71) | valid independent of wen | 0.9 | 5 |  |
 | 1_lb | sol: add wen dependency to valid | -------NO BUGS--------- |  |  | [added wen dependency](https://github.com/StanfordAHA/garnet/commit/933966a95cede08e1d85f338f58b829eef7afd27#diff-56b8645ef137aac84edd3bbce6ccac71) |

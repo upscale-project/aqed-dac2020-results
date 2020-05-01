@@ -13,16 +13,16 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /media/saranyu/Share/SF/garnet-master/memory_core/genesis_new/linebuffer_control.svp
+//  Source file: /home/jarvis/Documents/memory_core/genesis_new/linebuffer_control.svp
 //  Source template: linebuffer_control
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
 //
 //	From 'generate' statement (priority=5):
+// Parameter ddepth 	= 512
+// Parameter bbanks 	= 2
 // Parameter dwidth 	= 16
 // Parameter wwidth 	= 16
-// Parameter bbanks 	= 2
-// Parameter ddepth 	= 512
 //
 //		---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 //
@@ -75,9 +75,9 @@ input logic                 flush;
 input logic                 wen;
 
 input logic [15:0]          stencil_width;
-input logic [12:0]          depth;
+input logic [15:0]          depth;
 output logic                valid;
-input logic [12:0]          num_words_mem;
+input logic [15:0]          num_words_mem;
 output logic                ren_to_fifo;
 
 // Is this the last line in the thing? Valid_out should be gated based on the stencil
@@ -91,11 +91,11 @@ assign valid_int = (num_words_mem >= (depth - 1)) & wen & (depth > 0) & threshol
 assign valid = valid_gate & valid_int;
 assign ren_to_fifo = (num_words_mem >= (depth - 1)) & wen & (depth > 0);
 
-always @(posedge clk, posedge reset) begin
+always_ff @(posedge clk or posedge reset) begin
    if(reset) begin
       threshold <= 0;
    end
-   else begin
+   else if(clk_en) begin
       if(flush) begin
          threshold <= 0;
       end
@@ -105,11 +105,11 @@ always @(posedge clk, posedge reset) begin
    end
 end
 
-always @(posedge clk, posedge reset) begin
+always_ff @(posedge clk or posedge reset) begin
     if(reset) begin
        vg_ctr <= 0; 
     end
-    else begin
+    else if(clk_en) begin
         if (flush) begin
             vg_ctr <= 0;
         end

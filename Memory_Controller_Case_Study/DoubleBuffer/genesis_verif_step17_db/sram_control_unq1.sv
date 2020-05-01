@@ -13,14 +13,14 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /media/saranyu/Share/SF/garnet-master/memory_core/genesis_new/sram_control.svp
+//  Source file: /home/jarvis/Documents/memory_core/genesis_new/sram_control.svp
 //  Source template: sram_control
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
 //
 //	From 'generate' statement (priority=5):
-// Parameter dwidth 	= 16
 // Parameter wwidth 	= 16
+// Parameter dwidth 	= 16
 // Parameter ddepth 	= 512
 // Parameter bbanks 	= 2
 //
@@ -90,14 +90,11 @@ output logic [8:0] sram_to_mem_addr [1:0];
 
 logic [9:0] addr;
 logic [1:0] bank_seld;
-logic clk_gated;
 logic [1:0] sram_to_mem_ren_reg;
 logic [15:0] data_out_reg;
-// =============
-// Clock gate
-// =============
+
+
 assign addr = addr_in[9:0];
-//assign clk_gated = clk & clk_en;saranyu
 
 // ===========================
 // Pass signals to actual memory module
@@ -123,13 +120,14 @@ assign data_out =
 // ===================
 // Flop the ren for proper output
 // ===================
-always @ (posedge clk, posedge reset) begin//saranyu
+always_ff @(posedge clk or posedge reset) begin
 	if(reset) begin
 		sram_to_mem_ren_reg[0] <= 1'b0; //'
 		sram_to_mem_ren_reg[1] <= 1'b0; //'
     data_out_reg <= 0;
 	end
-	else if(clk_en) begin//saranyu
+    // Clk gate properly
+	else if(clk_en) begin
 		if(flush) begin
 			sram_to_mem_ren_reg[0] <= 1'b0; //'
 			sram_to_mem_ren_reg[1] <= 1'b0; //'

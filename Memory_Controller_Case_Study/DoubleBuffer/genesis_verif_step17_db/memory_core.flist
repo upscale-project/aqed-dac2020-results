@@ -6,3 +6,4 @@
 ./sram_control_unq1.sv  
 ./sram_stub_unq1.v
 ./mem_core_top_1.sv
+./concat_rtl.v

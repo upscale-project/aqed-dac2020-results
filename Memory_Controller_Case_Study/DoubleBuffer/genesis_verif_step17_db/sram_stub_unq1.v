@@ -13,7 +13,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /media/saranyu/Share/SF/garnet-master/memory_core/genesis_new/sram_stub.vp
+//  Source file: /home/jarvis/Documents/memory_core/genesis_new/sram_stub.vp
 //  Source template: sram_stub
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------

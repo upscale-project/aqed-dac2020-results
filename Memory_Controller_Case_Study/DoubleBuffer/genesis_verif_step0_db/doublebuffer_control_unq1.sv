@@ -172,6 +172,19 @@ assign addr = addr_in[8:0];
 
 assign last_line_gate = (stencil_width == 0) ? 1 : vg_ctr >= (stencil_width - 1);
 
+always @ (posedge clk or posedge reset) begin
+  if(reset) begin
+    data_out_reg <= 0;
+  end
+  if(flush) begin
+    data_out_reg <= 0;
+  end
+  else begin
+    data_out_reg <= data_out;
+  end
+end
+
+
 always @(posedge clk or posedge reset) begin
   if(reset) begin
     vg_ctr <= 0;
