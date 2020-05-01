@@ -1,0 +1,805 @@
+INFO-FLOW: Workspace /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1 opened at Wed Apr 15 18:07:54 PDT 2020
+Execute     config_clock -quiet -name default -period 50 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 50ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.lib 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.lib 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.lib 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.lib 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.lib 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.lib 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.lib 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.lib 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.lib 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 15850} {LUT 63400}     {FF 126800} {DSP48E 240}    {BRAM 270}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7.gen 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.13 sec.
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.21 sec.
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.21 sec.
+Command     ap_source done; 0.22 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_hp.hlp 
+Execute     source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6.gen 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xa7a12tcsg325-1q 
+Execute       add_library xilinx/aartix7/aartix7:xa7a12t:csg325:-1q 
+Execute         get_default_platform 
+Execute         license_isbetapart xa7a12t 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 2000}  {LUT 8000}      {FF 16000}  {DSP48E 40}     {BRAM 40}  
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/aartix7/aartix7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 2000}  {LUT 8000}      {FF 16000}  {DSP48E 40}     {BRAM 40}  
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 0.47 sec.
+Execute   set_part xa7a12tcsg325-1q 
+Execute     add_library xilinx/aartix7/aartix7:xa7a12t:csg325:-1q 
+Execute       get_default_platform 
+Execute       license_isbetapart xa7a12t 
+Command       license_isbetapart done; error code: 1; 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 2000}  {LUT 8000}      {FF 16000}  {DSP48E 40}     {BRAM 40}  
+Execute       config_chip_info -quiet -speed slow 
+Execute     add_library xilinx/aartix7/aartix7_fpv6 
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute   create_clock -period 50 -name default 
+Execute   csynth_design 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -lm 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     config_compile -blackbox  
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'buf4bug0.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling buf4bug0.cpp as C++
+Execute       get_default_platform 
+Execute       is_encrypted buf4bug0.cpp 
+Execute       get_default_platform 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "buf4bug0.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/autopilot" -I "/cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pp.0.cpp" 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E buf4bug0.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/autopilot -I /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pp.0.cpp
+Command       clang done; 1.91 sec.
+Execute       tidy_31 xilinx-xfmat-array-geometry /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang -syntaxcheck -src /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "/cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/autopilot" -I "/cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pp.0.cpp"  -o "/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec /cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/autopilot -I /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pp.0.cpp -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/useless.bc
+WARNING: [HLS 200-40] In file included from buf4bug0.cpp:1:
+buf4bug0.cpp:300:23: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                      ^
+buf4bug0.cpp:300:50: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                 ^
+buf4bug0.cpp:300:95: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                              ^
+buf4bug0.cpp:300:126: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                             ^
+buf4bug0.cpp:300:153: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                        ^
+buf4bug0.cpp:300:181: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                    ^
+buf4bug0.cpp:300:206: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                             ^
+buf4bug0.cpp:300:228: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                   ^
+buf4bug0.cpp:300:257: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                                                ^
+buf4bug0.cpp:300:282: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                                                                         ^
+buf4bug0.cpp:300:306: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                                                                                                 ^
+buf4bug0.cpp:300:329: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ap_uint<8> orig_val[2]={0}; ap_uint<8> dup_val[2]={0}; ap_uint<8> key[32]; ap_uint<16> orig_in=0xFFFF; ap_uint<8> orig_out[2]={0}; ap_uint<8> dup_out[2]={0}; ap_uint<1> orig_issued=0; ap_uint<1> dup_issued=0; ap_uint<16> dup_in=0xFFFF; ap_uint<16> in_count=0; ap_uint<16> out_count=0; ap_uint<1> orig_done=0; ap_uint<1> dup_done=0; ap_uint<8> output[128]; ap_uint<1> qed_done; ap_uint<1> qed_check; ap_uint<2> orig_idx; ap_uint<2> dup_idx;};
+                                                                                                                                                                                                                                                                                                                                        ^
+12 warnings generated.
+Command       clang done; 2.46 sec.
+INFO-FLOW: Done: GCC PP time: 5.4 seconds per iteration
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pp.0.cpp std=gnu++98 -directive=/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.9 sec.
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute       tidy_31 xilinx-directive2pragma /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pp.0.cpp std=gnu++98 -directive=/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/all.directive.json -quiet -fix-errors /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.87 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr /cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/xilinx-dataflow-lawyer.buf4bug0.pp.0.cpp.diag.yml /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/xilinx-dataflow-lawyer.buf4bug0.pp.0.cpp.out.log 2> /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/xilinx-dataflow-lawyer.buf4bug0.pp.0.cpp.err.log 
+Command       ap_eval done; 0.87 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pp.0.cpp std=gnu++98 
+Execute         ap_eval exec -ignorestderr /cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/tidy-3.1.buf4bug0.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/tidy-3.1.buf4bug0.pp.0.cpp.out.log 2> /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/tidy-3.1.buf4bug0.pp.0.cpp.err.log 
+Command         ap_eval done; 1.69 sec.
+Execute         ap_eval exec -ignorestderr /cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/xilinx-legacy-rewriter.buf4bug0.pp.0.cpp.out.log 2> /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/xilinx-legacy-rewriter.buf4bug0.pp.0.cpp.err.log 
+Command         ap_eval done; 1.32 sec.
+Command       tidy_31 done; 3.04 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 4.8 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.71 sec.
+Execute       get_default_platform 
+INFO-FLOW: Processing labels
+Execute       clang -src /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/autopilot" -I "/cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.bc" 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/autopilot -I /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.bc
+Command       clang done; 2.5 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/buf4bug0.g.bc -hls-opt -except-internalize aqed_top -L/cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/lib -lhlsm -lhlsmc++ -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.g 
+Command       llvm-ld done; 1.03 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 535.250 ; gain = 0.109 ; free physical = 89851 ; free virtual = 94997
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 535.250 ; gain = 0.109 ; free physical = 89851 ; free virtual = 94997
+Execute       get_config_sdx -target 
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.pp.bc -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.pp.0.bc -f 
+Execute         llvm-ld /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.pp.0.bc -disable-opt -L/cad/xilinx/vivado/2018.3/Vivado/2018.3/lnx64/lib -lfloatconversion -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.g.0 
+Command         llvm-ld done; 0.98 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -lower-blackbox -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top aqed_top -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.g.0.bc -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1' (buf4bug0.cpp:256) in function 'workload' completely with a factor of 1.
+Command         transform done; 0.24 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 535.426 ; gain = 0.285 ; free physical = 89823 ; free virtual = 94970
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.g.1.bc -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [XFORM 203-602] Inlining function 'aes_addRoundKey_cpy' into 'aes256_encrypt_ecb' (buf4bug0.cpp:217) automatically.
+INFO: [XFORM 203-602] Inlining function 'aes_subBytes' into 'aes256_encrypt_ecb' (buf4bug0.cpp:226) automatically.
+INFO: [XFORM 203-602] Inlining function 'aes_addRoundKey' into 'aes256_encrypt_ecb' (buf4bug0.cpp:229) automatically.
+INFO: [XFORM 203-602] Inlining function 'aes_tiling' into 'workload' (buf4bug0.cpp:280) automatically.
+Command         transform done; 0.24 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.g.2.prechk.bc -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 535.426 ; gain = 0.285 ; free physical = 89818 ; free virtual = 94965
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.g.1.bc to /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.o.1.bc -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-1101] Packing variable 'o1' (buf4bug0.cpp:438) into a 24-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'o2' (buf4bug0.cpp:440) into a 3-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'agg.result' (buf4bug0.cpp:430) into a 20-bit variable.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'Loop-1' (buf4bug0.cpp:233) in function 'aes_tiling' automatically.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (buf4bug0.cpp:249) in function 'workload' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'unroll_loop' (buf4bug0.cpp:278) in function 'workload' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (buf4bug0.cpp:233) in function 'aes_tiling' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (buf4bug0.cpp:342) in function 'aqed_in' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (buf4bug0.cpp:361) in function 'aqed_in' completely with a factor of 32.
+INFO: [XFORM 203-101] Partitioning array 'local_key' (buf4bug0.cpp:245) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf' (buf4bug0.cpp:266) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'aes_addRoundKey_cpy' into 'aes256_encrypt_ecb' (buf4bug0.cpp:217) automatically.
+INFO: [XFORM 203-602] Inlining function 'aes_subBytes' into 'aes256_encrypt_ecb' (buf4bug0.cpp:226) automatically.
+INFO: [XFORM 203-602] Inlining function 'aes_addRoundKey' into 'aes256_encrypt_ecb' (buf4bug0.cpp:229) automatically.
+INFO: [XFORM 203-602] Inlining function 'aes_tiling' into 'workload' (buf4bug0.cpp:280) automatically.
+WARNING: [XFORM 203-561] Updating loop upper bound from 2 to 1 for loop 'major_loop' in function 'workload'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 1 for loop 'major_loop' in function 'workload'.
+INFO: [XFORM 203-102] Automatically partitioning small array 'state.orig_val.V' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'state.orig_out.V' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'state.dup_val.V' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'buf[0]' (buf4bug0.cpp:266) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'buf[1]' (buf4bug0.cpp:266) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'state.orig_val.V' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'state.orig_out.V' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'state.dup_val.V' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf[0]' (buf4bug0.cpp:266) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf[1]' (buf4bug0.cpp:266) in dimension 1 completely.
+Command         transform done; 0.91 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.o.1.tmp.bc -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (buf4bug0.cpp:285:3) to (buf4bug0.cpp:283:31) in function 'workload'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (buf4bug0.cpp:407:31) to (buf4bug0.cpp:410:9) in function 'aqed_out'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (buf4bug0.cpp:356:11) in function 'aqed_in'... converting 11 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (buf4bug0.cpp:137:26) to (buf4bug0.cpp:139:2) in function 'aes256_encrypt_ecb'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (buf4bug0.cpp:115:24) to (buf4bug0.cpp:117:2) in function 'aes256_encrypt_ecb'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (buf4bug0.cpp:126:27) to (buf4bug0.cpp:128:2) in function 'aes256_encrypt_ecb'... converting 4 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'workload' (buf4bug0.cpp:237)...6 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'aqed_in' (buf4bug0.cpp:331)...7 expression(s) balanced.
+Command         transform done; 0.43 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 663.145 ; gain = 128.004 ; free physical = 89713 ; free virtual = 94860
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -bitwidth -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -cdfg-build /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.o.2.bc -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+Command         transform done; 0.61 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 663.145 ; gain = 128.004 ; free physical = 89667 ; free virtual = 94815
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 3.74 sec.
+Command     elaborate done; 20.51 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'aqed_top' ...
+Execute       ap_set_top_model aqed_top 
+Execute       get_model_list aqed_top -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model aqed_top 
+Execute       preproc_iomode -model aqed_out 
+Execute       preproc_iomode -model workload 
+Execute       preproc_iomode -model aes256_encrypt_ecb 
+Execute       preproc_iomode -model aqed_in 
+Execute       get_model_list aqed_top -filter all-wo-channel 
+INFO-FLOW: Model list for configure: aqed_in aes256_encrypt_ecb workload aqed_out aqed_top
+INFO-FLOW: Configuring Module : aqed_in ...
+Execute       set_default_model aqed_in 
+Execute       apply_spec_resource_limit aqed_in 
+INFO-FLOW: Configuring Module : aes256_encrypt_ecb ...
+Execute       set_default_model aes256_encrypt_ecb 
+Execute       apply_spec_resource_limit aes256_encrypt_ecb 
+INFO-FLOW: Configuring Module : workload ...
+Execute       set_default_model workload 
+Execute       apply_spec_resource_limit workload 
+INFO-FLOW: Configuring Module : aqed_out ...
+Execute       set_default_model aqed_out 
+Execute       apply_spec_resource_limit aqed_out 
+INFO-FLOW: Configuring Module : aqed_top ...
+Execute       set_default_model aqed_top 
+Execute       apply_spec_resource_limit aqed_top 
+INFO-FLOW: Model list for preprocess: aqed_in aes256_encrypt_ecb workload aqed_out aqed_top
+INFO-FLOW: Preprocessing Module: aqed_in ...
+Execute       set_default_model aqed_in 
+Execute       cdfg_preprocess -model aqed_in 
+Execute       rtl_gen_preprocess aqed_in 
+INFO-FLOW: Preprocessing Module: aes256_encrypt_ecb ...
+Execute       set_default_model aes256_encrypt_ecb 
+Execute       cdfg_preprocess -model aes256_encrypt_ecb 
+Execute       rtl_gen_preprocess aes256_encrypt_ecb 
+INFO-FLOW: Preprocessing Module: workload ...
+Execute       set_default_model workload 
+Execute       cdfg_preprocess -model workload 
+Execute       rtl_gen_preprocess workload 
+INFO-FLOW: Preprocessing Module: aqed_out ...
+Execute       set_default_model aqed_out 
+Execute       cdfg_preprocess -model aqed_out 
+Execute       rtl_gen_preprocess aqed_out 
+INFO-FLOW: Preprocessing Module: aqed_top ...
+Execute       set_default_model aqed_top 
+Execute       cdfg_preprocess -model aqed_top 
+Execute       rtl_gen_preprocess aqed_top 
+INFO-FLOW: Model list for synthesis: aqed_in aes256_encrypt_ecb workload aqed_out aqed_top
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aqed_in' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model aqed_in 
+Execute       schedule -model aqed_in 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.19 sec.
+INFO: [HLS 200-111]  Elapsed time: 22.15 seconds; current allocated memory: 121.903 MB.
+Execute       report -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_in.verbose.sched.rpt -verbose -f 
+Command       report done; 0.15 sec.
+Execute       db_write -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_in.sched.adb -f 
+INFO-FLOW: Finish scheduling aqed_in.
+Execute       set_default_model aqed_in 
+Execute       bind -model aqed_in 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=aqed_in
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.33 seconds; current allocated memory: 122.335 MB.
+Execute       report -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_in.verbose.bind.rpt -verbose -f 
+Command       report done; 0.24 sec.
+Execute       db_write -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_in.bind.adb -f 
+INFO-FLOW: Finish binding aqed_in.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aes256_encrypt_ecb' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model aes256_encrypt_ecb 
+Execute       schedule -model aes256_encrypt_ecb 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'ecb1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'cpkey'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'sub'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'addkey'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.19 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.55 seconds; current allocated memory: 122.709 MB.
+Execute       report -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aes256_encrypt_ecb.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aes256_encrypt_ecb.sched.adb -f 
+INFO-FLOW: Finish scheduling aes256_encrypt_ecb.
+Execute       set_default_model aes256_encrypt_ecb 
+Execute       bind -model aes256_encrypt_ecb 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=aes256_encrypt_ecb
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.13 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.28 seconds; current allocated memory: 123.083 MB.
+Execute       report -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aes256_encrypt_ecb.verbose.bind.rpt -verbose -f 
+Command       report done; 0.15 sec.
+Execute       db_write -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aes256_encrypt_ecb.bind.adb -f 
+INFO-FLOW: Finish binding aes256_encrypt_ecb.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'workload' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model workload 
+Execute       schedule -model workload 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.19 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.51 seconds; current allocated memory: 123.465 MB.
+Execute       report -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/workload.verbose.sched.rpt -verbose -f 
+INFO: [HLS 200-434] Only 1 loops out of a total 6 loops have been pipelined in this design.
+Command       report done; 0.23 sec.
+Execute       db_write -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/workload.sched.adb -f 
+Command       db_write done; 0.15 sec.
+INFO-FLOW: Finish scheduling workload.
+Execute       set_default_model workload 
+Execute       bind -model workload 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=workload
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.18 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.56 seconds; current allocated memory: 123.892 MB.
+Execute       report -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/workload.verbose.bind.rpt -verbose -f 
+Command       report done; 0.28 sec.
+Execute       db_write -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/workload.bind.adb -f 
+INFO-FLOW: Finish binding workload.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aqed_out' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model aqed_out 
+Execute       schedule -model aqed_out 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.51 seconds; current allocated memory: 124.181 MB.
+Execute       report -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_out.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_out.sched.adb -f 
+INFO-FLOW: Finish scheduling aqed_out.
+Execute       set_default_model aqed_out 
+Execute       bind -model aqed_out 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=aqed_out
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 124.449 MB.
+Execute       report -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_out.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_out.bind.adb -f 
+INFO-FLOW: Finish binding aqed_out.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'aqed_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model aqed_top 
+Execute       schedule -model aqed_top 
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SYN 201-561] Cannot apply I/O mode 'ap_none' on port 'return' changing to the default 'ap_ctrl_hs' mode.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.28 seconds; current allocated memory: 124.553 MB.
+Execute       report -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.sched.adb -f 
+INFO-FLOW: Finish scheduling aqed_top.
+Execute       set_default_model aqed_top 
+Execute       bind -model aqed_top 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=aqed_top
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.41 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.48 seconds; current allocated memory: 124.840 MB.
+Execute       report -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.verbose.bind.rpt -verbose -f 
+Command       report done; 0.43 sec.
+Execute       db_write -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.bind.adb -f 
+INFO-FLOW: Finish binding aqed_top.
+Execute       get_model_list aqed_top -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess aqed_in 
+Execute       rtl_gen_preprocess aes256_encrypt_ecb 
+Execute       rtl_gen_preprocess workload 
+Execute       rtl_gen_preprocess aqed_out 
+Execute       rtl_gen_preprocess aqed_top 
+INFO-FLOW: Model list for RTL generation: aqed_in aes256_encrypt_ecb workload aqed_out aqed_top
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aqed_in' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model aqed_in -vendor xilinx -mg_file /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_in.compgen.tcl 
+WARNING: [RTGEN 206-101] Register 'state_orig_val_V_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_val_V_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_in_count_V' is power-on initialization.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aqed_in'.
+INFO: [HLS 200-111]  Elapsed time: 0.62 seconds; current allocated memory: 125.783 MB.
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl aqed_in -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/systemc/aqed_in -synmodules aqed_in aes256_encrypt_ecb workload aqed_out aqed_top 
+Execute       gen_rtl aqed_in -style xilinx -f -lang vhdl -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/vhdl/aqed_in 
+Execute       gen_rtl aqed_in -style xilinx -f -lang vlog -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/verilog/aqed_in 
+Execute       gen_tb_info aqed_in -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_in -p /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db 
+Execute       report -model aqed_in -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/report/aqed_in_csynth.rpt -f 
+Execute       report -model aqed_in -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/report/aqed_in_csynth.xml -f -x 
+Execute       report -model aqed_in -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_in.verbose.rpt -verbose -f 
+Command       report done; 0.36 sec.
+Execute       db_write -model aqed_in -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_in.adb -f 
+Command       db_write done; 0.13 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aes256_encrypt_ecb' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model aes256_encrypt_ecb -vendor xilinx -mg_file /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aes256_encrypt_ecb.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aes256_encrypt_ecb'.
+INFO: [HLS 200-111]  Elapsed time: 0.97 seconds; current allocated memory: 128.530 MB.
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl aes256_encrypt_ecb -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/systemc/aes256_encrypt_ecb -synmodules aqed_in aes256_encrypt_ecb workload aqed_out aqed_top 
+Execute       gen_rtl aes256_encrypt_ecb -style xilinx -f -lang vhdl -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/vhdl/aes256_encrypt_ecb 
+Execute       gen_rtl aes256_encrypt_ecb -style xilinx -f -lang vlog -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/verilog/aes256_encrypt_ecb 
+Execute       gen_tb_info aes256_encrypt_ecb -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aes256_encrypt_ecb -p /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db 
+Execute       report -model aes256_encrypt_ecb -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/report/aes256_encrypt_ecb_csynth.rpt -f 
+Execute       report -model aes256_encrypt_ecb -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/report/aes256_encrypt_ecb_csynth.xml -f -x 
+Execute       report -model aes256_encrypt_ecb -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aes256_encrypt_ecb.verbose.rpt -verbose -f 
+Command       report done; 0.17 sec.
+Execute       db_write -model aes256_encrypt_ecb -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aes256_encrypt_ecb.adb -f 
+Command       db_write done; 0.19 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'workload' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model workload -vendor xilinx -mg_file /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/workload.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'workload'.
+INFO: [HLS 200-111]  Elapsed time: 0.83 seconds; current allocated memory: 130.641 MB.
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl workload -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/systemc/workload -synmodules aqed_in aes256_encrypt_ecb workload aqed_out aqed_top 
+Execute       gen_rtl workload -style xilinx -f -lang vhdl -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/vhdl/workload 
+Execute       gen_rtl workload -style xilinx -f -lang vlog -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/verilog/workload 
+Execute       gen_tb_info workload -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/workload -p /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db 
+Execute       report -model workload -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/report/workload_csynth.rpt -f 
+Execute       report -model workload -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/report/workload_csynth.xml -f -x 
+Execute       report -model workload -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/workload.verbose.rpt -verbose -f 
+Command       report done; 0.41 sec.
+Execute       db_write -model workload -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/workload.adb -f 
+Command       db_write done; 0.15 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aqed_out' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model aqed_out -vendor xilinx -mg_file /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_out.compgen.tcl 
+WARNING: [RTGEN 206-101] Register 'state_out_count_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_qed_done_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_out_V_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_out_V_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_qed_check_V' is power-on initialization.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aqed_out'.
+Command       create_rtl_model done; 0.14 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.04 seconds; current allocated memory: 132.847 MB.
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl aqed_out -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/systemc/aqed_out -synmodules aqed_in aes256_encrypt_ecb workload aqed_out aqed_top 
+Execute       gen_rtl aqed_out -style xilinx -f -lang vhdl -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/vhdl/aqed_out 
+Execute       gen_rtl aqed_out -style xilinx -f -lang vlog -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/verilog/aqed_out 
+Execute       gen_tb_info aqed_out -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_out -p /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db 
+Execute       report -model aqed_out -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/report/aqed_out_csynth.rpt -f 
+Execute       report -model aqed_out -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/report/aqed_out_csynth.xml -f -x 
+Execute       report -model aqed_out -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_out.verbose.rpt -verbose -f 
+Command       report done; 0.16 sec.
+Execute       db_write -model aqed_out -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_out.adb -f 
+Command       db_write done; 0.19 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'aqed_top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model aqed_top -vendor xilinx -mg_file /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'aqed_top/agg_result' to 'ap_none'.
+WARNING: [RTGEN 206-101] Port 'agg_result' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aqed_top/orig_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aqed_top/dup_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aqed_top/orig_idx' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'aqed_top/dup_idx' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'aqed_top' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'idx_ct_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_issued_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Global scalar 'state_orig_issued_V' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Register 'state_dup_issued_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_in_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_orig_idx_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_dup_in_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_dup_idx_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_dup_val_V_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'state_dup_val_V_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Global array 'bmc_in' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Register 'state_orig_done_V' is power-on initialization.
+WARNING: [RTGEN 206-101] Global scalar 'state_orig_done_V' will not be exposed as RTL port.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'aqed_top'.
+Command       create_rtl_model done; 0.35 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.98 seconds; current allocated memory: 134.597 MB.
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl aqed_top -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/systemc/aqed_top -synmodules aqed_in aes256_encrypt_ecb workload aqed_out aqed_top 
+Execute       gen_rtl aqed_top -istop -style xilinx -f -lang vhdl -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/vhdl/aqed_top 
+Execute       gen_rtl aqed_top -istop -style xilinx -f -lang vlog -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/verilog/aqed_top 
+Execute       export_constraint_db -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.constraint.tcl -f -tool general 
+Execute       report -model aqed_top -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.design.xml -verbose -f -dv 
+Command       report done; 0.37 sec.
+Execute       report -model aqed_top -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.sdaccel.xml -verbose -f -sdaccel 
+Execute       gen_tb_info aqed_top -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top -p /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db 
+Execute       report -model aqed_top -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/report/aqed_top_csynth.rpt -f 
+Execute       report -model aqed_top -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/syn/report/aqed_top_csynth.xml -f -x 
+Execute       report -model aqed_top -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.verbose.rpt -verbose -f 
+Command       report done; 0.45 sec.
+Execute       db_write -model aqed_top -o /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.adb -f 
+Command       db_write done; 0.18 sec.
+Execute       sc_get_clocks aqed_top 
+Execute       get_config_export -vivado_clock 
+Execute       sc_get_portdomain aqed_top 
+INFO-FLOW: Model list for RTL component generation: aqed_in aes256_encrypt_ecb workload aqed_out aqed_top
+INFO-FLOW: Handling components in module [aqed_in] ... 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_in.compgen.tcl 
+INFO-FLOW: Found component aqed_in_state_key_V.
+INFO-FLOW: Append model aqed_in_state_key_V
+INFO-FLOW: Handling components in module [aes256_encrypt_ecb] ... 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aes256_encrypt_ecb.compgen.tcl 
+INFO-FLOW: Found component aes256_encrypt_ecb_sbox.
+INFO-FLOW: Append model aes256_encrypt_ecb_sbox
+INFO-FLOW: Found component aes256_encrypt_ecb_ctx_body_key.
+INFO-FLOW: Append model aes256_encrypt_ecb_ctx_body_key
+INFO-FLOW: Found component aes256_encrypt_ecb_ctx_body_enckey.
+INFO-FLOW: Append model aes256_encrypt_ecb_ctx_body_enckey
+INFO-FLOW: Handling components in module [workload] ... 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/workload.compgen.tcl 
+INFO-FLOW: Found component workload_local_key_0.
+INFO-FLOW: Append model workload_local_key_0
+INFO-FLOW: Handling components in module [aqed_out] ... 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_out.compgen.tcl 
+INFO-FLOW: Handling components in module [aqed_top] ... 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.compgen.tcl 
+INFO-FLOW: Found component aqed_top_bmc_in.
+INFO-FLOW: Append model aqed_top_bmc_in
+INFO-FLOW: Append model aqed_in
+INFO-FLOW: Append model aes256_encrypt_ecb
+INFO-FLOW: Append model workload
+INFO-FLOW: Append model aqed_out
+INFO-FLOW: Append model aqed_top
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: aqed_in_state_key_V aes256_encrypt_ecb_sbox aes256_encrypt_ecb_ctx_body_key aes256_encrypt_ecb_ctx_body_enckey workload_local_key_0 aqed_top_bmc_in aqed_in aes256_encrypt_ecb workload aqed_out aqed_top
+INFO-FLOW: To file: write model aqed_in_state_key_V
+INFO-FLOW: To file: write model aes256_encrypt_ecb_sbox
+INFO-FLOW: To file: write model aes256_encrypt_ecb_ctx_body_key
+INFO-FLOW: To file: write model aes256_encrypt_ecb_ctx_body_enckey
+INFO-FLOW: To file: write model workload_local_key_0
+INFO-FLOW: To file: write model aqed_top_bmc_in
+INFO-FLOW: To file: write model aqed_in
+INFO-FLOW: To file: write model aes256_encrypt_ecb
+INFO-FLOW: To file: write model workload
+INFO-FLOW: To file: write model aqed_out
+INFO-FLOW: To file: write model aqed_top
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:CMD: auto_generate_csynth_design
+INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7.gen 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source done; 0.15 sec.
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.23 sec.
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.23 sec.
+Command       ap_source done; 0.23 sec.
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6.gen 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=50.000 (was NA)
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_in.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'aqed_in_state_key_V_ram (RAM)' using block RAMs with power-on initialization.
+Command       ap_source done; 0.14 sec.
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aes256_encrypt_ecb.compgen.tcl 
+INFO: [RTMG 210-279] Implementing memory 'aes256_encrypt_ecb_sbox_rom' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'aes256_encrypt_ecb_ctx_body_key_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'aes256_encrypt_ecb_ctx_body_enckey_ram (RAM)' using distributed RAMs.
+Command       ap_source done; 0.28 sec.
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/workload.compgen.tcl 
+WARNING: [RTMG 210-274] Memory 'workload_local_key_0' is read-only, switch it to a ROM.
+INFO: [RTMG 210-279] Implementing memory 'workload_local_key_0_rom' using distributed ROMs.
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_out.compgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'aqed_top_bmc_in_ram (RAM)' using distributed RAMs with power-on initialization.
+INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7.gen 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute             source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.14 sec.
+Execute           source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.15 sec.
+Command       ap_source done; 0.15 sec.
+Execute       source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/aartix7/aartix7_fpv6.gen 
+Execute         source /cad/xilinx/vivado/2018.3/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=aqed_top xml_exists=0
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.rtl_wrap.cfg.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.rtl_wrap.cfg.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.rtl_wrap.cfg.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.tbgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_in.compgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aes256_encrypt_ecb.compgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/workload.compgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_out.compgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_in.compgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aes256_encrypt_ecb.compgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/workload.compgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_out.compgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_in.compgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aes256_encrypt_ecb.compgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/workload.compgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_out.compgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.compgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.constraint.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=12
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=5
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=0 #modelList=11 #gSsdmPorts=12
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.tbgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.tbgen.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_export -xo 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/aqed_top.constraint.tcl 
+Execute       sc_get_clocks aqed_top 
+Execute       source /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_sdx -profile 
+Execute       ::config_rtl 
+INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist: /rsgs/pool0/Saranyu/AES_1/AES_abstracted/cpp/bug0/BUG0/solution1/.autopilot/db/kernel.internal.xml
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:23 ; elapsed = 00:00:36 . Memory (MB): peak = 727.145 ; gain = 192.004 ; free physical = 89448 ; free virtual = 94603
+INFO: [SYSC 207-301] Generating SystemC RTL for aqed_top.
+INFO: [VHDL 208-304] Generating VHDL RTL for aqed_top.
+INFO: [VLOG 209-307] Generating Verilog RTL for aqed_top.
+Command     autosyn done; 13.93 sec.
+Execute     get_part 
+Execute     get_config_export -sdx_tcl 
+Command   csynth_design done; 34.46 sec.
+Command ap_source done; 35.07 sec.
+Execute cleanup_all 

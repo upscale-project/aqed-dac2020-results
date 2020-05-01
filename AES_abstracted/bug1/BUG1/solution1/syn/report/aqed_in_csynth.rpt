@@ -1,0 +1,215 @@
+
+
+================================================================
+== Vivado HLS Report for 'aqed_in'
+================================================================
+* Date:           Wed Apr 15 21:54:58 2020
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        BUG1
+* Solution:       solution1
+* Product family: aartix7
+* Target device:  xa7a12tcsg325-1q
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  50.00|     8.232|        6.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    3|   17|    3|   17|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+-------+------+
+|       Name      | BRAM_18K| DSP48E|   FF  |  LUT |
++-----------------+---------+-------+-------+------+
+|DSP              |        -|      -|      -|     -|
+|Expression       |        -|      -|      0|   401|
+|FIFO             |        -|      -|      -|     -|
+|Instance         |        -|      -|      -|     -|
+|Memory           |        1|      -|      0|     0|
+|Multiplexer      |        -|      -|      -|   311|
+|Register         |        -|      -|     90|     -|
++-----------------+---------+-------+-------+------+
+|Total            |        1|      0|     90|   712|
++-----------------+---------+-------+-------+------+
+|Available        |       40|     40|  16000|  8000|
++-----------------+---------+-------+-------+------+
+|Utilization (%)  |        2|      0|   ~0  |     8|
++-----------------+---------+-------+-------+------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +---------------+---------------------+---------+---+----+------+-----+------+-------------+
+    |     Memory    |        Module       | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +---------------+---------------------+---------+---+----+------+-----+------+-------------+
+    |state_key_V_U  |aqed_in_state_key_V  |        1|  0|   0|    32|    1|     1|           32|
+    +---------------+---------------------+---------+---+----+------+-----+------+-------------+
+    |Total          |                     |        1|  0|   0|    32|    1|     1|           32|
+    +---------------+---------------------+---------+---+----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |      Variable Name      | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |sum2_fu_289_p2           |     +    |      0|  0|  15|           6|           6|
+    |sum4_fu_328_p2           |     +    |      0|  0|  15|           6|           6|
+    |sum8_fu_344_p2           |     +    |      0|  0|  15|           6|           6|
+    |sum_fu_272_p2            |     +    |      0|  0|  15|           6|           6|
+    |tmp_4_fu_631_p2          |     +    |      0|  0|  23|          16|           1|
+    |issue_dup_V_fu_558_p2    |    and   |      0|  0|   8|           1|           1|
+    |issue_orig_V_fu_369_p2   |    and   |      0|  0|   8|           1|           1|
+    |or_cond1_fu_375_p2       |    and   |      0|  0|   8|           1|           1|
+    |or_cond2_fu_408_p2       |    and   |      0|  0|   8|           1|           1|
+    |or_cond_fu_354_p2        |    and   |      0|  0|   8|           1|           1|
+    |sel_tmp10_fu_540_p2      |    and   |      0|  0|   8|           1|           1|
+    |sel_tmp1_fu_448_p2       |    and   |      0|  0|   8|           1|           1|
+    |sel_tmp2_fu_478_p2       |    and   |      0|  0|   8|           1|           1|
+    |sel_tmp3_fu_508_p2       |    and   |      0|  0|   8|           1|           1|
+    |sel_tmp4_fu_526_p2       |    and   |      0|  0|   8|           1|           1|
+    |sel_tmp5_fu_454_p2       |    and   |      0|  0|   8|           1|           1|
+    |sel_tmp7_fu_466_p2       |    and   |      0|  0|   8|           1|           1|
+    |tmp2_fu_490_p2           |    and   |      0|  0|   8|           1|           1|
+    |tmp3_fu_496_p2           |    and   |      0|  0|   8|           1|           1|
+    |tmp4_fu_502_p2           |    and   |      0|  0|   8|           1|           1|
+    |tmp5_fu_514_p2           |    and   |      0|  0|   8|           1|           1|
+    |tmp6_fu_520_p2           |    and   |      0|  0|   8|           1|           1|
+    |icmp1_fu_250_p2          |   icmp   |      0|  0|  11|           7|           1|
+    |icmp_fu_310_p2           |   icmp   |      0|  0|  11|           7|           1|
+    |tmp_2_fu_432_p2          |   icmp   |      0|  0|  11|           8|           8|
+    |tmp_3_fu_437_p2          |   icmp   |      0|  0|  11|           8|           8|
+    |tmp_7_fu_388_p2          |   icmp   |      0|  0|  11|           8|           8|
+    |tmp_8_fu_397_p2          |   icmp   |      0|  0|  11|           8|           8|
+    |brmerge_fu_426_p2        |    or    |      0|  0|   8|           1|           1|
+    |not_sel_tmp1_fu_552_p2   |    or    |      0|  0|   8|           1|           1|
+    |p_082_not_fu_420_p2      |    or    |      0|  0|   8|           1|           1|
+    |p_sum4_fu_338_p2         |    or    |      0|  0|  13|           6|           1|
+    |p_sum_fu_283_p2          |    or    |      0|  0|  13|           6|           1|
+    |sel_tmp8_fu_472_p2       |    or    |      0|  0|   8|           1|           1|
+    |sel_tmp9_fu_532_p3       |  select  |      0|  0|   2|           1|           1|
+    |not_sel_tmp_fu_484_p2    |    xor   |      0|  0|   8|           1|           2|
+    |or_cond_not_fu_414_p2    |    xor   |      0|  0|   8|           1|           2|
+    |sel_tmp27_not_fu_546_p2  |    xor   |      0|  0|   8|           1|           2|
+    |sel_tmp6_fu_460_p2       |    xor   |      0|  0|   8|           1|           2|
+    |sel_tmp_fu_442_p2        |    xor   |      0|  0|   8|           1|           2|
+    |tmp_9_fu_402_p2          |    xor   |      0|  0|   8|           1|           2|
+    |tmp_s_fu_363_p2          |    xor   |      0|  0|   8|           1|           2|
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |Total                    |          |      0|  0| 401|         127|          97|
+    +-------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------+----+-----------+-----+-----------+
+    |          Name         | LUT| Input Size| Bits| Total Bits|
+    +-----------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm              |  93|         19|    1|         19|
+    |bmc_in_address0        |  15|          3|    4|         12|
+    |bmc_in_address1        |  15|          3|    4|         12|
+    |state_dup_issued_V_o   |   9|          2|    1|          2|
+    |state_key_V_address0   |  85|         17|    5|         85|
+    |state_key_V_address1   |  85|         17|    5|         85|
+    |state_orig_issued_V_o  |   9|          2|    1|          2|
+    +-----------------------+----+-----------+-----+-----------+
+    |Total                  | 311|         63|   21|        217|
+    +-----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------+----+----+-----+-----------+
+    |             Name             | FF | LUT| Bits| Const Bits|
+    +------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                     |  18|   0|   18|          0|
+    |bmc_in_load_4_reg_685         |   8|   0|    8|          0|
+    |bmc_in_load_reg_678           |   8|   0|    8|          0|
+    |bmc_in_offset_cast1_reg_652   |   4|   0|    6|          2|
+    |icmp1_reg_647                 |   1|   0|    1|          0|
+    |icmp_reg_673                  |   1|   0|    1|          0|
+    |issue_dup_V_reg_706           |   1|   0|    1|          0|
+    |issue_orig_V_reg_702          |   1|   0|    1|          0|
+    |state_in_count_V              |  16|   0|   16|          0|
+    |state_in_count_V_loa_reg_710  |  16|   0|   16|          0|
+    |state_orig_val_V_0            |   8|   0|    8|          0|
+    |state_orig_val_V_1            |   8|   0|    8|          0|
+    +------------------------------+----+----+-----+-----------+
+    |Total                         |  90|   0|   92|          2|
+    +------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------------+-----+-----+------------+---------------------+--------------+
+|           RTL Ports          | Dir | Bits|  Protocol  |    Source Object    |    C Type    |
++------------------------------+-----+-----+------------+---------------------+--------------+
+|ap_clk                        |  in |    1| ap_ctrl_hs |       aqed_in       | return value |
+|ap_rst                        |  in |    1| ap_ctrl_hs |       aqed_in       | return value |
+|ap_start                      |  in |    1| ap_ctrl_hs |       aqed_in       | return value |
+|ap_done                       | out |    1| ap_ctrl_hs |       aqed_in       | return value |
+|ap_idle                       | out |    1| ap_ctrl_hs |       aqed_in       | return value |
+|ap_ready                      | out |    1| ap_ctrl_hs |       aqed_in       | return value |
+|bmc_in_address0               | out |    4|  ap_memory |        bmc_in       |     array    |
+|bmc_in_ce0                    | out |    1|  ap_memory |        bmc_in       |     array    |
+|bmc_in_q0                     |  in |    8|  ap_memory |        bmc_in       |     array    |
+|bmc_in_address1               | out |    4|  ap_memory |        bmc_in       |     array    |
+|bmc_in_ce1                    | out |    1|  ap_memory |        bmc_in       |     array    |
+|bmc_in_q1                     |  in |    8|  ap_memory |        bmc_in       |     array    |
+|bmc_in_offset                 |  in |    4|   ap_none  |    bmc_in_offset    |    scalar    |
+|orig_V                        |  in |    1|   ap_none  |        orig_V       |    scalar    |
+|dup_V                         |  in |    1|   ap_none  |        dup_V        |    scalar    |
+|orig_idx                      |  in |    8|   ap_none  |       orig_idx      |    scalar    |
+|dup_idx                       |  in |    8|   ap_none  |       dup_idx       |    scalar    |
+|state_orig_issued_V_i         |  in |    1|   ap_ovld  | state_orig_issued_V |    pointer   |
+|state_orig_issued_V_o         | out |    1|   ap_ovld  | state_orig_issued_V |    pointer   |
+|state_orig_issued_V_o_ap_vld  | out |    1|   ap_ovld  | state_orig_issued_V |    pointer   |
+|state_dup_issued_V_i          |  in |    1|   ap_ovld  |  state_dup_issued_V |    pointer   |
+|state_dup_issued_V_o          | out |    1|   ap_ovld  |  state_dup_issued_V |    pointer   |
+|state_dup_issued_V_o_ap_vld   | out |    1|   ap_ovld  |  state_dup_issued_V |    pointer   |
+|state_orig_in_V               | out |   16|   ap_vld   |   state_orig_in_V   |    pointer   |
+|state_orig_in_V_ap_vld        | out |    1|   ap_vld   |   state_orig_in_V   |    pointer   |
+|state_orig_idx_V              | out |    2|   ap_vld   |   state_orig_idx_V  |    pointer   |
+|state_orig_idx_V_ap_vld       | out |    1|   ap_vld   |   state_orig_idx_V  |    pointer   |
+|state_dup_in_V                | out |   16|   ap_vld   |    state_dup_in_V   |    pointer   |
+|state_dup_in_V_ap_vld         | out |    1|   ap_vld   |    state_dup_in_V   |    pointer   |
+|state_dup_idx_V               | out |    2|   ap_vld   |   state_dup_idx_V   |    pointer   |
+|state_dup_idx_V_ap_vld        | out |    1|   ap_vld   |   state_dup_idx_V   |    pointer   |
+|state_dup_val_V_0             | out |    8|   ap_vld   |  state_dup_val_V_0  |    pointer   |
+|state_dup_val_V_0_ap_vld      | out |    1|   ap_vld   |  state_dup_val_V_0  |    pointer   |
+|state_dup_val_V_1             | out |    8|   ap_vld   |  state_dup_val_V_1  |    pointer   |
+|state_dup_val_V_1_ap_vld      | out |    1|   ap_vld   |  state_dup_val_V_1  |    pointer   |
++------------------------------+-----+-----+------------+---------------------+--------------+
+
