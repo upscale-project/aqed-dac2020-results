@@ -31,8 +31,8 @@ In the mem_core_top_1.sv,
 
 1. The updation in each step is marked by the comment *\\\\updated* in the verilog code.
 2. Rate-matched in doublebuffer and circular_en are two sub-configuration bits and the verification flow was performed once keeping them high and then keeping them low. More details can be found in the __README__ in each folder.
-3. In doublebuffer the response bound was checked only after a functionally consistent design was reached after considering both sub-configurations produced by rate-matched. Specifically response-bound was checked at steps 12, 15-18.
-4. In FIFO and linebuffer, the response bound was checked whenever functional consistency checked off a design as clean specifically steps 5,7 and 8 in FIFO and 1, 2, 3 and 5 in linebuffer. The bug in 2 is due to response bound violation and passed functional consistency check.
+3. In doublebuffer response bound was checked only after a functional consistency check could not detect a bug in either sub-configuration produced by rate-matched. Specifically, response bound was checked in steps 12, 15-18.
+4. In FIFO and linebuffer, response bound was checked whenever functional consistency could not detect a bug, specifically in steps 5,7 and 8 of FIFO and steps 1, 2, 3 and 5 of linebuffer. The bug in step 2 of linebuffer passed functional consistency check but was detected by response bound violation.
 
 
 
