@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wavelist version="2">
-  <insertion-point-position>14</insertion-point-position>
+  <insertion-point-position>12</insertion-point-position>
   <wave>
     <expr>clk</expr>
     <label/>
@@ -37,32 +37,32 @@
     <radix/>
   </wave>
   <wave>
-    <expr>aqed.data_out</expr>
+    <expr>data_in</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
-    <expr>aqed.data_out_in</expr>
+    <expr>data_out_in</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
-    <expr>aqed.issue_dup</expr>
+    <expr>aqed.aqed_top_core_inst.state_dup_issued_sva</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
-    <expr>aqed.issue_orig</expr>
+    <expr>aqed.aqed_top_core_inst.state_orig_issued_sva</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>DUT.doublebuffer_control.ping_npong</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
     <expr>DUT.doublebuffer_control.autoswitch</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>clk_en</expr>
     <label/>
     <radix/>
   </wave>

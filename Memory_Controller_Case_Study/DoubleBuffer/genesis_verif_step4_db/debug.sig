@@ -37,27 +37,27 @@
     <radix/>
   </wave>
   <wave>
-    <expr>aqed.data_out</expr>
+    <expr>aqed.aqed_top_core_inst.state_dup_issued_sva</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
-    <expr>aqed.data_out_in</expr>
+    <expr>aqed.aqed_top_core_inst.state_orig_issued_sva</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
-    <expr>aqed.issue_dup</expr>
+    <expr>data_in</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>data_out_in</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
     <expr>DUT.doublebuffer_control.init_state</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>aqed.issue_orig</expr>
     <label/>
     <radix/>
   </wave>

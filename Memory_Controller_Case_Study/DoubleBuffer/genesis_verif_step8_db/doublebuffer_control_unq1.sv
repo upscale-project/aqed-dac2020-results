@@ -153,7 +153,7 @@ logic                  autoswitch;
 logic                  read_done;
 logic                  write_done;
 logic                  write_done_d1;
-
+logic 	  	       read_done_thresh;
 logic next_valid;
 logic write_gate;
 logic read_first;
@@ -204,6 +204,24 @@ always @(posedge clk or posedge reset) begin
     end
   end
 end
+always_ff @(posedge clk or posedge reset) begin//updated 
+    if(reset) begin
+        read_done_thresh <= 0;
+    end
+    else begin
+        if(flush) begin
+            read_done_thresh <= 0;
+        end
+        else begin
+            if(autoswitch | switch) begin
+                read_done_thresh <= 0;
+            end
+            else if(read_done) begin
+                read_done_thresh <= 1;
+            end
+        end
+    end
+end
 
 always @ (posedge clk or posedge reset) begin
     if(reset) begin
@@ -227,7 +245,7 @@ assign write_gate = write_addr[12:9] == chain_idx;
 assign next_valid = read_addr[12:9] == chain_idx;
 
 assign valid_from_read = (read_mux) & in_range & ~init_state;
-assign valid = last_line_gate & (valid_from_read);
+assign valid = last_line_gate & (valid_from_read)&~read_done_thresh;//updated
 
 always @ (posedge clk or posedge reset) begin
   if(reset) begin

@@ -1,12 +1,12 @@
-| **Sl** | **Progress** | **Bug** | **Time(s)** | **Bounds** | **Soln. Repo** | **circular_en** |
+| **SL** | **Progress** | **Bug** | **Time(s)** | **Bounds** | **Soln. Repo** | **circular_en** |
 |:------:|:-----------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------:|:------:|:----------------------------------------------------------------------:|:-----------:|
-| 0_fifo | start with [cleanup](https://github.com/StanfordAHA/garnet/commit/823bee79f2616fc4778c644953e9b9e22aa1d01b#diff-d7ec987a198ed4cf3b82800e750c4fed) | output valid signal in passthrough condition (if wen and ren are high and FIFO is empty, the input is passed directly to the output) not working because because of incomplete logic  | 1.2 | 6 |  | 0 |
-| 1_fifo | sol: make output valid dependent on ~empty \| wen\_in. Now can handle passthrough conditions when the FIFO is empty. | output valid goes high one cycle before valid data comes out | 1.2 | 6 | [added proper valid function to LB](https://github.com/StanfordAHA/garnet/commit/b219f61ba22f2993e4e79a4b8e1894134c093f77#diff-d7ec987a198ed4cf3b82800e750c4fed) | 0 |
-| 2_fifo | sol: flop output valid by 1 cycle | buggy empty | 1.2 | 6 | [added proper valid function to LB](https://github.com/StanfordAHA/garnet/commit/b219f61ba22f2993e4e79a4b8e1894134c093f77#diff-d7ec987a198ed4cf3b82800e750c4fed) | 0 |
-| 3_fifo | sol: disable empty | buggy full | 1 | 5 |  | 0 |
-| 4_fifo | sol: disable full | bus width mismatch for depth signal | 1.2 | 6 |  | 0 |
-| 5_fifo | sol: fix mitmatch | -------NO BUGS--------- |  |  | [found bug in FIFO, fixed, made test make more sense and do checks eve…](https://github.com/StanfordAHA/garnet/commit/88641665838078a95c1f2bb3003ad7270df57b3e#diff-d7ec987a198ed4cf3b82800e750c4fed) | 0 |
-| 6\_fifo | turning on clk gating  | clk gating occurs in fifo a cycle earlier | 1.4 | 6 |  | 0 |
-| 7\_fifo | Sol: add clk\_en in every if statement instead of gating at the top | -------NO BUGS--------- |  |  | [clk_en on the rest...here goes nothing](https://github.com/StanfordAHA/garnet/commit/88641665838078a95c1f2bb3003ad7270df57b3e#diff-d7ec987a198ed4cf3b82800e750c4fed) | 0 |
-| 8_fifo | final design | -------NO BUGS--------- |  |  |  | 0 |
-| 9\_fifo | final design | same address read twice since read_addr gets reset because of buggy circular buffer mode | 1.3 | 6 |  | 1 |
+| 0 | start with [cleanup](https://github.com/StanfordAHA/garnet/commit/823bee79f2616fc4778c644953e9b9e22aa1d01b#diff-d7ec987a198ed4cf3b82800e750c4fed) | output valid signal in passthrough condition (if wen and ren are high and FIFO is empty, the input is passed directly to the output) not working because because of incomplete logic  | 1.2 | 6 |  | 0 |
+| 1 | soln: make output valid dependent on ~empty \| wen\_in. Now can handle passthrough conditions when the FIFO is empty. | output valid goes high one cycle before valid data comes out | 1.2 | 6 | [added proper valid function to LB](https://github.com/StanfordAHA/garnet/commit/b219f61ba22f2993e4e79a4b8e1894134c093f77#diff-d7ec987a198ed4cf3b82800e750c4fed) | 0 |
+| 2 | soln: flop output valid by 1 cycle | buggy empty | 1.2 | 6 | [added proper valid function to LB](https://github.com/StanfordAHA/garnet/commit/b219f61ba22f2993e4e79a4b8e1894134c093f77#diff-d7ec987a198ed4cf3b82800e750c4fed) | 0 |
+| 3 | soln: disable empty | buggy full | 1 | 5 |  | 0 |
+| 4 | soln: disable full | bus width mismatch for depth signal | 1.2 | 6 |  | 0 |
+| 5 | soln: fix mitmatch | -------NO BUGS--------- |  |  | [found bug in FIFO, fixed, made test make more sense and do checks eve…](https://github.com/StanfordAHA/garnet/commit/88641665838078a95c1f2bb3003ad7270df57b3e#diff-d7ec987a198ed4cf3b82800e750c4fed) | 0 |
+| 6 | turning on clk gating  | clk gating occurs in fifo a cycle earlier | 1.4 | 6 |  | 0 |
+| 7 | soln: add clk\_en in every if statement instead of gating at the top | -------NO BUGS--------- |  |  | [clk_en on the rest...here goes nothing](https://github.com/StanfordAHA/garnet/commit/88641665838078a95c1f2bb3003ad7270df57b3e#diff-d7ec987a198ed4cf3b82800e750c4fed) | 0 |
+| 8 | final design | -------NO BUGS--------- |  |  |  | 0 |
+| 9 | final design | same address read twice since read_addr gets reset because of buggy circular buffer mode | 1.3 | 6 |  | 1 |

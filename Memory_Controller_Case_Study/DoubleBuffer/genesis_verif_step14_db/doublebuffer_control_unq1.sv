@@ -208,7 +208,7 @@ always_ff @(posedge clk or posedge reset) begin
     if(reset) begin
         read_done_thresh <= 0;
     end
-    else begin
+    else if(clk_en) begin//updated
         if(flush) begin
             read_done_thresh <= 0;
         end
@@ -227,7 +227,7 @@ always @ (posedge clk or posedge reset) begin
     if(reset) begin
         write_done_d1 <= 0;
     end
-    else begin
+    else if(clk_en) begin//updated
         if(flush) begin
             write_done_d1 <= 0;
         end
@@ -250,7 +250,7 @@ assign write_gate = write_addr[12:9] == chain_idx;
 assign next_valid = read_addr[12:9] == chain_idx;
 
 assign valid_from_read = (read_mux) & in_range & ~init_state;
-assign valid = last_line_gate & (valid_from_read)&~read_done_thresh;
+assign valid = last_line_gate & (valid_from_read )&~read_done_thresh;
 
 always @ (posedge clk or posedge reset) begin
   if(reset) begin
@@ -306,7 +306,7 @@ always @(posedge clk or posedge reset) begin
     firstn[0] <= 0;
     firstn[1] <= 0;
   end
-  else begin
+  else if(clk_en) begin//updated
     if(flush) begin
       firstn[0] <= 0;
       firstn[1] <= 0;
@@ -335,7 +335,7 @@ always_ff @(posedge clk or posedge reset) begin
     if(reset) begin
         saturated <= 0;
     end
-    else begin
+    else if(clk_en) begin
         if(flush) begin
             saturated <= 0;
         end
@@ -352,7 +352,7 @@ always_ff @(posedge clk or posedge reset) begin
     if(reset) begin
         read_first <= 1;
     end
-    else begin
+    else if(clk_en) begin//updated
         if(flush) begin
             read_first <= 1;
         end
@@ -367,7 +367,7 @@ always_ff @(posedge clk or posedge reset) begin
   if(reset) begin
     take_the_flop <= 0;
   end
-  else begin
+  else if(clk_en) begin//updated
       if(flush) begin
          take_the_flop <= 0;
       end
@@ -400,7 +400,7 @@ always_ff @(posedge clk or posedge reset) begin
     write_addr <= 0;
     read_cnt <= 0;
   end
-  else begin
+  else if(clk_en) begin//updated
     if(flush) begin 
       dim_counter[0] <= 0;
       dim_counter[1] <= 0;

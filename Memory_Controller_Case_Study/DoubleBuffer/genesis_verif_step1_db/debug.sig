@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wavelist version="2">
-  <insertion-point-position>17</insertion-point-position>
+  <insertion-point-position>11</insertion-point-position>
   <wave>
     <expr>clk</expr>
     <label/>
@@ -32,42 +32,32 @@
     <radix/>
   </wave>
   <wave>
+    <expr>aqed.aqed_top_core_inst.state_dup_issued_sva</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>aqed.aqed_top_core_inst.state_orig_issued_sva</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>data_in</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>data_out_in</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
     <expr>DUT.doublebuffer_control.valid</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
-    <expr>aqed.data_out</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>aqed.data_out_in</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>DUT.mem_inst1.sram_stub.data_array[0]</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>aqed.issue_dup</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>aqed.issue_orig</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
     <expr>DUT.doublebuffer_control.autoswitch</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>DUT.mem_inst0.sram_stub.data_array[1]</expr>
     <label/>
     <radix/>
   </wave>

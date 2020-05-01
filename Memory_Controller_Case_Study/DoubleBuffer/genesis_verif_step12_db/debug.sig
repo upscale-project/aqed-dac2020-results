@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wavelist version="2">
-  <insertion-point-position>14</insertion-point-position>
+  <insertion-point-position>16</insertion-point-position>
   <wave>
     <expr>clk</expr>
     <label/>
@@ -52,6 +52,11 @@
     <radix/>
   </wave>
   <wave>
+    <expr>DUT.mem_cen</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
     <expr>DUT.doublebuffer_control.read_addr</expr>
     <label/>
     <radix/>
@@ -62,12 +67,17 @@
     <radix/>
   </wave>
   <wave>
-    <expr>DUT.doublebuffer_control.doublebuffer_cen_mem</expr>
+    <expr>DUT.doublebuffer_control.read_done</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
-    <expr>DUT.doublebuffer_control.doublebuffer_wen_mem</expr>
+    <expr>DUT.doublebuffer_control.init_state</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>DUT.doublebuffer_control.doublebuffer_cen_mem</expr>
     <label/>
     <radix/>
   </wave>

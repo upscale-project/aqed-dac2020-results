@@ -13,7 +13,7 @@
 //	-----------------------------------------------
 //	
 //
-//  Source file: /media//Share/SF/garnet-master/memory_core/genesis_new/doublebuffer_control.svp
+//  Source file: /media/saranyu/Share/SF/garnet-master/memory_core/genesis_new/doublebuffer_control.svp
 //  Source template: doublebuffer_control
 //
 // --------------- Begin Pre-Generation Parameters Status Report ---------------
@@ -153,7 +153,7 @@ logic                  autoswitch;
 logic                  read_done;
 logic                  write_done;
 logic                  write_done_d1;
-logic 		       read_done_thresh;
+logic                  read_done_thresh;
 logic next_valid;
 logic write_gate;
 logic read_first;
@@ -277,8 +277,8 @@ always @(*) begin
   // Data to memory is just data in
   doublebuffer_data_in[0] = data_in;
   doublebuffer_data_in[1] = data_in;
-  doublebuffer_cen_mem[0] = (wen & (ping_npong == 0)) | switch | autoswitch | (read_mux);//updated
-  doublebuffer_cen_mem[1] = (wen & (ping_npong == 1)) | switch | autoswitch | (read_mux);//updated
+  doublebuffer_cen_mem[0] = (wen & (ping_npong == 0)) | switch | autoswitch | (read_mux);
+  doublebuffer_cen_mem[1] = (wen & (ping_npong == 1)) | switch | autoswitch | (read_mux);
   doublebuffer_wen_mem[0] = (ping_npong == 0) & (wen | ~write_done_d1) & write_gate;
   doublebuffer_wen_mem[1] = (ping_npong == 1) & (wen | ~write_done_d1) & write_gate;
   doublebuffer_addr_mem[0] = (ping_npong == 0) ? write_addr : read_addr;
@@ -305,7 +305,7 @@ always @(posedge clk or posedge reset) begin
   if(reset) begin
     firstn[0] <= 0;
     firstn[1] <= 0;
- end
+  end
   else begin
     if(flush) begin
       firstn[0] <= 0;

@@ -153,7 +153,7 @@ logic                  autoswitch;
 logic                  read_done;
 logic                  write_done;
 logic                  write_done_d1;
-logic                  read_done_thresh;
+logic 		       read_done_thresh;
 logic next_valid;
 logic write_gate;
 logic read_first;
@@ -208,7 +208,7 @@ always_ff @(posedge clk or posedge reset) begin
     if(reset) begin
         read_done_thresh <= 0;
     end
-    else if(clk_en) begin//updated
+    else if(clk_en) begin
         if(flush) begin
             read_done_thresh <= 0;
         end
@@ -227,7 +227,7 @@ always @ (posedge clk or posedge reset) begin
     if(reset) begin
         write_done_d1 <= 0;
     end
-    else if(clk_en) begin//updated
+    else if(clk_en) begin
         if(flush) begin
             write_done_d1 <= 0;
         end
@@ -306,7 +306,7 @@ always @(posedge clk or posedge reset) begin
     firstn[0] <= 0;
     firstn[1] <= 0;
   end
-  else if(clk_en) begin//updated
+  else if(clk_en) begin
     if(flush) begin
       firstn[0] <= 0;
       firstn[1] <= 0;
@@ -352,7 +352,7 @@ always_ff @(posedge clk or posedge reset) begin
     if(reset) begin
         read_first <= 1;
     end
-    else if(clk_en) begin//updated
+    else if(clk_en) begin
         if(flush) begin
             read_first <= 1;
         end
@@ -367,7 +367,7 @@ always_ff @(posedge clk or posedge reset) begin
   if(reset) begin
     take_the_flop <= 0;
   end
-  else if(clk_en) begin//updated
+  else if(clk_en) begin
       if(flush) begin
          take_the_flop <= 0;
       end
@@ -400,7 +400,7 @@ always_ff @(posedge clk or posedge reset) begin
     write_addr <= 0;
     read_cnt <= 0;
   end
-  else if(clk_en) begin//updated
+  else if(clk_en) begin
     if(flush) begin 
       dim_counter[0] <= 0;
       dim_counter[1] <= 0;

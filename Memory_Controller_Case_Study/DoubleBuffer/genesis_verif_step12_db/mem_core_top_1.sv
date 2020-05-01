@@ -137,8 +137,24 @@ memory_core DUT(
 
 aqed_top aqed(.clk(clk), .clk_en(clk_en), .reset(reset), .bmc_in_rsc_dat(data_in), .bmc_v_rsc_dat(wen_in), .acc_out_rsc_dat(data_out_in), .acc_out_v_rsc_dat(ren_in), .acc_out_rdy_rsc_dat(valid_out), .return_aqed_out_rsc_dat(data_out), .return_aqed_out_v_rsc_dat(wen_in_1), .return_qed_done_rsc_dat(qed_done), .return_qed_check_rsc_dat(qed_check));
 
+reg [16:0] count, in_after_orig;
+reg rdy_after_orig;
+always @(posedge clk) begin
+if(reset) begin
+  count <= 0; in_after_orig <= 0; rdy_after_orig <= 0;
+end
+else if (clk_en) begin
+  count <= (ren_in && (aqed.return_orig_issued_rsc_dat))?count+1:count;
+  in_after_orig <= (wen_in && (aqed.return_orig_issued_rsc_dat))?in_after_orig+1:in_after_orig;
+ end
+  rdy_after_orig <= (aqed.return_orig_done_rsc_dat || rdy_after_orig);
+end
 
 
+   assert_response_bound : assert property (
+       @(posedge clk)
+          (count>=4*depth) && (in_after_orig>=depth)|-> (rdy_after_orig));
+ 
 
 
    assert_qed_match : assert property (
@@ -165,7 +181,7 @@ aqed_top aqed(.clk(clk), .clk_en(clk_en), .reset(reset), .bmc_in_rsc_dat(data_in
 		const_depth <= depth;
 		const_rate_matched <= rate_matched;
 	end
-	cnst_depth: assume property ( @(posedge clk) (const_depth==depth && iter_cnt==depth && const_rate_matched==rate_matched ));
+	cnst_depth: assume property ( @(posedge clk) (const_depth==depth  && depth>0 && iter_cnt==depth && const_rate_matched==rate_matched ));
 	resource_constrain_1: assume property ( @(posedge clk) (count_wen==depth) |-> wen_in==0); 
 	resource_constrain_2: assume property ( @(posedge clk) (count_ren==depth) |-> ren_in==0); 
 

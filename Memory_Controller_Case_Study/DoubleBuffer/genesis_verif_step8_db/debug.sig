@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wavelist version="2">
-  <insertion-point-position>8</insertion-point-position>
+  <insertion-point-position>12</insertion-point-position>
   <wave>
     <expr>clk</expr>
     <label/>
@@ -22,52 +22,42 @@
     <radix/>
   </wave>
   <wave>
-    <expr>wen_in</expr>
+    <expr>DUT.doublebuffer_control.wen</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
-    <expr>ren_in</expr>
+    <expr>DUT.doublebuffer_control.depth</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
-    <expr>aqed.issue_dup</expr>
+    <expr>DUT.doublebuffer_control.valid</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
-    <expr>aqed.issue_orig</expr>
+    <expr>data_in</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
-    <expr>valid_out</expr>
+    <expr>data_out_in</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
-    <expr>aqed.data_out</expr>
+    <expr>aqed.aqed_top_core_inst.state_dup_issued_sva</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
-    <expr>aqed.data_out_in</expr>
+    <expr>aqed.aqed_top_core_inst.state_orig_issued_sva</expr>
     <label/>
     <radix/>
   </wave>
   <wave>
-    <expr>depth</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>DUT.mem_cen</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave>
-    <expr>DUT.doublebuffer_control.read_addr</expr>
+    <expr>DUT.doublebuffer_control.ping_npong</expr>
     <label/>
     <radix/>
   </wave>
@@ -78,6 +68,26 @@
   </wave>
   <wave>
     <expr>DUT.doublebuffer_control.read_done</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>DUT.doublebuffer_control.ping_npong</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>DUT.doublebuffer_control.firstn[0]</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>DUT.doublebuffer_control.firstn[1]</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>ren_in</expr>
     <label/>
     <radix/>
   </wave>
