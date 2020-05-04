@@ -1,8 +1,28 @@
 # aqed-dac2020-results
-Source files to reproduce the results shown for A-QED at DAC 2020, paper "A-QED Verification of Hardware Accelerators".
+Source files to reproduce the results shown for A-QED (Acclerator Quick Error 
+Detection) at DAC 2020, paper titled "A-QED Verification of Hardware Accelerators".
 
-## AES case study
-See directory "AES_abstracted/cpp/bug{i}/BUG{i}/solution1/syn/verilog/" for the Verilog sources of the design with bug "i=0...3", which are bugs "v1...v4", respectively, as reported in Table 2 in the paper. 
+For questions, please contact:
 
-The Verilog sources of the bugfree design are in directory "AES_abstracted/cpp/bugless/BUGLESS/solution1/syn/verilog"
-.
+Eshan Singh
+esingh@stanford.edu
+
+Saranyu Chattopadhyay
+saranyuc@stanford.edu
+
+## Directory Hierarchy
+
+Each directory contains an additional README file with further instructions and
+details of the design.
+
+1) AES_abstracted
+
+2) Memory_Controller_Case_Study
+
+3) gsm
+
+4) dataflow
+
+5) optical_flow
+
+
