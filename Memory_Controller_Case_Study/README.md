@@ -1,6 +1,6 @@
 # Memory Controller Unit Case Study
 
-Three configurations were explored - doublebuffer, FIFO and linebuffer from the [Memory Controller Unit](https://github.com/StanfordAHA/garnet/tree/master/memory_core), a part of the Garnet CGPRA developed by Stanford AHA! Agile Hardware Center.  
+Three configurations were explored - doublebuffer, FIFO and linebuffer from the [Memory Controller Unit](https://github.com/StanfordAHA/garnet/tree/master/memory_core), a part of the Garnet CGRA developed by Stanford AHA! Agile Hardware Center.  
 
 ### Directory Hierarchy
 
