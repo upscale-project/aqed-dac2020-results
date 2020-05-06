@@ -6,7 +6,7 @@ Three configurations were explored - doublebuffer, FIFO and linebuffer from the 
 
 Each verification flow can be found in **DoubleBuffer/**, **FIFO/** and **LineBuffer/**.  
 Each folder contains  
-1. __aqed_*.cpp file__ : the C++ code for the A-QED function from which the A-QED verilog is generated using *Mentor Graphics Catapult* HLS synthesis tool.
+1. __aqed\_\*.cpp file__ : the C++ code for the A-QED function from which the A-QED verilog is generated using *Mentor Graphics Catapult* HLS synthesis tool.
 2. __step*/__ : these folders contain the different steps taken in the verification flow. 
 3. __README__ : Contains a table listing the bug found in each step, its counter-example length, runtime and its solution in the next step.
 
