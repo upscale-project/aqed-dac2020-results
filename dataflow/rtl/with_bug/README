@@ -1,0 +1,10 @@
+### Custon Dataflow design - version with bug
+
+To run with Cadence Jaspergold:
+
+1) Launch the jaspergold GUI: "jaspergold"
+
+2) In the command window, source the tcl file: "source jasper.tcl"
+
+In the list of counterexamples, RB_Check_2 should fail with a counterexample of
+98 cycles. 

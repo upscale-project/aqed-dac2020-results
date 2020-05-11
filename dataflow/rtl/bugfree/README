@@ -1,0 +1,10 @@
+### Custon Dataflow design - bugfree version
+
+To run with Cadence Jaspergold:
+
+1) Launch the jaspergold GUI: "jaspergold"
+
+2) In the command window, source the tcl file: "source jasper.tcl"
+
+The design should exceed the bound for the counterexample in the design with
+the bug (98 cycles).

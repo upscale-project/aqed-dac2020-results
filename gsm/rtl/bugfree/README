@@ -1,0 +1,10 @@
+### Abstracted GSM design from CHStone benchmark suite - bugfree version
+
+To run with Cadence Jaspergold:
+
+1) Launch the jaspergold GUI: "jaspergold"
+
+2) In the command window, source the tcl file: "source jasper.tcl"
+
+BMC analysis bound should exceed the counterexample length of the version
+with the bug (65 cycles).
