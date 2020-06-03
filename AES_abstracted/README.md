@@ -11,6 +11,8 @@ Four bugs and the bugless design are looked into and can be found in the **./bug
    2. _aes.flist_ : contains the list of verilog files read by the formal tool
    3. _debug.sig_ : contains a list of waveform that were used for debugging the bug. Can be loaded into the _Cadence JasperGold_ waveform viewer once the counter-example is found.
 
+Please note that **bug0**, **bug1**, **bug2**, and **bug3** correspond to **AES_v1**, **AES_v2**, **AES_v3**, and **AES_v4** in Table 2 in our paper, respectively.
+
 ### Assertion
    The **assert_qed_match** is the  universal *Functional Consistency* check assertion and can be found in *aqed_top.v* in _bug*/BUG*/solution1/syn/verilog_.
 
