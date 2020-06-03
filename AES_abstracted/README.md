@@ -2,7 +2,7 @@
 
 ### Directory Hierarchy
 
-Four bugs and the bugless design are looked into and can be found in the **./bug0**, **./bug1**, **./bug2**, **./bug3** and **./bugless** repsectively. Each folder contains  
+Four bugs and the bugless design are looked into and can be found in the **./bug0**, **./bug1**, **./bug2**, **./bug3** and **./bugless** respectively. Each folder contains  
 
 1. __buf4*.cpp__ : The HLS synthesizable C++ file from which the verilog is generated using *Xilinx Vivado* HLS synthesis tool. It contains both the accelerator and the A-QED module. The top funcion of the accelerator is *workload* and that of the A-QED module is *aqed_top*. In the folders with buggy version, the bug in the accelerator is explained at **FIXME** comment.  
 2. __aes.h__ : The C++ header file containing structures used by the accelerator.  
