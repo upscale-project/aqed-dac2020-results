@@ -13,6 +13,8 @@ Four bugs and the bugless design are looked into and can be found in the **./bug
 
 Please note that **bug0**, **bug1**, **bug2**, and **bug3** correspond to **AES_v1**, **AES_v2**, **AES_v3**, and **AES_v4** in Table 2 in our paper, respectively.
 
+E.g., to reproduce the bug in **AES_v1** in Table 2, run `jaspergold ./jasper.tcl` in directory `bug0/BUG0/solution1/syn/verilog/`.
+
 ### Assertion
    The **assert_qed_match** is the  universal *Functional Consistency* check assertion and can be found in *aqed_top.v* in _bug*/BUG*/solution1/syn/verilog_.
 
