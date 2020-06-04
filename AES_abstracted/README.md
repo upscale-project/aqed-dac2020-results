@@ -4,7 +4,7 @@
 
 Four bugs and the bugless design are looked into and can be found in the **./bug0**, **./bug1**, **./bug2**, **./bug3** and **./bugless** respectively. Each folder contains  
 
-1. __buf4*.cpp__ : The HLS synthesizable C++ file from which the verilog is generated using *Xilinx Vivado* HLS synthesis tool. It contains both the accelerator and the A-QED module. The top funcion of the accelerator is *workload* and that of the A-QED module is *aqed_top*. In the folders with buggy version, the correct code line is comapred to the buggy code line at **FIXME** comment in the cpp file.  
+1. __buf4*.cpp__ : The HLS synthesizable C++ file from which the verilog is generated using *Xilinx Vivado* HLS synthesis tool. It contains both the accelerator and the A-QED module. The top funcion of the accelerator is *workload* and that of the A-QED module is *aqed_top*. In the folders with buggy version, the correct code line is compared to the buggy code line at **FIXME** comment in the cpp file.  
 2. __aes.h__ : The C++ header file containing structures used by the accelerator.  
 3. __BUG*/__ : The *Xilinx Vivado* project folder. The generated verilog files can be found in _./BUG*/solution1/syn/verilog_. __Warning: Synthesizing the RTL from C++, deletes the current */BUG*/solution1/syn/* folder__. The _./BUG*/solution1/syn/verilog_ folder, besides the generated verilog, contains  
    1. _jasper.tcl_ : contains the tcl file that may be sourced to run BMC on the design with _Cadence JasperGold_. 
