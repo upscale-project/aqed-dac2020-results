@@ -1,0 +1,228 @@
+
+
+================================================================
+== Vivado HLS Report for 'aqed_in'
+================================================================
+* Date:           Thu Apr 16 21:26:58 2020
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        gsm_new_2
+* Solution:       solution1
+* Product family: aartix7
+* Target device:  xa7a12tcsg325-1q
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+--------+----------+------------+
+    |  Clock | Target | Estimated| Uncertainty|
+    +--------+--------+----------+------------+
+    |ap_clk  |  100.00|     5.474|       12.50|
+    +--------+--------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    2|    4|    2|    4|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / (issue_orig)
+	3  / (!issue_orig)
+2 --> 
+	3  / true
+3 --> 
+	4  / (issue_dup)
+	5  / (!issue_dup)
+4 --> 
+	5  / true
+5 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.83>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%dup_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %dup)"   --->   Operation 6 'read' 'dup_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%orig_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %orig)"   --->   Operation 7 'read' 'orig_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%bmc_in_offset_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %bmc_in_offset)"   --->   Operation 8 'read' 'bmc_in_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%bmc_in_offset_cast1 = zext i3 %bmc_in_offset_read to i64"   --->   Operation 9 'zext' 'bmc_in_offset_cast1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%bmc_in_addr = getelementptr [8 x i16]* %bmc_in, i64 0, i64 %bmc_in_offset_cast1"   --->   Operation 10 'getelementptr' 'bmc_in_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%state_orig_issued_lo = load i1* @state_orig_issued, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:151]   --->   Operation 11 'load' 'state_orig_issued_lo' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns) (grouped into LUT with out node issue_orig)   --->   "%tmp = xor i1 %state_orig_issued_lo, true" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:151]   --->   Operation 12 'xor' 'tmp' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (0.94ns) (out node of the LUT)   --->   "%issue_orig = and i1 %orig_read, %tmp" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:151]   --->   Operation 13 'and' 'issue_orig' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%state_dup_issued_loa = load i1* @state_dup_issued, align 1" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:153]   --->   Operation 14 'load' 'state_dup_issued_loa' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns) (grouped into LUT with out node issue_dup)   --->   "%not_state_dup_issued = xor i1 %state_dup_issued_loa, true" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:153]   --->   Operation 15 'xor' 'not_state_dup_issued' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (0.00ns) (grouped into LUT with out node issue_dup)   --->   "%tmp9 = and i1 %dup_read, %not_state_dup_issued" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:153]   --->   Operation 16 'and' 'tmp9' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 17 [1/1] (0.94ns) (out node of the LUT)   --->   "%issue_dup = and i1 %tmp9, %state_orig_issued_lo" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:153]   --->   Operation 17 'and' 'issue_dup' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%state_in_count_load = load i16* @state_in_count, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:157]   --->   Operation 18 'load' 'state_in_count_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "br i1 %issue_orig, label %0, label %._crit_edge3" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:155]   --->   Operation 19 'br' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "store i1 true, i1* @state_orig_issued, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:156]   --->   Operation 20 'store' <Predicate = (issue_orig)> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "store i16 %state_in_count_load, i16* @state_orig_in, align 8" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:157]   --->   Operation 21 'store' <Predicate = (issue_orig)> <Delay = 0.00>
+ST_1 : Operation 22 [2/2] (2.15ns)   --->   "%bmc_in_load = load i16* %bmc_in_addr, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:158]   --->   Operation 22 'load' 'bmc_in_load' <Predicate = (issue_orig)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_1 : Operation 23 [1/1] (1.68ns)   --->   "%sum = add i3 %bmc_in_offset_read, 1"   --->   Operation 23 'add' 'sum' <Predicate = (issue_orig)> <Delay = 1.68> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%sum_cast = zext i3 %sum to i64"   --->   Operation 24 'zext' 'sum_cast' <Predicate = (issue_orig)> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%bmc_in_addr_4 = getelementptr [8 x i16]* %bmc_in, i64 0, i64 %sum_cast" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:159]   --->   Operation 25 'getelementptr' 'bmc_in_addr_4' <Predicate = (issue_orig)> <Delay = 0.00>
+ST_1 : Operation 26 [2/2] (2.15ns)   --->   "%bmc_in_load_1 = load i16* %bmc_in_addr_4, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:159]   --->   Operation 26 'load' 'bmc_in_load_1' <Predicate = (issue_orig)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+
+State 2 <SV = 1> <Delay = 3.83>
+ST_2 : Operation 27 [1/2] (2.15ns)   --->   "%bmc_in_load = load i16* %bmc_in_addr, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:158]   --->   Operation 27 'load' 'bmc_in_load' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "store i16 %bmc_in_load, i16* @state_orig_val_0, align 8" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:158]   --->   Operation 28 'store' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 29 [1/2] (2.15ns)   --->   "%bmc_in_load_1 = load i16* %bmc_in_addr_4, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:159]   --->   Operation 29 'load' 'bmc_in_load_1' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "store i16 %bmc_in_load_1, i16* @state_orig_val_1, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:159]   --->   Operation 30 'store' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 31 [1/1] (1.68ns)   --->   "%sum2 = add i3 %bmc_in_offset_read, 2"   --->   Operation 31 'add' 'sum2' <Predicate = true> <Delay = 1.68> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%sum2_cast = zext i3 %sum2 to i64"   --->   Operation 32 'zext' 'sum2_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%bmc_in_addr_5 = getelementptr [8 x i16]* %bmc_in, i64 0, i64 %sum2_cast" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:160]   --->   Operation 33 'getelementptr' 'bmc_in_addr_5' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [2/2] (2.15ns)   --->   "%bmc_in_load_2 = load i16* %bmc_in_addr_5, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:160]   --->   Operation 34 'load' 'bmc_in_load_2' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_2 : Operation 35 [1/1] (1.68ns)   --->   "%sum4 = add i3 %bmc_in_offset_read, 3"   --->   Operation 35 'add' 'sum4' <Predicate = true> <Delay = 1.68> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%sum4_cast = zext i3 %sum4 to i64"   --->   Operation 36 'zext' 'sum4_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%bmc_in_addr_6 = getelementptr [8 x i16]* %bmc_in, i64 0, i64 %sum4_cast" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:161]   --->   Operation 37 'getelementptr' 'bmc_in_addr_6' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [2/2] (2.15ns)   --->   "%bmc_in_load_3 = load i16* %bmc_in_addr_6, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:161]   --->   Operation 38 'load' 'bmc_in_load_3' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+
+State 3 <SV = 2> <Delay = 3.83>
+ST_3 : Operation 39 [1/2] (2.15ns)   --->   "%bmc_in_load_2 = load i16* %bmc_in_addr_5, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:160]   --->   Operation 39 'load' 'bmc_in_load_2' <Predicate = (issue_orig)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "store i16 %bmc_in_load_2, i16* @state_orig_val_2, align 4" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:160]   --->   Operation 40 'store' <Predicate = (issue_orig)> <Delay = 0.00>
+ST_3 : Operation 41 [1/2] (2.15ns)   --->   "%bmc_in_load_3 = load i16* %bmc_in_addr_6, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:161]   --->   Operation 41 'load' 'bmc_in_load_3' <Predicate = (issue_orig)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "store i16 %bmc_in_load_3, i16* @state_orig_val_3, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:161]   --->   Operation 42 'store' <Predicate = (issue_orig)> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "br label %._crit_edge3" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:170]   --->   Operation 43 'br' <Predicate = (issue_orig)> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "br i1 %issue_dup, label %_ifconv1, label %._crit_edge4" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:172]   --->   Operation 44 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 45 [2/2] (2.15ns)   --->   "%bmc_in_load_4 = load i16* %bmc_in_addr, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 45 'load' 'bmc_in_load_4' <Predicate = (issue_dup)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_3 : Operation 46 [1/1] (1.68ns)   --->   "%sum6 = add i3 %bmc_in_offset_read, 1"   --->   Operation 46 'add' 'sum6' <Predicate = (issue_dup)> <Delay = 1.68> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%sum6_cast = zext i3 %sum6 to i64"   --->   Operation 47 'zext' 'sum6_cast' <Predicate = (issue_dup)> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%bmc_in_addr_7 = getelementptr [8 x i16]* %bmc_in, i64 0, i64 %sum6_cast" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 48 'getelementptr' 'bmc_in_addr_7' <Predicate = (issue_dup)> <Delay = 0.00>
+ST_3 : Operation 49 [2/2] (2.15ns)   --->   "%bmc_in_load_5 = load i16* %bmc_in_addr_7, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 49 'load' 'bmc_in_load_5' <Predicate = (issue_dup)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+
+State 4 <SV = 3> <Delay = 4.53>
+ST_4 : Operation 50 [1/1] (0.00ns)   --->   "%state_orig_val_0_loa = load i16* @state_orig_val_0, align 8" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 50 'load' 'state_orig_val_0_loa' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 51 [1/2] (2.15ns)   --->   "%bmc_in_load_4 = load i16* %bmc_in_addr, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 51 'load' 'bmc_in_load_4' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_4 : Operation 52 [1/1] (2.38ns)   --->   "%tmp_s = icmp eq i16 %state_orig_val_0_loa, %bmc_in_load_4" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 52 'icmp' 'tmp_s' <Predicate = true> <Delay = 2.38> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.38> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 53 [1/1] (0.00ns)   --->   "%state_orig_val_1_loa = load i16* @state_orig_val_1, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 53 'load' 'state_orig_val_1_loa' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 54 [1/2] (2.15ns)   --->   "%bmc_in_load_5 = load i16* %bmc_in_addr_7, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 54 'load' 'bmc_in_load_5' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_4 : Operation 55 [1/1] (2.38ns)   --->   "%tmp_4 = icmp eq i16 %state_orig_val_1_loa, %bmc_in_load_5" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 55 'icmp' 'tmp_4' <Predicate = true> <Delay = 2.38> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.38> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 56 [1/1] (1.68ns)   --->   "%sum8 = add i3 %bmc_in_offset_read, 2"   --->   Operation 56 'add' 'sum8' <Predicate = true> <Delay = 1.68> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 57 [1/1] (0.00ns)   --->   "%sum8_cast = zext i3 %sum8 to i64"   --->   Operation 57 'zext' 'sum8_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 58 [1/1] (0.00ns)   --->   "%bmc_in_addr_8 = getelementptr [8 x i16]* %bmc_in, i64 0, i64 %sum8_cast" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 58 'getelementptr' 'bmc_in_addr_8' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 59 [2/2] (2.15ns)   --->   "%bmc_in_load_6 = load i16* %bmc_in_addr_8, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 59 'load' 'bmc_in_load_6' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_4 : Operation 60 [1/1] (1.68ns)   --->   "%sum1 = add i3 %bmc_in_offset_read, 3"   --->   Operation 60 'add' 'sum1' <Predicate = true> <Delay = 1.68> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "%sum1_cast = zext i3 %sum1 to i64"   --->   Operation 61 'zext' 'sum1_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 62 [1/1] (0.00ns)   --->   "%bmc_in_addr_9 = getelementptr [8 x i16]* %bmc_in, i64 0, i64 %sum1_cast" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 62 'getelementptr' 'bmc_in_addr_9' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 63 [2/2] (2.15ns)   --->   "%bmc_in_load_7 = load i16* %bmc_in_addr_9, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 63 'load' 'bmc_in_load_7' <Predicate = true> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+
+State 5 <SV = 4> <Delay = 5.47>
+ST_5 : Operation 64 [1/1] (0.00ns)   --->   "%state_orig_val_2_loa = load i16* @state_orig_val_2, align 4" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 64 'load' 'state_orig_val_2_loa' <Predicate = (issue_dup)> <Delay = 0.00>
+ST_5 : Operation 65 [1/2] (2.15ns)   --->   "%bmc_in_load_6 = load i16* %bmc_in_addr_8, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 65 'load' 'bmc_in_load_6' <Predicate = (issue_dup)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_5 : Operation 66 [1/1] (2.38ns)   --->   "%tmp_5 = icmp eq i16 %state_orig_val_2_loa, %bmc_in_load_6" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 66 'icmp' 'tmp_5' <Predicate = (issue_dup)> <Delay = 2.38> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.38> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 67 [1/1] (0.00ns)   --->   "%state_orig_val_3_loa = load i16* @state_orig_val_3, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 67 'load' 'state_orig_val_3_loa' <Predicate = (issue_dup)> <Delay = 0.00>
+ST_5 : Operation 68 [1/2] (2.15ns)   --->   "%bmc_in_load_7 = load i16* %bmc_in_addr_9, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 68 'load' 'bmc_in_load_7' <Predicate = (issue_dup)> <Delay = 2.15> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 8> <RAM>
+ST_5 : Operation 69 [1/1] (2.38ns)   --->   "%tmp_6 = icmp eq i16 %state_orig_val_3_loa, %bmc_in_load_7" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 69 'icmp' 'tmp_6' <Predicate = (issue_dup)> <Delay = 2.38> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.38> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 70 [1/1] (0.00ns) (grouped into LUT with out node tmp_7)   --->   "%tmp1 = and i1 %tmp_4, %tmp_5" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 70 'and' 'tmp1' <Predicate = (issue_dup)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 71 [1/1] (0.00ns) (grouped into LUT with out node tmp_7)   --->   "%tmp2 = and i1 %tmp_s, %tmp_6" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 71 'and' 'tmp2' <Predicate = (issue_dup)> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 72 [1/1] (0.94ns) (out node of the LUT)   --->   "%tmp_7 = and i1 %tmp2, %tmp1" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 72 'and' 'tmp_7' <Predicate = (issue_dup)> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 73 [1/1] (0.00ns)   --->   "store i1 %tmp_7, i1* @state_dup_issued, align 1" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173]   --->   Operation 73 'store' <Predicate = (issue_dup)> <Delay = 0.00>
+ST_5 : Operation 74 [1/1] (0.00ns)   --->   "br i1 %tmp_7, label %1, label %._crit_edge8" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:175]   --->   Operation 74 'br' <Predicate = (issue_dup)> <Delay = 0.00>
+ST_5 : Operation 75 [1/1] (0.00ns)   --->   "store i16 %state_in_count_load, i16* @state_dup_in, align 4" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:176]   --->   Operation 75 'store' <Predicate = (issue_dup & tmp_7)> <Delay = 0.00>
+ST_5 : Operation 76 [1/1] (0.00ns)   --->   "br label %._crit_edge8" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:177]   --->   Operation 76 'br' <Predicate = (issue_dup & tmp_7)> <Delay = 0.00>
+ST_5 : Operation 77 [1/1] (0.00ns)   --->   "br label %._crit_edge4" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:178]   --->   Operation 77 'br' <Predicate = (issue_dup)> <Delay = 0.00>
+ST_5 : Operation 78 [1/1] (2.14ns)   --->   "%tmp_8 = add i16 %state_in_count_load, 1" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:179]   --->   Operation 78 'add' 'tmp_8' <Predicate = true> <Delay = 2.14> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 79 [1/1] (0.00ns)   --->   "store i16 %tmp_8, i16* @state_in_count, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:179]   --->   Operation 79 'store' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 80 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 80 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 100ns, clock uncertainty: 12.5ns.
+
+ <State 1>: 3.83ns
+The critical path consists of the following:
+	wire read on port 'bmc_in_offset' [16]  (0 ns)
+	'add' operation ('sum') [33]  (1.68 ns)
+	'getelementptr' operation ('bmc_in_addr_4', ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:159) [35]  (0 ns)
+	'load' operation ('bmc_in_load_1', ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:159) on array 'bmc_in' [36]  (2.15 ns)
+
+ <State 2>: 3.83ns
+The critical path consists of the following:
+	'add' operation ('sum2') [38]  (1.68 ns)
+	'getelementptr' operation ('bmc_in_addr_5', ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:160) [40]  (0 ns)
+	'load' operation ('bmc_in_load_2', ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:160) on array 'bmc_in' [41]  (2.15 ns)
+
+ <State 3>: 3.83ns
+The critical path consists of the following:
+	'add' operation ('sum6') [56]  (1.68 ns)
+	'getelementptr' operation ('bmc_in_addr_7', ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173) [58]  (0 ns)
+	'load' operation ('bmc_in_load_5', ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173) on array 'bmc_in' [59]  (2.15 ns)
+
+ <State 4>: 4.53ns
+The critical path consists of the following:
+	'load' operation ('bmc_in_load_4', ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173) on array 'bmc_in' [53]  (2.15 ns)
+	'icmp' operation ('tmp_s', ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173) [54]  (2.38 ns)
+
+ <State 5>: 5.47ns
+The critical path consists of the following:
+	'load' operation ('bmc_in_load_6', ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173) on array 'bmc_in' [65]  (2.15 ns)
+	'icmp' operation ('tmp_5', ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173) [66]  (2.38 ns)
+	'and' operation ('tmp1', ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173) [73]  (0 ns)
+	'and' operation ('tmp_7', ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173) [75]  (0.942 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

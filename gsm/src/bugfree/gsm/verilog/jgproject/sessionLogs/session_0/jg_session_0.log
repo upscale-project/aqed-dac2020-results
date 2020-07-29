@@ -1,0 +1,710 @@
+#----------------------------------------
+# JasperGold Version Info
+# tool      : JasperGold 2016.09
+# platform  : Linux 3.10.0-957.21.3.el7.x86_64
+# version   : 2016.09p002 64 bits
+# build date: 2016.11.28 18:08:41 PST
+#----------------------------------------
+# started Thu Apr 16 20:18:47 PDT 2020
+# hostname  : rsg26.stanford.edu
+# pid       : 27017
+# arguments : '-label' 'session_0' '-console' 'rsg26.stanford.edu:41118' '-style' 'windows' '-use_native_tcl' '-proj' '/rsgs/pool0/Saranyu/gsm/cpp_bug4/gsm_new_2/verilog/jgproject/sessionLogs/session_0' '-init' '-hidden' '/rsgs/pool0/Saranyu/gsm/cpp_bug4/gsm_new_2/verilog/jgproject/.tmp/.initCmds.tcl' 'jasper.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2016 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc. 
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+JasperGold Apps Analysis Session - /rsgs/pool0/Saranyu/gsm/cpp_bug4/gsm_new_2/verilog/jgproject/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fpv".
+INFO: reading configuration file "/rsghome/saranyuc/.config/jasper/jaspergold.conf".
+INFO (IPL003): This JasperGold instance uses a new interpreter implementation for Tcl evaluation.
+    Launch JasperGold using the "-use_jtcl" command-line switch to restore it to the old implementation.
+% 
+% analyze -sv09 -f gsm.flist 
+[-- (VERI-1482)] Analyzing Verilog file /hd/cad/cadence/JASPERGOLD16.09.002.lnx86/lib/verilog/packages/std/std.sv into library std
+[-- (VERI-1482)] Analyzing Verilog file aqed_in_state_oribkb.v
+[-- (VERI-1482)] Analyzing Verilog file aqed_in.v
+[-- (VERI-1482)] Analyzing Verilog file aqed_out.v
+[-- (VERI-1482)] Analyzing Verilog file aqed_top_bmc_in.v
+[-- (VERI-1482)] Analyzing Verilog file aqed_top.v
+[-- (VERI-1482)] Analyzing Verilog file Autocorrelation_bcud.v
+[WARN (VERI-1208)] Autocorrelation_bcud.v(35): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(36): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(37): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(38): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(39): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(40): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(41): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(42): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(43): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(44): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(45): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(46): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(47): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(48): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(49): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(50): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(51): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(52): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(53): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(54): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(55): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(56): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(57): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(58): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(59): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(60): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(61): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(62): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(63): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(64): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(65): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(66): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(67): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(68): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(69): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(70): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(71): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(72): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(73): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(74): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(75): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(76): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(77): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(78): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(79): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(80): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(81): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(82): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(83): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(84): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(85): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(86): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(87): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(88): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(89): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(90): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(91): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(92): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(93): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(94): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(95): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(96): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(97): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(98): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(99): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(100): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(101): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(102): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(103): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(104): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(105): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(106): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(107): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(108): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(109): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(110): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(111): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(112): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(113): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(114): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(115): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(116): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(117): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(118): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(119): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(120): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(121): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(122): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(123): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(124): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(125): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(126): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(127): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(128): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(129): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(130): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(131): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(132): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(133): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(134): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(135): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(136): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(137): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(138): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(139): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(140): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(141): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(142): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(143): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(144): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(145): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(146): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(147): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(148): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(149): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(150): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(151): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(152): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(153): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(154): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(155): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(156): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(157): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(158): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(159): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(160): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(161): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(162): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(163): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(164): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(165): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(166): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(167): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(168): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(169): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(170): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(171): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(172): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(173): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(174): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(175): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(176): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(177): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(178): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(179): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(180): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(181): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(182): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(183): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(184): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(185): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(186): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(187): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(188): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(189): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(190): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(191): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(192): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(193): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(194): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(195): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(196): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(197): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(198): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(199): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(200): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(201): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(202): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(203): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(204): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(205): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(206): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(207): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(208): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(209): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(210): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(211): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(212): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(213): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(214): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(215): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(216): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(217): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(218): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(219): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(220): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(221): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(222): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(223): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(224): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(225): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(226): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(227): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(228): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(229): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(230): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(231): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(232): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(233): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(234): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(235): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(236): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(237): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(238): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(239): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(240): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(241): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(242): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(243): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(244): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(245): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(246): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(247): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(248): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(249): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(250): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(251): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(252): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(253): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(254): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(255): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(256): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(257): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(258): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(259): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(260): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(261): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(262): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(263): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(264): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(265): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(266): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(267): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(268): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(269): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(270): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(271): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(272): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(273): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(274): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(275): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(276): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(277): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(278): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(279): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(280): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(281): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(282): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(283): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(284): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(285): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(286): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(287): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(288): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(289): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(290): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(292): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(293): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(294): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(295): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(296): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(297): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(298): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(299): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(300): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(301): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(302): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(303): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(304): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(305): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(306): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(307): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(308): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(309): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(310): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(311): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(312): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(313): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(314): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(315): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(316): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(317): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(318): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(319): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(320): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(321): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(322): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(323): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(324): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(325): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(326): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(327): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(328): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(329): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(330): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(331): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(332): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(333): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(334): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(335): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(336): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(337): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(338): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(339): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(340): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(341): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(342): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(343): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(344): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(345): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(346): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(347): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(348): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(349): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(350): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(351): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(352): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(353): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(354): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(355): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(356): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(357): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(358): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(359): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(360): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(361): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(362): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(363): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(364): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(365): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(366): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(367): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(368): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(369): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(370): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(371): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(372): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(373): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(374): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(375): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(376): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(377): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(378): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(379): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(380): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(381): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(382): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(383): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(384): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(385): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(386): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(387): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(388): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(389): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(390): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(391): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(392): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(393): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(394): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(395): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(396): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(397): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(398): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(399): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(400): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(401): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(402): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(403): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(404): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(405): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(406): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(407): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(408): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(409): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(410): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(411): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(412): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(413): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(414): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(415): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(416): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(417): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(418): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(419): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(420): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(421): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(422): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(423): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(424): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(425): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(426): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(427): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(428): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(429): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(430): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(431): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(432): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(433): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(434): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(435): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(436): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(437): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(438): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(439): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(440): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(441): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(442): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(443): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(444): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(445): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(446): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(447): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(448): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(449): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(450): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(451): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(452): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(453): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(454): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(455): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(456): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(457): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(458): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(459): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(460): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(461): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(462): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(463): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(464): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(465): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(466): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(467): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(468): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(469): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(470): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(471): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(472): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(473): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(474): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(475): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(476): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(477): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(478): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(479): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(480): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(481): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(482): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(483): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(484): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(485): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(486): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(487): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(488): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(489): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(490): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(491): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(492): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(493): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(494): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(495): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(496): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(497): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(498): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(499): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(500): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(501): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(502): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(503): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(504): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(505): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(506): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(507): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(508): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(509): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(510): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(511): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(512): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(513): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(514): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(515): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(516): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(517): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(518): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(519): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(520): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(521): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(522): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(523): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(524): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(525): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(526): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(527): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(528): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(529): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(530): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(531): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(532): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(533): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(534): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(535): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(536): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(537): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(538): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(539): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(540): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(541): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(542): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(543): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(544): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(545): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(546): literal value truncated to fit in 4 bits
+[WARN (VERI-1208)] Autocorrelation_bcud.v(547): literal value truncated to fit in 4 bits
+[-- (VERI-1482)] Analyzing Verilog file Autocorrelation.v
+% elaborate -disable_auto_bbox -top aqed_top
+INFO (ISW003): Top module name is "aqed_top".
+[INFO (VERI-1018)] aqed_top.v(12): compiling module aqed_top
+[WARN (VERI-1060)] aqed_top.v(136): 'initial' construct ignored
+[INFO (VERI-1018)] aqed_top_bmc_in.v(65): compiling module aqed_top_bmc_in:(DataWidth=16,AddressRange=20,AddressWidth=5)
+[INFO (VERI-1018)] aqed_top_bmc_in.v(9): compiling module aqed_top_bmc_in_ram
+[WARN (VERI-1060)] aqed_top_bmc_in.v(31): 'initial' construct ignored
+[INFO (VERI-9012)] aqed_top_bmc_in.v(27): Unintentional Sequential element inferred for ram read before write using blocking assignment
+[INFO (VERI-9012)] aqed_top_bmc_in.v(24): Unintentional Sequential element inferred for q1 read before write using blocking assignment
+[INFO (VERI-9012)] aqed_top_bmc_in.v(19): Unintentional Sequential element inferred for q0 read before write using blocking assignment
+[INFO (VERI-1018)] Autocorrelation.v(10): compiling module Autocorrelation
+[WARN (VERI-1060)] Autocorrelation.v(357): 'initial' construct ignored
+[INFO (VERI-1018)] Autocorrelation_bcud.v(574): compiling module Autocorrelation_bcud:(DataWidth=4,AddressRange=256,AddressWidth=8)
+[INFO (VERI-1018)] Autocorrelation_bcud.v(9): compiling module Autocorrelation_bcud_rom
+[WARN (VERI-1060)] Autocorrelation_bcud.v(33): 'initial' construct ignored
+[INFO (VERI-9012)] Autocorrelation_bcud.v(18): Unintentional Sequential element inferred for q0 read before write using blocking assignment
+[INFO (VERI-9012)] Autocorrelation_bcud.v(21): Unintentional Sequential element inferred for q1 read before write using blocking assignment
+[INFO (VERI-9012)] Autocorrelation_bcud.v(24): Unintentional Sequential element inferred for q2 read before write using blocking assignment
+[WARN (VERI-1209)] Autocorrelation.v(467): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(468): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(505): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(506): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(514): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(515): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(531): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(557): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(558): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(681): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(683): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(685): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(687): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(689): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(691): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(703): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(705): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(707): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(709): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(711): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(713): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(715): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(731): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(733): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(735): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(737): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(751): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(753): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(755): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(757): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(759): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(761): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] Autocorrelation.v(803): expression size 32 truncated to fit in target size 16
+[WARN (VERI-1209)] Autocorrelation.v(831): expression size 32 truncated to fit in target size 16
+[WARN (VERI-1209)] Autocorrelation.v(944): expression size 32 truncated to fit in target size 24
+[WARN (VERI-1209)] Autocorrelation.v(1017): expression size 64 truncated to fit in target size 8
+[WARN (VERI-1209)] Autocorrelation.v(1019): expression size 64 truncated to fit in target size 8
+[WARN (VERI-1209)] Autocorrelation.v(1021): expression size 64 truncated to fit in target size 8
+[INFO (VERI-1018)] aqed_out.v(10): compiling module aqed_out
+[WARN (VERI-1060)] aqed_out.v(217): 'initial' construct ignored
+[WARN (VERI-1209)] aqed_out.v(415): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(417): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(419): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(421): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(423): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(425): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(427): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(429): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(431): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(433): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(435): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(441): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(443): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(445): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(447): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(449): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(451): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(453): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(455): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(457): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(459): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(461): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_out.v(488): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] aqed_out.v(491): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] aqed_out.v(548): expression size 32 truncated to fit in target size 12
+[INFO (VERI-1018)] aqed_in.v(10): compiling module aqed_in
+[WARN (VERI-1060)] aqed_in.v(209): 'initial' construct ignored
+[INFO (VERI-1018)] aqed_in_state_oribkb.v(65): compiling module aqed_in_state_oribkb:(DataWidth=16,AddressRange=10,AddressWidth=4)
+[INFO (VERI-1018)] aqed_in_state_oribkb.v(9): compiling module aqed_in_state_oribkb_ram
+[WARN (VERI-1060)] aqed_in_state_oribkb.v(31): 'initial' construct ignored
+[INFO (VERI-9012)] aqed_in_state_oribkb.v(27): Unintentional Sequential element inferred for ram read before write using blocking assignment
+[INFO (VERI-9012)] aqed_in_state_oribkb.v(24): Unintentional Sequential element inferred for q1 read before write using blocking assignment
+[INFO (VERI-9012)] aqed_in_state_oribkb.v(19): Unintentional Sequential element inferred for q0 read before write using blocking assignment
+[WARN (VERI-1209)] aqed_in.v(317): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(319): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(321): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(323): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(327): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(329): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(331): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(333): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(335): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(337): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(343): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(345): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(347): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(349): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(351): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(353): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(355): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(357): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(359): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(361): expression size 64 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(363): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_in.v(443): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_in.v(459): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] aqed_in.v(544): expression size 32 truncated to fit in target size 12
+[WARN (VERI-1209)] aqed_top.v(371): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_top.v(383): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] aqed_top.v(467): expression size 32 truncated to fit in target size 7
+[INFO] Beginning multiple driver analysis
+[INFO] Finished multiple driver analysis
+[INFO] Module Name aqed_top
+aqed_top
+[<embedded>] % clock ap_clk
+[<embedded>] % reset -expression ap_rst 
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "ap_rst".
+[<embedded>] % #set_engine_mode {Hp Ht Bm J Q3 U L R B K AB D I AD M N AM G C AG G2 C2 Hps Hts Tri}
+[<embedded>] % #autoprove
+[<embedded>] % set_engine_mode {B Bm}
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % pwd
+/rsgs/pool0/Saranyu/gsm/cpp_bug4/gsm_new_2/verilog
+INFO: delete ampa start in Shell
+INFO: delete ampa end in Shell
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.

@@ -1,0 +1,26 @@
+41,42c41,42
+<             ram[addr0] = d0; 
+<             q0 = d0;
+---
+>             ram[addr0] <= d0; 
+>             q0 <= d0;
+45c45
+<             q0 = ram[addr0];
+---
+>             q0 <= ram[addr0];
+46a47,51
+> end
+> 
+> 
+> always @(posedge clk)  
+> begin 
+51,52c56,57
+<             ram[addr1] = d1; 
+<             q1 = d1;
+---
+>             ram[addr1] <= d1; 
+>             q1 <= d1;
+55c60
+<             q1 = ram[addr1];
+---
+>             q1 <= ram[addr1];

@@ -1,0 +1,28 @@
+2020-04-16 20:18:45.945370 (27005) main____ INFO    ----------------------------------------
+2020-04-16 20:18:45.945539 (27005) main____ INFO    JasperGold version info
+2020-04-16 20:18:45.945565 (27005) main____ INFO      tool      : JasperGold 2016.09
+2020-04-16 20:18:45.945581 (27005) main____ INFO      version   : 2016.09p002 64 bits
+2020-04-16 20:18:45.945592 (27005) main____ INFO      build date: 2016.11.28 18:08:37 PST
+2020-04-16 20:18:45.945601 (27005) main____ INFO    ----------------------------------------
+2020-04-16 20:18:45.945609 (27005) main____ INFO    Runtime info:
+2020-04-16 20:18:45.945619 (27005) main____ INFO      platform  : Linux 3.10.0-957.21.3.el7.x86_64 x86_64
+2020-04-16 20:18:45.945633 (27005) main____ INFO      hostname  : rsg26.stanford.edu
+2020-04-16 20:18:45.945643 (27005) main____ INFO      pid       : 27005
+2020-04-16 20:18:45.945652 (27005) main____ INFO      arguments : '-style' 'windows' '-tcl' 'jasper.tcl'
+2020-04-16 20:18:45.945660 (27005) main____ INFO    ----------------------------------------
+2020-04-16 20:18:45.947800 (27005) lic__man INFO    Claim 'main' for <ui>.
+2020-04-16 20:18:45.953025 (27005) lic_core INFO    (1) checking out 'jasper_interactive' ...
+2020-04-16 20:18:45.978340 (27005) lic_core INFO    ... (1) checkout succeeded
+2020-04-16 20:18:45.978460 (27005) lic__man INFO    Claim 'fpv' for <ui>.
+2020-04-16 20:18:45.978512 (27005) lic_core INFO    (2) checking out 'jasper_fpv' ...
+2020-04-16 20:18:45.998976 (27005) lic_core INFO    ... (2) checkout succeeded
+2020-04-16 20:18:46.634336 (27005) lic__man INFO    Claim 'fpv' for <ui>.
+2020-04-16 20:18:46.804898 (27005) lic__man INFO    Unclaim 'fpv' for <ui>.
+2020-04-16 20:18:46.804968 (27005) lic__man INFO    Claim 'fpv' for <ui>.
+2020-04-16 20:18:46.829745 (27005) session_ INFO    Starting analysis session with session id 'session_0' ...
+2020-04-16 20:18:46.833512 (27005) session_ INFO    Analysis session with session id 'session_0' started (pid: 27017)
+2020-04-16 20:18:52.298457 (27005) session_ INFO    Analysis session 'session_0' connected to the console (host: 172.24.74.58:60274)
+2020-04-16 20:18:54.408501 (27005) lic__man INFO    Unclaim everything for 'session_0*'.
+2020-04-16 20:27:21.596625 (27005) lic__man INFO    Entering idle state.
+2020-04-16 20:48:58.571192 (27005) main____ INFO    About to exit: requested from GUI
+2020-04-16 20:48:58.723756 (27005) main____ INFO    Exiting.

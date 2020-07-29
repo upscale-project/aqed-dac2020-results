@@ -254,7 +254,6 @@ word bmc_in[scale*N];
 
 word LARc_out[scale*M];
 
-//longword L_ACF_out[scale*L];
 
 
 uint8_t mem_num = 0;
@@ -275,7 +274,6 @@ word *outLARc;
 word *inData_o;
 word *outLARc_o;
 
-//longword *outL_ACF;
 
 //Iterate through the memory
 inData = &bmc_in[(state.index)*N];
@@ -284,18 +282,10 @@ outLARc = &LARc_out[(state.index)*M];
 inData_o = &bmc_in[0];
 outLARc_o = &LARc_out[0];
 
-//outL_ACF = &L_ACF_out[L*mem_num];
-
-//mem_num++;
-//if (mem_num >= scale){
-//    mem_num = 0;
-//}
 
 o1 = aqed_in(inData, orig, dup);
 
 Gsm_LPC_Analysis(inData, outLARc);
-//Autocorrelation (inData, outL_ACF);
-//increment(inData, outLARc);
 
 o2 = aqed_out(inData, outLARc);
 
@@ -310,8 +300,7 @@ o3.orig_issued = state.orig_issued;
 o3.orig_done = state.orig_done;
 o3.check1 = o2.check1;
 o3.check2 = o2.check2;
-/*for(int i=0;i<scale*N;i++)
-	o3.bmc_in[i] = bmc_in[i];*/
+
 return o3;
 
 }

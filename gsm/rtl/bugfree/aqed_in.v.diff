@@ -1,0 +1,4 @@
+156,158d155
+<     if (ap_rst == 1'b1) begin
+<         state_in_count <= 16'd0;
+<     end else

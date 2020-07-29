@@ -1,0 +1,59 @@
+30d29
+< #define N 4
+40c39
+< Autocorrelation (word * s /* [0..(N-1)]     IN/OUT  */ ,
+---
+> Autocorrelation (word * s /* [0..159]     IN/OUT  */ ,
+58c57
+<   for (k = 0; k <= (N-1); k++)
+---
+>   for (k = 0; k <= 159; k++)
+60d58
+<   #pragma HLS PIPELINE
+76,77c74
+<       for (k = 0; k <= (N-1); k++)
+<         #pragma HLS UNROLL
+---
+>       for (k = 0; k <= 159; k++)
+90,91c87
+< /*    for (k = 8; k >= 0; k--)
+<     #pragma HLS PIPELINE
+---
+>     for (k = 8; k >= 0; k--)
+138,139c134
+<     for (i = 8; i <= (N-1); i++)
+<     #pragma HLS PIPELINE
+---
+>     for (i = 8; i <= 159; i++)
+156d150
+<    #pragma HLS PIPELINE
+158,160d151
+<   */
+<   }   // for (k = (N); k >= 0; k--)
+<   //   Rescaling of the array s[0..(N-1)]
+161a153,155
+>   }
+>   /*   Rescaling of the array s[0..159]
+>    */
+163,165c157
+< //Bug - Correct: for (k = (N-1); k >= 0; k--) 
+<     for (k = (N); k >= 0; k--)
+<     #pragma HLS UNROLL
+---
+>     for (k = 159; k >= 0; k--)
+185d176
+<   #pragma HLS PIPELINE
+194d184
+<   #pragma HLS PIPELINE
+201d190
+<    #pragma HLS PIPELINE
+204d192
+<    #pragma HLS PIPELINE
+210d197
+<    #pragma HLS PIPELINE
+264d250
+<    #pragma HLS PIPELINE
+328c314
+< Gsm_LPC_Analysis (word * s /* 0..(N-1) signals       IN/OUT  */ ,
+---
+> Gsm_LPC_Analysis (word * s /* 0..159 signals       IN/OUT  */ ,

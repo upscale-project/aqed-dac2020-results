@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="aqed_gsm_new.cpp" path="/pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp"/>
+    <originFiles name="lpc.c" path="/pool0/Saranyu/gsm/cpp_bug4/lpc.c"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

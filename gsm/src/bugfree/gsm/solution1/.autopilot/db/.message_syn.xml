@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp&apos; ..."/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1378" tag="" content="In file included from ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:1:
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:17: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:57: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                        ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:85: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                    ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:108: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                           ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:131: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                  ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:154: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                         ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:179: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                                                  ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:201: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                                                                        ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:220: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                                                                                           ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:239: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                                                                                                              ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:265: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                                                                                                                                        ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:287: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                                                                                                                                                              ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:305: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                                                                                                                                                                                ^
+../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:115:322: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+word orig_val[4]={0}; word * acc_out1; word orig_out1[4]={0}; longword orig_out2[8] = {0}; word dup_out1[4]={0}; word dup_out2[8] = {0}; uint16_t orig_in=0xFFFF; word orig_out[4]={0}; bool orig_issued=0; bool dup_issued=0; uint16_t dup_in=0xFFFF; uint16_t in_count=0; uint16_t out_count=0; bool orig_done=0; bool dup_done=0; bool qed_done; bool qed_check; bool index;};
+                                                                                                                                                                                                                                                                                                                                 ^
+14 warnings generated.\n"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 465.984 ; gain = 0.105 ; free physical = 109295 ; free virtual = 115436"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 465.984 ; gain = 0.105 ; free physical = 109295 ; free virtual = 115436"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 465.984 ; gain = 0.105 ; free physical = 109232 ; free virtual = 115374"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1472" tag="" content="Checking synthesizability ..."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;gsm_abs&apos; into &apos;Autocorrelation&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:61) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;gsm_mult_r&apos; into &apos;Autocorrelation&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:78) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;Transformation_to_Log_Area_Ratios&apos; into &apos;Gsm_LPC_Analysis&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:335) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;Gsm_LPC_Analysis&apos; into &apos;aqed_top&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:296) automatically."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 465.984 ; gain = 0.105 ; free physical = 109229 ; free virtual = 115371"/>
+	<Message severity="WARNING" prefix="[XFORM 203-1103]" key="XFORM_DATA_PACK_INVALID_346" tag="" content="Ignored data pack directive on non-struct variable &apos;o1.num_out&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:265)."/>
+	<Message severity="INFO" prefix="[XFORM 203-1101]" key="XFORM_DATA_PACK_STATUS_345" tag="" content="Packing variable &apos;o2&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:267) into a 19-bit variable."/>
+	<Message severity="INFO" prefix="[XFORM 203-1101]" key="XFORM_DATA_PACK_STATUS_345" tag="" content="Packing variable &apos;agg.result&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:263) into a 404-bit variable."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-2&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:76) in function &apos;Autocorrelation&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-3&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:164) in function &apos;Autocorrelation&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;gsm_abs&apos; into &apos;Autocorrelation&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:61) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;Gsm_LPC_Analysis&apos; into &apos;aqed_top&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:296) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_115" tag="" content="Automatically partitioning small array &apos;state.orig_val&apos; completely based on array size."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;state.orig_val&apos; in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock to (../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:123:1) in function &apos;gsm_norm&apos;... converting 11 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock to (../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:63:1) in function &apos;gsm_mult_r&apos;... converting 3 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock to (../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:49:1) in function &apos;gsm_mult&apos;... converting 3 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock to (../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:39:3) in function &apos;gsm_add&apos;... converting 3 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:199:10) to (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:225:4) in function &apos;aqed_out&apos;... converting 3 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock to (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:155:7) in function &apos;aqed_in&apos;... converting 5 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:173:10) to (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:175:10) in function &apos;aqed_in&apos;... converting 5 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock to (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:325:1) in function &apos;Quantization_and_coding&apos;... converting 17 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:59:6) to (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:58:28) in function &apos;Autocorrelation&apos;... converting 3 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;gsm_norm&apos; into &apos;Autocorrelation&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:71) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;gsm_mult_r&apos; into &apos;Autocorrelation&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:78) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-602]" key="XFORM_AUTO_INLINE_STATUS_223" tag="" content="Inlining function &apos;gsm_mult&apos; into &apos;Quantization_and_coding&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:314) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;aqed_out&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:192:9)...3 expression(s) balanced."/>
+	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;aqed_in&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:147)...3 expression(s) balanced."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 593.883 ; gain = 128.004 ; free physical = 109206 ; free virtual = 115348"/>
+	<Message severity="WARNING" prefix="[XFORM 203-631]" key="XFORM_FRN_STATUS_336" tag="" content="Renaming function &apos;Quantization_and_coding&apos; to &apos;Quantization_and_cod&apos; (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:48:1)"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 593.883 ; gain = 128.004 ; free physical = 109170 ; free virtual = 115312"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1317" tag="" content="Starting hardware synthesis ..."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1385" tag="" content="Synthesizing &apos;aqed_top&apos; ..."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;aqed_in&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 23.62 seconds; current allocated memory: 113.732 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.23 seconds; current allocated memory: 113.957 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;Autocorrelation&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;Loop 1&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.51 seconds; current allocated memory: 114.593 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.44 seconds; current allocated memory: 115.105 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;gsm_add&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.45 seconds; current allocated memory: 115.251 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.38 seconds; current allocated memory: 115.313 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;Quantization_and_cod&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.45 seconds; current allocated memory: 115.836 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.53 seconds; current allocated memory: 116.424 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;aqed_out&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.61 seconds; current allocated memory: 116.799 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.24 seconds; current allocated memory: 117.091 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;aqed_top&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.36 seconds; current allocated memory: 117.262 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.74 seconds; current allocated memory: 117.634 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;aqed_in&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;state_in_count&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;state_orig_val_0&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;state_orig_val_1&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;state_orig_val_2&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;state_orig_val_3&apos; is power-on initialization."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;aqed_in&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.73 seconds; current allocated memory: 118.212 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;Autocorrelation&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;Autocorrelation_bitoff&apos; to &apos;Autocorrelation_bbkb&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;aqed_top_mac_muladd_15ns_16s_16ns_31_1_1&apos; to &apos;aqed_top_mac_mulacud&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;aqed_top_mac_mulacud&apos;: 4 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;Autocorrelation&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.65 seconds; current allocated memory: 120.237 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;gsm_add&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;gsm_add&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.58 seconds; current allocated memory: 122.619 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;Quantization_and_cod&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;Quantization_and_cod_LARc_out&apos; to &apos;Quantization_and_dEe&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;aqed_top_mul_mul_15ns_8s_23_1_1&apos; to &apos;aqed_top_mul_mul_eOg&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;aqed_top_mul_mul_eOg&apos;: 3 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;Quantization_and_cod&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.82 seconds; current allocated memory: 123.968 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;aqed_out&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;state_out_count&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;state_acc_out1_index&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;state_qed_done&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;state_qed_check&apos; is power-on initialization."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;aqed_out&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.15 seconds; current allocated memory: 127.070 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;aqed_top&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;aqed_top/agg_result&apos; to &apos;ap_ovld&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;aqed_top/orig&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;aqed_top/dup&apos; to &apos;ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on function &apos;aqed_top&apos; to &apos;ap_ctrl_hs&apos;."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;state_index&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;state_orig_issued&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_862" tag="" content="Global scalar &apos;state_orig_issued&apos; will not be exposed as RTL port."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;state_dup_issued&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;state_orig_in&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;state_dup_in&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_862" tag="" content="Global array &apos;bmc_in&apos; will not be exposed as RTL port."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;state_orig_done&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_862" tag="" content="Global scalar &apos;state_orig_done&apos; will not be exposed as RTL port."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;aqed_top&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.89 seconds; current allocated memory: 128.919 MB."/>
+	<Message severity="INFO" prefix="[RTMG 210-279]" key="RTMG_279_1793" tag="" content="Implementing memory &apos;Autocorrelation_bbkb_rom&apos; using block ROMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;Quantization_and_dEe_ram (RAM)&apos; using block RAMs with power-on initialization."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;aqed_top_bmc_in_ram (RAM)&apos; using block RAMs with power-on initialization."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:00:26 ; elapsed = 00:00:40 . Memory (MB): peak = 657.883 ; gain = 192.004 ; free physical = 109008 ; free virtual = 115159"/>
+	<Message severity="INFO" prefix="[SYSC 207-301]" key="SYSC_301_1065" tag="" content="Generating SystemC RTL for aqed_top."/>
+	<Message severity="INFO" prefix="[VHDL 208-304]" key="VHDL_304_1066" tag="" content="Generating VHDL RTL for aqed_top."/>
+	<Message severity="INFO" prefix="[VLOG 209-307]" key="VLOG_307_1067" tag="" content="Generating Verilog RTL for aqed_top."/>
+	<Message severity="INFO" prefix="[HLS 200-112]" key="HLS_112_964" tag="" content="Total elapsed time: 40.14 seconds; peak allocated memory: 128.919 MB."/>
+</Messages>

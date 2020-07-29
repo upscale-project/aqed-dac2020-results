@@ -1,0 +1,33 @@
+305,308d304
+<     if (ap_rst == 1'b1) begin
+<         o2_qed_check_reg_279 <= 1'b0;
+<         o2_qed_done_reg_274 <= 1'b0;
+<     end else
+316,318d311
+<     if (ap_rst == 1'b1) begin
+<         state_dup_in <= 16'd65535;
+<     end else
+325,327d317
+<     if (ap_rst == 1'b1) begin
+<         state_dup_issued <= 1'd0;
+<     end else
+342,344d331
+<     if (ap_rst == 1'b1) begin
+<         state_orig_done <= 1'd0;
+<     end else
+351,353d337
+<     if (ap_rst == 1'b1) begin
+<         state_orig_in <= 16'd0;
+<     end else
+360,362d343
+<     if (ap_rst == 1'b1) begin
+<         state_orig_issued <= 1'd0;
+<     end else
+549,555d529
+< 
+<    assert_qed_match : assert property (
+<        @(posedge ap_clk)
+<          (o2_qed_done_reg_274) |-> (o2_qed_check_reg_279));
+< 
+< 
+< 

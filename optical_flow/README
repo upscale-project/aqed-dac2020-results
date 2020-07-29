@@ -28,7 +28,7 @@ the RTL with Vivado v2017.1.
 
 2) rtl
 
-This directory contains the synthesized RTL, generated using Vivado HLS 2018.2.
+This directory contains the synthesized RTL, generated using Vivado HLS 2017.1.
 There are two sub-directories:
     1. bugfree: the clean version of the design without the bug.
     2. withbug: a version of the desgn containing the bug.

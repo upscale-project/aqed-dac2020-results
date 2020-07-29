@@ -1,0 +1,12 @@
+225,227d224
+<     if (ap_rst == 1'b1) begin
+<         state_out_count <= 16'd0;
+<     end else
+241,243d237
+<     if (ap_rst == 1'b1) begin
+<         state_qed_check <= 1'd0;
+<     end else
+250,252d243
+<     if (ap_rst == 1'b1) begin
+<         state_qed_done <= 1'd0;
+<     end else

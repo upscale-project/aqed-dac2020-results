@@ -1,0 +1,122 @@
+
+
+================================================================
+== Vivado HLS Report for 'gsm_add'
+================================================================
+* Date:           Thu Apr 16 21:27:00 2020
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        gsm_new_2
+* Solution:       solution1
+* Product family: aartix7
+* Target device:  xa7a12tcsg325-1q
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+--------+----------+------------+
+    |  Clock | Target | Estimated| Uncertainty|
+    +--------+--------+----------+------------+
+    |ap_clk  |  100.00|     5.900|       12.50|
+    +--------+--------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    0|    0|    0|    0|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 0
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 5.89>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%b_read = call i13 @_ssdm_op_Read.ap_auto.i13(i13 %b) nounwind"   --->   Operation 2 'read' 'b_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%a_read = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %a) nounwind"   --->   Operation 3 'read' 'a_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%b_cast = sext i13 %b_read to i16"   --->   Operation 4 'sext' 'b_cast' <Predicate = (!tmp)> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%tmp_cast = sext i16 %a_read to i17" [../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:38]   --->   Operation 5 'sext' 'tmp_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%tmp_cast_19 = sext i13 %b_read to i17" [../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:38]   --->   Operation 6 'sext' 'tmp_cast_19' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (2.14ns)   --->   "%sum = add i17 %tmp_cast, %tmp_cast_19" [../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:38]   --->   Operation 7 'add' 'sum' <Predicate = true> <Delay = 2.14> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 8 [1/1] (2.38ns)   --->   "%tmp_s = icmp slt i17 %sum, -32768" [../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:39]   --->   Operation 8 'icmp' 'tmp_s' <Predicate = true> <Delay = 2.38> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%tmp_1 = call i2 @_ssdm_op_PartSelect.i2.i17.i32.i32(i17 %sum, i32 15, i32 16)" [../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:39]   --->   Operation 9 'partselect' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.93ns)   --->   "%icmp = icmp eq i2 %tmp_1, 1" [../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:39]   --->   Operation 10 'icmp' 'icmp' <Predicate = true> <Delay = 0.93> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 11 [1/1] (2.14ns)   --->   "%tmp_2 = add i16 %b_cast, %a_read" [../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:39]   --->   Operation 11 'add' 'tmp_2' <Predicate = (!tmp)> <Delay = 2.14> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 2.14> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (0.00ns) (grouped into LUT with out node tmp_3)   --->   "%phitmp = select i1 %tmp_s, i16 -32768, i16 32767" [../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:39]   --->   Operation 12 'select' 'phitmp' <Predicate = (tmp)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (0.00ns) (grouped into LUT with out node tmp_3)   --->   "%tmp = or i1 %tmp_s, %icmp" [../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:39]   --->   Operation 13 'or' 'tmp' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (1.37ns) (out node of the LUT)   --->   "%tmp_3 = select i1 %tmp, i16 %phitmp, i16 %tmp_2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:39]   --->   Operation 14 'select' 'tmp_3' <Predicate = true> <Delay = 1.37> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 1.37> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "ret i16 %tmp_3" [../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:39]   --->   Operation 15 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 100ns, clock uncertainty: 12.5ns.
+
+ <State 1>: 5.9ns
+The critical path consists of the following:
+	wire read on port 'b' [3]  (0 ns)
+	'add' operation ('sum', ../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:38) [8]  (2.15 ns)
+	'icmp' operation ('tmp_s', ../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:39) [9]  (2.38 ns)
+	'select' operation ('phitmp', ../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:39) [13]  (0 ns)
+	'select' operation ('tmp_3', ../../../../../pool0/Saranyu/gsm/cpp_bug4/add.c:39) [15]  (1.37 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,171 @@
+
+
+================================================================
+== Vivado HLS Report for 'aqed_in'
+================================================================
+* Date:           Thu Apr 16 21:27:04 2020
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        gsm_new_2
+* Solution:       solution1
+* Product family: aartix7
+* Target device:  xa7a12tcsg325-1q
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+--------+----------+------------+
+    |  Clock | Target | Estimated| Uncertainty|
+    +--------+--------+----------+------------+
+    |ap_clk  |  100.00|     5.474|       12.50|
+    +--------+--------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    2|    4|    2|    4|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+-------+------+
+|       Name      | BRAM_18K| DSP48E|   FF  |  LUT |
++-----------------+---------+-------+-------+------+
+|DSP              |        -|      -|      -|     -|
+|Expression       |        -|      -|      0|   175|
+|FIFO             |        -|      -|      -|     -|
+|Instance         |        -|      -|      -|     -|
+|Memory           |        -|      -|      -|     -|
+|Multiplexer      |        -|      -|      -|   105|
+|Register         |        -|      -|    108|     -|
++-----------------+---------+-------+-------+------+
+|Total            |        0|      0|    108|   280|
++-----------------+---------+-------+-------+------+
+|Available        |       40|     40|  16000|  8000|
++-----------------+---------+-------+-------+------+
+|Utilization (%)  |        0|      0|   ~0  |     3|
++-----------------+---------+-------+-------+------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------------------+----------+-------+---+----+------------+------------+
+    |          Variable Name         | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------------------+----------+-------+---+----+------------+------------+
+    |grp_fu_125_p2                   |     +    |      0|  0|  12|           3|           1|
+    |grp_fu_131_p2                   |     +    |      0|  0|  12|           3|           2|
+    |grp_fu_136_p2                   |     +    |      0|  0|  12|           3|           2|
+    |tmp_8_fu_321_p2                 |     +    |      0|  0|  23|          16|           1|
+    |issue_dup_fu_178_p2             |    and   |      0|  0|   8|           1|           1|
+    |issue_orig_fu_156_p2            |    and   |      0|  0|   8|           1|           1|
+    |tmp1_fu_294_p2                  |    and   |      0|  0|   8|           1|           1|
+    |tmp2_fu_299_p2                  |    and   |      0|  0|   8|           1|           1|
+    |tmp9_fu_172_p2                  |    and   |      0|  0|   8|           1|           1|
+    |tmp_7_fu_304_p2                 |    and   |      0|  0|   8|           1|           1|
+    |tmp_4_fu_258_p2                 |   icmp   |      0|  0|  13|          16|          16|
+    |tmp_5_fu_278_p2                 |   icmp   |      0|  0|  13|          16|          16|
+    |tmp_6_fu_288_p2                 |   icmp   |      0|  0|  13|          16|          16|
+    |tmp_s_fu_248_p2                 |   icmp   |      0|  0|  13|          16|          16|
+    |not_state_dup_issued_fu_166_p2  |    xor   |      0|  0|   8|           1|           2|
+    |tmp_fu_150_p2                   |    xor   |      0|  0|   8|           1|           2|
+    +--------------------------------+----------+-------+---+----+------------+------------+
+    |Total                           |          |      0|  0| 175|          97|          80|
+    +--------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------+----+-----------+-----+-----------+
+    |         Name        | LUT| Input Size| Bits| Total Bits|
+    +---------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm            |  33|          6|    1|          6|
+    |bmc_in_address0      |  27|          5|    3|         15|
+    |bmc_in_address1      |  27|          5|    3|         15|
+    |state_dup_issued_o   |   9|          2|    1|          2|
+    |state_orig_issued_o  |   9|          2|    1|          2|
+    +---------------------+----+-----------+-----+-----------+
+    |Total                | 105|         20|    9|         40|
+    +---------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------+----+----+-----+-----------+
+    |             Name            | FF | LUT| Bits| Const Bits|
+    +-----------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                    |   5|   0|    5|          0|
+    |bmc_in_addr_reg_339          |   3|   0|    3|          0|
+    |issue_dup_reg_348            |   1|   0|    1|          0|
+    |issue_orig_reg_344           |   1|   0|    1|          0|
+    |state_in_count               |  16|   0|   16|          0|
+    |state_in_count_load_reg_352  |  16|   0|   16|          0|
+    |state_orig_val_0             |  16|   0|   16|          0|
+    |state_orig_val_1             |  16|   0|   16|          0|
+    |state_orig_val_2             |  16|   0|   16|          0|
+    |state_orig_val_3             |  16|   0|   16|          0|
+    |tmp_4_reg_383                |   1|   0|    1|          0|
+    |tmp_s_reg_378                |   1|   0|    1|          0|
+    +-----------------------------+----+----+-----+-----------+
+    |Total                        | 108|   0|  108|          0|
+    +-----------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------+-----+-----+------------+-------------------+--------------+
+|          RTL Ports         | Dir | Bits|  Protocol  |   Source Object   |    C Type    |
++----------------------------+-----+-----+------------+-------------------+--------------+
+|ap_clk                      |  in |    1| ap_ctrl_hs |      aqed_in      | return value |
+|ap_rst                      |  in |    1| ap_ctrl_hs |      aqed_in      | return value |
+|ap_start                    |  in |    1| ap_ctrl_hs |      aqed_in      | return value |
+|ap_done                     | out |    1| ap_ctrl_hs |      aqed_in      | return value |
+|ap_idle                     | out |    1| ap_ctrl_hs |      aqed_in      | return value |
+|ap_ready                    | out |    1| ap_ctrl_hs |      aqed_in      | return value |
+|bmc_in_address0             | out |    3|  ap_memory |       bmc_in      |     array    |
+|bmc_in_ce0                  | out |    1|  ap_memory |       bmc_in      |     array    |
+|bmc_in_q0                   |  in |   16|  ap_memory |       bmc_in      |     array    |
+|bmc_in_address1             | out |    3|  ap_memory |       bmc_in      |     array    |
+|bmc_in_ce1                  | out |    1|  ap_memory |       bmc_in      |     array    |
+|bmc_in_q1                   |  in |   16|  ap_memory |       bmc_in      |     array    |
+|bmc_in_offset               |  in |    3|   ap_none  |   bmc_in_offset   |    scalar    |
+|orig                        |  in |    1|   ap_none  |        orig       |    scalar    |
+|dup                         |  in |    1|   ap_none  |        dup        |    scalar    |
+|state_orig_issued_i         |  in |    1|   ap_ovld  | state_orig_issued |    pointer   |
+|state_orig_issued_o         | out |    1|   ap_ovld  | state_orig_issued |    pointer   |
+|state_orig_issued_o_ap_vld  | out |    1|   ap_ovld  | state_orig_issued |    pointer   |
+|state_dup_issued_i          |  in |    1|   ap_ovld  |  state_dup_issued |    pointer   |
+|state_dup_issued_o          | out |    1|   ap_ovld  |  state_dup_issued |    pointer   |
+|state_dup_issued_o_ap_vld   | out |    1|   ap_ovld  |  state_dup_issued |    pointer   |
+|state_orig_in               | out |   16|   ap_vld   |   state_orig_in   |    pointer   |
+|state_orig_in_ap_vld        | out |    1|   ap_vld   |   state_orig_in   |    pointer   |
+|state_dup_in                | out |   16|   ap_vld   |    state_dup_in   |    pointer   |
+|state_dup_in_ap_vld         | out |    1|   ap_vld   |    state_dup_in   |    pointer   |
++----------------------------+-----+-----+------------+-------------------+--------------+
+

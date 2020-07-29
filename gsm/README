@@ -1,24 +1,49 @@
 
-# GSM example
+## GSM example
 
 This example uses the GSM design from the CHStone suite of High-Level
 Synthesis benchmarks[1].
 
 [1] http://dx.doi.org/10.2197/ipsjjip.17.242
 
-# Directory Structure
+### Directory Structure
 
 1) src
 
 This directory contains the C source code used to generate the verified RTL.
-There are two sub-directories, one for the bugfree version of the design, and 
-on containing the bug.
+There are two sub-directories:
+    1. bugfree: the clean version of the design without the bug.
+    2. withbug: a version of the desgn containing the bug.
+
+Each also contains the synthesis directory, gsm, use to generate
+the RTL with Vivado HLS v2018.2.
+
+
+#### Edits to source code
+
+   Edits made to gsm.c, renamed to aqed_gsm.cpp, are as follows (also in gsm.c.diff)
+      1. The input paramter N is reduced to 4.
+         (The full gsm module proved too large for the BMC tool to handle)
+      2. The addition of the AQED module with the top level function aqed_top.
+         i.  Note that bmc_in[scale*N] is the memory arrary created for the input
+         ii. The global variable state.index determines which entry in the array is
+             read in. 
+
+   Edits made to lpc.c, are as follows (also in lpc.c.diff)
+      1. The input parameter N is reduced to 4.
+      2. The middle stage of the Autocorrelation function is abstracted away (lines 90-158).
+         (The reduces the complexity of the function to allow the BMC tool to handle the design.)
+      3. The function is optimized for the HLS with #pragma UNROLL/PIPELINE to reduce the 
+         latency of the synthesized design.
 
 2) rtl
 
 This directory contains the synthesized RTL, generated using Vivado HLS 2018.2.
-There are two sub-directories, one for the bugfree version of the design, and
-on containing the bug. Each contains a README, detailing the A-QED setup and
+There are two sub-directories:
+    1. bugfree: the clean version of the design without the bug.
+    2. withbug: a version of the desgn containing the bug.
+
+Each contains a README, detailing changes to the verilog and
 how to run it using Cadence Jaspergold.
 
 

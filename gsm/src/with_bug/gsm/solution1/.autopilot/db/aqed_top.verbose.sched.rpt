@@ -1,0 +1,183 @@
+
+
+================================================================
+== Vivado HLS Report for 'aqed_top'
+================================================================
+* Date:           Thu Apr 16 21:27:02 2020
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        gsm_new_2
+* Solution:       solution1
+* Product family: aartix7
+* Target device:  xa7a12tcsg325-1q
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+--------+----------+------------+
+    |  Clock | Target | Estimated| Uncertainty|
+    +--------+--------+----------+------------+
+    |ap_clk  |  100.00|    28.728|       12.50|
+    +--------+--------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   24|   32|   24|   32|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 7
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.77>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%dup_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %dup)"   --->   Operation 8 'read' 'dup_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%orig_read = call i1 @_ssdm_op_Read.ap_auto.i1(i1 %orig)"   --->   Operation 9 'read' 'orig_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%state_index_load = load i1* @state_index, align 1" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:281]   --->   Operation 10 'load' 'state_index_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%tmp_s = call i3 @_ssdm_op_BitConcatenate.i3.i1.i2(i1 %state_index_load, i2 0)" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:281]   --->   Operation 11 'bitconcatenate' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%tmp_4 = call i4 @_ssdm_op_BitConcatenate.i4.i1.i3(i1 %state_index_load, i3 0)" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:282]   --->   Operation 12 'bitconcatenate' 'tmp_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [2/2] (1.68ns)   --->   "call fastcc void @aqed_in([8 x i16]* @bmc_in, i3 %tmp_s, i1 zeroext %orig_read, i1 zeroext %dup_read)" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:294]   --->   Operation 13 'call' <Predicate = true> <Delay = 1.68> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 14 [2/2] (1.77ns)   --->   "call fastcc void @Quantization_and_cod(i4 %tmp_4)" [../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:336->../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:296]   --->   Operation 14 'call' <Predicate = true> <Delay = 1.77> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 15 [1/1] (0.94ns)   --->   "%not_s = xor i1 %state_index_load, true" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:302]   --->   Operation 15 'xor' 'not_s' <Predicate = true> <Delay = 0.94> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.94> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "store i1 %not_s, i1* @state_index, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:305]   --->   Operation 16 'store' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 17 [1/2] (0.00ns)   --->   "call fastcc void @aqed_in([8 x i16]* @bmc_in, i3 %tmp_s, i1 zeroext %orig_read, i1 zeroext %dup_read)" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:294]   --->   Operation 17 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 18 [1/2] (0.00ns)   --->   "call fastcc void @Quantization_and_cod(i4 %tmp_4)" [../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:336->../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:296]   --->   Operation 18 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 19 [2/2] (0.00ns)   --->   "call fastcc void @Autocorrelation([8 x i16]* @bmc_in, i3 %tmp_s)" [../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:333->../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:296]   --->   Operation 19 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 20 [1/2] (0.00ns)   --->   "call fastcc void @Autocorrelation([8 x i16]* @bmc_in, i3 %tmp_s)" [../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:333->../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:296]   --->   Operation 20 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 1.68>
+ST_5 : Operation 21 [2/2] (1.68ns)   --->   "%tmp_1 = call fastcc { i1, i1 } @aqed_out(i3 %tmp_s)" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:300]   --->   Operation 21 'call' 'tmp_1' <Predicate = true> <Delay = 1.68> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.94>
+ST_6 : Operation 22 [1/2] (0.94ns)   --->   "%tmp_1 = call fastcc { i1, i1 } @aqed_out(i3 %tmp_s)" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:300]   --->   Operation 22 'call' 'tmp_1' <Predicate = true> <Delay = 0.94> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_6 : Operation 23 [1/1] (0.00ns)   --->   "%o2_qed_done = extractvalue { i1, i1 } %tmp_1, 0" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:300]   --->   Operation 23 'extractvalue' 'o2_qed_done' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 24 [1/1] (0.00ns)   --->   "%o2_qed_check = extractvalue { i1, i1 } %tmp_1, 1" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:300]   --->   Operation 24 'extractvalue' 'o2_qed_check' <Predicate = true> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i404* %agg_result), !map !197"   --->   Operation 25 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1 %orig), !map !312"   --->   Operation 26 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1 %dup), !map !318"   --->   Operation 27 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([9 x i8]* @aqed_top_str) nounwind"   --->   Operation 28 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 29 [1/1] (0.00ns)   --->   "%agg_result_read = call i404 @_ssdm_op_Read.ap_auto.i404P(i404* %agg_result)" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:307]   --->   Operation 29 'read' 'agg_result_read' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 30 [1/1] (0.00ns)   --->   "%state_orig_issued_lo = load i1* @state_orig_issued, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:309]   --->   Operation 30 'load' 'state_orig_issued_lo' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 31 [1/1] (0.00ns)   --->   "%state_orig_done_load = load i1* @state_orig_done, align 2" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:310]   --->   Operation 31 'load' 'state_orig_done_load' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 32 [1/1] (0.00ns)   --->   "%tmp_2 = call i20 @_ssdm_op_BitConcatenate.i20.i16.i1.i1.i1.i1(i16 0, i1 %state_orig_done_load, i1 %state_orig_issued_lo, i1 %o2_qed_check, i1 %o2_qed_done)" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:312]   --->   Operation 32 'bitconcatenate' 'tmp_2' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 33 [1/1] (0.00ns)   --->   "%agg_result19_part_se = call i404 @_ssdm_op_PartSet.i404.i404.i20.i32.i32(i404 %agg_result_read, i20 %tmp_2, i32 0, i32 19)" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:312]   --->   Operation 33 'partset' 'agg_result19_part_se' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 34 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i404P(i404* %agg_result, i404 %agg_result19_part_se)" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:312]   --->   Operation 34 'write' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 35 [1/1] (0.00ns)   --->   "ret void" [../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:315]   --->   Operation 35 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 100ns, clock uncertainty: 12.5ns.
+
+ <State 1>: 1.78ns
+The critical path consists of the following:
+	'load' operation ('state_index_load', ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:281) on static variable 'state_index' [28]  (0 ns)
+	'call' operation (../../../../../pool0/Saranyu/gsm/cpp_bug4/lpc.c:336->../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:296) to 'Quantization_and_cod' [33]  (1.78 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 1.68ns
+The critical path consists of the following:
+	'call' operation ('tmp_1', ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:300) to 'aqed_out' [34]  (1.68 ns)
+
+ <State 6>: 0.942ns
+The critical path consists of the following:
+	'call' operation ('tmp_1', ../../../../../pool0/Saranyu/gsm/cpp_bug4/aqed_gsm_new.cpp:300) to 'aqed_out' [34]  (0.942 ns)
+
+ <State 7>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
