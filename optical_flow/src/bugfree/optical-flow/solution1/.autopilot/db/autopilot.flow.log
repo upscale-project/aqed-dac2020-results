@@ -1,0 +1,1473 @@
+INFO-FLOW: Workspace /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1 opened at Tue Apr 14 19:34:43 PDT 2020
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/virtex7/virtex7 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/xfir.lib 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/xfft.lib 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/virtex7/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 91050 } {LUT 364200 } {FF 728400 } {DSP48E 1260} {BRAM 1590}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/virtex7/virtex7.gen 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.11 sec.
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.18 sec.
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.19 sec.
+Command     ap_source done; 0.19 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/virtex7/virtex7_fpv6 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/virtex7/virtex7_hp.hlp 
+Execute     source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xc7v2000tfhg1761-1 
+Execute       add_library xilinx/virtex7/virtex7:xc7v2000t:fhg1761:-1 
+Execute         get_default_platform 
+Execute         license_isbetapart xc7v2000t 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 305400} {LUT 1221600} {FF 2443200} {DSP48E 2160} {BRAM 2584} {SLR 4}  
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/virtex7/virtex7_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7v2000tfhg1761-1'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 305400} {LUT 1221600} {FF 2443200} {DSP48E 2160} {BRAM 2584} {SLR 4}  
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 0.48 sec.
+Execute   set_part xc7v2000tfhg1761-1 -tool vivado 
+Execute     add_library xilinx/virtex7/virtex7:xc7v2000t:fhg1761:-1 
+Execute       get_default_platform 
+Execute       license_isbetapart xc7v2000t 
+Command       license_isbetapart done; error code: 1; 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 305400} {LUT 1221600} {FF 2443200} {DSP48E 2160} {BRAM 2584} {SLR 4}  
+Execute       config_chip_info -quiet -speed slow 
+Execute     add_library xilinx/virtex7/virtex7_fpv6 
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute   create_clock -period 10 -name default 
+Execute   csynth_design 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -lm 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'optical_flow.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling optical_flow.cpp as C++
+Execute       get_default_platform 
+Execute       is_encrypted optical_flow.cpp 
+Execute       get_default_platform 
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "optical_flow.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot" -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pp.0.cpp" 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E optical_flow.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pp.0.cpp
+Command       clang done; 1.98 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot" -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pp.0.cpp"  -o "/rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pp.0.cpp -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/useless.bc
+Command       clang done; 4.78 sec.
+INFO-FLOW: GCC PP time: 6 seconds per iteration
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pp.0.cpp std=gnu++98 -directive=/rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 6.34 sec.
+INFO-FLOW: CDT Preprocessing with tidy-3.1...
+Execute       tidy_31 xilinx-directive2pragma /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pp.0.cpp std=gnu++98 -directive=/rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/solution1.json 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/solution1.json -quiet -fix-errors /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 5.85 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/xilinx-dataflow-lawyer.optical_flow.pp.0.cpp.diag.yml /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/xilinx-dataflow-lawyer.optical_flow.pp.0.cpp.out.log 2> /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/xilinx-dataflow-lawyer.optical_flow.pp.0.cpp.err.log 
+Command       ap_eval done; 4.17 sec.
+WARNING: [HLS 214-111] Static variables and non-static stream cannot be used inside a dataflow region: optical_flow.cpp:414:17
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer -quiet -fix-errors /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 14.61 sec.
+INFO-FLOW: tidy-3.1 time 24 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* --checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 8.87 sec.
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "/rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot" -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pragma.2.cpp" 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pragma.1.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pragma.2.cpp
+Command       clang done; 1.79 sec.
+Execute       get_default_platform 
+INFO-FLOW: Processing labels
+Execute       clang -src /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot" -I "/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.bc" 
+INFO-FLOW: exec /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot -I /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.bc
+Command       clang done; 4.87 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.g.bc -hls-opt -except-internalize optical_flow -L/cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/lib -lhlsm -lhlsmc++ -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.g 
+Command       llvm-ld done; 1.18 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:52 ; elapsed = 00:00:57 . Memory (MB): peak = 465.984 ; gain = 0.105 ; free physical = 98713 ; free virtual = 106533
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:52 ; elapsed = 00:00:57 . Memory (MB): peak = 465.984 ; gain = 0.105 ; free physical = 98713 ; free virtual = 106533
+Execute       ::config_rtl 
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.pp.bc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.pp.0.bc -f 
+Command         transform done; 0.27 sec.
+Execute         llvm-ld /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.pp.0.bc -disable-opt -L/cad/xilinx/vivado/2018.2/Vivado/2018.2/lnx64/lib -lfloatconversion -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.g.0 
+Command         llvm-ld done; 1.29 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top optical_flow -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.g.0.bc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:123) in function 'hls::Window<1, 7, gradient_t>::shift_pixels_left()' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:123) in function 'hls::Window<1, 3, tensor_t>::shift_pixels_left()' completely.
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<17, 9, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'optical_flow' (optical_flow.cpp:461).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<17, 9, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'optical_flow' (optical_flow.cpp:462).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<17, 9, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'optical_flow' (optical_flow.cpp:463).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<17, 9, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'optical_flow' (optical_flow.cpp:464).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<17, 9, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'optical_flow' (optical_flow.cpp:465).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<17, 9, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'optical_flow' (optical_flow.cpp:466).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<5, 5, ap_fixed<17, 9, (ap_q_mode)5, (ap_o_mode)3, 0> >::shift_pixels_left' into 'gradient_xy_calc' (optical_flow.cpp:72).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<5, 5, ap_fixed<17, 9, (ap_q_mode)5, (ap_o_mode)3, 0> >::shift_pixels_left' into 'gradient_xy_calc' (optical_flow.cpp:65).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<5, 5, ap_fixed<17, 9, (ap_q_mode)5, (ap_o_mode)3, 0> >::insert_pixel' into 'gradient_xy_calc' (optical_flow.cpp:68).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<5, 5, ap_fixed<17, 9, (ap_q_mode)5, (ap_o_mode)3, 0> >::insert_pixel' into 'gradient_xy_calc' (optical_flow.cpp:73).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<5, 5, ap_fixed<17, 9, (ap_q_mode)5, (ap_o_mode)3, 0> >::insert_pixel' into 'gradient_xy_calc' (optical_flow.cpp:74).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<5, 5, ap_fixed<17, 9, (ap_q_mode)5, (ap_o_mode)3, 0> >::insert_pixel' into 'gradient_xy_calc' (optical_flow.cpp:75).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<5, 5, ap_fixed<17, 9, (ap_q_mode)5, (ap_o_mode)3, 0> >::insert_pixel' into 'gradient_xy_calc' (optical_flow.cpp:76).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<5, 5, ap_fixed<17, 9, (ap_q_mode)5, (ap_o_mode)3, 0> >::insert_pixel' into 'gradient_xy_calc' (optical_flow.cpp:77).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<5, 5, ap_fixed<17, 9, (ap_q_mode)5, (ap_o_mode)3, 0> >::getval' into 'gradient_xy_calc' (optical_flow.cpp:88).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<5, 5, ap_fixed<17, 9, (ap_q_mode)5, (ap_o_mode)3, 0> >::getval' into 'gradient_xy_calc' (optical_flow.cpp:87).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<7, 10, gradient_t, 0>::shift_pixels_up' into 'gradient_weight_y' (optical_flow.cpp:152).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<7, 10, gradient_t, 0>::shift_pixels_up' into 'gradient_weight_y' (optical_flow.cpp:143).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<7, 10, gradient_t, 0>::insert_bottom_row' into 'gradient_weight_y' (optical_flow.cpp:157).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<7, 10, gradient_t, 0>::insert_bottom_row' into 'gradient_weight_y' (optical_flow.cpp:148).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<1, 7, gradient_t>::shift_pixels_left' into 'gradient_weight_x' (optical_flow.cpp:193).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<1, 7, gradient_t>::insert_pixel' into 'gradient_weight_x' (optical_flow.cpp:205).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<1, 7, gradient_t>::getval' into 'gradient_weight_x' (optical_flow.cpp:215).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<1, 7, gradient_t>::getval' into 'gradient_weight_x' (optical_flow.cpp:216).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<1, 7, gradient_t>::getval' into 'gradient_weight_x' (optical_flow.cpp:217).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<3, 10, outer_t, 0>::shift_pixels_up' into 'tensor_weight_y' (optical_flow.cpp:269).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<3, 10, outer_t, 0>::insert_bottom_row' into 'tensor_weight_y' (optical_flow.cpp:279).
+INFO: [XFORM 203-603] Inlining function 'hls::LineBuffer<3, 10, outer_t, 0>::getval' into 'tensor_weight_y' (optical_flow.cpp:289).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<1, 3, tensor_t>::shift_pixels_left' into 'tensor_weight_x' (optical_flow.cpp:316).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<1, 3, tensor_t>::insert_pixel' into 'tensor_weight_x' (optical_flow.cpp:327).
+INFO: [XFORM 203-603] Inlining function 'hls::Window<1, 3, tensor_t>::getval' into 'tensor_weight_x' (optical_flow.cpp:336).
+Command         transform done; 1.83 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:55 ; elapsed = 00:01:00 . Memory (MB): peak = 595.938 ; gain = 130.059 ; free physical = 98585 ; free virtual = 106413
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.g.1.bc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+Command         transform done; 0.89 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.g.2.prechk.bc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+WARNING: [SYNCHK 200-120] optical_flow.cpp:371: multiplication is assumed not to overflow by default, otherwise, please add option '-fwrapv'.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+Command         transform done; 0.28 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 595.938 ; gain = 130.059 ; free physical = 98527 ; free virtual = 106359
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.g.1.bc to /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.o.1.bc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-1101] Packing variable 'outputs' (optical_flow.cpp:401) into a 64-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'tmp.val.V' (optical_flow.cpp:266) into a 192-bit variable.
+INFO: [XFORM 203-1101] Packing variable 'buf.val.val.V' (optical_flow.cpp:258) into a 192-bit variable.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'OUTER_INNER' (optical_flow.cpp:236) in function 'outer_product' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'TENSOR_WEIGHT_Y_INNER' (optical_flow.cpp:263) in function 'tensor_weight_y' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'TENSOR_WEIGHT_X_INNER' (optical_flow.cpp:314) in function 'tensor_weight_x' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'GRAD_WEIGHT_X_INNER' (optical_flow.cpp:191) in function 'gradient_weight_x' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'GRAD_WEIGHT_Y_INNER' (optical_flow.cpp:137) in function 'gradient_weight_y' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'GRAD_XY_INNER' (optical_flow.cpp:38) in function 'gradient_xy_calc' for pipelining.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.1' (./../host/typedefs.h:44) in function 'outer_product' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.1' (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:727) in function 'tensor_weight_y' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.1.1' (./../host/typedefs.h:44) in function 'tensor_weight_y' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.2' (./../host/typedefs.h:44) in function 'tensor_weight_y' completely.
+INFO: [XFORM 203-501] Unrolling loop 'TENSOR_WEIGHT_Y_TMP_INIT' (optical_flow.cpp:277) in function 'tensor_weight_y' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.4' (./../host/typedefs.h:44) in function 'tensor_weight_y' completely.
+INFO: [XFORM 203-501] Unrolling loop 'TENSOR_WEIGHT_Y_ACC_INIT' (optical_flow.cpp:283) in function 'tensor_weight_y' completely.
+INFO: [XFORM 203-501] Unrolling loop 'TENSOR_WEIGHT_Y_TMP_OUTER' (optical_flow.cpp:288) in function 'tensor_weight_y' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.6.1' (./../host/typedefs.h:44) in function 'tensor_weight_y' completely.
+INFO: [XFORM 203-501] Unrolling loop 'TENSOR_WEIGHT_Y_TMP_INNER' (optical_flow.cpp:292) in function 'tensor_weight_y' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.7' (./../host/typedefs.h:48) in function 'tensor_weight_y' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.1' (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:125) in function 'tensor_weight_x' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.1.1' (./../host/typedefs.h:48) in function 'tensor_weight_x' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.2' (./../host/typedefs.h:48) in function 'tensor_weight_x' completely.
+INFO: [XFORM 203-501] Unrolling loop 'TENSOR_WEIGHT_X_TMP_INIT' (optical_flow.cpp:325) in function 'tensor_weight_x' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.4' (./../host/typedefs.h:48) in function 'tensor_weight_x' completely.
+INFO: [XFORM 203-501] Unrolling loop 'TENSOR_WEIGHT_X_ACC_INIT' (optical_flow.cpp:331) in function 'tensor_weight_x' completely.
+INFO: [XFORM 203-501] Unrolling loop 'TENSOR_WEIGHT_X_TMP_OUTER' (optical_flow.cpp:335) in function 'tensor_weight_x' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.6.1' (./../host/typedefs.h:48) in function 'tensor_weight_x' completely.
+INFO: [XFORM 203-501] Unrolling loop 'TENSOR_WEIGHT_X_TMP_INNER' (optical_flow.cpp:338) in function 'tensor_weight_x' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.7' (./../host/typedefs.h:48) in function 'tensor_weight_x' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.1' (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:125) in function 'gradient_weight_x' completely.
+INFO: [XFORM 203-501] Unrolling loop 'GRAD_WEIGHT_X_ACC' (optical_flow.cpp:214) in function 'gradient_weight_x' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.1' (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:727) in function 'gradient_weight_y' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.2' (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:727) in function 'gradient_weight_y' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.1' (optical_flow.cpp:41) in function 'gradient_xy_calc' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.2' (optical_flow.cpp:51) in function 'gradient_xy_calc' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.3' (optical_flow.cpp:57) in function 'gradient_xy_calc' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.4' (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:123) in function 'gradient_xy_calc' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.4.1' (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:125) in function 'gradient_xy_calc' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.5' (optical_flow.cpp:67) in function 'gradient_xy_calc' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.6' (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:123) in function 'gradient_xy_calc' completely.
+INFO: [XFORM 203-501] Unrolling loop 'Loop-1.1.6.1' (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:125) in function 'gradient_xy_calc' completely.
+INFO: [XFORM 203-501] Unrolling loop 'GRAD_XY_XYGRAD' (optical_flow.cpp:86) in function 'gradient_xy_calc' completely.
+INFO: [XFORM 203-102] Partitioning array 'out.val.V' (optical_flow.cpp:242) automatically.
+INFO: [XFORM 203-102] Partitioning array 'value.val.V.assign' (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:631) automatically.
+INFO: [XFORM 203-102] Partitioning array 'acc.val.V' (optical_flow.cpp:281) automatically.
+INFO: [XFORM 203-102] Partitioning array 'value.val.V.assign' (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:61) automatically.
+INFO: [XFORM 203-102] Partitioning array 'tmp.val.V' (optical_flow.cpp:317) automatically.
+INFO: [XFORM 203-102] Partitioning array 'acc.val.V' (optical_flow.cpp:329) automatically.
+INFO: [XFORM 203-102] Partitioning array 'buf.V' automatically.
+INFO: [XFORM 203-101] Partitioning array 'buf.val.val.V' (optical_flow.cpp:258) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf.val.val.V' (optical_flow.cpp:308) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf.val.x.V' (optical_flow.cpp:186) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf.val.y.V' (optical_flow.cpp:186) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf.val.z.V' (optical_flow.cpp:186) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf.val.x.V' (optical_flow.cpp:131) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf.val.y.V' (optical_flow.cpp:131) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf.val.z.V' (optical_flow.cpp:131) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf.V.1'  in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'smallbuf.V' (optical_flow.cpp:27) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.val.V' (optical_flow.cpp:31) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf.val.val.V' (optical_flow.cpp:308) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf.val.x.V' (optical_flow.cpp:186) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf.val.y.V' (optical_flow.cpp:186) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'buf.val.z.V' (optical_flow.cpp:186) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'window.val.V' (optical_flow.cpp:31) in dimension 2 completely.
+INFO: [XFORM 203-102] Partitioning array 'buf.val.val.V.0.1' (optical_flow.cpp:308) automatically.
+INFO: [XFORM 203-102] Partitioning array 'buf.val.val.V.0.2' (optical_flow.cpp:308) automatically.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'buf.V.1.1' in function 'gradient_xy_calc'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'buf.V.1.2' in function 'gradient_xy_calc'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'buf.V.1.3' in function 'gradient_xy_calc'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'buf.V.1.4' in function 'gradient_xy_calc'.
+WARNING: [ANALYSIS 214-31] The program may have out of bound access of array variable 'frame.V' in function 'gradient_xy_calc' (optical_flow.cpp:45:9).
+INFO: [XFORM 203-721] Changing loop 'Loop_FRAMES_CP_OUTER_proc' (optical_flow.cpp:453) to a process function for dataflow in function 'optical_flow'.
+WARNING: [XFORM 203-713] All the elements of global array 'gradient_x.V'  should be updated in process function 'gradient_xy_calc', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'gradient_y.V'  should be updated in process function 'gradient_xy_calc', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'y_filtered.x.V'  should be updated in process function 'gradient_weight_y', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'y_filtered.y.V'  should be updated in process function 'gradient_weight_y', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'y_filtered.z.V'  should be updated in process function 'gradient_weight_y', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'filtered_gradient.x.V'  should be updated in process function 'gradient_weight_x', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'filtered_gradient.y.V'  should be updated in process function 'gradient_weight_x', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'filtered_gradient.z.V'  should be updated in process function 'gradient_weight_x', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'tensor_y.val.V'  should be updated in process function 'tensor_weight_y', otherwise it may not be synthesized correctly.
+WARNING: [XFORM 203-713] All the elements of global array 'tensor.val.V'  should be updated in process function 'tensor_weight_x', otherwise it may not be synthesized correctly.
+INFO: [XFORM 203-712] Applying dataflow to function 'optical_flow', detected/extracted 9 process function(s): 
+	 'Loop_FRAMES_CP_OUTER_proc'
+	 'gradient_xy_calc'
+	 'gradient_z_calc'
+	 'gradient_weight_y'
+	 'gradient_weight_x'
+	 'outer_product'
+	 'tensor_weight_y'
+	 'tensor_weight_x'
+	 'flow_calc'.
+WARNING: [XFORM 203-124] Array  'tensor.val.V' : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'tensor_y.val.V' : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'gradient_x.V' : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'gradient_y.V' : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'y_filtered.x.V' : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'y_filtered.y.V' : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'y_filtered.z.V' : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'filtered_gradient.x.V' : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'filtered_gradient.y.V' : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'filtered_gradient.z.V' : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+WARNING: [XFORM 203-124] Array  'frame3_a.V' : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order.
+Command         transform done; 3.63 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.o.1.tmp.bc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:631:41) to (optical_flow.cpp:297:7) in function 'tensor_weight_y'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (./../host/typedefs.h:48:9) to (optical_flow.cpp:343:7) in function 'tensor_weight_x'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (optical_flow.cpp:63:7) in function 'gradient_xy_calc'... converting 3 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'tensor_weight_x' (./../host/typedefs.h:48:9)...11 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'gradient_xy_calc' (optical_flow.cpp:35:48)...6 expression(s) balanced.
+Command         transform done; 1.25 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:59 ; elapsed = 00:01:06 . Memory (MB): peak = 659.797 ; gain = 193.918 ; free physical = 98355 ; free virtual = 106192
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -bitwidth -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -dead-allocation-elimination -cdfg-build /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.o.2.bc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [XFORM 203-541] Flattening a loop nest 'TENSOR_WEIGHT_Y_OUTER' (optical_flow.cpp:261:4) in function 'tensor_weight_y'.
+INFO: [XFORM 203-541] Flattening a loop nest 'TENSOR_WEIGHT_X_OUTER' (optical_flow.cpp:312:4) in function 'tensor_weight_x'.
+INFO: [XFORM 203-541] Flattening a loop nest 'OUTER_OUTER' (optical_flow.cpp:234:4) in function 'outer_product'.
+INFO: [XFORM 203-541] Flattening a loop nest 'GRAD_Z_OUTER' (optical_flow.cpp:112:4) in function 'gradient_z_calc'.
+INFO: [XFORM 203-541] Flattening a loop nest 'GRAD_XY_OUTER' (optical_flow.cpp:36:4) in function 'gradient_xy_calc'.
+INFO: [XFORM 203-541] Flattening a loop nest 'GRAD_WEIGHT_Y_OUTER' (optical_flow.cpp:135:4) in function 'gradient_weight_y'.
+INFO: [XFORM 203-541] Flattening a loop nest 'GRAD_WEIGHT_X_OUTER' (optical_flow.cpp:189:4) in function 'gradient_weight_x'.
+INFO: [XFORM 203-541] Flattening a loop nest 'FLOW_OUTER' (optical_flow.cpp:357:4) in function 'flow_calc'.
+INFO: [XFORM 203-541] Flattening a loop nest 'FRAMES_CP_OUTER' (optical_flow.cpp:453:6) in function 'Loop_FRAMES_CP_OUTER_proc'.
+WARNING: [XFORM 203-631] Renaming function 'Loop_FRAMES_CP_OUTER_proc' to 'Loop_FRAMES_CP_OUTER' (optical_flow.cpp:452:51)
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[2].val.V' (optical_flow.cpp:258).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[1].val.V' (optical_flow.cpp:258).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[2].val.V' (optical_flow.cpp:258).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[1].val.V' (optical_flow.cpp:258).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[1].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[2].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[3].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[4].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[5].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[6].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[1].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[2].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[3].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[4].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[5].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[6].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[1].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[2].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[3].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[4].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[5].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[6].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[1].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[2].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[3].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[4].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[5].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[6].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[1].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[2].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[3].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[4].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[5].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[6].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[1].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[2].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[3].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[4].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[5].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false intra dependency for variable 'buf.val[6].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[1].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[2].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[3].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[4].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[5].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[6].x.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[1].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[2].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[3].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[4].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[5].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[6].y.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[1].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[2].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[3].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[4].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[5].z.V' (optical_flow.cpp:131).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'buf.val[6].z.V' (optical_flow.cpp:131).
+INFO: [XFORM 203-811] Inferring multiple bus burst write of a total cumulative length 10 on port 'outputs' (optical_flow.cpp:392:7). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [XFORM 203-811] Inferring multiple bus burst read of a total cumulative length 10 on port 'frames.V' (optical_flow.cpp:459:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+INFO: [XFORM 203-603] Evaluating the output(s) of a call to function '_ssdm_op_BitConcatenate.i49.i30.i19' in function 'gradient_weight_x' and propagating its result(s) since all actual argument(s) to the function are constants.
+Command         transform done; 4.25 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:01 ; elapsed = 00:01:11 . Memory (MB): peak = 785.883 ; gain = 320.004 ; free physical = 98156 ; free virtual = 105995
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 14.03 sec.
+Command     elaborate done; 69.29 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'optical_flow' ...
+Execute       ap_set_top_model optical_flow 
+WARNING: [SYN 201-103] Legalizing function name 'optical_flow.entry12' to 'optical_flow_entry12'.
+Execute       get_model_list optical_flow -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model optical_flow 
+Execute       preproc_iomode -model flow_calc 
+Execute       preproc_iomode -model tensor_weight_x 
+Execute       preproc_iomode -model tensor_weight_y 
+Execute       preproc_iomode -model outer_product 
+Execute       preproc_iomode -model gradient_weight_x 
+Execute       preproc_iomode -model gradient_weight_y 
+Execute       preproc_iomode -model gradient_z_calc 
+Execute       preproc_iomode -model gradient_xy_calc 
+Execute       preproc_iomode -model Loop_FRAMES_CP_OUTER 
+Execute       preproc_iomode -model optical_flow.entry12 
+Execute       get_model_list optical_flow -filter all-wo-channel 
+INFO-FLOW: Model list for configure: optical_flow.entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow
+INFO-FLOW: Configuring Module : optical_flow.entry12 ...
+Execute       set_default_model optical_flow.entry12 
+Execute       apply_spec_resource_limit optical_flow.entry12 
+INFO-FLOW: Configuring Module : Loop_FRAMES_CP_OUTER ...
+Execute       set_default_model Loop_FRAMES_CP_OUTER 
+Execute       apply_spec_resource_limit Loop_FRAMES_CP_OUTER 
+INFO-FLOW: Configuring Module : gradient_xy_calc ...
+Execute       set_default_model gradient_xy_calc 
+Execute       apply_spec_resource_limit gradient_xy_calc 
+INFO-FLOW: Configuring Module : gradient_z_calc ...
+Execute       set_default_model gradient_z_calc 
+Execute       apply_spec_resource_limit gradient_z_calc 
+INFO-FLOW: Configuring Module : gradient_weight_y ...
+Execute       set_default_model gradient_weight_y 
+Execute       apply_spec_resource_limit gradient_weight_y 
+INFO-FLOW: Configuring Module : gradient_weight_x ...
+Execute       set_default_model gradient_weight_x 
+Execute       apply_spec_resource_limit gradient_weight_x 
+INFO-FLOW: Configuring Module : outer_product ...
+Execute       set_default_model outer_product 
+Execute       apply_spec_resource_limit outer_product 
+INFO-FLOW: Configuring Module : tensor_weight_y ...
+Execute       set_default_model tensor_weight_y 
+Execute       apply_spec_resource_limit tensor_weight_y 
+INFO-FLOW: Configuring Module : tensor_weight_x ...
+Execute       set_default_model tensor_weight_x 
+Execute       apply_spec_resource_limit tensor_weight_x 
+INFO-FLOW: Configuring Module : flow_calc ...
+Execute       set_default_model flow_calc 
+Execute       apply_spec_resource_limit flow_calc 
+INFO-FLOW: Configuring Module : optical_flow ...
+Execute       set_default_model optical_flow 
+Execute       apply_spec_resource_limit optical_flow 
+INFO-FLOW: Model list for preprocess: optical_flow.entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow
+INFO-FLOW: Preprocessing Module: optical_flow.entry12 ...
+Execute       set_default_model optical_flow.entry12 
+Execute       cdfg_preprocess -model optical_flow.entry12 
+Execute       rtl_gen_preprocess optical_flow.entry12 
+INFO-FLOW: Preprocessing Module: Loop_FRAMES_CP_OUTER ...
+Execute       set_default_model Loop_FRAMES_CP_OUTER 
+Execute       cdfg_preprocess -model Loop_FRAMES_CP_OUTER 
+Execute       rtl_gen_preprocess Loop_FRAMES_CP_OUTER 
+INFO-FLOW: Preprocessing Module: gradient_xy_calc ...
+Execute       set_default_model gradient_xy_calc 
+Execute       cdfg_preprocess -model gradient_xy_calc 
+Execute       rtl_gen_preprocess gradient_xy_calc 
+INFO-FLOW: Preprocessing Module: gradient_z_calc ...
+Execute       set_default_model gradient_z_calc 
+Execute       cdfg_preprocess -model gradient_z_calc 
+Execute       rtl_gen_preprocess gradient_z_calc 
+INFO-FLOW: Preprocessing Module: gradient_weight_y ...
+Execute       set_default_model gradient_weight_y 
+Execute       cdfg_preprocess -model gradient_weight_y 
+Execute       rtl_gen_preprocess gradient_weight_y 
+INFO-FLOW: Preprocessing Module: gradient_weight_x ...
+Execute       set_default_model gradient_weight_x 
+Execute       cdfg_preprocess -model gradient_weight_x 
+Execute       rtl_gen_preprocess gradient_weight_x 
+INFO-FLOW: Preprocessing Module: outer_product ...
+Execute       set_default_model outer_product 
+Execute       cdfg_preprocess -model outer_product 
+Execute       rtl_gen_preprocess outer_product 
+INFO-FLOW: Preprocessing Module: tensor_weight_y ...
+Execute       set_default_model tensor_weight_y 
+Execute       cdfg_preprocess -model tensor_weight_y 
+Execute       rtl_gen_preprocess tensor_weight_y 
+INFO-FLOW: Preprocessing Module: tensor_weight_x ...
+Execute       set_default_model tensor_weight_x 
+Execute       cdfg_preprocess -model tensor_weight_x 
+Execute       rtl_gen_preprocess tensor_weight_x 
+INFO-FLOW: Preprocessing Module: flow_calc ...
+Execute       set_default_model flow_calc 
+Execute       cdfg_preprocess -model flow_calc 
+Execute       rtl_gen_preprocess flow_calc 
+INFO-FLOW: Preprocessing Module: optical_flow ...
+Execute       set_default_model optical_flow 
+Execute       cdfg_preprocess -model optical_flow 
+Execute       rtl_gen_preprocess optical_flow 
+INFO-FLOW: Model list for synthesis: optical_flow.entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'optical_flow_entry12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model optical_flow.entry12 
+Execute       schedule -model optical_flow.entry12 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 70.95 seconds; current allocated memory: 275.051 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow_entry12.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow_entry12.sched.adb -f 
+INFO-FLOW: Finish scheduling optical_flow.entry12.
+Execute       set_default_model optical_flow.entry12 
+Execute       bind -model optical_flow.entry12 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=optical_flow.entry12
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 275.112 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow_entry12.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow_entry12.bind.adb -f 
+INFO-FLOW: Finish binding optical_flow.entry12.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_FRAMES_CP_OUTER' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Loop_FRAMES_CP_OUTER 
+Execute       schedule -model Loop_FRAMES_CP_OUTER 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'FRAMES_CP_OUTER_FRAMES_CP_INNER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 19.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.42 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.52 seconds; current allocated memory: 275.569 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/Loop_FRAMES_CP_OUTER.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/Loop_FRAMES_CP_OUTER.sched.adb -f 
+INFO-FLOW: Finish scheduling Loop_FRAMES_CP_OUTER.
+Execute       set_default_model Loop_FRAMES_CP_OUTER 
+Execute       bind -model Loop_FRAMES_CP_OUTER 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=Loop_FRAMES_CP_OUTER
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 275.940 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/Loop_FRAMES_CP_OUTER.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/Loop_FRAMES_CP_OUTER.bind.adb -f 
+INFO-FLOW: Finish binding Loop_FRAMES_CP_OUTER.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gradient_xy_calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model gradient_xy_calc 
+Execute       schedule -model gradient_xy_calc 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'GRAD_XY_OUTER_GRAD_XY_INNER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.48 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.69 seconds; current allocated memory: 276.839 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_xy_calc.verbose.sched.rpt -verbose -f 
+Command       report done; 0.15 sec.
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_xy_calc.sched.adb -f 
+Command       db_write done; 0.16 sec.
+INFO-FLOW: Finish scheduling gradient_xy_calc.
+Execute       set_default_model gradient_xy_calc 
+Execute       bind -model gradient_xy_calc 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=gradient_xy_calc
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.3 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.62 seconds; current allocated memory: 277.527 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_xy_calc.verbose.bind.rpt -verbose -f 
+Command       report done; 0.27 sec.
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_xy_calc.bind.adb -f 
+Command       db_write done; 0.11 sec.
+INFO-FLOW: Finish binding gradient_xy_calc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gradient_z_calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model gradient_z_calc 
+Execute       schedule -model gradient_z_calc 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'GRAD_Z_OUTER_GRAD_Z_INNER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.39 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.82 seconds; current allocated memory: 277.881 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_z_calc.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_z_calc.sched.adb -f 
+INFO-FLOW: Finish scheduling gradient_z_calc.
+Execute       set_default_model gradient_z_calc 
+Execute       bind -model gradient_z_calc 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=gradient_z_calc
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.14 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 278.076 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_z_calc.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_z_calc.bind.adb -f 
+INFO-FLOW: Finish binding gradient_z_calc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gradient_weight_y' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model gradient_weight_y 
+Execute       schedule -model gradient_weight_y 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'GRAD_WEIGHT_Y_OUTER_GRAD_WEIGHT_Y_INNER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.39 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.57 seconds; current allocated memory: 278.469 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_y.verbose.sched.rpt -verbose -f 
+Command       report done; 0.13 sec.
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_y.sched.adb -f 
+INFO-FLOW: Finish scheduling gradient_weight_y.
+Execute       set_default_model gradient_weight_y 
+Execute       bind -model gradient_weight_y 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=gradient_weight_y
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.18 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.37 seconds; current allocated memory: 278.891 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_y.verbose.bind.rpt -verbose -f 
+Command       report done; 0.17 sec.
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_y.bind.adb -f 
+INFO-FLOW: Finish binding gradient_weight_y.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'gradient_weight_x' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model gradient_weight_x 
+Execute       schedule -model gradient_weight_x 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'GRAD_WEIGHT_X_OUTER_GRAD_WEIGHT_X_INNER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.4 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.68 seconds; current allocated memory: 279.472 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_x.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_x.sched.adb -f 
+Command       db_write done; 0.11 sec.
+INFO-FLOW: Finish scheduling gradient_weight_x.
+Execute       set_default_model gradient_weight_x 
+Execute       bind -model gradient_weight_x 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=gradient_weight_x
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.31 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.51 seconds; current allocated memory: 280.049 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_x.verbose.bind.rpt -verbose -f 
+Command       report done; 0.33 sec.
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_x.bind.adb -f 
+Command       db_write done; 0.26 sec.
+INFO-FLOW: Finish binding gradient_weight_x.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'outer_product' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model outer_product 
+Execute       schedule -model outer_product 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'OUTER_OUTER_OUTER_INNER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.53 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.2 seconds; current allocated memory: 280.379 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/outer_product.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/outer_product.sched.adb -f 
+Command       db_write done; 0.19 sec.
+INFO-FLOW: Finish scheduling outer_product.
+Execute       set_default_model outer_product 
+Execute       bind -model outer_product 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=outer_product
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.3 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.56 seconds; current allocated memory: 280.576 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/outer_product.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/outer_product.bind.adb -f 
+INFO-FLOW: Finish binding outer_product.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'tensor_weight_y' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model tensor_weight_y 
+Execute       schedule -model tensor_weight_y 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'TENSOR_WEIGHT_Y_OUTER_TENSOR_WEIGHT_Y_INNER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.4 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.71 seconds; current allocated memory: 281.291 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_y.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_y.sched.adb -f 
+Command       db_write done; 0.12 sec.
+INFO-FLOW: Finish scheduling tensor_weight_y.
+Execute       set_default_model tensor_weight_y 
+Execute       bind -model tensor_weight_y 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=tensor_weight_y
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.19 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.41 seconds; current allocated memory: 281.893 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_y.verbose.bind.rpt -verbose -f 
+Command       report done; 0.22 sec.
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_y.bind.adb -f 
+Command       db_write done; 0.2 sec.
+INFO-FLOW: Finish binding tensor_weight_y.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'tensor_weight_x' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model tensor_weight_x 
+Execute       schedule -model tensor_weight_x 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'TENSOR_WEIGHT_X_OUTER_TENSOR_WEIGHT_X_INNER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.42 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.94 seconds; current allocated memory: 282.688 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_x.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_x.sched.adb -f 
+INFO-FLOW: Finish scheduling tensor_weight_x.
+Execute       set_default_model tensor_weight_x 
+Execute       bind -model tensor_weight_x 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=tensor_weight_x
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.14 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.31 seconds; current allocated memory: 283.361 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_x.verbose.bind.rpt -verbose -f 
+Command       report done; 0.2 sec.
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_x.bind.adb -f 
+INFO-FLOW: Finish binding tensor_weight_x.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'flow_calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model flow_calc 
+Execute       schedule -model flow_calc 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'FLOW_OUTER_FLOW_INNER'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 83.
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.34 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.69 seconds; current allocated memory: 284.649 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/flow_calc.verbose.sched.rpt -verbose -f 
+Command       report done; 0.29 sec.
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/flow_calc.sched.adb -f 
+Command       db_write done; 0.13 sec.
+INFO-FLOW: Finish scheduling flow_calc.
+Execute       set_default_model flow_calc 
+Execute       bind -model flow_calc 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=flow_calc
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.2 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.62 seconds; current allocated memory: 285.675 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/flow_calc.verbose.bind.rpt -verbose -f 
+Command       report done; 0.32 sec.
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/flow_calc.bind.adb -f 
+Command       db_write done; 0.17 sec.
+INFO-FLOW: Finish binding flow_calc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'optical_flow' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model optical_flow 
+Execute       schedule -model optical_flow 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.2 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.79 seconds; current allocated memory: 286.028 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.sched.adb -f 
+INFO-FLOW: Finish scheduling optical_flow.
+Execute       set_default_model optical_flow 
+Execute       bind -model optical_flow 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=optical_flow
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 1.6 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.76 seconds; current allocated memory: 287.081 MB.
+Execute       report -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.verbose.bind.rpt -verbose -f 
+Command       report done; 0.73 sec.
+Execute       db_write -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.bind.adb -f 
+INFO-FLOW: Finish binding optical_flow.
+Execute       get_model_list optical_flow -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess optical_flow.entry12 
+Execute       rtl_gen_preprocess Loop_FRAMES_CP_OUTER 
+Execute       rtl_gen_preprocess gradient_xy_calc 
+Execute       rtl_gen_preprocess gradient_z_calc 
+Execute       rtl_gen_preprocess gradient_weight_y 
+Execute       rtl_gen_preprocess gradient_weight_x 
+Execute       rtl_gen_preprocess outer_product 
+Execute       rtl_gen_preprocess tensor_weight_y 
+Execute       rtl_gen_preprocess tensor_weight_x 
+Execute       rtl_gen_preprocess flow_calc 
+Execute       rtl_gen_preprocess optical_flow 
+INFO-FLOW: Model list for RTL generation: optical_flow.entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'optical_flow_entry12' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model optical_flow.entry12 -vendor xilinx -mg_file /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow_entry12.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'optical_flow_entry12'.
+INFO: [HLS 200-111]  Elapsed time: 0.94 seconds; current allocated memory: 287.623 MB.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.rtl_wrap.cfg.tcl 
+Execute       gen_rtl optical_flow.entry12 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/systemc/optical_flow_entry12 -synmodules optical_flow.entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow 
+Execute       gen_rtl optical_flow.entry12 -style xilinx -f -lang vhdl -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/vhdl/optical_flow_entry12 
+Execute       gen_rtl optical_flow.entry12 -style xilinx -f -lang vlog -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/verilog/optical_flow_entry12 
+Execute       gen_tb_info optical_flow.entry12 -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow_entry12 -p /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db 
+Execute       report -model optical_flow.entry12 -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/optical_flow_entry12_csynth.rpt -f 
+Execute       report -model optical_flow.entry12 -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/optical_flow_entry12_csynth.xml -f -x 
+Execute       report -model optical_flow.entry12 -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow_entry12.verbose.rpt -verbose -f 
+Execute       db_write -model optical_flow.entry12 -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow_entry12.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_FRAMES_CP_OUTER' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model Loop_FRAMES_CP_OUTER -vendor xilinx -mg_file /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/Loop_FRAMES_CP_OUTER.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'optical_flow_urem_6ns_5ns_6_10_1' to 'optical_flow_urembkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'optical_flow_urembkb': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_FRAMES_CP_OUTER'.
+Command       create_rtl_model done; 0.12 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.38 seconds; current allocated memory: 288.688 MB.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Loop_FRAMES_CP_OUTER -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/systemc/Loop_FRAMES_CP_OUTER -synmodules optical_flow.entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow 
+Execute       gen_rtl Loop_FRAMES_CP_OUTER -style xilinx -f -lang vhdl -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/vhdl/Loop_FRAMES_CP_OUTER 
+Execute       gen_rtl Loop_FRAMES_CP_OUTER -style xilinx -f -lang vlog -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/verilog/Loop_FRAMES_CP_OUTER 
+Execute       gen_tb_info Loop_FRAMES_CP_OUTER -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/Loop_FRAMES_CP_OUTER -p /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db 
+Execute       report -model Loop_FRAMES_CP_OUTER -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/Loop_FRAMES_CP_OUTER_csynth.rpt -f 
+Execute       report -model Loop_FRAMES_CP_OUTER -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/Loop_FRAMES_CP_OUTER_csynth.xml -f -x 
+Command       report done; 0.16 sec.
+Execute       report -model Loop_FRAMES_CP_OUTER -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/Loop_FRAMES_CP_OUTER.verbose.rpt -verbose -f 
+Command       report done; 0.15 sec.
+Execute       db_write -model Loop_FRAMES_CP_OUTER -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/Loop_FRAMES_CP_OUTER.adb -f 
+Command       db_write done; 0.16 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gradient_xy_calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model gradient_xy_calc -vendor xilinx -mg_file /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_xy_calc.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'gradient_xy_calc_buf_V_1_1' to 'gradient_xy_calc_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_xy_calc_buf_V_1_2' to 'gradient_xy_calc_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_xy_calc_buf_V_1_3' to 'gradient_xy_calc_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_xy_calc_buf_V_1_4' to 'gradient_xy_calc_fYi' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gradient_xy_calc'.
+Command       create_rtl_model done; 0.23 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.23 seconds; current allocated memory: 291.075 MB.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.rtl_wrap.cfg.tcl 
+Execute       gen_rtl gradient_xy_calc -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/systemc/gradient_xy_calc -synmodules optical_flow.entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow 
+Execute       gen_rtl gradient_xy_calc -style xilinx -f -lang vhdl -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/vhdl/gradient_xy_calc 
+Execute       gen_rtl gradient_xy_calc -style xilinx -f -lang vlog -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/verilog/gradient_xy_calc 
+Execute       gen_tb_info gradient_xy_calc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_xy_calc -p /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db 
+Execute       report -model gradient_xy_calc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/gradient_xy_calc_csynth.rpt -f 
+Execute       report -model gradient_xy_calc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/gradient_xy_calc_csynth.xml -f -x 
+Execute       report -model gradient_xy_calc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_xy_calc.verbose.rpt -verbose -f 
+Command       report done; 0.35 sec.
+Execute       db_write -model gradient_xy_calc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_xy_calc.adb -f 
+Command       db_write done; 0.27 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gradient_z_calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model gradient_z_calc -vendor xilinx -mg_file /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_z_calc.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gradient_z_calc'.
+INFO: [HLS 200-111]  Elapsed time: 1.17 seconds; current allocated memory: 294.506 MB.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.rtl_wrap.cfg.tcl 
+Execute       gen_rtl gradient_z_calc -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/systemc/gradient_z_calc -synmodules optical_flow.entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow 
+Execute       gen_rtl gradient_z_calc -style xilinx -f -lang vhdl -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/vhdl/gradient_z_calc 
+Execute       gen_rtl gradient_z_calc -style xilinx -f -lang vlog -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/verilog/gradient_z_calc 
+Execute       gen_tb_info gradient_z_calc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_z_calc -p /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db 
+Execute       report -model gradient_z_calc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/gradient_z_calc_csynth.rpt -f 
+Execute       report -model gradient_z_calc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/gradient_z_calc_csynth.xml -f -x 
+Execute       report -model gradient_z_calc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_z_calc.verbose.rpt -verbose -f 
+Execute       db_write -model gradient_z_calc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_z_calc.adb -f 
+Command       db_write done; 0.12 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gradient_weight_y' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model gradient_weight_y -vendor xilinx -mg_file /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_y.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_1_x_V' to 'gradient_weight_yg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_2_x_V' to 'gradient_weight_yhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_3_x_V' to 'gradient_weight_yibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_4_x_V' to 'gradient_weight_yjbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_5_x_V' to 'gradient_weight_ykbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_6_x_V' to 'gradient_weight_ylbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_1_y_V' to 'gradient_weight_ymb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_2_y_V' to 'gradient_weight_yncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_3_y_V' to 'gradient_weight_yocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_4_y_V' to 'gradient_weight_ypcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_5_y_V' to 'gradient_weight_yqcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_6_y_V' to 'gradient_weight_yrcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_1_z_V' to 'gradient_weight_ysc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_2_z_V' to 'gradient_weight_ytde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_3_z_V' to 'gradient_weight_yudo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_4_z_V' to 'gradient_weight_yvdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_5_z_V' to 'gradient_weight_ywdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'gradient_weight_y_buf_val_6_z_V' to 'gradient_weight_yxdS' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gradient_weight_y'.
+Command       create_rtl_model done; 0.48 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.92 seconds; current allocated memory: 296.150 MB.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.rtl_wrap.cfg.tcl 
+Execute       gen_rtl gradient_weight_y -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/systemc/gradient_weight_y -synmodules optical_flow.entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow 
+Execute       gen_rtl gradient_weight_y -style xilinx -f -lang vhdl -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/vhdl/gradient_weight_y 
+Execute       gen_rtl gradient_weight_y -style xilinx -f -lang vlog -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/verilog/gradient_weight_y 
+Execute       gen_tb_info gradient_weight_y -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_y -p /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db 
+Execute       report -model gradient_weight_y -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/gradient_weight_y_csynth.rpt -f 
+Execute       report -model gradient_weight_y -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/gradient_weight_y_csynth.xml -f -x 
+Execute       report -model gradient_weight_y -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_y.verbose.rpt -verbose -f 
+Command       report done; 0.23 sec.
+Execute       db_write -model gradient_weight_y -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_y.adb -f 
+Command       db_write done; 0.24 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'gradient_weight_x' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model gradient_weight_x -vendor xilinx -mg_file /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_x.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'gradient_weight_x'.
+Command       create_rtl_model done; 0.2 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.07 seconds; current allocated memory: 298.961 MB.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.rtl_wrap.cfg.tcl 
+Execute       gen_rtl gradient_weight_x -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/systemc/gradient_weight_x -synmodules optical_flow.entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow 
+Execute       gen_rtl gradient_weight_x -style xilinx -f -lang vhdl -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/vhdl/gradient_weight_x 
+Execute       gen_rtl gradient_weight_x -style xilinx -f -lang vlog -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/verilog/gradient_weight_x 
+Execute       gen_tb_info gradient_weight_x -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_x -p /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db 
+Execute       report -model gradient_weight_x -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/gradient_weight_x_csynth.rpt -f 
+Execute       report -model gradient_weight_x -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/gradient_weight_x_csynth.xml -f -x 
+Execute       report -model gradient_weight_x -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_x.verbose.rpt -verbose -f 
+Command       report done; 0.28 sec.
+Execute       db_write -model gradient_weight_x -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_x.adb -f 
+Command       db_write done; 0.59 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'outer_product' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model outer_product -vendor xilinx -mg_file /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/outer_product.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'optical_flow_mul_mul_18s_18s_36_1_1' to 'optical_flow_mul_yd2' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'optical_flow_mul_yd2': 6 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'outer_product'.
+Command       create_rtl_model done; 0.17 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.65 seconds; current allocated memory: 301.903 MB.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.rtl_wrap.cfg.tcl 
+Execute       gen_rtl outer_product -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/systemc/outer_product -synmodules optical_flow.entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow 
+Execute       gen_rtl outer_product -style xilinx -f -lang vhdl -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/vhdl/outer_product 
+Execute       gen_rtl outer_product -style xilinx -f -lang vlog -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/verilog/outer_product 
+Execute       gen_tb_info outer_product -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/outer_product -p /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db 
+Execute       report -model outer_product -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/outer_product_csynth.rpt -f 
+Execute       report -model outer_product -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/outer_product_csynth.xml -f -x 
+Execute       report -model outer_product -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/outer_product.verbose.rpt -verbose -f 
+Execute       db_write -model outer_product -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/outer_product.adb -f 
+Command       db_write done; 0.16 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'tensor_weight_y' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model tensor_weight_y -vendor xilinx -mg_file /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_y.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'tensor_weight_y_buf_val_1_val_V' to 'tensor_weight_y_bzec' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'tensor_weight_y_buf_val_2_val_V' to 'tensor_weight_y_bAem' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'tensor_weight_y'.
+Command       create_rtl_model done; 0.16 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.65 seconds; current allocated memory: 303.741 MB.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.rtl_wrap.cfg.tcl 
+Execute       gen_rtl tensor_weight_y -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/systemc/tensor_weight_y -synmodules optical_flow.entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow 
+Execute       gen_rtl tensor_weight_y -style xilinx -f -lang vhdl -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/vhdl/tensor_weight_y 
+Execute       gen_rtl tensor_weight_y -style xilinx -f -lang vlog -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/verilog/tensor_weight_y 
+Execute       gen_tb_info tensor_weight_y -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_y -p /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db 
+Execute       report -model tensor_weight_y -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/tensor_weight_y_csynth.rpt -f 
+Execute       report -model tensor_weight_y -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/tensor_weight_y_csynth.xml -f -x 
+Execute       report -model tensor_weight_y -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_y.verbose.rpt -verbose -f 
+Command       report done; 0.26 sec.
+Execute       db_write -model tensor_weight_y -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_y.adb -f 
+Command       db_write done; 0.32 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'tensor_weight_x' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model tensor_weight_x -vendor xilinx -mg_file /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_x.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'tensor_weight_x'.
+INFO: [HLS 200-111]  Elapsed time: 1.11 seconds; current allocated memory: 307.395 MB.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.rtl_wrap.cfg.tcl 
+Execute       gen_rtl tensor_weight_x -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/systemc/tensor_weight_x -synmodules optical_flow.entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow 
+Execute       gen_rtl tensor_weight_x -style xilinx -f -lang vhdl -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/vhdl/tensor_weight_x 
+Execute       gen_rtl tensor_weight_x -style xilinx -f -lang vlog -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/verilog/tensor_weight_x 
+Execute       gen_tb_info tensor_weight_x -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_x -p /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db 
+Execute       report -model tensor_weight_x -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/tensor_weight_x_csynth.rpt -f 
+Execute       report -model tensor_weight_x -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/tensor_weight_x_csynth.xml -f -x 
+Execute       report -model tensor_weight_x -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_x.verbose.rpt -verbose -f 
+Command       report done; 0.26 sec.
+Execute       db_write -model tensor_weight_x -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_x.adb -f 
+Command       db_write done; 0.36 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'flow_calc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model flow_calc -vendor xilinx -mg_file /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/flow_calc.compgen.tcl 
+WARNING: [RTGEN 206-101] Register 'buf_V_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'buf_V_1151' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'optical_flow_sdiv_70ns_62s_70_74_1' to 'optical_flow_sdivBew' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'optical_flow_sdivBew': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'optical_flow_urembkb': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'flow_calc'.
+Command       create_rtl_model done; 0.52 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.5 seconds; current allocated memory: 313.860 MB.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.rtl_wrap.cfg.tcl 
+Execute       gen_rtl flow_calc -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/systemc/flow_calc -synmodules optical_flow.entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow 
+Execute       gen_rtl flow_calc -style xilinx -f -lang vhdl -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/vhdl/flow_calc 
+Execute       gen_rtl flow_calc -style xilinx -f -lang vlog -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/verilog/flow_calc 
+Execute       gen_tb_info flow_calc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/flow_calc -p /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db 
+Execute       report -model flow_calc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/flow_calc_csynth.rpt -f 
+Execute       report -model flow_calc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/flow_calc_csynth.xml -f -x 
+Execute       report -model flow_calc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/flow_calc.verbose.rpt -verbose -f 
+Command       report done; 0.48 sec.
+Execute       db_write -model flow_calc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/flow_calc.adb -f 
+Command       db_write done; 0.38 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'optical_flow' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model optical_flow -vendor xilinx -mg_file /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'optical_flow/gmem0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'optical_flow/gmem1' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'optical_flow/frames_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'optical_flow/outputs' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'optical_flow' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'frames_V' and 'outputs' to AXI-Lite port control.
+INFO: [SYN 201-210] Renamed object name 'start_for_flow_calc_U0' to 'start_for_flow_caCeG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_gradient_xy_calc_U0' to 'start_for_gradienDeQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_gradient_z_calc_U0' to 'start_for_gradienEe0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_gradient_weight_y_U0' to 'start_for_gradienFfa' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_gradient_weight_x_U0' to 'start_for_gradienGfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_outer_product_U0' to 'start_for_outer_pHfu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_tensor_weight_y_U0' to 'start_for_tensor_IfE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_tensor_weight_x_U0' to 'start_for_tensor_JfO' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'optical_flow'.
+Command       create_rtl_model done; 0.42 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.81 seconds; current allocated memory: 318.816 MB.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.rtl_wrap.cfg.tcl 
+Execute       gen_rtl optical_flow -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/systemc/optical_flow -synmodules optical_flow.entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow 
+Execute       gen_rtl optical_flow -istop -style xilinx -f -lang vhdl -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/vhdl/optical_flow 
+Command       gen_rtl done; 0.12 sec.
+Execute       gen_rtl optical_flow -istop -style xilinx -f -lang vlog -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/verilog/optical_flow 
+Execute       export_constraint_db -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.constraint.tcl -f -tool general 
+Execute       report -model optical_flow -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.design.xml -verbose -f -dv 
+Command       report done; 0.87 sec.
+Execute       report -model optical_flow -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.sdaccel.xml -verbose -f -sdaccel 
+Command       report done; 0.19 sec.
+Execute       gen_tb_info optical_flow -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow -p /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.11 sec.
+Execute       report -model optical_flow -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/optical_flow_csynth.rpt -f 
+Execute       report -model optical_flow -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/syn/report/optical_flow_csynth.xml -f -x 
+Execute       report -model optical_flow -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.verbose.rpt -verbose -f 
+Command       report done; 0.85 sec.
+Execute       db_write -model optical_flow -o /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.adb -f 
+Command       db_write done; 0.24 sec.
+Execute       sc_get_clocks optical_flow 
+Execute       sc_get_portdomain optical_flow 
+INFO-FLOW: Model list for RTL component generation: optical_flow.entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow
+INFO-FLOW: Handling components in module [optical_flow_entry12] ... 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow_entry12.compgen.tcl 
+INFO-FLOW: Handling components in module [Loop_FRAMES_CP_OUTER] ... 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/Loop_FRAMES_CP_OUTER.compgen.tcl 
+INFO-FLOW: Found component optical_flow_urembkb.
+INFO-FLOW: Append model optical_flow_urembkb
+INFO-FLOW: Handling components in module [gradient_xy_calc] ... 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_xy_calc.compgen.tcl 
+INFO-FLOW: Found component gradient_xy_calc_cud.
+INFO-FLOW: Append model gradient_xy_calc_cud
+INFO-FLOW: Handling components in module [gradient_z_calc] ... 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_z_calc.compgen.tcl 
+INFO-FLOW: Handling components in module [gradient_weight_y] ... 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_y.compgen.tcl 
+INFO-FLOW: Found component gradient_weight_yg8j.
+INFO-FLOW: Append model gradient_weight_yg8j
+INFO-FLOW: Found component gradient_weight_yhbi.
+INFO-FLOW: Append model gradient_weight_yhbi
+INFO-FLOW: Handling components in module [gradient_weight_x] ... 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_x.compgen.tcl 
+INFO-FLOW: Handling components in module [outer_product] ... 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/outer_product.compgen.tcl 
+INFO-FLOW: Found component optical_flow_mul_yd2.
+INFO-FLOW: Append model optical_flow_mul_yd2
+INFO-FLOW: Handling components in module [tensor_weight_y] ... 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_y.compgen.tcl 
+INFO-FLOW: Found component tensor_weight_y_bzec.
+INFO-FLOW: Append model tensor_weight_y_bzec
+INFO-FLOW: Handling components in module [tensor_weight_x] ... 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_x.compgen.tcl 
+INFO-FLOW: Handling components in module [flow_calc] ... 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/flow_calc.compgen.tcl 
+INFO-FLOW: Found component optical_flow_sdivBew.
+INFO-FLOW: Append model optical_flow_sdivBew
+INFO-FLOW: Handling components in module [optical_flow] ... 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.compgen.tcl 
+INFO-FLOW: Found component fifo_w32_d2_A.
+INFO-FLOW: Append model fifo_w32_d2_A
+INFO-FLOW: Found component fifo_w32_d2_A.
+INFO-FLOW: Append model fifo_w32_d2_A
+INFO-FLOW: Found component fifo_w8_d10_A.
+INFO-FLOW: Append model fifo_w8_d10_A
+INFO-FLOW: Found component fifo_w8_d10_A.
+INFO-FLOW: Append model fifo_w8_d10_A
+INFO-FLOW: Found component fifo_w8_d10_A.
+INFO-FLOW: Append model fifo_w8_d10_A
+INFO-FLOW: Found component fifo_w8_d10_A.
+INFO-FLOW: Append model fifo_w8_d10_A
+INFO-FLOW: Found component fifo_w8_d10_A.
+INFO-FLOW: Append model fifo_w8_d10_A
+INFO-FLOW: Found component fifo_w8_d10_A.
+INFO-FLOW: Append model fifo_w8_d10_A
+INFO-FLOW: Found component fifo_w32_d10_A.
+INFO-FLOW: Append model fifo_w32_d10_A
+INFO-FLOW: Found component fifo_w32_d10_A.
+INFO-FLOW: Append model fifo_w32_d10_A
+INFO-FLOW: Found component fifo_w32_d40_A.
+INFO-FLOW: Append model fifo_w32_d40_A
+INFO-FLOW: Found component fifo_w1_d10_A.
+INFO-FLOW: Append model fifo_w1_d10_A
+INFO-FLOW: Found component fifo_w1_d10_A.
+INFO-FLOW: Append model fifo_w1_d10_A
+INFO-FLOW: Found component fifo_w1_d10_A.
+INFO-FLOW: Append model fifo_w1_d10_A
+INFO-FLOW: Found component fifo_w32_d10_A.
+INFO-FLOW: Append model fifo_w32_d10_A
+INFO-FLOW: Found component fifo_w32_d10_A.
+INFO-FLOW: Append model fifo_w32_d10_A
+INFO-FLOW: Found component fifo_w32_d10_A.
+INFO-FLOW: Append model fifo_w32_d10_A
+INFO-FLOW: Found component fifo_w191_d10_A.
+INFO-FLOW: Append model fifo_w191_d10_A
+INFO-FLOW: Found component fifo_w192_d10_A.
+INFO-FLOW: Append model fifo_w192_d10_A
+INFO-FLOW: Found component fifo_w192_d10_A.
+INFO-FLOW: Append model fifo_w192_d10_A
+INFO-FLOW: Found component start_for_flow_caCeG.
+INFO-FLOW: Append model start_for_flow_caCeG
+INFO-FLOW: Found component start_for_gradienDeQ.
+INFO-FLOW: Append model start_for_gradienDeQ
+INFO-FLOW: Found component start_for_gradienEe0.
+INFO-FLOW: Append model start_for_gradienEe0
+INFO-FLOW: Found component start_for_gradienFfa.
+INFO-FLOW: Append model start_for_gradienFfa
+INFO-FLOW: Found component start_for_gradienGfk.
+INFO-FLOW: Append model start_for_gradienGfk
+INFO-FLOW: Found component start_for_outer_pHfu.
+INFO-FLOW: Append model start_for_outer_pHfu
+INFO-FLOW: Found component start_for_tensor_IfE.
+INFO-FLOW: Append model start_for_tensor_IfE
+INFO-FLOW: Found component start_for_tensor_JfO.
+INFO-FLOW: Append model start_for_tensor_JfO
+INFO-FLOW: Found component optical_flow_control_s_axi.
+INFO-FLOW: Append model optical_flow_control_s_axi
+INFO-FLOW: Found component optical_flow_gmem0_m_axi.
+INFO-FLOW: Append model optical_flow_gmem0_m_axi
+INFO-FLOW: Found component optical_flow_gmem1_m_axi.
+INFO-FLOW: Append model optical_flow_gmem1_m_axi
+INFO-FLOW: Append model optical_flow_entry12
+INFO-FLOW: Append model Loop_FRAMES_CP_OUTER
+INFO-FLOW: Append model gradient_xy_calc
+INFO-FLOW: Append model gradient_z_calc
+INFO-FLOW: Append model gradient_weight_y
+INFO-FLOW: Append model gradient_weight_x
+INFO-FLOW: Append model outer_product
+INFO-FLOW: Append model tensor_weight_y
+INFO-FLOW: Append model tensor_weight_x
+INFO-FLOW: Append model flow_calc
+INFO-FLOW: Append model optical_flow
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: optical_flow_urembkb gradient_xy_calc_cud gradient_weight_yg8j gradient_weight_yhbi optical_flow_mul_yd2 tensor_weight_y_bzec optical_flow_sdivBew fifo_w32_d2_A fifo_w32_d2_A fifo_w8_d10_A fifo_w8_d10_A fifo_w8_d10_A fifo_w8_d10_A fifo_w8_d10_A fifo_w8_d10_A fifo_w32_d10_A fifo_w32_d10_A fifo_w32_d40_A fifo_w1_d10_A fifo_w1_d10_A fifo_w1_d10_A fifo_w32_d10_A fifo_w32_d10_A fifo_w32_d10_A fifo_w191_d10_A fifo_w192_d10_A fifo_w192_d10_A start_for_flow_caCeG start_for_gradienDeQ start_for_gradienEe0 start_for_gradienFfa start_for_gradienGfk start_for_outer_pHfu start_for_tensor_IfE start_for_tensor_JfO optical_flow_control_s_axi optical_flow_gmem0_m_axi optical_flow_gmem1_m_axi optical_flow_entry12 Loop_FRAMES_CP_OUTER gradient_xy_calc gradient_z_calc gradient_weight_y gradient_weight_x outer_product tensor_weight_y tensor_weight_x flow_calc optical_flow
+INFO-FLOW: To file: write model optical_flow_urembkb
+INFO-FLOW: To file: write model gradient_xy_calc_cud
+INFO-FLOW: To file: write model gradient_weight_yg8j
+INFO-FLOW: To file: write model gradient_weight_yhbi
+INFO-FLOW: To file: write model optical_flow_mul_yd2
+INFO-FLOW: To file: write model tensor_weight_y_bzec
+INFO-FLOW: To file: write model optical_flow_sdivBew
+INFO-FLOW: To file: write model fifo_w32_d2_A
+INFO-FLOW: To file: write model fifo_w32_d2_A
+INFO-FLOW: To file: write model fifo_w8_d10_A
+INFO-FLOW: To file: write model fifo_w8_d10_A
+INFO-FLOW: To file: write model fifo_w8_d10_A
+INFO-FLOW: To file: write model fifo_w8_d10_A
+INFO-FLOW: To file: write model fifo_w8_d10_A
+INFO-FLOW: To file: write model fifo_w8_d10_A
+INFO-FLOW: To file: write model fifo_w32_d10_A
+INFO-FLOW: To file: write model fifo_w32_d10_A
+INFO-FLOW: To file: write model fifo_w32_d40_A
+INFO-FLOW: To file: write model fifo_w1_d10_A
+INFO-FLOW: To file: write model fifo_w1_d10_A
+INFO-FLOW: To file: write model fifo_w1_d10_A
+INFO-FLOW: To file: write model fifo_w32_d10_A
+INFO-FLOW: To file: write model fifo_w32_d10_A
+INFO-FLOW: To file: write model fifo_w32_d10_A
+INFO-FLOW: To file: write model fifo_w191_d10_A
+INFO-FLOW: To file: write model fifo_w192_d10_A
+INFO-FLOW: To file: write model fifo_w192_d10_A
+INFO-FLOW: To file: write model start_for_flow_caCeG
+INFO-FLOW: To file: write model start_for_gradienDeQ
+INFO-FLOW: To file: write model start_for_gradienEe0
+INFO-FLOW: To file: write model start_for_gradienFfa
+INFO-FLOW: To file: write model start_for_gradienGfk
+INFO-FLOW: To file: write model start_for_outer_pHfu
+INFO-FLOW: To file: write model start_for_tensor_IfE
+INFO-FLOW: To file: write model start_for_tensor_JfO
+INFO-FLOW: To file: write model optical_flow_control_s_axi
+INFO-FLOW: To file: write model optical_flow_gmem0_m_axi
+INFO-FLOW: To file: write model optical_flow_gmem1_m_axi
+INFO-FLOW: To file: write model optical_flow_entry12
+INFO-FLOW: To file: write model Loop_FRAMES_CP_OUTER
+INFO-FLOW: To file: write model gradient_xy_calc
+INFO-FLOW: To file: write model gradient_z_calc
+INFO-FLOW: To file: write model gradient_weight_y
+INFO-FLOW: To file: write model gradient_weight_x
+INFO-FLOW: To file: write model outer_product
+INFO-FLOW: To file: write model tensor_weight_y
+INFO-FLOW: To file: write model tensor_weight_x
+INFO-FLOW: To file: write model flow_calc
+INFO-FLOW: To file: write model optical_flow
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+Execute       get_config_sdx -target 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/virtex7/virtex7.gen 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.17 sec.
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.17 sec.
+Command       ap_source done; 0.18 sec.
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow_entry12.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/Loop_FRAMES_CP_OUTER.compgen.tcl 
+INFO: [RTMG 210-282] Generating pipelined core: 'optical_flow_urembkb_div'
+Command       ap_source done; 0.18 sec.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_xy_calc.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'gradient_xy_calc_cud_ram (RAM)' using distributed RAMs with power-on initialization.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_z_calc.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_y.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'gradient_weight_yg8j_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'gradient_weight_yhbi_ram (RAM)' using distributed RAMs.
+Command       ap_source done; 0.18 sec.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_x.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/outer_product.compgen.tcl 
+Command       ap_source done; 0.14 sec.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_y.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'tensor_weight_y_bzec_ram (RAM)' using block RAMs.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_x.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/flow_calc.compgen.tcl 
+INFO: [RTMG 210-282] Generating pipelined core: 'optical_flow_sdivBew_div'
+Command       ap_source done; 0.15 sec.
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.compgen.tcl 
+INFO: [RTMG 210-285] Implementing FIFO 'frames_V_c_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'outputs_c_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'frame1_a_V_U(fifo_w8_d10_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'frame2_a_V_U(fifo_w8_d10_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'frame3_a_V_U(fifo_w8_d10_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'frame3_b_V_U(fifo_w8_d10_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'frame4_a_V_U(fifo_w8_d10_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'frame5_a_V_U(fifo_w8_d10_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'gradient_x_V_U(fifo_w32_d10_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'gradient_y_V_U(fifo_w32_d10_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'gradient_z_V_U(fifo_w32_d40_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'y_filtered_x_V_U(fifo_w1_d10_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'y_filtered_y_V_U(fifo_w1_d10_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'y_filtered_z_V_U(fifo_w1_d10_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'filtered_gradient_x_s_U(fifo_w32_d10_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'filtered_gradient_y_s_U(fifo_w32_d10_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'filtered_gradient_z_s_U(fifo_w32_d10_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'out_product_val_V_U(fifo_w191_d10_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'tensor_y_val_V_U(fifo_w192_d10_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'tensor_val_V_U(fifo_w192_d10_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_flow_caCeG_U(start_for_flow_caCeG)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_gradienDeQ_U(start_for_gradienDeQ)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_gradienEe0_U(start_for_gradienEe0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_gradienFfa_U(start_for_gradienFfa)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_gradienGfk_U(start_for_gradienGfk)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_outer_pHfu_U(start_for_outer_pHfu)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_tensor_IfE_U(start_for_tensor_IfE)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_tensor_JfO_U(start_for_tensor_JfO)' using Shift Registers.
+Execute         source ./control.slave.tcl 
+Execute         is_m_axi_addr64 
+Command       ap_source done; 2.68 sec.
+Execute       get_config_sdx -target 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/generic/autopilot/common.gen 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/generic/autopilot/op.gen 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/generic/autopilot/interface.gen 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/virtex7/virtex7.gen 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/virtex.gen 
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/plb46.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/fsl.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/axi4.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/maxi.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/util.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/xfft.gen 
+Execute             source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.15 sec.
+Execute           source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.15 sec.
+Command       ap_source done; 0.15 sec.
+Execute       source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
+Execute         source /cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.rtl_wrap.cfg.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.rtl_wrap.cfg.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.rtl_wrap.cfg.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.tbgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.tbgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow_entry12.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/Loop_FRAMES_CP_OUTER.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_xy_calc.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_z_calc.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_y.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_x.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/outer_product.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_y.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_x.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/flow_calc.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow_entry12.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/Loop_FRAMES_CP_OUTER.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_xy_calc.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_z_calc.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_y.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_x.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/outer_product.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_y.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_x.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/flow_calc.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow_entry12.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/Loop_FRAMES_CP_OUTER.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_xy_calc.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_z_calc.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_y.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/gradient_weight_x.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/outer_product.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_y.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/tensor_weight_x.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/flow_calc.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.compgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.constraint.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.tbgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.tbgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.tbgen.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/optical_flow.constraint.tcl 
+Execute       sc_get_clocks optical_flow 
+Execute       source /rsgs/pool0/esingh/aqed4saranyu/rosetta/rosetta/optical-flow/src/ocl/optical-flow/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_sdx -profile 
+Execute       ::config_rtl 
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:01:17 ; elapsed = 00:01:52 . Memory (MB): peak = 785.891 ; gain = 320.012 ; free physical = 97070 ; free virtual = 104928
+INFO: [SYSC 207-301] Generating SystemC RTL for optical_flow.
+INFO: [VHDL 208-304] Generating VHDL RTL for optical_flow.
+INFO: [VLOG 209-307] Generating Verilog RTL for optical_flow.
+Command     autosyn done; 41.54 sec.
+Command   csynth_design done; 110.84 sec.
+Command ap_source done; 111.48 sec.
+Execute cleanup_all 

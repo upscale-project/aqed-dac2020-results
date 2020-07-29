@@ -1,0 +1,55 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'optical_flow'" level="0">
+<item name = "Date">Tue Apr 14 19:36:07 2020
+</item>
+<item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
+<item name = "Project">optical-flow</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">virtex7</item>
+<item name = "Target device">xc7v2000tfhg1761-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.750, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">201, 201, 134, 134, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_flow_calc_fu_186">flow_calc, 133, 133, 133, 133, none</column>
+<column name="grp_tensor_weight_y_fu_199">tensor_weight_y, 64, 64, 64, 64, none</column>
+<column name="grp_tensor_weight_x_fu_207">tensor_weight_x, 59, 59, 59, 59, none</column>
+<column name="grp_gradient_xy_calc_fu_215">gradient_xy_calc, 89, 89, 89, 89, none</column>
+<column name="grp_gradient_weight_x_fu_233">gradient_weight_x, 68, 68, 68, 68, none</column>
+<column name="grp_Loop_FRAMES_CP_OUTER_fu_249">Loop_FRAMES_CP_OUTER, 69, 69, 69, 69, none</column>
+<column name="grp_gradient_weight_y_fu_268">gradient_weight_y, 82, 82, 82, 82, none</column>
+<column name="grp_gradient_z_calc_fu_284">gradient_z_calc, 54, 54, 54, 54, none</column>
+<column name="grp_outer_product_fu_300">outer_product, 53, 53, 53, 53, none</column>
+<column name="StgValue_22_optical_flow_entry12_fu_312">optical_flow_entry12, 0, 0, 0, 0, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

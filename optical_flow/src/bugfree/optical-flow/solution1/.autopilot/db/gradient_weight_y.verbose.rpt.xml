@@ -1,0 +1,218 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'gradient_weight_y'" level="0">
+<item name = "Date">Tue Apr 14 19:36:12 2020
+</item>
+<item name = "Version">2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)</item>
+<item name = "Project">optical-flow</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">virtex7</item>
+<item name = "Target device">xc7v2000tfhg1761-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 5.540, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">82, 82, 82, 82, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- GRAD_WEIGHT_Y_OUTER_GRAD_WEIGHT_Y_INNER">80, 80, 2, 1, 1, 80, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
+<column name="DSP">-, -, -, -</column>
+<column name="Expression">-, -, 0, 123</column>
+<column name="FIFO">-, -, -, -</column>
+<column name="Instance">-, -, -, -</column>
+<column name="Memory">0, -, 1152, 90</column>
+<column name="Multiplexer">-, -, -, 189</column>
+<column name="Register">-, -, 185, -</column>
+<specialColumn name="Available SLR">646, 540, 610800, 305400</specialColumn>
+<specialColumn name="Utilization SLR (%)">0, 0, ~0, ~0</specialColumn>
+<specialColumn name="Available">2584, 2160, 2443200, 1221600</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
+</table>
+</item>
+<item name = "DSP48"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="9">Memory, Module, BRAM_18K, FF, LUT, Words, Bits, Banks, W*Bits*Banks</keys>
+<column name="buf_val_1_x_V_U">gradient_weight_yg8j, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_1_y_V_U">gradient_weight_yg8j, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_1_z_V_U">gradient_weight_yg8j, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_2_x_V_U">gradient_weight_yhbi, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_3_x_V_U">gradient_weight_yhbi, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_4_x_V_U">gradient_weight_yhbi, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_5_x_V_U">gradient_weight_yhbi, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_6_x_V_U">gradient_weight_yhbi, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_2_y_V_U">gradient_weight_yhbi, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_3_y_V_U">gradient_weight_yhbi, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_4_y_V_U">gradient_weight_yhbi, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_5_y_V_U">gradient_weight_yhbi, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_6_y_V_U">gradient_weight_yhbi, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_2_z_V_U">gradient_weight_yhbi, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_3_z_V_U">gradient_weight_yhbi, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_4_z_V_U">gradient_weight_yhbi, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_5_z_V_U">gradient_weight_yhbi, 0, 64, 5, 10, 32, 1, 320</column>
+<column name="buf_val_6_z_V_U">gradient_weight_yhbi, 0, 64, 5, 10, 32, 1, 320</column>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="c_fu_644_p2">+, 0, 0, 13, 4, 1</column>
+<column name="indvar_flatten_next_fu_551_p2">+, 0, 0, 15, 7, 1</column>
+<column name="r6_fu_571_p2">+, 0, 0, 13, 4, 1</column>
+<column name="ap_block_pp0_stage0_01001">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_137">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op119_read_state3">and, 0, 0, 2, 1, 1</column>
+<column name="exitcond1_i_fu_557_p2">icmp, 0, 0, 9, 4, 4</column>
+<column name="exitcond_flatten_fu_545_p2">icmp, 0, 0, 11, 7, 7</column>
+<column name="tmp_47_i7_fu_603_p2">icmp, 0, 0, 9, 4, 2</column>
+<column name="tmp_47_i_mid1_fu_597_p2">icmp, 0, 0, 9, 4, 2</column>
+<column name="tmp_i8_fu_583_p2">icmp, 0, 0, 9, 4, 3</column>
+<column name="tmp_i_mid1_fu_577_p2">icmp, 0, 0, 9, 4, 3</column>
+<column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state3_pp0_stage0_iter1">or, 0, 0, 2, 1, 1</column>
+<column name="col_assign_mid2_fu_563_p3">select, 0, 0, 4, 1, 1</column>
+<column name="r_i_mid2_fu_617_p3">select, 0, 0, 4, 1, 4</column>
+<column name="tmp_47_i_mid2_fu_609_p3">select, 0, 0, 2, 1, 1</column>
+<column name="tmp_i_mid2_fu_589_p3">select, 0, 0, 2, 1, 1</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">xor, 0, 0, 2, 2, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">21, 4, 1, 4</column>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">15, 3, 1, 3</column>
+<column name="ap_phi_mux_storemerge2_phi_fu_523_p4">9, 2, 32, 64</column>
+<column name="ap_phi_mux_storemerge3_phi_fu_510_p4">9, 2, 32, 64</column>
+<column name="ap_phi_mux_storemerge_phi_fu_536_p4">9, 2, 32, 64</column>
+<column name="ap_phi_reg_pp0_iter1_storemerge2_reg_519">9, 2, 32, 64</column>
+<column name="ap_phi_reg_pp0_iter1_storemerge3_reg_506">9, 2, 32, 64</column>
+<column name="ap_phi_reg_pp0_iter1_storemerge_reg_532">9, 2, 32, 64</column>
+<column name="col_assign_reg_495">9, 2, 4, 8</column>
+<column name="gradient_x_V_blk_n">9, 2, 1, 2</column>
+<column name="gradient_y_V_blk_n">9, 2, 1, 2</column>
+<column name="gradient_z_V_blk_n">9, 2, 1, 2</column>
+<column name="indvar_flatten_reg_473">9, 2, 7, 14</column>
+<column name="r_i_reg_484">9, 2, 4, 8</column>
+<column name="real_start">9, 2, 1, 2</column>
+<column name="y_filtered_x_V_blk_n">9, 2, 1, 2</column>
+<column name="y_filtered_y_V_blk_n">9, 2, 1, 2</column>
+<column name="y_filtered_z_V_blk_n">9, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">3, 0, 3, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter0">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_phi_reg_pp0_iter1_storemerge2_reg_519">32, 0, 32, 0</column>
+<column name="ap_phi_reg_pp0_iter1_storemerge3_reg_506">32, 0, 32, 0</column>
+<column name="ap_phi_reg_pp0_iter1_storemerge_reg_532">32, 0, 32, 0</column>
+<column name="buf_val_2_x_V_addr_reg_679">4, 0, 4, 0</column>
+<column name="buf_val_2_y_V_addr_reg_685">4, 0, 4, 0</column>
+<column name="buf_val_2_z_V_addr_reg_691">4, 0, 4, 0</column>
+<column name="buf_val_3_x_V_addr_reg_697">4, 0, 4, 0</column>
+<column name="buf_val_3_y_V_addr_reg_703">4, 0, 4, 0</column>
+<column name="buf_val_3_z_V_addr_reg_709">4, 0, 4, 0</column>
+<column name="buf_val_4_x_V_addr_reg_715">4, 0, 4, 0</column>
+<column name="buf_val_4_y_V_addr_reg_721">4, 0, 4, 0</column>
+<column name="buf_val_4_z_V_addr_reg_727">4, 0, 4, 0</column>
+<column name="buf_val_5_x_V_addr_reg_733">4, 0, 4, 0</column>
+<column name="buf_val_5_y_V_addr_reg_739">4, 0, 4, 0</column>
+<column name="buf_val_5_z_V_addr_reg_745">4, 0, 4, 0</column>
+<column name="buf_val_6_x_V_addr_reg_751">4, 0, 4, 0</column>
+<column name="buf_val_6_y_V_addr_reg_757">4, 0, 4, 0</column>
+<column name="buf_val_6_z_V_addr_reg_763">4, 0, 4, 0</column>
+<column name="col_assign_reg_495">4, 0, 4, 0</column>
+<column name="exitcond_flatten_reg_650">1, 0, 1, 0</column>
+<column name="indvar_flatten_reg_473">7, 0, 7, 0</column>
+<column name="r_i_reg_484">4, 0, 4, 0</column>
+<column name="start_once_reg">1, 0, 1, 0</column>
+<column name="tmp_47_i_mid2_reg_663">1, 0, 1, 0</column>
+<column name="tmp_50_i_reg_672">4, 0, 64, 60</column>
+<column name="tmp_i_mid2_reg_659">1, 0, 1, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, gradient_weight_y, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, gradient_weight_y, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, gradient_weight_y, return value</column>
+<column name="start_full_n">in, 1, ap_ctrl_hs, gradient_weight_y, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, gradient_weight_y, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, gradient_weight_y, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, gradient_weight_y, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, gradient_weight_y, return value</column>
+<column name="start_out">out, 1, ap_ctrl_hs, gradient_weight_y, return value</column>
+<column name="start_write">out, 1, ap_ctrl_hs, gradient_weight_y, return value</column>
+<column name="gradient_x_V_dout">in, 32, ap_fifo, gradient_x_V, pointer</column>
+<column name="gradient_x_V_empty_n">in, 1, ap_fifo, gradient_x_V, pointer</column>
+<column name="gradient_x_V_read">out, 1, ap_fifo, gradient_x_V, pointer</column>
+<column name="gradient_y_V_dout">in, 32, ap_fifo, gradient_y_V, pointer</column>
+<column name="gradient_y_V_empty_n">in, 1, ap_fifo, gradient_y_V, pointer</column>
+<column name="gradient_y_V_read">out, 1, ap_fifo, gradient_y_V, pointer</column>
+<column name="gradient_z_V_dout">in, 32, ap_fifo, gradient_z_V, pointer</column>
+<column name="gradient_z_V_empty_n">in, 1, ap_fifo, gradient_z_V, pointer</column>
+<column name="gradient_z_V_read">out, 1, ap_fifo, gradient_z_V, pointer</column>
+<column name="y_filtered_x_V_din">out, 1, ap_fifo, y_filtered_x_V, pointer</column>
+<column name="y_filtered_x_V_full_n">in, 1, ap_fifo, y_filtered_x_V, pointer</column>
+<column name="y_filtered_x_V_write">out, 1, ap_fifo, y_filtered_x_V, pointer</column>
+<column name="y_filtered_y_V_din">out, 1, ap_fifo, y_filtered_y_V, pointer</column>
+<column name="y_filtered_y_V_full_n">in, 1, ap_fifo, y_filtered_y_V, pointer</column>
+<column name="y_filtered_y_V_write">out, 1, ap_fifo, y_filtered_y_V, pointer</column>
+<column name="y_filtered_z_V_din">out, 1, ap_fifo, y_filtered_z_V, pointer</column>
+<column name="y_filtered_z_V_full_n">in, 1, ap_fifo, y_filtered_z_V, pointer</column>
+<column name="y_filtered_z_V_write">out, 1, ap_fifo, y_filtered_z_V, pointer</column>
+</table>
+</item>
+</section>
+</profile>

@@ -1,0 +1,1609 @@
+
+
+================================================================
+== Vivado HLS Report for 'optical_flow'
+================================================================
+* Date:           Tue Apr 14 19:36:07 2020
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        optical-flow
+* Solution:       solution1
+* Product family: virtex7
+* Target device:  xc7v2000tfhg1761-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.750|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |  201|  201|  134|  134| dataflow |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------------------------------+----------------------+-----+-----+-----+-----+---------+
+        |                                         |                      |  Latency  |  Interval | Pipeline|
+        |                 Instance                |        Module        | min | max | min | max |   Type  |
+        +-----------------------------------------+----------------------+-----+-----+-----+-----+---------+
+        |grp_flow_calc_fu_186                     |flow_calc             |  133|  133|  133|  133|   none  |
+        |grp_tensor_weight_y_fu_199               |tensor_weight_y       |   64|   64|   64|   64|   none  |
+        |grp_tensor_weight_x_fu_207               |tensor_weight_x       |   59|   59|   59|   59|   none  |
+        |grp_gradient_xy_calc_fu_215              |gradient_xy_calc      |   89|   89|   89|   89|   none  |
+        |grp_gradient_weight_x_fu_233             |gradient_weight_x     |   68|   68|   68|   68|   none  |
+        |grp_Loop_FRAMES_CP_OUTER_fu_249          |Loop_FRAMES_CP_OUTER  |   69|   69|   69|   69|   none  |
+        |grp_gradient_weight_y_fu_268             |gradient_weight_y     |   82|   82|   82|   82|   none  |
+        |grp_gradient_z_calc_fu_284               |gradient_z_calc       |   54|   54|   54|   54|   none  |
+        |grp_outer_product_fu_300                 |outer_product         |   53|   53|   53|   53|   none  |
+        |StgValue_22_optical_flow_entry12_fu_312  |optical_flow_entry12  |    0|    0|    0|    0|   none  |
+        +-----------------------------------------+----------------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 17
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 17, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 }
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.93>
+ST_1 : Operation 18 [1/1] (1.00ns)   --->   "%outputs_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %outputs)"   --->   Operation 18 'read' 'outputs_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 19 [1/1] (1.00ns)   --->   "%frames_V_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %frames_V)"   --->   Operation 19 'read' 'frames_V_read' <Predicate = true> <Delay = 1.00> <Core = "s_axilite">   --->   Core 10 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%outputs_c = alloca i32, align 4"   --->   Operation 20 'alloca' 'outputs_c' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.93> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%frames_V_c = alloca i32, align 4"   --->   Operation 21 'alloca' 'frames_V_c' <Predicate = true> <Delay = 0.00> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.93> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 22 [1/1] (2.93ns)   --->   "call void @optical_flow.entry12(i32 %frames_V_read, i32 %outputs_read, i32* %frames_V_c, i32* %outputs_c)"   --->   Operation 22 'call' <Predicate = true> <Delay = 2.93> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 23 [2/2] (0.00ns)   --->   "call fastcc void @Loop_FRAMES_CP_OUTER(i64* %gmem0, i32* nocapture %frames_V_c)"   --->   Operation 23 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 24 [1/2] (0.00ns)   --->   "call fastcc void @Loop_FRAMES_CP_OUTER(i64* %gmem0, i32* nocapture %frames_V_c)"   --->   Operation 24 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 25 [2/2] (0.00ns)   --->   "call fastcc void @gradient_xy_calc()" [optical_flow.cpp:471]   --->   Operation 25 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 26 [2/2] (0.00ns)   --->   "call fastcc void @gradient_z_calc()" [optical_flow.cpp:472]   --->   Operation 26 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 27 [1/2] (0.00ns)   --->   "call fastcc void @gradient_xy_calc()" [optical_flow.cpp:471]   --->   Operation 27 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 28 [1/2] (0.00ns)   --->   "call fastcc void @gradient_z_calc()" [optical_flow.cpp:472]   --->   Operation 28 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 29 [2/2] (0.00ns)   --->   "call fastcc void @gradient_weight_y()" [optical_flow.cpp:473]   --->   Operation 29 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 30 [1/2] (0.00ns)   --->   "call fastcc void @gradient_weight_y()" [optical_flow.cpp:473]   --->   Operation 30 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 31 [2/2] (0.00ns)   --->   "call fastcc void @gradient_weight_x()" [optical_flow.cpp:474]   --->   Operation 31 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 0.00>
+ST_9 : Operation 32 [1/2] (0.00ns)   --->   "call fastcc void @gradient_weight_x()" [optical_flow.cpp:474]   --->   Operation 32 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 0.00>
+ST_10 : Operation 33 [2/2] (0.00ns)   --->   "call fastcc void @outer_product()"   --->   Operation 33 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 0.00>
+ST_11 : Operation 34 [1/2] (0.00ns)   --->   "call fastcc void @outer_product()"   --->   Operation 34 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 0.00>
+ST_12 : Operation 35 [2/2] (0.00ns)   --->   "call fastcc void @tensor_weight_y()"   --->   Operation 35 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 0.00>
+ST_13 : Operation 36 [1/2] (0.00ns)   --->   "call fastcc void @tensor_weight_y()"   --->   Operation 36 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 13> <Delay = 0.00>
+ST_14 : Operation 37 [2/2] (0.00ns)   --->   "call fastcc void @tensor_weight_x()"   --->   Operation 37 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 14> <Delay = 0.00>
+ST_15 : Operation 38 [1/2] (0.00ns)   --->   "call fastcc void @tensor_weight_x()"   --->   Operation 38 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 15> <Delay = 0.00>
+ST_16 : Operation 39 [2/2] (0.00ns)   --->   "call fastcc void @flow_calc(i64* %gmem1, i32* nocapture %outputs_c)"   --->   Operation 39 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 16> <Delay = 0.00>
+ST_17 : Operation 40 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %gmem1), !map !214"   --->   Operation 40 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 41 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i64* %gmem0), !map !223"   --->   Operation 41 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 42 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecChannel([25 x i8]* @filtered_gradient_OC_2, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i32* @filtered_gradient_x_s, i32* @filtered_gradient_x_s)"   --->   Operation 42 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 43 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* @filtered_gradient_x_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 43 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 44 [1/1] (0.00ns)   --->   "%empty_33 = call i32 (...)* @_ssdm_op_SpecChannel([25 x i8]* @filtered_gradient_OC_1, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i32* @filtered_gradient_y_s, i32* @filtered_gradient_y_s)"   --->   Operation 44 'specchannel' 'empty_33' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 45 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* @filtered_gradient_y_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 45 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 46 [1/1] (0.00ns)   --->   "%empty_34 = call i32 (...)* @_ssdm_op_SpecChannel([25 x i8]* @filtered_gradient_OC, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i32* @filtered_gradient_z_s, i32* @filtered_gradient_z_s)"   --->   Operation 46 'specchannel' 'empty_34' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 47 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* @filtered_gradient_z_s, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 47 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 48 [1/1] (0.00ns)   --->   "%empty_35 = call i32 (...)* @_ssdm_op_SpecChannel([14 x i8]* @frame1_a_OC_V181_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i8* @frame1_a_V, i8* @frame1_a_V)"   --->   Operation 48 'specchannel' 'empty_35' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 49 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @frame1_a_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 49 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 50 [1/1] (0.00ns)   --->   "%empty_36 = call i32 (...)* @_ssdm_op_SpecChannel([14 x i8]* @frame2_a_OC_V179_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i8* @frame2_a_V, i8* @frame2_a_V)"   --->   Operation 50 'specchannel' 'empty_36' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 51 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @frame2_a_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 51 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 52 [1/1] (0.00ns)   --->   "%empty_37 = call i32 (...)* @_ssdm_op_SpecChannel([14 x i8]* @frame3_a_OC_V177_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i8* @frame3_a_V, i8* @frame3_a_V)"   --->   Operation 52 'specchannel' 'empty_37' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 53 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @frame3_a_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 53 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 54 [1/1] (0.00ns)   --->   "%empty_38 = call i32 (...)* @_ssdm_op_SpecChannel([14 x i8]* @frame3_b_OC_V175_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i8* @frame3_b_V, i8* @frame3_b_V)"   --->   Operation 54 'specchannel' 'empty_38' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 55 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @frame3_b_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 55 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 56 [1/1] (0.00ns)   --->   "%empty_39 = call i32 (...)* @_ssdm_op_SpecChannel([14 x i8]* @frame4_a_OC_V173_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i8* @frame4_a_V, i8* @frame4_a_V)"   --->   Operation 56 'specchannel' 'empty_39' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 57 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @frame4_a_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 57 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 58 [1/1] (0.00ns)   --->   "%empty_40 = call i32 (...)* @_ssdm_op_SpecChannel([14 x i8]* @frame5_a_OC_V171_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i8* @frame5_a_V, i8* @frame5_a_V)"   --->   Operation 58 'specchannel' 'empty_40' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 59 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i8* @frame5_a_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 59 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 60 [1/1] (0.00ns)   --->   "%empty_41 = call i32 (...)* @_ssdm_op_SpecChannel([16 x i8]* @gradient_x_OC_V169_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i32* @gradient_x_V, i32* @gradient_x_V)"   --->   Operation 60 'specchannel' 'empty_41' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 61 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* @gradient_x_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 61 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 62 [1/1] (0.00ns)   --->   "%empty_42 = call i32 (...)* @_ssdm_op_SpecChannel([16 x i8]* @gradient_y_OC_V167_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i32* @gradient_y_V, i32* @gradient_y_V)"   --->   Operation 62 'specchannel' 'empty_42' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 63 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* @gradient_y_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 63 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 64 [1/1] (0.00ns)   --->   "%empty_43 = call i32 (...)* @_ssdm_op_SpecChannel([16 x i8]* @gradient_z_OC_V165_s, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 40, i32 50, i32* @gradient_z_V, i32* @gradient_z_V)"   --->   Operation 64 'specchannel' 'empty_43' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 65 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* @gradient_z_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 65 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 66 [1/1] (0.00ns)   --->   "%empty_44 = call i32 (...)* @_ssdm_op_SpecChannel([21 x i8]* @out_product_OC_val_O, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i191* @out_product_val_V, i191* @out_product_val_V)"   --->   Operation 66 'specchannel' 'empty_44' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 67 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i191* @out_product_val_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 67 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 68 [1/1] (0.00ns)   --->   "%empty_45 = call i32 (...)* @_ssdm_op_SpecChannel([16 x i8]* @tensor_OC_val_OC_V16, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i192* @tensor_val_V, i192* @tensor_val_V)"   --->   Operation 68 'specchannel' 'empty_45' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 69 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i192* @tensor_val_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 69 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 70 [1/1] (0.00ns)   --->   "%empty_46 = call i32 (...)* @_ssdm_op_SpecChannel([18 x i8]* @tensor_y_OC_val_OC_V, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i192* @tensor_y_val_V, i192* @tensor_y_val_V)"   --->   Operation 70 'specchannel' 'empty_46' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 71 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i192* @tensor_y_val_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 71 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 72 [1/1] (0.00ns)   --->   "%empty_47 = call i32 (...)* @_ssdm_op_SpecChannel([18 x i8]* @y_filtered_OC_x_OC_V, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i1* @y_filtered_x_V, i1* @y_filtered_x_V)"   --->   Operation 72 'specchannel' 'empty_47' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 73 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @y_filtered_x_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 73 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 74 [1/1] (0.00ns)   --->   "%empty_48 = call i32 (...)* @_ssdm_op_SpecChannel([18 x i8]* @y_filtered_OC_y_OC_V, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i1* @y_filtered_y_V, i1* @y_filtered_y_V)"   --->   Operation 74 'specchannel' 'empty_48' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 75 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @y_filtered_y_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 75 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 76 [1/1] (0.00ns)   --->   "%empty_49 = call i32 (...)* @_ssdm_op_SpecChannel([18 x i8]* @y_filtered_OC_z_OC_V, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 10, i32 50, i1* @y_filtered_z_V, i1* @y_filtered_z_V)"   --->   Operation 76 'specchannel' 'empty_49' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 77 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @y_filtered_z_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 77 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 78 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecDataflowPipeline(i32 -1, [1 x i8]* @p_str2) nounwind" [optical_flow.cpp:411]   --->   Operation 78 'specdataflowpipeline' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 79 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([13 x i8]* @optical_flow_str) nounwind"   --->   Operation 79 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 80 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %gmem0, [6 x i8]* @p_str30, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [6 x i8]* @p_str31, [6 x i8]* @p_str32, [1 x i8]* @p_str2, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str2, [1 x i8]* @p_str2)"   --->   Operation 80 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 81 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i64* %gmem1, [6 x i8]* @p_str30, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [6 x i8]* @p_str33, [6 x i8]* @p_str32, [1 x i8]* @p_str2, i32 16, i32 16, i32 16, i32 16, [1 x i8]* @p_str2, [1 x i8]* @p_str2)"   --->   Operation 81 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 82 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %frames_V, [10 x i8]* @p_str34, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [8 x i8]* @p_str35, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2)"   --->   Operation 82 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 83 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 %outputs, [10 x i8]* @p_str34, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [8 x i8]* @p_str35, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2)"   --->   Operation 83 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 84 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str34, i32 0, i32 0, [1 x i8]* @p_str2, i32 0, i32 0, [8 x i8]* @p_str35, [1 x i8]* @p_str2, [1 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str2, [1 x i8]* @p_str2) nounwind" [optical_flow.cpp:408]   --->   Operation 84 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 85 [1/1] (0.00ns)   --->   "%empty_50 = call i32 (...)* @_ssdm_op_SpecChannel([11 x i8]* @frames_OC_V_c_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 0, i32* %frames_V_c, i32* %frames_V_c)"   --->   Operation 85 'specchannel' 'empty_50' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 86 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %frames_V_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 86 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 87 [1/1] (0.00ns)   --->   "%empty_51 = call i32 (...)* @_ssdm_op_SpecChannel([10 x i8]* @outputs_c_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 0, i32* %outputs_c, i32* %outputs_c)"   --->   Operation 87 'specchannel' 'empty_51' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 88 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* %outputs_c, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 88 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 89 [1/2] (0.00ns)   --->   "call fastcc void @flow_calc(i64* %gmem1, i32* nocapture %outputs_c)"   --->   Operation 89 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_17 : Operation 90 [1/1] (0.00ns)   --->   "ret void" [optical_flow.cpp:479]   --->   Operation 90 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 1
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ gmem0]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=4; pingpong=0; private_global=0; IO mode=m_axi:ce=0
+Port [ gmem1]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=4; pingpong=0; private_global=0; IO mode=m_axi:ce=0
+Port [ frames_V]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ outputs]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ frame1_a_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ frame2_a_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ frame3_a_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ frame3_b_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ frame4_a_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ frame5_a_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ buf_V_1_1]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ buf_V_1_2]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ buf_V_1_3]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ buf_V_1_4]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[10]; IO mode=ap_memory:ce=0
+Port [ gradient_x_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ gradient_y_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ gradient_z_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ y_filtered_x_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ y_filtered_y_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ y_filtered_z_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ filtered_gradient_x_s]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ filtered_gradient_y_s]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ filtered_gradient_z_s]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ out_product_val_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ tensor_y_val_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ tensor_val_V]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=3; pingpong=0; private_global=1; linkage=7; visibility=0; IO mode=ap_fifo:ce=0
+Port [ buf_V_0]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+Port [ buf_V_1151]:  wired=0; compound=0; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=0; linkage=7; visibility=0; IO mode=ap_ovld:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+outputs_read  (read                ) [ 000000000000000000]
+frames_V_read (read                ) [ 000000000000000000]
+outputs_c     (alloca              ) [ 011111111111111111]
+frames_V_c    (alloca              ) [ 011111111111111111]
+StgValue_22   (call                ) [ 000000000000000000]
+StgValue_24   (call                ) [ 000000000000000000]
+StgValue_27   (call                ) [ 000000000000000000]
+StgValue_28   (call                ) [ 000000000000000000]
+StgValue_30   (call                ) [ 000000000000000000]
+StgValue_32   (call                ) [ 000000000000000000]
+StgValue_34   (call                ) [ 000000000000000000]
+StgValue_36   (call                ) [ 000000000000000000]
+StgValue_38   (call                ) [ 000000000000000000]
+StgValue_40   (specbitsmap         ) [ 000000000000000000]
+StgValue_41   (specbitsmap         ) [ 000000000000000000]
+empty         (specchannel         ) [ 000000000000000000]
+StgValue_43   (specinterface       ) [ 000000000000000000]
+empty_33      (specchannel         ) [ 000000000000000000]
+StgValue_45   (specinterface       ) [ 000000000000000000]
+empty_34      (specchannel         ) [ 000000000000000000]
+StgValue_47   (specinterface       ) [ 000000000000000000]
+empty_35      (specchannel         ) [ 000000000000000000]
+StgValue_49   (specinterface       ) [ 000000000000000000]
+empty_36      (specchannel         ) [ 000000000000000000]
+StgValue_51   (specinterface       ) [ 000000000000000000]
+empty_37      (specchannel         ) [ 000000000000000000]
+StgValue_53   (specinterface       ) [ 000000000000000000]
+empty_38      (specchannel         ) [ 000000000000000000]
+StgValue_55   (specinterface       ) [ 000000000000000000]
+empty_39      (specchannel         ) [ 000000000000000000]
+StgValue_57   (specinterface       ) [ 000000000000000000]
+empty_40      (specchannel         ) [ 000000000000000000]
+StgValue_59   (specinterface       ) [ 000000000000000000]
+empty_41      (specchannel         ) [ 000000000000000000]
+StgValue_61   (specinterface       ) [ 000000000000000000]
+empty_42      (specchannel         ) [ 000000000000000000]
+StgValue_63   (specinterface       ) [ 000000000000000000]
+empty_43      (specchannel         ) [ 000000000000000000]
+StgValue_65   (specinterface       ) [ 000000000000000000]
+empty_44      (specchannel         ) [ 000000000000000000]
+StgValue_67   (specinterface       ) [ 000000000000000000]
+empty_45      (specchannel         ) [ 000000000000000000]
+StgValue_69   (specinterface       ) [ 000000000000000000]
+empty_46      (specchannel         ) [ 000000000000000000]
+StgValue_71   (specinterface       ) [ 000000000000000000]
+empty_47      (specchannel         ) [ 000000000000000000]
+StgValue_73   (specinterface       ) [ 000000000000000000]
+empty_48      (specchannel         ) [ 000000000000000000]
+StgValue_75   (specinterface       ) [ 000000000000000000]
+empty_49      (specchannel         ) [ 000000000000000000]
+StgValue_77   (specinterface       ) [ 000000000000000000]
+StgValue_78   (specdataflowpipeline) [ 000000000000000000]
+StgValue_79   (spectopmodule       ) [ 000000000000000000]
+StgValue_80   (specinterface       ) [ 000000000000000000]
+StgValue_81   (specinterface       ) [ 000000000000000000]
+StgValue_82   (specinterface       ) [ 000000000000000000]
+StgValue_83   (specinterface       ) [ 000000000000000000]
+StgValue_84   (specinterface       ) [ 000000000000000000]
+empty_50      (specchannel         ) [ 000000000000000000]
+StgValue_86   (specinterface       ) [ 000000000000000000]
+empty_51      (specchannel         ) [ 000000000000000000]
+StgValue_88   (specinterface       ) [ 000000000000000000]
+StgValue_89   (call                ) [ 000000000000000000]
+StgValue_90   (ret                 ) [ 000000000000000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="gmem0">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gmem0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="gmem1">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gmem1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="frames_V">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="frames_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="outputs">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="outputs"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="frame1_a_V">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="frame1_a_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="frame2_a_V">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="frame2_a_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1000" name="frame3_a_V">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="frame3_a_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1000" name="frame3_b_V">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="frame3_b_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1000" name="frame4_a_V">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="frame4_a_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1000" name="frame5_a_V">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="frame5_a_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1000" name="buf_V_1_1">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="buf_V_1_1"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1000" name="buf_V_1_2">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="buf_V_1_2"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1000" name="buf_V_1_3">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="buf_V_1_3"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1000" name="buf_V_1_4">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="buf_V_1_4"/><MemPortTyVec>1 0 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1000" name="gradient_x_V">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gradient_x_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1000" name="gradient_y_V">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gradient_y_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1000" name="gradient_z_V">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gradient_z_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1000" name="y_filtered_x_V">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="y_filtered_x_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1000" name="y_filtered_y_V">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="y_filtered_y_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1000" name="y_filtered_z_V">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="y_filtered_z_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1000" name="filtered_gradient_x_s">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="filtered_gradient_x_s"/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1000" name="filtered_gradient_y_s">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="filtered_gradient_y_s"/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1000" name="filtered_gradient_z_s">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="filtered_gradient_z_s"/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1000" name="out_product_val_V">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="out_product_val_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1000" name="tensor_y_val_V">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="tensor_y_val_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1000" name="tensor_val_V">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="tensor_val_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1000" name="buf_V_0">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="buf_V_0"/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1000" name="buf_V_1151">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="buf_V_1151"/></StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1001" name="const_56">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Read.s_axilite.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1001" name="const_58">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1001" name="const_60">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="optical_flow.entry12"/></StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1001" name="const_62">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="Loop_FRAMES_CP_OUTER"/></StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1001" name="const_64">
+<pin_list>
+<pin id="65" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gradient_xy_calc"/></StgValue>
+</bind>
+</comp>
+
+<comp id="66" class="1001" name="const_66">
+<pin_list>
+<pin id="67" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gradient_z_calc"/></StgValue>
+</bind>
+</comp>
+
+<comp id="68" class="1001" name="const_68">
+<pin_list>
+<pin id="69" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gradient_weight_y"/></StgValue>
+</bind>
+</comp>
+
+<comp id="70" class="1001" name="const_70">
+<pin_list>
+<pin id="71" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gradient_weight_x"/></StgValue>
+</bind>
+</comp>
+
+<comp id="72" class="1001" name="const_72">
+<pin_list>
+<pin id="73" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="outer_product"/></StgValue>
+</bind>
+</comp>
+
+<comp id="74" class="1001" name="const_74">
+<pin_list>
+<pin id="75" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="tensor_weight_y"/></StgValue>
+</bind>
+</comp>
+
+<comp id="76" class="1001" name="const_76">
+<pin_list>
+<pin id="77" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="tensor_weight_x"/></StgValue>
+</bind>
+</comp>
+
+<comp id="78" class="1001" name="const_78">
+<pin_list>
+<pin id="79" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="flow_calc"/></StgValue>
+</bind>
+</comp>
+
+<comp id="80" class="1001" name="const_80">
+<pin_list>
+<pin id="81" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
+</bind>
+</comp>
+
+<comp id="82" class="1001" name="const_82">
+<pin_list>
+<pin id="83" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecChannel"/></StgValue>
+</bind>
+</comp>
+
+<comp id="84" class="1001" name="const_84">
+<pin_list>
+<pin id="85" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="filtered_gradient_OC_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="86" class="1001" name="const_86">
+<pin_list>
+<pin id="87" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="88" class="1001" name="const_88">
+<pin_list>
+<pin id="89" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="90" class="1001" name="const_90">
+<pin_list>
+<pin id="91" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="92" class="1001" name="const_92">
+<pin_list>
+<pin id="93" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="94" class="1001" name="const_94">
+<pin_list>
+<pin id="95" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="96" class="1001" name="const_96">
+<pin_list>
+<pin id="97" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ap_fifo_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="98" class="1001" name="const_98">
+<pin_list>
+<pin id="99" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="100" class="1001" name="const_100">
+<pin_list>
+<pin id="101" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="102" class="1001" name="const_102">
+<pin_list>
+<pin id="103" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="104" class="1001" name="const_104">
+<pin_list>
+<pin id="105" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="filtered_gradient_OC_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="106" class="1001" name="const_106">
+<pin_list>
+<pin id="107" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="filtered_gradient_OC"/></StgValue>
+</bind>
+</comp>
+
+<comp id="108" class="1001" name="const_108">
+<pin_list>
+<pin id="109" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="frame1_a_OC_V181_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="110" class="1001" name="const_110">
+<pin_list>
+<pin id="111" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="frame2_a_OC_V179_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="112" class="1001" name="const_112">
+<pin_list>
+<pin id="113" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="frame3_a_OC_V177_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="114" class="1001" name="const_114">
+<pin_list>
+<pin id="115" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="frame3_b_OC_V175_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="116" class="1001" name="const_116">
+<pin_list>
+<pin id="117" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="frame4_a_OC_V173_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="118" class="1001" name="const_118">
+<pin_list>
+<pin id="119" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="frame5_a_OC_V171_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="120" class="1001" name="const_120">
+<pin_list>
+<pin id="121" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gradient_x_OC_V169_s"/></StgValue>
+</bind>
+</comp>
+
+<comp id="122" class="1001" name="const_122">
+<pin_list>
+<pin id="123" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gradient_y_OC_V167_s"/></StgValue>
+</bind>
+</comp>
+
+<comp id="124" class="1001" name="const_124">
+<pin_list>
+<pin id="125" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="gradient_z_OC_V165_s"/></StgValue>
+</bind>
+</comp>
+
+<comp id="126" class="1001" name="const_126">
+<pin_list>
+<pin id="127" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="128" class="1001" name="const_128">
+<pin_list>
+<pin id="129" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="out_product_OC_val_O"/></StgValue>
+</bind>
+</comp>
+
+<comp id="130" class="1001" name="const_130">
+<pin_list>
+<pin id="131" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="tensor_OC_val_OC_V16"/></StgValue>
+</bind>
+</comp>
+
+<comp id="132" class="1001" name="const_132">
+<pin_list>
+<pin id="133" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="tensor_y_OC_val_OC_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="134" class="1001" name="const_134">
+<pin_list>
+<pin id="135" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="y_filtered_OC_x_OC_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="136" class="1001" name="const_136">
+<pin_list>
+<pin id="137" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="y_filtered_OC_y_OC_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="138" class="1001" name="const_138">
+<pin_list>
+<pin id="139" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="y_filtered_OC_z_OC_V"/></StgValue>
+</bind>
+</comp>
+
+<comp id="140" class="1001" name="const_140">
+<pin_list>
+<pin id="141" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecDataflowPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="142" class="1001" name="const_142">
+<pin_list>
+<pin id="143" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="144" class="1001" name="const_144">
+<pin_list>
+<pin id="145" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="146" class="1001" name="const_146">
+<pin_list>
+<pin id="147" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
+</bind>
+</comp>
+
+<comp id="148" class="1001" name="const_148">
+<pin_list>
+<pin id="149" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="optical_flow_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="150" class="1001" name="const_150">
+<pin_list>
+<pin id="151" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str30"/></StgValue>
+</bind>
+</comp>
+
+<comp id="152" class="1001" name="const_152">
+<pin_list>
+<pin id="153" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str31"/></StgValue>
+</bind>
+</comp>
+
+<comp id="154" class="1001" name="const_154">
+<pin_list>
+<pin id="155" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="156" class="1001" name="const_156">
+<pin_list>
+<pin id="157" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str33"/></StgValue>
+</bind>
+</comp>
+
+<comp id="158" class="1001" name="const_158">
+<pin_list>
+<pin id="159" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str34"/></StgValue>
+</bind>
+</comp>
+
+<comp id="160" class="1001" name="const_160">
+<pin_list>
+<pin id="161" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str35"/></StgValue>
+</bind>
+</comp>
+
+<comp id="162" class="1001" name="const_162">
+<pin_list>
+<pin id="163" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="frames_OC_V_c_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="164" class="1001" name="const_164">
+<pin_list>
+<pin id="165" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="outputs_c_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="166" class="1004" name="outputs_c_fu_166">
+<pin_list>
+<pin id="167" dir="0" index="0" bw="1" slack="0"/>
+<pin id="168" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="outputs_c/1 "/>
+</bind>
+</comp>
+
+<comp id="170" class="1004" name="frames_V_c_fu_170">
+<pin_list>
+<pin id="171" dir="0" index="0" bw="1" slack="0"/>
+<pin id="172" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="frames_V_c/1 "/>
+</bind>
+</comp>
+
+<comp id="174" class="1004" name="outputs_read_read_fu_174">
+<pin_list>
+<pin id="175" dir="0" index="0" bw="32" slack="0"/>
+<pin id="176" dir="0" index="1" bw="32" slack="0"/>
+<pin id="177" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="outputs_read/1 "/>
+</bind>
+</comp>
+
+<comp id="180" class="1004" name="frames_V_read_read_fu_180">
+<pin_list>
+<pin id="181" dir="0" index="0" bw="32" slack="0"/>
+<pin id="182" dir="0" index="1" bw="32" slack="0"/>
+<pin id="183" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="read(1150) " fcode="read"/>
+<opset="frames_V_read/1 "/>
+</bind>
+</comp>
+
+<comp id="186" class="1004" name="grp_flow_calc_fu_186">
+<pin_list>
+<pin id="187" dir="0" index="0" bw="0" slack="0"/>
+<pin id="188" dir="0" index="1" bw="64" slack="0"/>
+<pin id="189" dir="0" index="2" bw="32" slack="15"/>
+<pin id="190" dir="0" index="3" bw="32" slack="0"/>
+<pin id="191" dir="0" index="4" bw="32" slack="0"/>
+<pin id="192" dir="0" index="5" bw="192" slack="0"/>
+<pin id="193" dir="1" index="6" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_39/16 "/>
+</bind>
+</comp>
+
+<comp id="199" class="1004" name="grp_tensor_weight_y_fu_199">
+<pin_list>
+<pin id="200" dir="0" index="0" bw="0" slack="0"/>
+<pin id="201" dir="0" index="1" bw="191" slack="0"/>
+<pin id="202" dir="0" index="2" bw="192" slack="0"/>
+<pin id="203" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_35/12 "/>
+</bind>
+</comp>
+
+<comp id="207" class="1004" name="grp_tensor_weight_x_fu_207">
+<pin_list>
+<pin id="208" dir="0" index="0" bw="0" slack="0"/>
+<pin id="209" dir="0" index="1" bw="192" slack="0"/>
+<pin id="210" dir="0" index="2" bw="192" slack="0"/>
+<pin id="211" dir="1" index="3" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_37/14 "/>
+</bind>
+</comp>
+
+<comp id="215" class="1004" name="grp_gradient_xy_calc_fu_215">
+<pin_list>
+<pin id="216" dir="0" index="0" bw="0" slack="0"/>
+<pin id="217" dir="0" index="1" bw="8" slack="0"/>
+<pin id="218" dir="0" index="2" bw="32" slack="0"/>
+<pin id="219" dir="0" index="3" bw="32" slack="0"/>
+<pin id="220" dir="0" index="4" bw="32" slack="0"/>
+<pin id="221" dir="0" index="5" bw="32" slack="0"/>
+<pin id="222" dir="0" index="6" bw="32" slack="0"/>
+<pin id="223" dir="0" index="7" bw="32" slack="0"/>
+<pin id="224" dir="1" index="8" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_25/4 "/>
+</bind>
+</comp>
+
+<comp id="233" class="1004" name="grp_gradient_weight_x_fu_233">
+<pin_list>
+<pin id="234" dir="0" index="0" bw="0" slack="0"/>
+<pin id="235" dir="0" index="1" bw="1" slack="0"/>
+<pin id="236" dir="0" index="2" bw="1" slack="0"/>
+<pin id="237" dir="0" index="3" bw="1" slack="0"/>
+<pin id="238" dir="0" index="4" bw="32" slack="0"/>
+<pin id="239" dir="0" index="5" bw="32" slack="0"/>
+<pin id="240" dir="0" index="6" bw="32" slack="0"/>
+<pin id="241" dir="1" index="7" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_31/8 "/>
+</bind>
+</comp>
+
+<comp id="249" class="1004" name="grp_Loop_FRAMES_CP_OUTER_fu_249">
+<pin_list>
+<pin id="250" dir="0" index="0" bw="0" slack="0"/>
+<pin id="251" dir="0" index="1" bw="64" slack="0"/>
+<pin id="252" dir="0" index="2" bw="32" slack="1"/>
+<pin id="253" dir="0" index="3" bw="8" slack="0"/>
+<pin id="254" dir="0" index="4" bw="8" slack="0"/>
+<pin id="255" dir="0" index="5" bw="8" slack="0"/>
+<pin id="256" dir="0" index="6" bw="8" slack="0"/>
+<pin id="257" dir="0" index="7" bw="8" slack="0"/>
+<pin id="258" dir="0" index="8" bw="8" slack="0"/>
+<pin id="259" dir="1" index="9" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_23/2 "/>
+</bind>
+</comp>
+
+<comp id="268" class="1004" name="grp_gradient_weight_y_fu_268">
+<pin_list>
+<pin id="269" dir="0" index="0" bw="0" slack="0"/>
+<pin id="270" dir="0" index="1" bw="32" slack="0"/>
+<pin id="271" dir="0" index="2" bw="32" slack="0"/>
+<pin id="272" dir="0" index="3" bw="32" slack="0"/>
+<pin id="273" dir="0" index="4" bw="1" slack="0"/>
+<pin id="274" dir="0" index="5" bw="1" slack="0"/>
+<pin id="275" dir="0" index="6" bw="1" slack="0"/>
+<pin id="276" dir="1" index="7" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_29/6 "/>
+</bind>
+</comp>
+
+<comp id="284" class="1004" name="grp_gradient_z_calc_fu_284">
+<pin_list>
+<pin id="285" dir="0" index="0" bw="0" slack="0"/>
+<pin id="286" dir="0" index="1" bw="8" slack="0"/>
+<pin id="287" dir="0" index="2" bw="8" slack="0"/>
+<pin id="288" dir="0" index="3" bw="8" slack="0"/>
+<pin id="289" dir="0" index="4" bw="8" slack="0"/>
+<pin id="290" dir="0" index="5" bw="8" slack="0"/>
+<pin id="291" dir="0" index="6" bw="32" slack="0"/>
+<pin id="292" dir="1" index="7" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_26/4 "/>
+</bind>
+</comp>
+
+<comp id="300" class="1004" name="grp_outer_product_fu_300">
+<pin_list>
+<pin id="301" dir="0" index="0" bw="0" slack="0"/>
+<pin id="302" dir="0" index="1" bw="32" slack="0"/>
+<pin id="303" dir="0" index="2" bw="32" slack="0"/>
+<pin id="304" dir="0" index="3" bw="32" slack="0"/>
+<pin id="305" dir="0" index="4" bw="191" slack="0"/>
+<pin id="306" dir="1" index="5" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_33/10 "/>
+</bind>
+</comp>
+
+<comp id="312" class="1004" name="StgValue_22_optical_flow_entry12_fu_312">
+<pin_list>
+<pin id="313" dir="0" index="0" bw="0" slack="0"/>
+<pin id="314" dir="0" index="1" bw="32" slack="0"/>
+<pin id="315" dir="0" index="2" bw="32" slack="0"/>
+<pin id="316" dir="0" index="3" bw="32" slack="0"/>
+<pin id="317" dir="0" index="4" bw="32" slack="0"/>
+<pin id="318" dir="1" index="5" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_22/1 "/>
+</bind>
+</comp>
+
+<comp id="322" class="1005" name="outputs_c_reg_322">
+<pin_list>
+<pin id="323" dir="0" index="0" bw="32" slack="0"/>
+<pin id="324" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opset="outputs_c "/>
+</bind>
+</comp>
+
+<comp id="328" class="1005" name="frames_V_c_reg_328">
+<pin_list>
+<pin id="329" dir="0" index="0" bw="32" slack="0"/>
+<pin id="330" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opset="frames_V_c "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="169"><net_src comp="58" pin="0"/><net_sink comp="166" pin=0"/></net>
+
+<net id="173"><net_src comp="58" pin="0"/><net_sink comp="170" pin=0"/></net>
+
+<net id="178"><net_src comp="56" pin="0"/><net_sink comp="174" pin=0"/></net>
+
+<net id="179"><net_src comp="6" pin="0"/><net_sink comp="174" pin=1"/></net>
+
+<net id="184"><net_src comp="56" pin="0"/><net_sink comp="180" pin=0"/></net>
+
+<net id="185"><net_src comp="4" pin="0"/><net_sink comp="180" pin=1"/></net>
+
+<net id="194"><net_src comp="78" pin="0"/><net_sink comp="186" pin=0"/></net>
+
+<net id="195"><net_src comp="2" pin="0"/><net_sink comp="186" pin=1"/></net>
+
+<net id="196"><net_src comp="52" pin="0"/><net_sink comp="186" pin=3"/></net>
+
+<net id="197"><net_src comp="54" pin="0"/><net_sink comp="186" pin=4"/></net>
+
+<net id="198"><net_src comp="50" pin="0"/><net_sink comp="186" pin=5"/></net>
+
+<net id="204"><net_src comp="74" pin="0"/><net_sink comp="199" pin=0"/></net>
+
+<net id="205"><net_src comp="46" pin="0"/><net_sink comp="199" pin=1"/></net>
+
+<net id="206"><net_src comp="48" pin="0"/><net_sink comp="199" pin=2"/></net>
+
+<net id="212"><net_src comp="76" pin="0"/><net_sink comp="207" pin=0"/></net>
+
+<net id="213"><net_src comp="48" pin="0"/><net_sink comp="207" pin=1"/></net>
+
+<net id="214"><net_src comp="50" pin="0"/><net_sink comp="207" pin=2"/></net>
+
+<net id="225"><net_src comp="64" pin="0"/><net_sink comp="215" pin=0"/></net>
+
+<net id="226"><net_src comp="12" pin="0"/><net_sink comp="215" pin=1"/></net>
+
+<net id="227"><net_src comp="20" pin="0"/><net_sink comp="215" pin=2"/></net>
+
+<net id="228"><net_src comp="22" pin="0"/><net_sink comp="215" pin=3"/></net>
+
+<net id="229"><net_src comp="24" pin="0"/><net_sink comp="215" pin=4"/></net>
+
+<net id="230"><net_src comp="26" pin="0"/><net_sink comp="215" pin=5"/></net>
+
+<net id="231"><net_src comp="28" pin="0"/><net_sink comp="215" pin=6"/></net>
+
+<net id="232"><net_src comp="30" pin="0"/><net_sink comp="215" pin=7"/></net>
+
+<net id="242"><net_src comp="70" pin="0"/><net_sink comp="233" pin=0"/></net>
+
+<net id="243"><net_src comp="34" pin="0"/><net_sink comp="233" pin=1"/></net>
+
+<net id="244"><net_src comp="36" pin="0"/><net_sink comp="233" pin=2"/></net>
+
+<net id="245"><net_src comp="38" pin="0"/><net_sink comp="233" pin=3"/></net>
+
+<net id="246"><net_src comp="40" pin="0"/><net_sink comp="233" pin=4"/></net>
+
+<net id="247"><net_src comp="42" pin="0"/><net_sink comp="233" pin=5"/></net>
+
+<net id="248"><net_src comp="44" pin="0"/><net_sink comp="233" pin=6"/></net>
+
+<net id="260"><net_src comp="62" pin="0"/><net_sink comp="249" pin=0"/></net>
+
+<net id="261"><net_src comp="0" pin="0"/><net_sink comp="249" pin=1"/></net>
+
+<net id="262"><net_src comp="8" pin="0"/><net_sink comp="249" pin=3"/></net>
+
+<net id="263"><net_src comp="10" pin="0"/><net_sink comp="249" pin=4"/></net>
+
+<net id="264"><net_src comp="12" pin="0"/><net_sink comp="249" pin=5"/></net>
+
+<net id="265"><net_src comp="14" pin="0"/><net_sink comp="249" pin=6"/></net>
+
+<net id="266"><net_src comp="16" pin="0"/><net_sink comp="249" pin=7"/></net>
+
+<net id="267"><net_src comp="18" pin="0"/><net_sink comp="249" pin=8"/></net>
+
+<net id="277"><net_src comp="68" pin="0"/><net_sink comp="268" pin=0"/></net>
+
+<net id="278"><net_src comp="28" pin="0"/><net_sink comp="268" pin=1"/></net>
+
+<net id="279"><net_src comp="30" pin="0"/><net_sink comp="268" pin=2"/></net>
+
+<net id="280"><net_src comp="32" pin="0"/><net_sink comp="268" pin=3"/></net>
+
+<net id="281"><net_src comp="34" pin="0"/><net_sink comp="268" pin=4"/></net>
+
+<net id="282"><net_src comp="36" pin="0"/><net_sink comp="268" pin=5"/></net>
+
+<net id="283"><net_src comp="38" pin="0"/><net_sink comp="268" pin=6"/></net>
+
+<net id="293"><net_src comp="66" pin="0"/><net_sink comp="284" pin=0"/></net>
+
+<net id="294"><net_src comp="8" pin="0"/><net_sink comp="284" pin=1"/></net>
+
+<net id="295"><net_src comp="10" pin="0"/><net_sink comp="284" pin=2"/></net>
+
+<net id="296"><net_src comp="14" pin="0"/><net_sink comp="284" pin=3"/></net>
+
+<net id="297"><net_src comp="16" pin="0"/><net_sink comp="284" pin=4"/></net>
+
+<net id="298"><net_src comp="18" pin="0"/><net_sink comp="284" pin=5"/></net>
+
+<net id="299"><net_src comp="32" pin="0"/><net_sink comp="284" pin=6"/></net>
+
+<net id="307"><net_src comp="72" pin="0"/><net_sink comp="300" pin=0"/></net>
+
+<net id="308"><net_src comp="40" pin="0"/><net_sink comp="300" pin=1"/></net>
+
+<net id="309"><net_src comp="42" pin="0"/><net_sink comp="300" pin=2"/></net>
+
+<net id="310"><net_src comp="44" pin="0"/><net_sink comp="300" pin=3"/></net>
+
+<net id="311"><net_src comp="46" pin="0"/><net_sink comp="300" pin=4"/></net>
+
+<net id="319"><net_src comp="60" pin="0"/><net_sink comp="312" pin=0"/></net>
+
+<net id="320"><net_src comp="180" pin="2"/><net_sink comp="312" pin=1"/></net>
+
+<net id="321"><net_src comp="174" pin="2"/><net_sink comp="312" pin=2"/></net>
+
+<net id="325"><net_src comp="166" pin="1"/><net_sink comp="322" pin=0"/></net>
+
+<net id="326"><net_src comp="322" pin="1"/><net_sink comp="312" pin=4"/></net>
+
+<net id="327"><net_src comp="322" pin="1"/><net_sink comp="186" pin=2"/></net>
+
+<net id="331"><net_src comp="170" pin="1"/><net_sink comp="328" pin=0"/></net>
+
+<net id="332"><net_src comp="328" pin="1"/><net_sink comp="312" pin=3"/></net>
+
+<net id="333"><net_src comp="328" pin="1"/><net_sink comp="249" pin=2"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: gmem1 | {16 17 }
+	Port: frame1_a_V | {2 3 }
+	Port: frame2_a_V | {2 3 }
+	Port: frame3_a_V | {2 3 }
+	Port: frame3_b_V | {2 3 }
+	Port: frame4_a_V | {2 3 }
+	Port: frame5_a_V | {2 3 }
+	Port: buf_V_1_1 | {4 5 }
+	Port: buf_V_1_2 | {4 5 }
+	Port: buf_V_1_3 | {4 5 }
+	Port: buf_V_1_4 | {4 5 }
+	Port: gradient_x_V | {4 5 }
+	Port: gradient_y_V | {4 5 }
+	Port: gradient_z_V | {4 5 }
+	Port: y_filtered_x_V | {6 7 }
+	Port: y_filtered_y_V | {6 7 }
+	Port: y_filtered_z_V | {6 7 }
+	Port: filtered_gradient_x_s | {8 9 }
+	Port: filtered_gradient_y_s | {8 9 }
+	Port: filtered_gradient_z_s | {8 9 }
+	Port: out_product_val_V | {10 11 }
+	Port: tensor_y_val_V | {12 13 }
+	Port: tensor_val_V | {14 15 }
+	Port: buf_V_0 | {16 17 }
+	Port: buf_V_1151 | {16 17 }
+ - Input state : 
+	Port: optical_flow : gmem0 | {2 3 }
+	Port: optical_flow : frames_V | {1 }
+	Port: optical_flow : outputs | {1 }
+	Port: optical_flow : frame1_a_V | {4 5 }
+	Port: optical_flow : frame2_a_V | {4 5 }
+	Port: optical_flow : frame3_a_V | {4 5 }
+	Port: optical_flow : frame3_b_V | {4 5 }
+	Port: optical_flow : frame4_a_V | {4 5 }
+	Port: optical_flow : frame5_a_V | {4 5 }
+	Port: optical_flow : buf_V_1_1 | {4 5 }
+	Port: optical_flow : buf_V_1_2 | {4 5 }
+	Port: optical_flow : buf_V_1_3 | {4 5 }
+	Port: optical_flow : buf_V_1_4 | {4 5 }
+	Port: optical_flow : gradient_x_V | {6 7 }
+	Port: optical_flow : gradient_y_V | {6 7 }
+	Port: optical_flow : gradient_z_V | {6 7 }
+	Port: optical_flow : y_filtered_x_V | {8 9 }
+	Port: optical_flow : y_filtered_y_V | {8 9 }
+	Port: optical_flow : y_filtered_z_V | {8 9 }
+	Port: optical_flow : filtered_gradient_x_s | {10 11 }
+	Port: optical_flow : filtered_gradient_y_s | {10 11 }
+	Port: optical_flow : filtered_gradient_z_s | {10 11 }
+	Port: optical_flow : out_product_val_V | {12 13 }
+	Port: optical_flow : tensor_y_val_V | {14 15 }
+	Port: optical_flow : tensor_val_V | {16 17 }
+	Port: optical_flow : buf_V_0 | {16 17 }
+	Port: optical_flow : buf_V_1151 | {16 17 }
+  - Chain level:
+	State 1
+		StgValue_22 : 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|-----------------------------------------|---------|---------|---------|---------|---------|
+| Operation|             Functional Unit             |   BRAM  |  DSP48E |  Delay  |    FF   |   LUT   |
+|----------|-----------------------------------------|---------|---------|---------|---------|---------|
+|          |           grp_flow_calc_fu_186          |    0    |    24   |  8.281  |  18334  |  14130  |
+|          |        grp_tensor_weight_y_fu_199       |    12   |    54   |  2.366  |   1299  |   1407  |
+|          |        grp_tensor_weight_x_fu_207       |    0    |    54   |    0    |   1290  |   1384  |
+|          |       grp_gradient_xy_calc_fu_215       |    0    |    8    |  7.098  |   606   |   1015  |
+|   call   |       grp_gradient_weight_x_fu_233      |    0    |    0    |  3.549  |   140   |   1134  |
+|          |     grp_Loop_FRAMES_CP_OUTER_fu_249     |    0    |    0    |  2.366  |   335   |   248   |
+|          |       grp_gradient_weight_y_fu_268      |    0    |    0    |  17.745 |   1405  |   334   |
+|          |        grp_gradient_z_calc_fu_284       |    0    |    4    |    0    |   105   |   229   |
+|          |         grp_outer_product_fu_300        |    0    |    6    |    0    |   199   |    26   |
+|          | StgValue_22_optical_flow_entry12_fu_312 |    0    |    0    |    0    |    0    |    0    |
+|----------|-----------------------------------------|---------|---------|---------|---------|---------|
+|   read   |         outputs_read_read_fu_174        |    0    |    0    |    0    |    0    |    0    |
+|          |        frames_V_read_read_fu_180        |    0    |    0    |    0    |    0    |    0    |
+|----------|-----------------------------------------|---------|---------|---------|---------|---------|
+|   Total  |                                         |    12   |   150   |  41.405 |  23713  |  19907  |
+|----------|-----------------------------------------|---------|---------|---------|---------|---------|
+
+Memories:
++---------+--------+--------+--------+
+|         |  BRAM  |   FF   |   LUT  |
++---------+--------+--------+--------+
+|buf_V_1_1|    0   |   64   |    5   |
+|buf_V_1_2|    0   |   64   |    5   |
+|buf_V_1_3|    0   |   64   |    5   |
+|buf_V_1_4|    0   |   64   |    5   |
++---------+--------+--------+--------+
+|  Total  |    0   |   256  |   20   |
++---------+--------+--------+--------+
+
+* Register list:
++------------------+--------+
+|                  |   FF   |
++------------------+--------+
+|frames_V_c_reg_328|   32   |
+| outputs_c_reg_322|   32   |
++------------------+--------+
+|       Total      |   64   |
++------------------+--------+
+
+* Multiplexer (MUX) list: 
+|--------|------|------|------|--------|
+|  Comp  |  Pin | Size |  BW  | S x BW |
+|--------|------|------|------|--------|
+|  Total |      |      |      |    0   |
+|--------|------|------|------|--------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+
+|           |  BRAM  | DSP48E |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+--------+--------+
+|  Function |   12   |   150  |   41   |  23713 |  19907 |
+|   Memory  |    0   |    -   |    -   |   256  |   20   |
+|Multiplexer|    -   |    -   |    -   |    -   |    -   |
+|  Register |    -   |    -   |    -   |   64   |    -   |
++-----------+--------+--------+--------+--------+--------+
+|   Total   |   12   |   150  |   41   |  24033 |  19927 |
++-----------+--------+--------+--------+--------+--------+

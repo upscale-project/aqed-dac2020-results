@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;optical_flow.cpp&apos; ..."/>
+	<Message severity="WARNING" prefix="[HLS 214-111]" key="HLS 214-111" tag="DATAFLOW,SDX_KERNEL" content="Static variables and non-static stream cannot be used inside a dataflow region: optical_flow.cpp:414:17"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Linking Time (s): cpu = 00:00:52 ; elapsed = 00:00:57 . Memory (MB): peak = 465.984 ; gain = 0.105 ; free physical = 98713 ; free virtual = 106533"/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Pragmas Time (s): cpu = 00:00:52 ; elapsed = 00:00:57 . Memory (MB): peak = 465.984 ; gain = 0.105 ; free physical = 98713 ; free virtual = 106533"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1467" tag="" content="Starting code transformations ..."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1&apos; (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:123) in function &apos;hls::Window&lt;1, 7, gradient_t&gt;::shift_pixels_left()&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1&apos; (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:123) in function &apos;hls::Window&lt;1, 3, tensor_t&gt;::shift_pixels_left()&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;17, 9, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&gt;&gt;&apos; into &apos;optical_flow&apos; (optical_flow.cpp:461)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;17, 9, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&gt;&gt;&apos; into &apos;optical_flow&apos; (optical_flow.cpp:462)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;17, 9, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&gt;&gt;&apos; into &apos;optical_flow&apos; (optical_flow.cpp:463)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;17, 9, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&gt;&gt;&apos; into &apos;optical_flow&apos; (optical_flow.cpp:464)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;17, 9, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&gt;&gt;&apos; into &apos;optical_flow&apos; (optical_flow.cpp:465)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;ap_fixed_base&lt;17, 9, true, (ap_q_mode)5, (ap_o_mode)3, 0&gt;::operator&gt;&gt;&apos; into &apos;optical_flow&apos; (optical_flow.cpp:466)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;5, 5, ap_fixed&lt;17, 9, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;::shift_pixels_left&apos; into &apos;gradient_xy_calc&apos; (optical_flow.cpp:72)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;5, 5, ap_fixed&lt;17, 9, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;::shift_pixels_left&apos; into &apos;gradient_xy_calc&apos; (optical_flow.cpp:65)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;5, 5, ap_fixed&lt;17, 9, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;::insert_pixel&apos; into &apos;gradient_xy_calc&apos; (optical_flow.cpp:68)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;5, 5, ap_fixed&lt;17, 9, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;::insert_pixel&apos; into &apos;gradient_xy_calc&apos; (optical_flow.cpp:73)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;5, 5, ap_fixed&lt;17, 9, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;::insert_pixel&apos; into &apos;gradient_xy_calc&apos; (optical_flow.cpp:74)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;5, 5, ap_fixed&lt;17, 9, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;::insert_pixel&apos; into &apos;gradient_xy_calc&apos; (optical_flow.cpp:75)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;5, 5, ap_fixed&lt;17, 9, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;::insert_pixel&apos; into &apos;gradient_xy_calc&apos; (optical_flow.cpp:76)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;5, 5, ap_fixed&lt;17, 9, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;::insert_pixel&apos; into &apos;gradient_xy_calc&apos; (optical_flow.cpp:77)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;5, 5, ap_fixed&lt;17, 9, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;::getval&apos; into &apos;gradient_xy_calc&apos; (optical_flow.cpp:88)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;5, 5, ap_fixed&lt;17, 9, (ap_q_mode)5, (ap_o_mode)3, 0&gt; &gt;::getval&apos; into &apos;gradient_xy_calc&apos; (optical_flow.cpp:87)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::LineBuffer&lt;7, 10, gradient_t, 0&gt;::shift_pixels_up&apos; into &apos;gradient_weight_y&apos; (optical_flow.cpp:152)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::LineBuffer&lt;7, 10, gradient_t, 0&gt;::shift_pixels_up&apos; into &apos;gradient_weight_y&apos; (optical_flow.cpp:143)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::LineBuffer&lt;7, 10, gradient_t, 0&gt;::insert_bottom_row&apos; into &apos;gradient_weight_y&apos; (optical_flow.cpp:157)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::LineBuffer&lt;7, 10, gradient_t, 0&gt;::insert_bottom_row&apos; into &apos;gradient_weight_y&apos; (optical_flow.cpp:148)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;1, 7, gradient_t&gt;::shift_pixels_left&apos; into &apos;gradient_weight_x&apos; (optical_flow.cpp:193)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;1, 7, gradient_t&gt;::insert_pixel&apos; into &apos;gradient_weight_x&apos; (optical_flow.cpp:205)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;1, 7, gradient_t&gt;::getval&apos; into &apos;gradient_weight_x&apos; (optical_flow.cpp:215)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;1, 7, gradient_t&gt;::getval&apos; into &apos;gradient_weight_x&apos; (optical_flow.cpp:216)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;1, 7, gradient_t&gt;::getval&apos; into &apos;gradient_weight_x&apos; (optical_flow.cpp:217)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::LineBuffer&lt;3, 10, outer_t, 0&gt;::shift_pixels_up&apos; into &apos;tensor_weight_y&apos; (optical_flow.cpp:269)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::LineBuffer&lt;3, 10, outer_t, 0&gt;::insert_bottom_row&apos; into &apos;tensor_weight_y&apos; (optical_flow.cpp:279)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::LineBuffer&lt;3, 10, outer_t, 0&gt;::getval&apos; into &apos;tensor_weight_y&apos; (optical_flow.cpp:289)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;1, 3, tensor_t&gt;::shift_pixels_left&apos; into &apos;tensor_weight_x&apos; (optical_flow.cpp:316)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;1, 3, tensor_t&gt;::insert_pixel&apos; into &apos;tensor_weight_x&apos; (optical_flow.cpp:327)."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_221" tag="" content="Inlining function &apos;hls::Window&lt;1, 3, tensor_t&gt;::getval&apos; into &apos;tensor_weight_x&apos; (optical_flow.cpp:336)."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Standard Transforms Time (s): cpu = 00:00:55 ; elapsed = 00:01:00 . Memory (MB): peak = 595.938 ; gain = 130.059 ; free physical = 98585 ; free virtual = 106413"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1472" tag="" content="Checking synthesizability ..."/>
+	<Message severity="WARNING" prefix="[SYNCHK 200-120]" key="SYNCHK_NSW_ASSUME_385" tag="" content="optical_flow.cpp:371: multiplication is assumed not to overflow by default, otherwise, please add option &apos;-fwrapv&apos;."/>
+	<Message severity="INFO" prefix="[SYNCHK 200-10]" key="SYNCHK_SYNCHK_SUMMARY_377" tag="" content="0 error(s), 1 warning(s)."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Checking Synthesizability Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 595.938 ; gain = 130.059 ; free physical = 98527 ; free virtual = 106359"/>
+	<Message severity="INFO" prefix="[XFORM 203-1101]" key="XFORM_DATA_PACK_STATUS_345" tag="" content="Packing variable &apos;outputs&apos; (optical_flow.cpp:401) into a 64-bit variable."/>
+	<Message severity="INFO" prefix="[XFORM 203-1101]" key="XFORM_DATA_PACK_STATUS_345" tag="" content="Packing variable &apos;tmp.val.V&apos; (optical_flow.cpp:266) into a 192-bit variable."/>
+	<Message severity="INFO" prefix="[XFORM 203-1101]" key="XFORM_DATA_PACK_STATUS_345" tag="" content="Packing variable &apos;buf.val.val.V&apos; (optical_flow.cpp:258) into a 192-bit variable."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;OUTER_INNER&apos; (optical_flow.cpp:236) in function &apos;outer_product&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;TENSOR_WEIGHT_Y_INNER&apos; (optical_flow.cpp:263) in function &apos;tensor_weight_y&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;TENSOR_WEIGHT_X_INNER&apos; (optical_flow.cpp:314) in function &apos;tensor_weight_x&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;GRAD_WEIGHT_X_INNER&apos; (optical_flow.cpp:191) in function &apos;gradient_weight_x&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;GRAD_WEIGHT_Y_INNER&apos; (optical_flow.cpp:137) in function &apos;gradient_weight_y&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-502]" key="XFORM_AUTO_UNROLL_STATUS_246" tag="" content="Unrolling all sub-loops inside loop &apos;GRAD_XY_INNER&apos; (optical_flow.cpp:38) in function &apos;gradient_xy_calc&apos; for pipelining."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.1&apos; (./../host/typedefs.h:44) in function &apos;outer_product&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.1&apos; (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:727) in function &apos;tensor_weight_y&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.1.1&apos; (./../host/typedefs.h:44) in function &apos;tensor_weight_y&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.2&apos; (./../host/typedefs.h:44) in function &apos;tensor_weight_y&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;TENSOR_WEIGHT_Y_TMP_INIT&apos; (optical_flow.cpp:277) in function &apos;tensor_weight_y&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.4&apos; (./../host/typedefs.h:44) in function &apos;tensor_weight_y&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;TENSOR_WEIGHT_Y_ACC_INIT&apos; (optical_flow.cpp:283) in function &apos;tensor_weight_y&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;TENSOR_WEIGHT_Y_TMP_OUTER&apos; (optical_flow.cpp:288) in function &apos;tensor_weight_y&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.6.1&apos; (./../host/typedefs.h:44) in function &apos;tensor_weight_y&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;TENSOR_WEIGHT_Y_TMP_INNER&apos; (optical_flow.cpp:292) in function &apos;tensor_weight_y&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.7&apos; (./../host/typedefs.h:48) in function &apos;tensor_weight_y&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.1&apos; (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:125) in function &apos;tensor_weight_x&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.1.1&apos; (./../host/typedefs.h:48) in function &apos;tensor_weight_x&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.2&apos; (./../host/typedefs.h:48) in function &apos;tensor_weight_x&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;TENSOR_WEIGHT_X_TMP_INIT&apos; (optical_flow.cpp:325) in function &apos;tensor_weight_x&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.4&apos; (./../host/typedefs.h:48) in function &apos;tensor_weight_x&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;TENSOR_WEIGHT_X_ACC_INIT&apos; (optical_flow.cpp:331) in function &apos;tensor_weight_x&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;TENSOR_WEIGHT_X_TMP_OUTER&apos; (optical_flow.cpp:335) in function &apos;tensor_weight_x&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.6.1&apos; (./../host/typedefs.h:48) in function &apos;tensor_weight_x&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;TENSOR_WEIGHT_X_TMP_INNER&apos; (optical_flow.cpp:338) in function &apos;tensor_weight_x&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.7&apos; (./../host/typedefs.h:48) in function &apos;tensor_weight_x&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.1&apos; (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:125) in function &apos;gradient_weight_x&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;GRAD_WEIGHT_X_ACC&apos; (optical_flow.cpp:214) in function &apos;gradient_weight_x&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.1&apos; (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:727) in function &apos;gradient_weight_y&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.2&apos; (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:727) in function &apos;gradient_weight_y&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.1&apos; (optical_flow.cpp:41) in function &apos;gradient_xy_calc&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.2&apos; (optical_flow.cpp:51) in function &apos;gradient_xy_calc&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.3&apos; (optical_flow.cpp:57) in function &apos;gradient_xy_calc&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.4&apos; (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:123) in function &apos;gradient_xy_calc&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.4.1&apos; (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:125) in function &apos;gradient_xy_calc&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.5&apos; (optical_flow.cpp:67) in function &apos;gradient_xy_calc&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.6&apos; (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:123) in function &apos;gradient_xy_calc&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;Loop-1.1.6.1&apos; (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:125) in function &apos;gradient_xy_calc&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-501]" key="XFORM_UNROLL_STATUS_325" tag="" content="Unrolling loop &apos;GRAD_XY_XYGRAD&apos; (optical_flow.cpp:86) in function &apos;gradient_xy_calc&apos; completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_120" tag="" content="Partitioning array &apos;out.val.V&apos; (optical_flow.cpp:242) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_120" tag="" content="Partitioning array &apos;value.val.V.assign&apos; (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:631) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_120" tag="" content="Partitioning array &apos;acc.val.V&apos; (optical_flow.cpp:281) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_120" tag="" content="Partitioning array &apos;value.val.V.assign&apos; (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:61) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_120" tag="" content="Partitioning array &apos;tmp.val.V&apos; (optical_flow.cpp:317) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_120" tag="" content="Partitioning array &apos;acc.val.V&apos; (optical_flow.cpp:329) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_120" tag="" content="Partitioning array &apos;buf.V&apos; automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;buf.val.val.V&apos; (optical_flow.cpp:258) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;buf.val.val.V&apos; (optical_flow.cpp:308) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;buf.val.x.V&apos; (optical_flow.cpp:186) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;buf.val.y.V&apos; (optical_flow.cpp:186) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;buf.val.z.V&apos; (optical_flow.cpp:186) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;buf.val.x.V&apos; (optical_flow.cpp:131) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;buf.val.y.V&apos; (optical_flow.cpp:131) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;buf.val.z.V&apos; (optical_flow.cpp:131) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;buf.V.1&apos;  in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;smallbuf.V&apos; (optical_flow.cpp:27) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;window.val.V&apos; (optical_flow.cpp:31) in dimension 1 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;buf.val.val.V&apos; (optical_flow.cpp:308) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;buf.val.x.V&apos; (optical_flow.cpp:186) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;buf.val.y.V&apos; (optical_flow.cpp:186) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;buf.val.z.V&apos; (optical_flow.cpp:186) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-101]" key="XFORM_PARTITION_STATUS_116" tag="" content="Partitioning array &apos;window.val.V&apos; (optical_flow.cpp:31) in dimension 2 completely."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_120" tag="" content="Partitioning array &apos;buf.val.val.V.0.1&apos; (optical_flow.cpp:308) automatically."/>
+	<Message severity="INFO" prefix="[XFORM 203-102]" key="XFORM_AUTO_PARTITION_STATUS_120" tag="" content="Partitioning array &apos;buf.val.val.V.0.2&apos; (optical_flow.cpp:308) automatically."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-31]" key="ANALYSIS_ARRAY_ACCESS_OUTBOUND_179" tag="" content="The program may have out of bound access of array variable &apos;buf.V.1.1&apos; in function &apos;gradient_xy_calc&apos;."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-31]" key="ANALYSIS_ARRAY_ACCESS_OUTBOUND_179" tag="" content="The program may have out of bound access of array variable &apos;buf.V.1.2&apos; in function &apos;gradient_xy_calc&apos;."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-31]" key="ANALYSIS_ARRAY_ACCESS_OUTBOUND_179" tag="" content="The program may have out of bound access of array variable &apos;buf.V.1.3&apos; in function &apos;gradient_xy_calc&apos;."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-31]" key="ANALYSIS_ARRAY_ACCESS_OUTBOUND_179" tag="" content="The program may have out of bound access of array variable &apos;buf.V.1.4&apos; in function &apos;gradient_xy_calc&apos;."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-31]" key="ANALYSIS_ARRAY_ACCESS_OUTBOUND_179" tag="" content="The program may have out of bound access of array variable &apos;frame.V&apos; in function &apos;gradient_xy_calc&apos; (optical_flow.cpp:45:9)."/>
+	<Message severity="INFO" prefix="[XFORM 203-721]" key="XFORM_LOOP_STREAM_STATUS_309" tag="" content="Changing loop &apos;Loop_FRAMES_CP_OUTER_proc&apos; (optical_flow.cpp:453) to a process function for dataflow in function &apos;optical_flow&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_193" tag="SDX_ARRAY,DATAFLOW" content="All the elements of global array &apos;gradient_x.V&apos;  should be updated in process function &apos;gradient_xy_calc&apos;, otherwise it may not be synthesized correctly."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_193" tag="SDX_ARRAY,DATAFLOW" content="All the elements of global array &apos;gradient_y.V&apos;  should be updated in process function &apos;gradient_xy_calc&apos;, otherwise it may not be synthesized correctly."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_193" tag="SDX_ARRAY,DATAFLOW" content="All the elements of global array &apos;y_filtered.x.V&apos;  should be updated in process function &apos;gradient_weight_y&apos;, otherwise it may not be synthesized correctly."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_193" tag="SDX_ARRAY,DATAFLOW" content="All the elements of global array &apos;y_filtered.y.V&apos;  should be updated in process function &apos;gradient_weight_y&apos;, otherwise it may not be synthesized correctly."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_193" tag="SDX_ARRAY,DATAFLOW" content="All the elements of global array &apos;y_filtered.z.V&apos;  should be updated in process function &apos;gradient_weight_y&apos;, otherwise it may not be synthesized correctly."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_193" tag="SDX_ARRAY,DATAFLOW" content="All the elements of global array &apos;filtered_gradient.x.V&apos;  should be updated in process function &apos;gradient_weight_x&apos;, otherwise it may not be synthesized correctly."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_193" tag="SDX_ARRAY,DATAFLOW" content="All the elements of global array &apos;filtered_gradient.y.V&apos;  should be updated in process function &apos;gradient_weight_x&apos;, otherwise it may not be synthesized correctly."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_193" tag="SDX_ARRAY,DATAFLOW" content="All the elements of global array &apos;filtered_gradient.z.V&apos;  should be updated in process function &apos;gradient_weight_x&apos;, otherwise it may not be synthesized correctly."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_193" tag="SDX_ARRAY,DATAFLOW" content="All the elements of global array &apos;tensor_y.val.V&apos;  should be updated in process function &apos;tensor_weight_y&apos;, otherwise it may not be synthesized correctly."/>
+	<Message severity="WARNING" prefix="[XFORM 203-713]" key="XFORM_DATAFLOW_WARNING_193" tag="SDX_ARRAY,DATAFLOW" content="All the elements of global array &apos;tensor.val.V&apos;  should be updated in process function &apos;tensor_weight_x&apos;, otherwise it may not be synthesized correctly."/>
+	<Message severity="INFO" prefix="[XFORM 203-712]" key="XFORM_DATAFLOW_TRANSFORM_230" tag="DATAFLOW" content="Applying dataflow to function &apos;optical_flow&apos;, detected/extracted 9 process function(s): 
+	 &apos;Loop_FRAMES_CP_OUTER_proc&apos;
+	 &apos;gradient_xy_calc&apos;
+	 &apos;gradient_z_calc&apos;
+	 &apos;gradient_weight_y&apos;
+	 &apos;gradient_weight_x&apos;
+	 &apos;outer_product&apos;
+	 &apos;tensor_weight_y&apos;
+	 &apos;tensor_weight_x&apos;
+	 &apos;flow_calc&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-124]" key="XFORM_ARRAY_STREAM_WARNING_632" tag="" content="Array  &apos;tensor.val.V&apos; : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order."/>
+	<Message severity="WARNING" prefix="[XFORM 203-124]" key="XFORM_ARRAY_STREAM_WARNING_632" tag="" content="Array  &apos;tensor_y.val.V&apos; : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order."/>
+	<Message severity="WARNING" prefix="[XFORM 203-124]" key="XFORM_ARRAY_STREAM_WARNING_632" tag="" content="Array  &apos;gradient_x.V&apos; : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order."/>
+	<Message severity="WARNING" prefix="[XFORM 203-124]" key="XFORM_ARRAY_STREAM_WARNING_632" tag="" content="Array  &apos;gradient_y.V&apos; : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order."/>
+	<Message severity="WARNING" prefix="[XFORM 203-124]" key="XFORM_ARRAY_STREAM_WARNING_632" tag="" content="Array  &apos;y_filtered.x.V&apos; : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order."/>
+	<Message severity="WARNING" prefix="[XFORM 203-124]" key="XFORM_ARRAY_STREAM_WARNING_632" tag="" content="Array  &apos;y_filtered.y.V&apos; : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order."/>
+	<Message severity="WARNING" prefix="[XFORM 203-124]" key="XFORM_ARRAY_STREAM_WARNING_632" tag="" content="Array  &apos;y_filtered.z.V&apos; : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order."/>
+	<Message severity="WARNING" prefix="[XFORM 203-124]" key="XFORM_ARRAY_STREAM_WARNING_632" tag="" content="Array  &apos;filtered_gradient.x.V&apos; : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order."/>
+	<Message severity="WARNING" prefix="[XFORM 203-124]" key="XFORM_ARRAY_STREAM_WARNING_632" tag="" content="Array  &apos;filtered_gradient.y.V&apos; : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order."/>
+	<Message severity="WARNING" prefix="[XFORM 203-124]" key="XFORM_ARRAY_STREAM_WARNING_632" tag="" content="Array  &apos;filtered_gradient.z.V&apos; : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order."/>
+	<Message severity="WARNING" prefix="[XFORM 203-124]" key="XFORM_ARRAY_STREAM_WARNING_632" tag="" content="Array  &apos;frame3_a.V&apos; : may have improper streaming access(es), possible reasons: (1) some entries are accessed more than once; (2) some entries are not used; (3) the entries are not accessed in sequential order."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:631:41) to (optical_flow.cpp:297:7) in function &apos;tensor_weight_y&apos;... converting 3 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (./../host/typedefs.h:48:9) to (optical_flow.cpp:343:7) in function &apos;tensor_weight_x&apos;... converting 3 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-401]" key="XFORM_IFCONV_STATUS_239" tag="" content="Performing if-conversion on hyperblock from (optical_flow.cpp:63:7) in function &apos;gradient_xy_calc&apos;... converting 3 basic blocks."/>
+	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;tensor_weight_x&apos; (./../host/typedefs.h:48:9)...11 expression(s) balanced."/>
+	<Message severity="INFO" prefix="[XFORM 203-11]" key="XFORM_EXPR_BALANCE_STATUS_178" tag="" content="Balancing expressions in function &apos;gradient_xy_calc&apos; (optical_flow.cpp:35:48)...6 expression(s) balanced."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Pre-synthesis Time (s): cpu = 00:00:59 ; elapsed = 00:01:06 . Memory (MB): peak = 659.797 ; gain = 193.918 ; free physical = 98355 ; free virtual = 106192"/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;TENSOR_WEIGHT_Y_OUTER&apos; (optical_flow.cpp:261:4) in function &apos;tensor_weight_y&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;TENSOR_WEIGHT_X_OUTER&apos; (optical_flow.cpp:312:4) in function &apos;tensor_weight_x&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;OUTER_OUTER&apos; (optical_flow.cpp:234:4) in function &apos;outer_product&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;GRAD_Z_OUTER&apos; (optical_flow.cpp:112:4) in function &apos;gradient_z_calc&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;GRAD_XY_OUTER&apos; (optical_flow.cpp:36:4) in function &apos;gradient_xy_calc&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;GRAD_WEIGHT_Y_OUTER&apos; (optical_flow.cpp:135:4) in function &apos;gradient_weight_y&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;GRAD_WEIGHT_X_OUTER&apos; (optical_flow.cpp:189:4) in function &apos;gradient_weight_x&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;FLOW_OUTER&apos; (optical_flow.cpp:357:4) in function &apos;flow_calc&apos;."/>
+	<Message severity="INFO" prefix="[XFORM 203-541]" key="XFORM_LOOPFLAT_STATUS_218" tag="" content="Flattening a loop nest &apos;FRAMES_CP_OUTER&apos; (optical_flow.cpp:453:6) in function &apos;Loop_FRAMES_CP_OUTER_proc&apos;."/>
+	<Message severity="WARNING" prefix="[XFORM 203-631]" key="XFORM_FRN_STATUS_336" tag="" content="Renaming function &apos;Loop_FRAMES_CP_OUTER_proc&apos; to &apos;Loop_FRAMES_CP_OUTER&apos; (optical_flow.cpp:452:51)"/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[2].val.V&apos; (optical_flow.cpp:258)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[1].val.V&apos; (optical_flow.cpp:258)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[2].val.V&apos; (optical_flow.cpp:258)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[1].val.V&apos; (optical_flow.cpp:258)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[1].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[2].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[3].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[4].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[5].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[6].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[1].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[2].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[3].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[4].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[5].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[6].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[1].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[2].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[3].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[4].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[5].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[6].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[1].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[2].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[3].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[4].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[5].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[6].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[1].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[2].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[3].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[4].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[5].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[6].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[1].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[2].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[3].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[4].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[5].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false intra dependency for variable &apos;buf.val[6].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[1].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[2].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[3].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[4].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[5].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[6].x.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[1].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[2].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[3].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[4].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[5].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[6].y.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[1].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[2].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[3].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[4].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[5].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="WARNING" prefix="[ANALYSIS 214-52]" key="ANALYSIS_USER_SET_DEP_242" tag="" content="Found false inter dependency for variable &apos;buf.val[6].z.V&apos; (optical_flow.cpp:131)."/>
+	<Message severity="INFO" prefix="[XFORM 203-811]" key="XFORM_BUS_BURST_INFER_STATUS_254" tag="SDX_AXI" content="Inferring multiple bus burst write of a total cumulative length 10 on port &apos;outputs&apos; (optical_flow.cpp:392:7). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[XFORM 203-811]" key="XFORM_BUS_BURST_INFER_STATUS_254" tag="SDX_AXI" content="Inferring multiple bus burst read of a total cumulative length 10 on port &apos;frames.V&apos; (optical_flow.cpp:459:2). These data requests might be further partitioned to multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings."/>
+	<Message severity="INFO" prefix="[XFORM 203-603]" key="XFORM_INLINE_STATUS_234" tag="" content="Evaluating the output(s) of a call to function &apos;_ssdm_op_BitConcatenate.i49.i30.i19&apos; in function &apos;gradient_weight_x&apos; and propagating its result(s) since all actual argument(s) to the function are constants."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished Architecture Synthesis Time (s): cpu = 00:01:01 ; elapsed = 00:01:11 . Memory (MB): peak = 785.883 ; gain = 320.004 ; free physical = 98156 ; free virtual = 105995"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1317" tag="" content="Starting hardware synthesis ..."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1385" tag="" content="Synthesizing &apos;optical_flow&apos; ..."/>
+	<Message severity="WARNING" prefix="[SYN 201-103]" key="SYN_MODULE_NAME_ILLEGAL_445" tag="" content="Legalizing function name &apos;optical_flow.entry12&apos; to &apos;optical_flow_entry12&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;optical_flow_entry12&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 70.95 seconds; current allocated memory: 275.051 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.14 seconds; current allocated memory: 275.112 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;Loop_FRAMES_CP_OUTER&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;FRAMES_CP_OUTER_FRAMES_CP_INNER&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 19."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.52 seconds; current allocated memory: 275.569 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.24 seconds; current allocated memory: 275.940 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;gradient_xy_calc&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;GRAD_XY_OUTER_GRAD_XY_INNER&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 5."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.69 seconds; current allocated memory: 276.839 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.62 seconds; current allocated memory: 277.527 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;gradient_z_calc&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;GRAD_Z_OUTER_GRAD_Z_INNER&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 4."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.82 seconds; current allocated memory: 277.881 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.24 seconds; current allocated memory: 278.076 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;gradient_weight_y&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;GRAD_WEIGHT_Y_OUTER_GRAD_WEIGHT_Y_INNER&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 2."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.57 seconds; current allocated memory: 278.469 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.37 seconds; current allocated memory: 278.891 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;gradient_weight_x&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;GRAD_WEIGHT_X_OUTER_GRAD_WEIGHT_X_INNER&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.68 seconds; current allocated memory: 279.472 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.51 seconds; current allocated memory: 280.049 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;outer_product&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;OUTER_OUTER_OUTER_INNER&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 3."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.2 seconds; current allocated memory: 280.379 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.56 seconds; current allocated memory: 280.576 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;tensor_weight_y&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;TENSOR_WEIGHT_Y_OUTER_TENSOR_WEIGHT_Y_INNER&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 4."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.71 seconds; current allocated memory: 281.291 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.41 seconds; current allocated memory: 281.893 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;tensor_weight_x&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;TENSOR_WEIGHT_X_OUTER_TENSOR_WEIGHT_X_INNER&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 4."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.94 seconds; current allocated memory: 282.688 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.31 seconds; current allocated memory: 283.361 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;flow_calc&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_41" tag="" content="Pipelining loop &apos;FLOW_OUTER_FLOW_INNER&apos;."/>
+	<Message severity="INFO" prefix="[SCHED 204-61]" key="SCHED_PIPELINING_STATUS_44" tag="" content="Pipelining result : Target II = 1, Final II = 1, Depth = 83."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.69 seconds; current allocated memory: 284.649 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.62 seconds; current allocated memory: 285.675 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1477" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-42]" key="HLS_42_1438" tag="" content="-- Implementing module &apos;optical_flow&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1478" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_597" tag="" content="Starting scheduling ..."/>
+	<Message severity="INFO" prefix="[SCHED 204-11]" key="SCHED_SCHED_STATUS_596" tag="" content="Finished scheduling."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.79 seconds; current allocated memory: 286.028 MB."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_926" tag="" content="Starting micro-architecture generation ..."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_698" tag="" content="Performing variable lifetime analysis."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_697" tag="" content="Exploring resource sharing."/>
+	<Message severity="INFO" prefix="[BIND 205-101]" key="BIND_101_693" tag="" content="Binding ..."/>
+	<Message severity="INFO" prefix="[BIND 205-100]" key="BIND_100_925" tag="" content="Finished micro-architecture generation."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.76 seconds; current allocated memory: 287.081 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;optical_flow_entry12&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;optical_flow_entry12&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.94 seconds; current allocated memory: 287.623 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;Loop_FRAMES_CP_OUTER&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;optical_flow_urem_6ns_5ns_6_10_1&apos; to &apos;optical_flow_urembkb&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;optical_flow_urembkb&apos;: 1 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;Loop_FRAMES_CP_OUTER&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.38 seconds; current allocated memory: 288.688 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;gradient_xy_calc&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_xy_calc_buf_V_1_1&apos; to &apos;gradient_xy_calc_cud&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_xy_calc_buf_V_1_2&apos; to &apos;gradient_xy_calc_dEe&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_xy_calc_buf_V_1_3&apos; to &apos;gradient_xy_calc_eOg&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_xy_calc_buf_V_1_4&apos; to &apos;gradient_xy_calc_fYi&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;gradient_xy_calc&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.23 seconds; current allocated memory: 291.075 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;gradient_z_calc&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;gradient_z_calc&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.17 seconds; current allocated memory: 294.506 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;gradient_weight_y&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_1_x_V&apos; to &apos;gradient_weight_yg8j&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_2_x_V&apos; to &apos;gradient_weight_yhbi&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_3_x_V&apos; to &apos;gradient_weight_yibs&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_4_x_V&apos; to &apos;gradient_weight_yjbC&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_5_x_V&apos; to &apos;gradient_weight_ykbM&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_6_x_V&apos; to &apos;gradient_weight_ylbW&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_1_y_V&apos; to &apos;gradient_weight_ymb6&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_2_y_V&apos; to &apos;gradient_weight_yncg&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_3_y_V&apos; to &apos;gradient_weight_yocq&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_4_y_V&apos; to &apos;gradient_weight_ypcA&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_5_y_V&apos; to &apos;gradient_weight_yqcK&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_6_y_V&apos; to &apos;gradient_weight_yrcU&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_1_z_V&apos; to &apos;gradient_weight_ysc4&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_2_z_V&apos; to &apos;gradient_weight_ytde&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_3_z_V&apos; to &apos;gradient_weight_yudo&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_4_z_V&apos; to &apos;gradient_weight_yvdy&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_5_z_V&apos; to &apos;gradient_weight_ywdI&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;gradient_weight_y_buf_val_6_z_V&apos; to &apos;gradient_weight_yxdS&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;gradient_weight_y&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.92 seconds; current allocated memory: 296.150 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;gradient_weight_x&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;gradient_weight_x&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.07 seconds; current allocated memory: 298.961 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;outer_product&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;optical_flow_mul_mul_18s_18s_36_1_1&apos; to &apos;optical_flow_mul_yd2&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;optical_flow_mul_yd2&apos;: 6 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;outer_product&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.65 seconds; current allocated memory: 301.903 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;tensor_weight_y&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;tensor_weight_y_buf_val_1_val_V&apos; to &apos;tensor_weight_y_bzec&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;tensor_weight_y_buf_val_2_val_V&apos; to &apos;tensor_weight_y_bAem&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;tensor_weight_y&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 0.65 seconds; current allocated memory: 303.741 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;tensor_weight_x&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;tensor_weight_x&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.11 seconds; current allocated memory: 307.395 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;flow_calc&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;buf_V_0&apos; is power-on initialization."/>
+	<Message severity="WARNING" prefix="[RTGEN 206-101]" key="RTGEN_101_861" tag="" content="Register &apos;buf_V_1151&apos; is power-on initialization."/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;optical_flow_sdiv_70ns_62s_70_74_1&apos; to &apos;optical_flow_sdivBew&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;optical_flow_sdivBew&apos;: 2 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_855" tag="" content="Generating core module &apos;optical_flow_urembkb&apos;: 2 instance(s)."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;flow_calc&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.5 seconds; current allocated memory: 313.860 MB."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1483" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1484" tag="" content="-- Generating RTL for module &apos;optical_flow&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1485" tag="" content="----------------------------------------------------------------"/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;optical_flow/gmem0&apos; to &apos;m_axi&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;optical_flow/gmem1&apos; to &apos;m_axi&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;optical_flow/frames_V&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on port &apos;optical_flow/outputs&apos; to &apos;s_axilite &amp; ap_none&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-500]" key="PREPROC_IO_COMP_CONFLICT_1950" tag="" content="Setting interface mode on function &apos;optical_flow&apos; to &apos;s_axilite &amp; ap_ctrl_hs&apos;."/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_851" tag="" content="Bundling port &apos;return&apos;, &apos;frames_V&apos; and &apos;outputs&apos; to AXI-Lite port control."/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;start_for_flow_calc_U0&apos; to &apos;start_for_flow_caCeG&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;start_for_gradient_xy_calc_U0&apos; to &apos;start_for_gradienDeQ&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;start_for_gradient_z_calc_U0&apos; to &apos;start_for_gradienEe0&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;start_for_gradient_weight_y_U0&apos; to &apos;start_for_gradienFfa&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;start_for_gradient_weight_x_U0&apos; to &apos;start_for_gradienGfk&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;start_for_outer_product_U0&apos; to &apos;start_for_outer_pHfu&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;start_for_tensor_weight_y_U0&apos; to &apos;start_for_tensor_IfE&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[SYN 201-210]" key="SYN_210_889" tag="" content="Renamed object name &apos;start_for_tensor_weight_x_U0&apos; to &apos;start_for_tensor_JfO&apos; due to the length limit 20"/>
+	<Message severity="INFO" prefix="[RTGEN 206-100]" key="RTGEN_100_856" tag="" content="Finished creating RTL model for &apos;optical_flow&apos;."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="" content=" Elapsed time: 1.81 seconds; current allocated memory: 318.816 MB."/>
+	<Message severity="INFO" prefix="[RTMG 210-282]" key="RTMG_282_1796" tag="" content="Generating pipelined core: &apos;optical_flow_urembkb_div&apos;"/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1792" tag="" content="Implementing memory &apos;gradient_xy_calc_cud_ram (RAM)&apos; using distributed RAMs with power-on initialization."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;gradient_weight_yg8j_ram (RAM)&apos; using distributed RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;gradient_weight_yhbi_ram (RAM)&apos; using distributed RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-278]" key="RTMG_278_1790" tag="" content="Implementing memory &apos;tensor_weight_y_bzec_ram (RAM)&apos; using block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-282]" key="RTMG_282_1796" tag="" content="Generating pipelined core: &apos;optical_flow_sdivBew_div&apos;"/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;frames_V_c_U(fifo_w32_d2_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;outputs_c_U(fifo_w32_d2_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;frame1_a_V_U(fifo_w8_d10_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;frame2_a_V_U(fifo_w8_d10_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;frame3_a_V_U(fifo_w8_d10_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;frame3_b_V_U(fifo_w8_d10_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;frame4_a_V_U(fifo_w8_d10_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;frame5_a_V_U(fifo_w8_d10_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;gradient_x_V_U(fifo_w32_d10_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;gradient_y_V_U(fifo_w32_d10_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;gradient_z_V_U(fifo_w32_d40_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;y_filtered_x_V_U(fifo_w1_d10_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;y_filtered_y_V_U(fifo_w1_d10_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;y_filtered_z_V_U(fifo_w1_d10_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;filtered_gradient_x_s_U(fifo_w32_d10_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;filtered_gradient_y_s_U(fifo_w32_d10_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;filtered_gradient_z_s_U(fifo_w32_d10_A)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;out_product_val_V_U(fifo_w191_d10_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;tensor_y_val_V_U(fifo_w192_d10_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;tensor_val_V_U(fifo_w192_d10_A)&apos; using Block RAMs."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;start_for_flow_caCeG_U(start_for_flow_caCeG)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;start_for_gradienDeQ_U(start_for_gradienDeQ)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;start_for_gradienEe0_U(start_for_gradienEe0)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;start_for_gradienFfa_U(start_for_gradienFfa)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;start_for_gradienGfk_U(start_for_gradienGfk)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;start_for_outer_pHfu_U(start_for_outer_pHfu)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;start_for_tensor_IfE_U(start_for_tensor_IfE)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[RTMG 210-285]" key="RTMG_285_1799" tag="" content="Implementing FIFO &apos;start_for_tensor_JfO_U(start_for_tensor_JfO)&apos; using Shift Registers."/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_965" tag="" content="Finished generating all RTL models Time (s): cpu = 00:01:17 ; elapsed = 00:01:52 . Memory (MB): peak = 785.891 ; gain = 320.012 ; free physical = 97070 ; free virtual = 104928"/>
+	<Message severity="INFO" prefix="[SYSC 207-301]" key="SYSC_301_1065" tag="" content="Generating SystemC RTL for optical_flow."/>
+	<Message severity="INFO" prefix="[VHDL 208-304]" key="VHDL_304_1066" tag="" content="Generating VHDL RTL for optical_flow."/>
+	<Message severity="INFO" prefix="[VLOG 209-307]" key="VLOG_307_1067" tag="" content="Generating Verilog RTL for optical_flow."/>
+	<Message severity="INFO" prefix="[HLS 200-112]" key="HLS_112_964" tag="" content="Total elapsed time: 112.39 seconds; peak allocated memory: 318.816 MB."/>
+</Messages>

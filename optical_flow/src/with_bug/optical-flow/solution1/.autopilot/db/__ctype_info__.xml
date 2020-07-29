@@ -1,0 +1,41 @@
+<InterfaceSummary>
+<RtlPorts>
+<name>gmem0</name>
+<CType>
+<TypeName>ap_uint 64</TypeName>
+<TypeWidth>64</TypeWidth>
+<PhysicalWidth>64</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
+<name>gmem1</name>
+<CType>
+<TypeName>struct</TypeName>
+<TypeWidth>64</TypeWidth>
+<PhysicalWidth>64</PhysicalWidth>
+<Fields>
+<Field>
+<FieldName>x</FieldName>
+<FieldType>
+<TypeName>ap_fixed 32 13 5 3 0</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</FieldType>
+</Field>
+<Field>
+<FieldName>y</FieldName>
+<FieldType>
+<TypeName>ap_fixed 32 13 5 3 0</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>32</PhysicalWidth>
+</FieldType>
+</Field>
+</Fields>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>1</InvalidType>
+</RtlPorts>
+</InterfaceSummary>
+

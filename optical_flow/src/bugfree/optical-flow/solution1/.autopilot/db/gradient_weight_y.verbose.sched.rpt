@@ -1,0 +1,278 @@
+
+
+================================================================
+== Vivado HLS Report for 'gradient_weight_y'
+================================================================
+* Date:           Tue Apr 14 19:35:57 2020
+
+* Version:        2018.2 (Build 2258646 on Thu Jun 14 20:25:20 MDT 2018)
+* Project:        optical-flow
+* Solution:       solution1
+* Product family: virtex7
+* Target device:  xc7v2000tfhg1761-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     5.540|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   82|   82|   82|   82|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                                           |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |                 Loop Name                 | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- GRAD_WEIGHT_Y_OUTER_GRAD_WEIGHT_Y_INNER  |   80|   80|         2|          1|          1|    80|    yes   |
+        +-------------------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	4  / (exitcond_flatten)
+	3  / (!exitcond_flatten)
+3 --> 
+	2  / true
+4 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.18>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @y_filtered_z_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 5 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @y_filtered_y_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 6 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i1* @y_filtered_x_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 7 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* @gradient_z_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 8 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* @gradient_y_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 9 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecInterface(i32* @gradient_x_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 10 'specinterface' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%buf_val_1_x_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 11 'alloca' 'buf_val_1_x_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%buf_val_2_x_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 12 'alloca' 'buf_val_2_x_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%buf_val_3_x_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 13 'alloca' 'buf_val_3_x_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%buf_val_4_x_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 14 'alloca' 'buf_val_4_x_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%buf_val_5_x_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 15 'alloca' 'buf_val_5_x_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%buf_val_6_x_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 16 'alloca' 'buf_val_6_x_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%buf_val_1_y_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 17 'alloca' 'buf_val_1_y_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%buf_val_2_y_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 18 'alloca' 'buf_val_2_y_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%buf_val_3_y_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 19 'alloca' 'buf_val_3_y_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%buf_val_4_y_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 20 'alloca' 'buf_val_4_y_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%buf_val_5_y_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 21 'alloca' 'buf_val_5_y_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%buf_val_6_y_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 22 'alloca' 'buf_val_6_y_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%buf_val_1_z_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 23 'alloca' 'buf_val_1_z_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%buf_val_2_z_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 24 'alloca' 'buf_val_2_z_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%buf_val_3_z_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 25 'alloca' 'buf_val_3_z_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%buf_val_4_z_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 26 'alloca' 'buf_val_4_z_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%buf_val_5_z_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 27 'alloca' 'buf_val_5_z_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%buf_val_6_z_V = alloca [10 x i32], align 4" [optical_flow.cpp:131]   --->   Operation 28 'alloca' 'buf_val_6_z_V' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%rbegin_i_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([59 x i8]* @hls_KD_KD_LineBuffe) nounwind"   --->   Operation 29 'specregionbegin' 'rbegin_i_i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%rend_i_i = call i32 (...)* @_ssdm_op_SpecRegionEnd([59 x i8]* @hls_KD_KD_LineBuffe, i32 %rbegin_i_i) nounwind"   --->   Operation 30 'specregionend' 'rend_i_i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (1.18ns)   --->   "br label %0" [optical_flow.cpp:134]   --->   Operation 31 'br' <Predicate = true> <Delay = 1.18>
+
+State 2 <SV = 1> <Delay = 4.29>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i7 [ 0, %entry ], [ %indvar_flatten_next, %._crit_edge.i ]"   --->   Operation 32 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%r_i = phi i4 [ 0, %entry ], [ %r_i_mid2, %._crit_edge.i ]" [optical_flow.cpp:136]   --->   Operation 33 'phi' 'r_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%col_assign = phi i4 [ 0, %entry ], [ %c, %._crit_edge.i ]"   --->   Operation 34 'phi' 'col_assign' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (1.12ns)   --->   "%exitcond_flatten = icmp eq i7 %indvar_flatten, -48"   --->   Operation 35 'icmp' 'exitcond_flatten' <Predicate = true> <Delay = 1.12> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.12> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 36 [1/1] (1.38ns)   --->   "%indvar_flatten_next = add i7 %indvar_flatten, 1"   --->   Operation 36 'add' 'indvar_flatten_next' <Predicate = true> <Delay = 1.38> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten, label %gradient_weight_y.exit, label %.reset"   --->   Operation 37 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (1.12ns)   --->   "%exitcond1_i = icmp eq i4 %col_assign, -6" [optical_flow.cpp:136]   --->   Operation 38 'icmp' 'exitcond1_i' <Predicate = (!exitcond_flatten)> <Delay = 1.12> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.12> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 39 [1/1] (0.65ns)   --->   "%col_assign_mid2 = select i1 %exitcond1_i, i4 0, i4 %col_assign" [optical_flow.cpp:136]   --->   Operation 39 'select' 'col_assign_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.65> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.65> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 40 [1/1] (1.36ns)   --->   "%r6 = add i4 %r_i, 1" [optical_flow.cpp:134]   --->   Operation 40 'add' 'r6' <Predicate = (!exitcond_flatten)> <Delay = 1.36> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 41 [1/1] (1.12ns)   --->   "%tmp_i_mid1 = icmp ult i4 %r6, 5" [optical_flow.cpp:141]   --->   Operation 41 'icmp' 'tmp_i_mid1' <Predicate = (!exitcond_flatten)> <Delay = 1.12> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.12> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 42 [1/1] (1.12ns)   --->   "%tmp_i8 = icmp ult i4 %r_i, 5" [optical_flow.cpp:141]   --->   Operation 42 'icmp' 'tmp_i8' <Predicate = (!exitcond_flatten)> <Delay = 1.12> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.12> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 43 [1/1] (0.62ns)   --->   "%tmp_i_mid2 = select i1 %exitcond1_i, i1 %tmp_i_mid1, i1 %tmp_i8" [optical_flow.cpp:141]   --->   Operation 43 'select' 'tmp_i_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.62> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.65> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 44 [1/1] (1.12ns)   --->   "%tmp_47_i_mid1 = icmp ugt i4 %r6, 2" [optical_flow.cpp:174]   --->   Operation 44 'icmp' 'tmp_47_i_mid1' <Predicate = (!exitcond_flatten)> <Delay = 1.12> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.12> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 45 [1/1] (1.12ns)   --->   "%tmp_47_i7 = icmp ugt i4 %r_i, 2" [optical_flow.cpp:174]   --->   Operation 45 'icmp' 'tmp_47_i7' <Predicate = (!exitcond_flatten)> <Delay = 1.12> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.12> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 46 [1/1] (0.62ns)   --->   "%tmp_47_i_mid2 = select i1 %exitcond1_i, i1 %tmp_47_i_mid1, i1 %tmp_47_i7" [optical_flow.cpp:174]   --->   Operation 46 'select' 'tmp_47_i_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.62> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.65> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 47 [1/1] (0.65ns)   --->   "%r_i_mid2 = select i1 %exitcond1_i, i4 %r6, i4 %r_i" [optical_flow.cpp:136]   --->   Operation 47 'select' 'r_i_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.65> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.65> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 48 [1/1] (0.00ns)   --->   "%tmp_50_i = zext i4 %col_assign_mid2 to i64" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 48 'zext' 'tmp_50_i' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 49 [1/1] (0.00ns)   --->   "%buf_val_2_x_V_addr = getelementptr [10 x i32]* %buf_val_2_x_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 49 'getelementptr' 'buf_val_2_x_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 50 [2/2] (1.42ns)   --->   "%buf_val_2_x_V_load = load i32* %buf_val_2_x_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 50 'load' 'buf_val_2_x_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%buf_val_2_y_V_addr = getelementptr [10 x i32]* %buf_val_2_y_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 51 'getelementptr' 'buf_val_2_y_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 52 [2/2] (1.42ns)   --->   "%buf_val_2_y_V_load = load i32* %buf_val_2_y_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 52 'load' 'buf_val_2_y_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 53 [1/1] (0.00ns)   --->   "%buf_val_2_z_V_addr = getelementptr [10 x i32]* %buf_val_2_z_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 53 'getelementptr' 'buf_val_2_z_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 54 [2/2] (1.42ns)   --->   "%buf_val_2_z_V_load = load i32* %buf_val_2_z_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 54 'load' 'buf_val_2_z_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 55 [1/1] (0.00ns)   --->   "%buf_val_3_x_V_addr = getelementptr [10 x i32]* %buf_val_3_x_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 55 'getelementptr' 'buf_val_3_x_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 56 [2/2] (1.42ns)   --->   "%buf_val_3_x_V_load = load i32* %buf_val_3_x_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 56 'load' 'buf_val_3_x_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 57 [1/1] (0.00ns)   --->   "%buf_val_3_y_V_addr = getelementptr [10 x i32]* %buf_val_3_y_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 57 'getelementptr' 'buf_val_3_y_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 58 [2/2] (1.42ns)   --->   "%buf_val_3_y_V_load = load i32* %buf_val_3_y_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 58 'load' 'buf_val_3_y_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%buf_val_3_z_V_addr = getelementptr [10 x i32]* %buf_val_3_z_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 59 'getelementptr' 'buf_val_3_z_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 60 [2/2] (1.42ns)   --->   "%buf_val_3_z_V_load = load i32* %buf_val_3_z_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 60 'load' 'buf_val_3_z_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 61 [1/1] (0.00ns)   --->   "%buf_val_4_x_V_addr = getelementptr [10 x i32]* %buf_val_4_x_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 61 'getelementptr' 'buf_val_4_x_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 62 [2/2] (1.42ns)   --->   "%buf_val_4_x_V_load = load i32* %buf_val_4_x_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 62 'load' 'buf_val_4_x_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 63 [1/1] (0.00ns)   --->   "%buf_val_4_y_V_addr = getelementptr [10 x i32]* %buf_val_4_y_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 63 'getelementptr' 'buf_val_4_y_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 64 [2/2] (1.42ns)   --->   "%buf_val_4_y_V_load = load i32* %buf_val_4_y_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 64 'load' 'buf_val_4_y_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%buf_val_4_z_V_addr = getelementptr [10 x i32]* %buf_val_4_z_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 65 'getelementptr' 'buf_val_4_z_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 66 [2/2] (1.42ns)   --->   "%buf_val_4_z_V_load = load i32* %buf_val_4_z_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 66 'load' 'buf_val_4_z_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%buf_val_5_x_V_addr = getelementptr [10 x i32]* %buf_val_5_x_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 67 'getelementptr' 'buf_val_5_x_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 68 [2/2] (1.42ns)   --->   "%buf_val_5_x_V_load = load i32* %buf_val_5_x_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 68 'load' 'buf_val_5_x_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 69 [1/1] (0.00ns)   --->   "%buf_val_5_y_V_addr = getelementptr [10 x i32]* %buf_val_5_y_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 69 'getelementptr' 'buf_val_5_y_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 70 [2/2] (1.42ns)   --->   "%buf_val_5_y_V_load = load i32* %buf_val_5_y_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 70 'load' 'buf_val_5_y_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 71 [1/1] (0.00ns)   --->   "%buf_val_5_z_V_addr = getelementptr [10 x i32]* %buf_val_5_z_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 71 'getelementptr' 'buf_val_5_z_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 72 [2/2] (1.42ns)   --->   "%buf_val_5_z_V_load = load i32* %buf_val_5_z_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 72 'load' 'buf_val_5_z_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 73 [1/1] (0.00ns)   --->   "%buf_val_6_x_V_addr = getelementptr [10 x i32]* %buf_val_6_x_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 73 'getelementptr' 'buf_val_6_x_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 74 [2/2] (1.42ns)   --->   "%buf_val_6_x_V_load = load i32* %buf_val_6_x_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 74 'load' 'buf_val_6_x_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 75 [1/1] (0.00ns)   --->   "%buf_val_6_y_V_addr = getelementptr [10 x i32]* %buf_val_6_y_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 75 'getelementptr' 'buf_val_6_y_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 76 [2/2] (1.42ns)   --->   "%buf_val_6_y_V_load = load i32* %buf_val_6_y_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 76 'load' 'buf_val_6_y_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 77 [1/1] (0.00ns)   --->   "%buf_val_6_z_V_addr = getelementptr [10 x i32]* %buf_val_6_z_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 77 'getelementptr' 'buf_val_6_z_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 78 [2/2] (1.42ns)   --->   "%buf_val_6_z_V_load = load i32* %buf_val_6_z_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 78 'load' 'buf_val_6_z_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 79 [1/1] (1.18ns)   --->   "br i1 %tmp_i_mid2, label %.preheader.preheader.i221.i, label %.preheader.preheader.i.i" [optical_flow.cpp:141]   --->   Operation 79 'br' <Predicate = (!exitcond_flatten)> <Delay = 1.18>
+ST_2 : Operation 80 [1/1] (0.00ns)   --->   "br i1 %tmp_47_i_mid2, label %1, label %._crit_edge.i" [optical_flow.cpp:174]   --->   Operation 80 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_2 : Operation 81 [1/1] (1.36ns)   --->   "%c = add i4 %col_assign_mid2, 1" [optical_flow.cpp:136]   --->   Operation 81 'add' 'c' <Predicate = (!exitcond_flatten)> <Delay = 1.36> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 5.54>
+ST_3 : Operation 82 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([40 x i8]* @GRAD_WEIGHT_Y_OUTER_s)"   --->   Operation 82 'specloopname' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 83 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([20 x i8]* @p_str9) nounwind" [optical_flow.cpp:137]   --->   Operation 83 'specloopname' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 84 [1/1] (0.00ns)   --->   "%tmp_57_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([20 x i8]* @p_str9)" [optical_flow.cpp:137]   --->   Operation 84 'specregionbegin' 'tmp_57_i' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 85 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [optical_flow.cpp:138]   --->   Operation 85 'specpipeline' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 86 [1/1] (0.00ns)   --->   "%buf_val_1_x_V_addr = getelementptr [10 x i32]* %buf_val_1_x_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 86 'getelementptr' 'buf_val_1_x_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 87 [1/1] (0.00ns)   --->   "%buf_val_1_y_V_addr = getelementptr [10 x i32]* %buf_val_1_y_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 87 'getelementptr' 'buf_val_1_y_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 88 [1/1] (0.00ns)   --->   "%buf_val_1_z_V_addr = getelementptr [10 x i32]* %buf_val_1_z_V, i64 0, i64 %tmp_50_i" [/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 88 'getelementptr' 'buf_val_1_z_V_addr' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 89 [1/2] (1.42ns)   --->   "%buf_val_2_x_V_load = load i32* %buf_val_2_x_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 89 'load' 'buf_val_2_x_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 90 [1/1] (1.42ns)   --->   "store i32 %buf_val_2_x_V_load, i32* %buf_val_1_x_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 90 'store' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 91 [1/2] (1.42ns)   --->   "%buf_val_2_y_V_load = load i32* %buf_val_2_y_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 91 'load' 'buf_val_2_y_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 92 [1/1] (1.42ns)   --->   "store i32 %buf_val_2_y_V_load, i32* %buf_val_1_y_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 92 'store' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 93 [1/2] (1.42ns)   --->   "%buf_val_2_z_V_load = load i32* %buf_val_2_z_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 93 'load' 'buf_val_2_z_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 94 [1/1] (1.42ns)   --->   "store i32 %buf_val_2_z_V_load, i32* %buf_val_1_z_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 94 'store' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 95 [1/2] (1.42ns)   --->   "%buf_val_3_x_V_load = load i32* %buf_val_3_x_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 95 'load' 'buf_val_3_x_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 96 [1/1] (1.42ns)   --->   "store i32 %buf_val_3_x_V_load, i32* %buf_val_2_x_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 96 'store' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 97 [1/2] (1.42ns)   --->   "%buf_val_3_y_V_load = load i32* %buf_val_3_y_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 97 'load' 'buf_val_3_y_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 98 [1/1] (1.42ns)   --->   "store i32 %buf_val_3_y_V_load, i32* %buf_val_2_y_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 98 'store' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 99 [1/2] (1.42ns)   --->   "%buf_val_3_z_V_load = load i32* %buf_val_3_z_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 99 'load' 'buf_val_3_z_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 100 [1/1] (1.42ns)   --->   "store i32 %buf_val_3_z_V_load, i32* %buf_val_2_z_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 100 'store' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 101 [1/2] (1.42ns)   --->   "%buf_val_4_x_V_load = load i32* %buf_val_4_x_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 101 'load' 'buf_val_4_x_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 102 [1/1] (1.42ns)   --->   "store i32 %buf_val_4_x_V_load, i32* %buf_val_3_x_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 102 'store' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 103 [1/2] (1.42ns)   --->   "%buf_val_4_y_V_load = load i32* %buf_val_4_y_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 103 'load' 'buf_val_4_y_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 104 [1/1] (1.42ns)   --->   "store i32 %buf_val_4_y_V_load, i32* %buf_val_3_y_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 104 'store' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 105 [1/2] (1.42ns)   --->   "%buf_val_4_z_V_load = load i32* %buf_val_4_z_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 105 'load' 'buf_val_4_z_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 106 [1/1] (1.42ns)   --->   "store i32 %buf_val_4_z_V_load, i32* %buf_val_3_z_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 106 'store' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 107 [1/2] (1.42ns)   --->   "%buf_val_5_x_V_load = load i32* %buf_val_5_x_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 107 'load' 'buf_val_5_x_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 108 [1/1] (1.42ns)   --->   "store i32 %buf_val_5_x_V_load, i32* %buf_val_4_x_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 108 'store' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 109 [1/2] (1.42ns)   --->   "%buf_val_5_y_V_load = load i32* %buf_val_5_y_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 109 'load' 'buf_val_5_y_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 110 [1/1] (1.42ns)   --->   "store i32 %buf_val_5_y_V_load, i32* %buf_val_4_y_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 110 'store' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 111 [1/2] (1.42ns)   --->   "%buf_val_5_z_V_load = load i32* %buf_val_5_z_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 111 'load' 'buf_val_5_z_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 112 [1/1] (1.42ns)   --->   "store i32 %buf_val_5_z_V_load, i32* %buf_val_4_z_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 112 'store' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 113 [1/2] (1.42ns)   --->   "%buf_val_6_x_V_load = load i32* %buf_val_6_x_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 113 'load' 'buf_val_6_x_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 114 [1/1] (1.42ns)   --->   "store i32 %buf_val_6_x_V_load, i32* %buf_val_5_x_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 114 'store' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 115 [1/2] (1.42ns)   --->   "%buf_val_6_y_V_load = load i32* %buf_val_6_y_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 115 'load' 'buf_val_6_y_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 116 [1/1] (1.42ns)   --->   "store i32 %buf_val_6_y_V_load, i32* %buf_val_5_y_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 116 'store' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 117 [1/2] (1.42ns)   --->   "%buf_val_6_z_V_load = load i32* %buf_val_6_z_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 117 'load' 'buf_val_6_z_V_load' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 118 [1/1] (1.42ns)   --->   "store i32 %buf_val_6_z_V_load, i32* %buf_val_5_z_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:729->optical_flow.cpp:143]   --->   Operation 118 'store' <Predicate = (!exitcond_flatten)> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 119 [1/1] (2.93ns)   --->   "%tmp_x_V = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* @gradient_x_V)" [optical_flow.cpp:145]   --->   Operation 119 'read' 'tmp_x_V' <Predicate = (!exitcond_flatten & tmp_i_mid2)> <Delay = 2.93> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.93> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 2> <FIFO>
+ST_3 : Operation 120 [1/1] (2.93ns)   --->   "%tmp_y_V = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* @gradient_y_V)" [optical_flow.cpp:146]   --->   Operation 120 'read' 'tmp_y_V' <Predicate = (!exitcond_flatten & tmp_i_mid2)> <Delay = 2.93> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.93> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 2> <FIFO>
+ST_3 : Operation 121 [1/1] (2.93ns)   --->   "%tmp_z_V = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* @gradient_z_V)" [optical_flow.cpp:147]   --->   Operation 121 'read' 'tmp_z_V' <Predicate = (!exitcond_flatten & tmp_i_mid2)> <Delay = 2.93> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.93> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 2> <FIFO>
+ST_3 : Operation 122 [1/1] (1.18ns)   --->   "br label %.preheader.preheader.i.i" [optical_flow.cpp:149]   --->   Operation 122 'br' <Predicate = (!exitcond_flatten & tmp_i_mid2)> <Delay = 1.18>
+ST_3 : Operation 123 [1/1] (0.00ns)   --->   "%storemerge3 = phi i32 [ %tmp_x_V, %.preheader.preheader.i221.i ], [ 0, %.reset ]"   --->   Operation 123 'phi' 'storemerge3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 124 [1/1] (0.00ns)   --->   "%storemerge2 = phi i32 [ %tmp_y_V, %.preheader.preheader.i221.i ], [ 0, %.reset ]"   --->   Operation 124 'phi' 'storemerge2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 125 [1/1] (0.00ns)   --->   "%storemerge = phi i32 [ %tmp_z_V, %.preheader.preheader.i221.i ], [ 0, %.reset ]"   --->   Operation 125 'phi' 'storemerge' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 126 [1/1] (1.42ns)   --->   "store i32 %storemerge3, i32* %buf_val_6_x_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:765->optical_flow.cpp:148]   --->   Operation 126 'store' <Predicate = true> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 127 [1/1] (1.42ns)   --->   "store i32 %storemerge2, i32* %buf_val_6_y_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:765->optical_flow.cpp:157]   --->   Operation 127 'store' <Predicate = true> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 128 [1/1] (1.42ns)   --->   "store i32 %storemerge, i32* %buf_val_6_z_V_addr, align 4" [./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:765->optical_flow.cpp:148]   --->   Operation 128 'store' <Predicate = true> <Delay = 1.42> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_3 : Operation 129 [1/1] (2.93ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i1P(i1* @y_filtered_x_V, i1 false)" [./../host/typedefs.h:38->optical_flow.cpp:176]   --->   Operation 129 'write' <Predicate = (tmp_47_i_mid2)> <Delay = 2.93> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.93> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 2> <FIFO>
+ST_3 : Operation 130 [1/1] (2.93ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i1P(i1* @y_filtered_y_V, i1 false)" [./../host/typedefs.h:38->optical_flow.cpp:176]   --->   Operation 130 'write' <Predicate = (tmp_47_i_mid2)> <Delay = 2.93> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.93> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 2> <FIFO>
+ST_3 : Operation 131 [1/1] (2.93ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i1P(i1* @y_filtered_z_V, i1 false)" [./../host/typedefs.h:38->optical_flow.cpp:176]   --->   Operation 131 'write' <Predicate = (tmp_47_i_mid2)> <Delay = 2.93> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 2.93> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 1> <Depth = 2> <FIFO>
+ST_3 : Operation 132 [1/1] (0.00ns)   --->   "br label %._crit_edge.i" [optical_flow.cpp:177]   --->   Operation 132 'br' <Predicate = (tmp_47_i_mid2)> <Delay = 0.00>
+ST_3 : Operation 133 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([20 x i8]* @p_str9, i32 %tmp_57_i)" [optical_flow.cpp:178]   --->   Operation 133 'specregionend' 'empty' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_3 : Operation 134 [1/1] (0.00ns)   --->   "br label %0"   --->   Operation 134 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+
+State 4 <SV = 2> <Delay = 0.00>
+ST_4 : Operation 135 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 135 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.18ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('indvar_flatten') with incoming values : ('indvar_flatten_next') [35]  (1.18 ns)
+
+ <State 2>: 4.29ns
+The critical path consists of the following:
+	'phi' operation ('r_i', optical_flow.cpp:136) with incoming values : ('r_i_mid2', optical_flow.cpp:136) [36]  (0 ns)
+	'add' operation ('r6', optical_flow.cpp:134) [45]  (1.36 ns)
+	'icmp' operation ('tmp_i_mid1', optical_flow.cpp:141) [46]  (1.12 ns)
+	'select' operation ('tmp_i_mid2', optical_flow.cpp:141) [48]  (0.625 ns)
+	multiplexor before 'phi' operation ('tmp.x.V') with incoming values : ('tmp.x.V', optical_flow.cpp:145) [112]  (1.18 ns)
+
+ <State 3>: 5.54ns
+The critical path consists of the following:
+	fifo read on port 'gradient_x_V' (optical_flow.cpp:145) [107]  (2.93 ns)
+	multiplexor before 'phi' operation ('tmp.x.V') with incoming values : ('tmp.x.V', optical_flow.cpp:145) [112]  (1.18 ns)
+	'phi' operation ('tmp.x.V') with incoming values : ('tmp.x.V', optical_flow.cpp:145) [112]  (0 ns)
+	'store' operation (./../host/typedefs.h:38->/cad/xilinx/vivado/2018.2/Vivado/2018.2/common/technology/autopilot/hls/hls_video_mem.h:765->optical_flow.cpp:148) of variable 'tmp.x.V' on array 'buf.val[6].x.V', optical_flow.cpp:131 [115]  (1.43 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
