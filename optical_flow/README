@@ -1,25 +1,41 @@
 
-# Optical Flow example
+## Optical Flow example
 
 This example uses the Optical Flow design from the Rosetta suite of High-Level
 Synthesis benchmarks developed at Cornell University[1].
 
 [1] http://www.csl.cornell.edu/~zhiruz/pdfs/rosetta-fpga2018.pdf
 
-# Directory Structure
+### Directory Structure
 
 1) src
 
 This directory contains the C++ source code used to generate the verified RTL.
-There are two sub-directories, one for the bugfree version of the design, and 
-on containing the bug.
+There are two sub-directories:
+    1. bugfree: the clean version of the design without the bug.
+    2. withbug: a version of the desgn containing the bug.
+
+Each also contains the synthesis directory, optical-flow, use to generate
+the RTL with Vivado v2017.1.
+
+#### Source Code Edits
+
+   Edits made to  optial_flow.cpp are as follows (also in optical_flow.cpp.diff)
+      1. The header file typedefs.h is included in the local directory  
+      2. The max_width and default_depth is reduced to 10.
+         (The full optical flow module proved too large for the BMC tool to handle)
+      3. The pragmas for generating an axi interface were also removed.
 
 2) rtl
 
 This directory contains the synthesized RTL, generated using Vivado HLS 2018.2.
-There are two sub-directories, one for the bugfree version of the design, and
-on containing the bug. Each contains a README, detailing the A-QED setup and
-how to run it using Cadence Jaspergold.
+There are two sub-directories:
+    1. bugfree: the clean version of the design without the bug.
+    2. withbug: a version of the desgn containing the bug.
+
+Each contains a README, detailing the A-QED setup and how to run it using 
+Cadence Jaspergold.
+
 
 
 

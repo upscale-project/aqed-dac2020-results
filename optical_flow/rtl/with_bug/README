@@ -1,4 +1,11 @@
-### Rosetta Optical Flow design - version with bug
+## Rosetta Optical Flow design - version with bug
+
+The additional files for  Cadence Jaspergold are:
+
+   1. _jasper.tcl_ : contains the tcl file that may be sourced to run BMC on the design.
+   2. _optical_flow.flist_ : contains the list of verilog files read by the formal tool
+   3. _debug_cex.sig_ : contains a list of waveform that were used for debugging the bug.
+                        Can be loaded into the _Cadence JasperGold_ waveform viewer.
 
 To run with Cadence Jaspergold:
 
@@ -9,4 +16,11 @@ To run with Cadence Jaspergold:
 In the list of assertions, RB_Check_1 should fail with a counterexample of 197
 cycles. 
 
+### Assertions
+
+The assertions to evaluate the Response Bound (RB) check can be found in
+optical_flow.v, lines 1786 and 1790.
+
+It should be noted that an A-QED module was not added to this design, as the
+bug was detected using the RB check and not Functional Consistency.
 

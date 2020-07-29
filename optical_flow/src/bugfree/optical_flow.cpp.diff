@@ -1,0 +1,26 @@
+9c9
+< #include "typedefs.h"
+---
+> #include "../host/typedefs.h"
+15,16c15,16
+< const int max_width = 10; 
+< const int default_depth = 10;
+---
+> const int max_width = MAX_WIDTH; 
+> const int default_depth = MAX_WIDTH;
+404,409c404,409
+< //    #pragma HLS INTERFACE m_axi port=frames offset=slave bundle=gmem0
+< //    #pragma HLS INTERFACE m_axi port=outputs offset=slave bundle=gmem1
+< //    #pragma HLS INTERFACE s_axilite port=frames bundle=control
+< //    #pragma HLS INTERFACE s_axilite port=outputs bundle=control
+< //    #pragma HLS INTERFACE s_axilite port=return bundle=control
+< //    #pragma HLS data_pack variable=outputs
+---
+>     #pragma HLS INTERFACE m_axi port=frames offset=slave bundle=gmem0
+>     #pragma HLS INTERFACE m_axi port=outputs offset=slave bundle=gmem1
+>     #pragma HLS INTERFACE s_axilite port=frames bundle=control
+>     #pragma HLS INTERFACE s_axilite port=outputs bundle=control
+>     #pragma HLS INTERFACE s_axilite port=return bundle=control
+>     #pragma HLS data_pack variable=outputs
+481d480
+< 

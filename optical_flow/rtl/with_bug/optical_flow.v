@@ -1776,7 +1776,7 @@ always @(posedge ap_clk) begin
     if(ap_rst_n_inv || (sel_in && !sel_in_labeled)) begin
        ready_after_sel_in_done <= 1'b0;
     end
-    else if ((sel_in_count == out_count) /*&& ready_in*/) begin
+    else if ((sel_in_count == out_count) && ready_in) begin
        ready_after_sel_in_done <= 1'b1;
     end
 end

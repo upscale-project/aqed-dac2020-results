@@ -1,22 +1,31 @@
 
-# Dataflow example
+## Dataflow example
 
 This design is a custom dataflow application developed by the VAST lab at the
-University of California, Los Angeles (UCLA).
+University of California, Los Angeles (UCLA)[1].
 
-# Directory Structure
+[1] Chi, Y., et al., “Rapid Cycle-Accurate Simulator for High-Level Synthesis,”
+Proc. Intl. Symp. FPGAs, 2019.
+
+
+### Directory Structure
 
 1) src
 
 This directory contains the C++ source code used to generate the verified RTL.
-There are two sub-directories, one for the bugfree version of the design, and 
-on containing the bug.
+There are two sub-directories:
+    1. bugfree: the clean version of the design without the bug.
+    2. withbug: a version of the desgn containing the bug.
+
 
 2) rtl
 
 This directory contains the synthesized RTL, generated using Vivado HLS 2018.2.
-There are two sub-directories, one for the bugfree version of the design, and
-on containing the bug. Each contains a README, detailing the A-QED setup and
+There are two sub-directories:
+    1. bugfree: the clean version of the design without the bug.
+    2. withbug: a version of the desgn containing the bug.
+
+Each contains a README, detailing the A-QED setup and
 how to run it using Cadence Jaspergold.
 
 

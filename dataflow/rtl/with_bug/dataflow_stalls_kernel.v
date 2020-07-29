@@ -1305,6 +1305,9 @@ assign store_U0_start_full_n = 1'b0;
 
 assign store_U0_start_write = 1'b0;
 
+
+// Additions for Response Bound Checks
+
 reg ready_after_sel_in_done;
 reg sel_in_labeled;
 wire sel_in;
@@ -1379,12 +1382,6 @@ always @(posedge ap_clk) begin
        input_after_sel <= 1'b1;
     end
 end
-
-
-
-//assume property (always @(posedge ap_clk) data_count < 32'd100);
-
-
 
 assert_RB_check_1: assert property (
        @(posedge ap_clk)

@@ -1,10 +1,26 @@
 ### Custon Dataflow design - version with bug
 
+The additional files for  Cadence Jaspergold are:
+
+   1. _jasper.tcl_ : contains the tcl file that may be sourced to run BMC on the design.
+   2. _dataflow.flist_ : contains the list of verilog files read by the formal tool
+   3. _debug.sig_ : contains a list of waveform that were used for debugging the bug.
+                        Can be loaded into the _Cadence JasperGold_ waveform viewer.
+
 To run with Cadence Jaspergold:
 
 1) Launch the jaspergold GUI: "jaspergold"
 
 2) In the command window, source the tcl file: "source jasper.tcl"
 
-In the list of counterexamples, RB_Check_2 should fail with a counterexample of
-98 cycles. 
+In the list of assertions, RB_Check_2 should fail with a counterexample of
+98 cycles.
+
+### Assertions
+
+The assertions to evaluate the Response Bound (RB) check can be found in
+dataflow_stalls_kernel.v, lines 1386 and 1390.
+
+It should be noted that an A-QED module was not added to this design, as the
+bug was detected using the RB check and not Functional Consistency.
+

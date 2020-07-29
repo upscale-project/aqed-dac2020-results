@@ -394,7 +394,7 @@ void flow_calc(tensor_t tensors[MAX_HEIGHT][MAX_WIDTH],
     }
   }
 }
-extern "C" 
+extern "C"
 {
   // top-level kernel function
   void optical_flow(frames_t   frames[MAX_HEIGHT * MAX_WIDTH],
@@ -416,7 +416,7 @@ extern "C"
     static pixel_t gradient_y[MAX_HEIGHT][MAX_WIDTH];
     #pragma HLS STREAM variable=gradient_y depth=default_depth
     static pixel_t gradient_z[MAX_HEIGHT][MAX_WIDTH];
-    #pragma HLS STREAM variable=gradient_z depth=4*max_width
+    #pragma HLS STREAM variable=gradient_z depth=max_width*4
     static gradient_t y_filtered[MAX_HEIGHT][MAX_WIDTH];
     #pragma HLS STREAM variable=y_filtered depth=default_depth
     static gradient_t filtered_gradient[MAX_HEIGHT][MAX_WIDTH];
@@ -476,7 +476,6 @@ extern "C"
     tensor_weight_y(out_product, tensor_y);
     tensor_weight_x(tensor_y, tensor);
     flow_calc(tensor, outputs);
-   }
+  }
 }
-
 
