@@ -1,0 +1,83 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="scatter" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="load" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="store" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="compute1" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="compute2" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="gather" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="dataflow_stalls_kernel" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="65536"/>
+<option name="port" positionalBoolean="4" value="output_ddr0"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="gmemo"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dataflow_stalls_kernel" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="65536"/>
+<option name="port" positionalBoolean="4" value="input_ddr0"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="gmemi"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dataflow_stalls_kernel" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="output_ddr0"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dataflow_stalls_kernel" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="input_ddr0"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dataflow_stalls_kernel" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="data_count"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dataflow_stalls_kernel" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+<option name="bundle" value="control"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dataflow_stalls_kernel" label="">
+<pragma name="STREAM">
+<option name="variable" positionalBoolean="4" value="data_stage0"/>
+<option name="depth" value="10"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dataflow_stalls_kernel" label="">
+<pragma name="STREAM">
+<option name="variable" positionalBoolean="4" value="data_stage5"/>
+<option name="depth" value="10"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="dataflow_stalls_kernel" label="">
+<pragma name="DATAFLOW"/>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

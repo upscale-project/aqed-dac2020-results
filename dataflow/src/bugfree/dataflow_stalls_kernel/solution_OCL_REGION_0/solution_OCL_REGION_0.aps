@@ -1,0 +1,29 @@
+<AutoPilot:solution xmlns:AutoPilot="com.autoesl.autopilot.solution">
+    <name>
+        <value string="solution_OCL_REGION_0"/>
+    </name>
+    <project>
+        <value string="dataflow_stalls_kernel"/>
+    </project>
+    <targetInfo>
+        <TargetInfo value="xc7vx690t:ffg1157:-2"/>
+    </targetInfo>
+    <libraryList>
+        <library value="xilinx/virtex7/virtex7" name="DefaultPlatform"/>
+        <library value="xilinx/virtex7/virtex7_fpv6" name="DefaultPlatform"/>
+    </libraryList>
+    <clockList>
+        <clock default="false" name="default" uncertainty="1.350000" period="200MHz"/>
+    </clockList>
+    <config>
+        <config_rtl register_reset="1"/>
+        <config_interface m_axi_addr64="1"/>
+        <config_schedule relax_ii_for_timing="1"/>
+        <config_compile pipeline_loops="64" name_max_length="256"/>
+        <schedule model="dataflow_stalls_kernel"/>
+    </config>
+    <ExportDesign askAgain="true" evaluate="false" rtl="verilog" formatName="ip_catalog">
+        <Format formatName="ip_catalog" description="" vendor="" library="" ipname="" version="1.0" driver_input_dir="" display_name="" taxonomy=""/>
+    </ExportDesign>
+</AutoPilot:solution>
+

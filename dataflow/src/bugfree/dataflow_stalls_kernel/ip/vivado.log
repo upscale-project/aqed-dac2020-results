@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# Vivado v2017.1_sdx (64-bit)
+# SW Build 1915620 on Thu Jun 22 17:54:59 MDT 2017
+# IP Build 1908669 on Thu Jun 22 19:20:41 MDT 2017
+# Start of session at: Tue Apr 14 07:39:32 2020
+# Process ID: 28182
+# Current directory: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/tmp/set_fifo_depths/2017.1/adm-pcie-7v3/_xocc_compile_dataflow_stalls_kernel_dataflow_stalls-hw.dir/impl/kernels/dataflow_stalls_kernel/dataflow_stalls_kernel/solution_OCL_REGION_0/impl/ip
+# Command line: vivado -notrace -mode batch -source run_ippack.tcl
+# Log file: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/tmp/set_fifo_depths/2017.1/adm-pcie-7v3/_xocc_compile_dataflow_stalls_kernel_dataflow_stalls-hw.dir/impl/kernels/dataflow_stalls_kernel/dataflow_stalls_kernel/solution_OCL_REGION_0/impl/ip/vivado.log
+# Journal file: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/tmp/set_fifo_depths/2017.1/adm-pcie-7v3/_xocc_compile_dataflow_stalls_kernel_dataflow_stalls-hw.dir/impl/kernels/dataflow_stalls_kernel/dataflow_stalls_kernel/solution_OCL_REGION_0/impl/ip/vivado.jou
+#-----------------------------------------------------------
+INFO: [Common 17-1460] Use of init.tcl in /cad/xilinx/SDAccel/2017.1/SDx/2017.1/Vivado/scripts/init.tcl is deprecated. Please use Vivado_init.tcl 
+Sourcing tcl script '/cad/xilinx/SDAccel/2017.1/SDx/2017.1/Vivado/scripts/init.tcl'
+16 Beta devices matching pattern found, 0 enabled.
+Loaded SDSoC Platform Tcl Library
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/cad/xilinx/SDAccel/2017.1/SDx/2017.1/Vivado/data/ip'.
+WARNING: [Vivado 12-4404] The CPU emulation flow is not supported when using a packaged XO file with XOCC.
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 14 07:40:06 2020...

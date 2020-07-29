@@ -1,0 +1,264 @@
+
+
+================================================================
+== Vivado HLS Report for 'dataflow_stalls_kernel'
+================================================================
+* Date:           Tue Apr 14 07:39:21 2020
+
+* Version:        2017.1 (Build 1846317 on Thu Jun 22 18:17:09 MDT 2017)
+* Project:        dataflow_stalls_kernel
+* Solution:       solution_OCL_REGION_0
+* Product family: virtex7
+* Target device:  xc7vx690tffg1157-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|      3.65|        1.35|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    ?|    ?|    ?|    ?| dataflow |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +-------------+----------+-----+-----+-----+-----+---------+
+        |             |          |  Latency  |  Interval | Pipeline|
+        |   Instance  |  Module  | min | max | min | max |   Type  |
+        +-------------+----------+-----+-----+-----+-----+---------+
+        |compute2_U0  |compute2  |    ?|    ?|    ?|    ?|   none  |
+        |store_U0     |store     |    ?|    ?|    ?|    ?|   none  |
+        |load5_U0     |load5     |    ?|    ?|    ?|    ?|   none  |
+        |gather_U0    |gather    |    ?|    ?|    ?|    ?|   none  |
+        |compute1_U0  |compute1  |    ?|    ?|    ?|    ?|   none  |
+        |scatter_U0   |scatter   |    ?|    ?|    ?|    ?|   none  |
+        +-------------+----------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|DSP              |        -|      -|       -|       -|
+|Expression       |        -|      -|       0|      32|
+|FIFO             |        0|      -|       0|      12|
+|Instance         |        8|     16|    2810|    3549|
+|Memory           |        -|      -|       -|       -|
+|Multiplexer      |        -|      -|       -|       -|
+|Register         |        -|      -|       1|       -|
++-----------------+---------+-------+--------+--------+
+|Total            |        8|     16|    2811|    3593|
++-----------------+---------+-------+--------+--------+
+|Available        |     2940|   3600|  866400|  433200|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |    ~0   |   ~0  |   ~0   |   ~0   |
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    +----------------------------------------+--------------------------------------+---------+-------+-----+-----+
+    |                Instance                |                Module                | BRAM_18K| DSP48E|  FF | LUT |
+    +----------------------------------------+--------------------------------------+---------+-------+-----+-----+
+    |compute1_U0                             |compute1                              |        0|      0|  138|  212|
+    |compute2_U0                             |compute2                              |        0|     16|  796|  408|
+    |dataflow_stalls_kernel_control_s_axi_U  |dataflow_stalls_kernel_control_s_axi  |        0|      0|  214|  360|
+    |dataflow_stalls_kernel_gmemi_m_axi_U    |dataflow_stalls_kernel_gmemi_m_axi    |        4|      0|  566|  766|
+    |dataflow_stalls_kernel_gmemo_m_axi_U    |dataflow_stalls_kernel_gmemo_m_axi    |        4|      0|  566|  766|
+    |gather_U0                               |gather                                |        0|      0|  136|  291|
+    |load5_U0                                |load5                                 |        0|      0|  115|  267|
+    |scatter_U0                              |scatter                               |        0|      0|   74|  214|
+    |store_U0                                |store                                 |        0|      0|  205|  265|
+    +----------------------------------------+--------------------------------------+---------+-------+-----+-----+
+    |Total                                   |                                      |        8|     16| 2810| 3549|
+    +----------------------------------------+--------------------------------------+---------+-------+-----+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +------------------+---------+---+----+------+-----+---------+
+    |       Name       | BRAM_18K| FF| LUT| Depth| Bits| Size:D*B|
+    +------------------+---------+---+----+------+-----+---------+
+    |data_count_c10_U  |        0|  0|   1|     1|   32|       32|
+    |data_count_c7_U   |        0|  0|   1|     1|   32|       32|
+    |data_count_c8_U   |        0|  0|   1|     1|   32|       32|
+    |data_count_c9_U   |        0|  0|   1|     1|   32|       32|
+    |data_count_c_U    |        0|  0|   1|     1|   32|       32|
+    |data_stage0_V_U   |        0|  0|   1|    10|   64|      640|
+    |data_stage1_V_U   |        0|  0|   1|     1|   64|       64|
+    |data_stage2_V_U   |        0|  0|   1|     1|   64|       64|
+    |data_stage3_V_U   |        0|  0|   1|     5|   64|      320|
+    |data_stage4_V_U   |        0|  0|   1|     1|   64|       64|
+    |data_stage5_V_U   |        0|  0|   1|    10|   64|      640|
+    |output_ddr0_c_U   |        0|  0|   1|     4|   64|      256|
+    +------------------+---------+---+----+------+-----+---------+
+    |Total             |        0|  0|  12|    37|  608|     2208|
+    +------------------+---------+---+----+------+-----+---------+
+
+    * Expression: 
+    +--------------------------+----------+-------+---+----+------------+------------+
+    |       Variable Name      | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------------+----------+-------+---+----+------------+------------+
+    |ap_idle                   |    and   |      0|  0|   8|           1|           1|
+    |compute1_U0_start_full_n  |    or    |      0|  0|   8|           1|           1|
+    |load5_U0_start_full_n     |    or    |      0|  0|   8|           1|           1|
+    |scatter_U0_start_full_n   |    or    |      0|  0|   8|           1|           1|
+    +--------------------------+----------+-------+---+----+------------+------------+
+    |Total                     |          |      0|  0|  32|           4|           4|
+    +--------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    +--------------+---+----+-----+-----------+
+    |     Name     | FF| LUT| Bits| Const Bits|
+    +--------------+---+----+-----+-----------+
+    |ap_rst_n_inv  |  1|   0|    1|          0|
+    +--------------+---+----+-----+-----------+
+    |Total         |  1|   0|    1|          0|
+    +--------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+------------------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |      Source Object     |    C Type    |
++-----------------------+-----+-----+------------+------------------------+--------------+
+|s_axi_control_AWVALID  |  in |    1|    s_axi   |         control        |    scalar    |
+|s_axi_control_AWREADY  | out |    1|    s_axi   |         control        |    scalar    |
+|s_axi_control_AWADDR   |  in |    6|    s_axi   |         control        |    scalar    |
+|s_axi_control_WVALID   |  in |    1|    s_axi   |         control        |    scalar    |
+|s_axi_control_WREADY   | out |    1|    s_axi   |         control        |    scalar    |
+|s_axi_control_WDATA    |  in |   32|    s_axi   |         control        |    scalar    |
+|s_axi_control_WSTRB    |  in |    4|    s_axi   |         control        |    scalar    |
+|s_axi_control_ARVALID  |  in |    1|    s_axi   |         control        |    scalar    |
+|s_axi_control_ARREADY  | out |    1|    s_axi   |         control        |    scalar    |
+|s_axi_control_ARADDR   |  in |    6|    s_axi   |         control        |    scalar    |
+|s_axi_control_RVALID   | out |    1|    s_axi   |         control        |    scalar    |
+|s_axi_control_RREADY   |  in |    1|    s_axi   |         control        |    scalar    |
+|s_axi_control_RDATA    | out |   32|    s_axi   |         control        |    scalar    |
+|s_axi_control_RRESP    | out |    2|    s_axi   |         control        |    scalar    |
+|s_axi_control_BVALID   | out |    1|    s_axi   |         control        |    scalar    |
+|s_axi_control_BREADY   |  in |    1|    s_axi   |         control        |    scalar    |
+|s_axi_control_BRESP    | out |    2|    s_axi   |         control        |    scalar    |
+|ap_clk                 |  in |    1| ap_ctrl_hs | dataflow_stalls_kernel | return value |
+|ap_rst_n               |  in |    1| ap_ctrl_hs | dataflow_stalls_kernel | return value |
+|interrupt              | out |    1| ap_ctrl_hs | dataflow_stalls_kernel | return value |
+|m_axi_gmemo_AWVALID    | out |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_AWREADY    |  in |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_AWADDR     | out |   64|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_AWID       | out |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_AWLEN      | out |    8|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_AWSIZE     | out |    3|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_AWBURST    | out |    2|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_AWLOCK     | out |    2|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_AWCACHE    | out |    4|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_AWPROT     | out |    3|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_AWQOS      | out |    4|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_AWREGION   | out |    4|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_AWUSER     | out |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_WVALID     | out |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_WREADY     |  in |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_WDATA      | out |   64|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_WSTRB      | out |    8|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_WLAST      | out |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_WID        | out |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_WUSER      | out |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_ARVALID    | out |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_ARREADY    |  in |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_ARADDR     | out |   64|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_ARID       | out |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_ARLEN      | out |    8|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_ARSIZE     | out |    3|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_ARBURST    | out |    2|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_ARLOCK     | out |    2|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_ARCACHE    | out |    4|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_ARPROT     | out |    3|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_ARQOS      | out |    4|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_ARREGION   | out |    4|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_ARUSER     | out |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_RVALID     |  in |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_RREADY     | out |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_RDATA      |  in |   64|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_RLAST      |  in |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_RID        |  in |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_RUSER      |  in |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_RRESP      |  in |    2|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_BVALID     |  in |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_BREADY     | out |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_BRESP      |  in |    2|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_BID        |  in |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemo_BUSER      |  in |    1|    m_axi   |          gmemo         |    pointer   |
+|m_axi_gmemi_AWVALID    | out |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_AWREADY    |  in |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_AWADDR     | out |   64|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_AWID       | out |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_AWLEN      | out |    8|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_AWSIZE     | out |    3|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_AWBURST    | out |    2|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_AWLOCK     | out |    2|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_AWCACHE    | out |    4|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_AWPROT     | out |    3|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_AWQOS      | out |    4|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_AWREGION   | out |    4|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_AWUSER     | out |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_WVALID     | out |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_WREADY     |  in |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_WDATA      | out |   64|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_WSTRB      | out |    8|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_WLAST      | out |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_WID        | out |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_WUSER      | out |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_ARVALID    | out |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_ARREADY    |  in |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_ARADDR     | out |   64|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_ARID       | out |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_ARLEN      | out |    8|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_ARSIZE     | out |    3|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_ARBURST    | out |    2|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_ARLOCK     | out |    2|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_ARCACHE    | out |    4|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_ARPROT     | out |    3|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_ARQOS      | out |    4|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_ARREGION   | out |    4|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_ARUSER     | out |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_RVALID     |  in |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_RREADY     | out |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_RDATA      |  in |   64|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_RLAST      |  in |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_RID        |  in |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_RUSER      |  in |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_RRESP      |  in |    2|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_BVALID     |  in |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_BREADY     | out |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_BRESP      |  in |    2|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_BID        |  in |    1|    m_axi   |          gmemi         |    pointer   |
+|m_axi_gmemi_BUSER      |  in |    1|    m_axi   |          gmemi         |    pointer   |
++-----------------------+-----+-----+------------+------------------------+--------------+
+

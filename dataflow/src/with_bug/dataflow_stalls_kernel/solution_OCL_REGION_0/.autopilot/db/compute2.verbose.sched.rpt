@@ -1,0 +1,272 @@
+
+
+================================================================
+== Vivado HLS Report for 'compute2'
+================================================================
+* Date:           Tue Apr 14 07:35:05 2020
+
+* Version:        2017.1 (Build 1846317 on Thu Jun 22 18:17:09 MDT 2017)
+* Project:        dataflow_stalls_kernel
+* Solution:       solution_OCL_REGION_0
+* Product family: virtex7
+* Target device:  xc7vx690tffg1157-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|      2.83|        1.35|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                  |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name    | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- compute2_epoch  |    ?|    ?|         9|          1|          1|     ?|    yes   |
+        +------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 9
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states: 11
+* Pipeline: 1
+  Pipeline-0: II = 1, D = 9, States = { 2 3 4 5 6 7 8 9 10 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	11  / (exitcond_i)
+	3  / (!exitcond_i)
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	2  / true
+11 --> 
+* FSM state operations: 
+
+ <State 1>: 1.15ns
+ST_1: StgValue_12 (4)  [1/1] 0.00ns
+entry:0  call void (...)* @_ssdm_op_SpecInterface(i64* %to_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str42, i32 0, i32 0, [1 x i8]* @p_str43, [1 x i8]* @p_str44, [1 x i8]* @p_str45, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str46, [1 x i8]* @p_str47)
+
+ST_1: StgValue_13 (5)  [1/1] 0.00ns
+entry:1  call void (...)* @_ssdm_op_SpecInterface(i64* %from_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str28, i32 0, i32 0, [1 x i8]* @p_str29, [1 x i8]* @p_str30, [1 x i8]* @p_str31, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str32, [1 x i8]* @p_str33)
+
+ST_1: StgValue_14 (6)  [1/1] 0.00ns
+entry:2  call void (...)* @_ssdm_op_SpecInterface(i32* %data_count, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str123, i32 0, i32 0, [1 x i8]* @p_str124, [1 x i8]* @p_str125, [1 x i8]* @p_str126, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str127, [1 x i8]* @p_str128)
+
+ST_1: data_count_read (7)  [1/1] 1.15ns
+entry:3  %data_count_read = call i32 @_ssdm_op_Read.ap_fifo.i32P(i32* %data_count)
+
+ST_1: StgValue_16 (8)  [1/1] 0.85ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:72
+entry:4  br label %0
+
+
+ <State 2>: 1.51ns
+ST_2: i_i (10)  [1/1] 0.00ns
+:0  %i_i = phi i32 [ 0, %entry ], [ %i, %1 ]
+
+ST_2: exitcond_i (11)  [1/1] 1.26ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:72
+:1  %exitcond_i = icmp eq i32 %i_i, %data_count_read
+
+ST_2: i (12)  [1/1] 1.51ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:77
+:2  %i = add i32 %i_i, 1
+
+ST_2: StgValue_20 (13)  [1/1] 0.00ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:72
+:3  br i1 %exitcond_i, label %.exit, label %1
+
+
+ <State 3>: 1.15ns
+ST_3: tmp (18)  [1/1] 1.15ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:75
+:3  %tmp = call i64 @_ssdm_op_Read.ap_fifo.volatile.i64P(i64* %from_V)
+
+
+ <State 4>: 2.83ns
+ST_4: tmp_3 (19)  [6/6] 2.83ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:76
+:4  %tmp_3 = mul i64 %tmp, %tmp
+
+
+ <State 5>: 2.83ns
+ST_5: tmp_3 (19)  [5/6] 2.83ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:76
+:4  %tmp_3 = mul i64 %tmp, %tmp
+
+
+ <State 6>: 2.83ns
+ST_6: tmp_3 (19)  [4/6] 2.83ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:76
+:4  %tmp_3 = mul i64 %tmp, %tmp
+
+
+ <State 7>: 2.83ns
+ST_7: tmp_3 (19)  [3/6] 2.83ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:76
+:4  %tmp_3 = mul i64 %tmp, %tmp
+
+
+ <State 8>: 2.83ns
+ST_8: tmp_3 (19)  [2/6] 2.83ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:76
+:4  %tmp_3 = mul i64 %tmp, %tmp
+
+
+ <State 9>: 2.83ns
+ST_9: tmp_3 (19)  [1/6] 2.83ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:76
+:4  %tmp_3 = mul i64 %tmp, %tmp
+
+
+ <State 10>: 1.15ns
+ST_10: StgValue_28 (15)  [1/1] 0.00ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:72
+:0  call void (...)* @_ssdm_op_SpecLoopName([15 x i8]* @p_str5) nounwind
+
+ST_10: tmp_12_i (16)  [1/1] 0.00ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:72
+:1  %tmp_12_i = call i32 (...)* @_ssdm_op_SpecRegionBegin([15 x i8]* @p_str5)
+
+ST_10: StgValue_30 (17)  [1/1] 0.00ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:73
+:2  call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str1) nounwind
+
+ST_10: StgValue_31 (20)  [1/1] 1.15ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:76
+:5  call void @_ssdm_op_Write.ap_fifo.volatile.i64P(i64* %to_V, i64 %tmp_3)
+
+ST_10: empty (21)  [1/1] 0.00ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:79
+:6  %empty = call i32 (...)* @_ssdm_op_SpecRegionEnd([15 x i8]* @p_str5, i32 %tmp_12_i)
+
+ST_10: StgValue_33 (22)  [1/1] 0.00ns  loc: /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:79
+:7  br label %0
+
+
+ <State 11>: 0.00ns
+ST_11: StgValue_34 (24)  [1/1] 0.00ns
+.exit:0  ret void
+
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 1.35ns.
+
+ <State 1>: 1.15ns
+The critical path consists of the following:
+	fifo read on port 'data_count' [7]  (1.15 ns)
+
+ <State 2>: 1.51ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:77) [10]  (0 ns)
+	'add' operation ('i', /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:77) [12]  (1.51 ns)
+
+ <State 3>: 1.15ns
+The critical path consists of the following:
+	fifo read on port 'from_V' (/rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:75) [18]  (1.15 ns)
+
+ <State 4>: 2.83ns
+The critical path consists of the following:
+	'mul' operation ('tmp', /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:76) [19]  (2.83 ns)
+
+ <State 5>: 2.83ns
+The critical path consists of the following:
+	'mul' operation ('tmp', /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:76) [19]  (2.83 ns)
+
+ <State 6>: 2.83ns
+The critical path consists of the following:
+	'mul' operation ('tmp', /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:76) [19]  (2.83 ns)
+
+ <State 7>: 2.83ns
+The critical path consists of the following:
+	'mul' operation ('tmp', /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:76) [19]  (2.83 ns)
+
+ <State 8>: 2.83ns
+The critical path consists of the following:
+	'mul' operation ('tmp', /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:76) [19]  (2.83 ns)
+
+ <State 9>: 2.83ns
+The critical path consists of the following:
+	'mul' operation ('tmp', /rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:76) [19]  (2.83 ns)
+
+ <State 10>: 1.15ns
+The critical path consists of the following:
+	fifo write on port 'to_V' (/rsgs/pool0/esingh/aqed4saranyu/results/dataflow/dataflow-stalls_ab/src/dataflow_stalls_kernel.cpp:76) [20]  (1.15 ns)
+
+ <State 11>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
