@@ -2,14 +2,18 @@
 
 ### Directory Hierarchy
 
-Four bugs and the bugless design are looked into and can be found in the **./bug0**, **./bug1**, **./bug2**, **./bug3** and **./bugless** repsectively. Each folder contains  
+Four bugs and the bugless design are looked into and can be found in the **./bug0**, **./bug1**, **./bug2**, **./bug3** and **./bugless** respectively. Each folder contains  
 
-1. __buf4*.cpp__ : The HLS synthesizable C++ file from which the verilog is generated using *Xilinx Vivado* HLS synthesis tool. It contains both the accelerator and the A-QED module. The top funcion of the accelerator is *workload* and that of the A-QED module is *aqed_top*. In the folders with buggy version, the bug in the accelerator is explained at **FIXME** comment.  
+1. __buf4*.cpp__ : The HLS synthesizable C++ file from which the verilog is generated using *Xilinx Vivado* HLS synthesis tool. It contains both the accelerator and the A-QED module. The top funcion of the accelerator is *workload* and that of the A-QED module is *aqed_top*. In the folders with buggy version, the correct code line is compared to the buggy code line at **FIXME** comment in the cpp file.  
 2. __aes.h__ : The C++ header file containing structures used by the accelerator.  
 3. __BUG*/__ : The *Xilinx Vivado* project folder. The generated verilog files can be found in _./BUG*/solution1/syn/verilog_. __Warning: Synthesizing the RTL from C++, deletes the current */BUG*/solution1/syn/* folder__. The _./BUG*/solution1/syn/verilog_ folder, besides the generated verilog, contains  
    1. _jasper.tcl_ : contains the tcl file that may be sourced to run BMC on the design with _Cadence JasperGold_. 
    2. _aes.flist_ : contains the list of verilog files read by the formal tool
    3. _debug.sig_ : contains a list of waveform that were used for debugging the bug. Can be loaded into the _Cadence JasperGold_ waveform viewer once the counter-example is found.
+
+Please note that **bug0**, **bug1**, **bug2**, and **bug3** correspond to **AES_v1**, **AES_v2**, **AES_v3**, and **AES_v4** in Table 2 in our paper, respectively.
+
+E.g., to reproduce the bug in **AES_v1** in Table 2, run `jaspergold ./jasper.tcl` in directory `bug0/BUG0/solution1/syn/verilog/`.
 
 ### Assertion
    The **assert_qed_match** is the  universal *Functional Consistency* check assertion and can be found in *aqed_top.v* in _bug*/BUG*/solution1/syn/verilog_.

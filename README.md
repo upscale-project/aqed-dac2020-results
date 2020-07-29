@@ -1,6 +1,10 @@
 # aqed-dac2020-results
 Source files to reproduce the results shown for A-QED (Acclerator Quick Error 
-Detection) at DAC 2020, paper titled "A-QED Verification of Hardware Accelerators".
+Detection) as presented in our paper at DAC 2020:
+
+E. Singh, F. Lonsing, S. Chattopadhyay, M. Strange, P. Wei, X. Zhang,
+Y. Zhou, D. Chen, J. Cong, P. Raina, Z. Zhang, C. Barrett, and S. Mitra,
+*A-QED Verification of Hardware Accelerators*, in Proc. DAC, ACM, 2020.
 
 For questions, please contact:
 
@@ -25,4 +29,4 @@ details of the design.
 
 5) optical_flow
 
-
+All results were obtained using Cadence JasperGold.
